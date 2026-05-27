@@ -4,3 +4,4 @@ requirement/
 __pycache__/
 node_modules/
 data/
+_tmp/
