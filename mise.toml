@@ -1,0 +1,29 @@
+[tools]
+python = "3.12"
+uv = "latest"
+node = "20"
+pnpm = "9"
+
+[settings]
+python.uv_venv_auto = true
+
+
+[tasks.setup]
+description = "install dependencies"
+dir="backend"
+run = "uv sync"
+
+[tasks.api]
+description = "Run the backend API on :8000 with auto-reload"
+dir = "backend"
+run = ".venv/bin/uvicorn src.api:app --reload --port 8000"
+
+[tasks.web]
+description = "Run the frontend dev server on :5173"
+dir = "web"
+run = "pnpm dev"
+
+[tasks.test]
+description = "Run backend tests"
+dir = "backend"
+run = ".venv/bin/pytest"
