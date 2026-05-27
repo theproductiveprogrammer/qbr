@@ -7,11 +7,15 @@ pnpm = "9"
 [settings]
 python.uv_venv_auto = true
 
+[env]
+_.file = ".env"
 
 [tasks.setup]
-description = "install dependencies"
-dir="backend"
-run = "uv sync"
+description = "Install backend (uv sync) + frontend (pnpm install) dependencies"
+run = """
+cd backend && uv sync
+cd ../web && pnpm install
+"""
 
 [tasks.api]
 description = "Run the backend API on :8000 with auto-reload"
@@ -23,7 +27,21 @@ description = "Run the frontend dev server on :5173"
 dir = "web"
 run = "pnpm dev"
 
+[tasks.dev]
+description = "Run backend + frontend together (Ctrl+C stops both)"
+run = """
+trap 'kill 0' EXIT INT TERM
+( cd backend && .venv/bin/uvicorn src.api:app --reload --port 8000 ) &
+( cd web && pnpm dev ) &
+wait
+"""
+
 [tasks.test]
 description = "Run backend tests"
 dir = "backend"
 run = ".venv/bin/pytest"
+
+[tasks.typecheck]
+description = "Frontend type check"
+dir = "web"
+run = "pnpm tsc -b --noEmit"
