@@ -28,33 +28,30 @@ A five-stage prompt chain over structured JSON.
 
 ## Quickstart
 
+All commands are mise tasks — run them from the repo root.
+
 ```bash
-# 1. install backend + frontend deps
-mise setup
-cd web && pnpm install && cd ..
+# 1. install backend (uv sync) + frontend (pnpm install) dependencies
+mise run setup
 
-# 2. set the API key
-export OPENAI_API_KEY=sk-...
+# 2. set the OpenAI key — either export it or drop it into .env at the repo root
+echo "OPENAI_API_KEY=sk-..." > .env
 
-# 3. ingest source data into data/output/
-cd backend && .venv/bin/python -m src.ingest
+# 3. start backend + frontend together (Ctrl+C stops both)
+mise run dev
 
-# 4. start the backend (FastAPI on :8000)
-python -m src.api
-
-# 5. start the frontend (separate terminal, Vite on :5173)
-cd web && pnpm dev
-
-# 6. open the UI and click "Run" on an account
+# 4. open the UI
 open http://localhost:5173
 ```
 
-CLI also works for headless runs:
+Other tasks:
 
 ```bash
-python -m src.pipeline --account meridian
-python -m src.pipeline --account all
-python -m src.pipeline --account meridian --from s3   # resume from a stage
+mise run api        # backend only on :6173
+mise run web        # frontend only on :5173
+mise run test       # backend schema + pipeline tests
+mise run typecheck  # frontend type check
+mise tasks          # list everything
 ```
 
 ## Project layout

@@ -56,4 +56,4 @@ def get_brief(account_id: str) -> Brief:
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run("src.api:app", host="127.0.0.1", port=8000, reload=True)
+    uvicorn.run("src.api:app", host="127.0.0.1", port=6173, reload=True)

@@ -2,7 +2,6 @@
 python = "3.12"
 uv = "latest"
 node = "20"
-pnpm = "9"
 
 [settings]
 python.uv_venv_auto = true
@@ -11,28 +10,28 @@ python.uv_venv_auto = true
 _.file = ".env"
 
 [tasks.setup]
-description = "Install backend (uv sync) + frontend (pnpm install) dependencies"
+description = "Install backend (uv sync) + frontend (npm install) dependencies"
 run = """
 cd backend && uv sync
-cd ../web && pnpm install
+cd ../web && npm install
 """
 
 [tasks.api]
-description = "Run the backend API on :8000 with auto-reload"
+description = "Run the backend API on :6173 with auto-reload"
 dir = "backend"
-run = ".venv/bin/uvicorn src.api:app --reload --port 8000"
+run = ".venv/bin/uvicorn src.api:app --reload --port 6173"
 
 [tasks.web]
 description = "Run the frontend dev server on :5173"
 dir = "web"
-run = "pnpm dev"
+run = "npm run dev"
 
 [tasks.dev]
 description = "Run backend + frontend together (Ctrl+C stops both)"
 run = """
 trap 'kill 0' EXIT INT TERM
-( cd backend && .venv/bin/uvicorn src.api:app --reload --port 8000 ) &
-( cd web && pnpm dev ) &
+( cd backend && .venv/bin/uvicorn src.api:app --reload --port 6173 ) &
+( cd web && npm run dev ) &
 wait
 """
 
@@ -44,4 +43,4 @@ run = ".venv/bin/pytest"
 [tasks.typecheck]
 description = "Frontend type check"
 dir = "web"
-run = "pnpm tsc -b --noEmit"
+run = "npx tsc --noEmit"
