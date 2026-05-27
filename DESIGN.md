@@ -114,11 +114,8 @@ Each goal/gap/opportunity carries `confidence: high | med | low`. UI shows a col
 
 ```
 podium-case-study/
-├── backend/
-│   ├── data/
-│   │   ├── transcripts/             # copied from requirement/
-│   │   ├── usage.xlsx
-│   │   └── feature_catalog.json     # hand-built
+├── data/
+│   ├── input/                       # raw transcripts + usage.xlsx (gitignored)
 │   ├── output/
 │   │   └── <account>/               # JSON artifacts, one dir per account
 │   │       ├── corpus.json
@@ -127,6 +124,8 @@ podium-case-study/
 │   │       ├── gaps.json
 │   │       ├── opportunities.json
 │   │       └── brief.json
+│   └── feature_catalog.json         # hand-built
+├── backend/
 │   ├── src/
 │   │   ├── ingest.py                # transcript parser, xlsx loader, name normalizer
 │   │   ├── stages/

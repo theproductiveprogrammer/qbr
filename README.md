@@ -36,8 +36,8 @@ cd web && pnpm install && cd ..
 # 2. set the API key
 export OPENAI_API_KEY=sk-...
 
-# 3. ingest source data into backend/output/
-cd backend && python -m src.ingest
+# 3. ingest source data into data/output/
+cd backend && .venv/bin/python -m src.ingest
 
 # 4. start the backend (FastAPI on :8000)
 python -m src.api
