@@ -5,6 +5,7 @@ import json
 import re
 import sys
 from dataclasses import asdict, dataclass
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -34,6 +35,7 @@ ACCOUNTS: dict[str, dict[str, Any]] = {
 }
 
 TURN_HEADER_RE = re.compile(r"^(\d+:\d+)\s*\|\s*(.+?)\s*$")
+RECORDED_DATE_RE = re.compile(r"Recorded on\s+([A-Za-z]+\s+\d+,\s*\d{4})")
 ORG_NAME_COL = "ORGANIZATION NAME"
 
 
@@ -46,16 +48,52 @@ class Turn:
     text: str
 
 
-def parse_transcript(path: Path) -> list[Turn]:
-    # The problem is: transcripts are walls of text with timestamp+speaker headers and
-    # multi-line content blocks, and the pipeline needs line-anchored quoteable chunks
-    # so downstream evidence locators line up with what the AM sees in the file.
-    # The way we solve this is: scan line-by-line for the `MM:SS | Speaker` header
-    # pattern, accumulate content until the next header, emit a Turn with the header
-    # line as line_start and the last non-blank content line as line_end.
-    # flow: pipeline -> build_corpus() -> parse_transcript() <-- HERE
+@dataclass
+class TranscriptParse:
+    n_lines: int
+    recorded_date: str | None
+    turns: list[Turn]
+
+
+def parse_recorded_date(content: str) -> str | None:
+    # The problem is: transcripts must be processed in chronological order so the LLM
+    # sees how customer goals evolved over the relationship, but the filenames carry
+    # no date — only the "Recorded on Mon DD, YYYY" line in each file's header.
+    # The way we solve this is: regex the date from the first ~30 lines and normalize
+    # to ISO (YYYY-MM-DD) so sort is just string-sort.
+    # flow: parse_transcript() -> parse_recorded_date() <-- HERE
+    head = "\n".join(content.splitlines()[:30])
+    m = RECORDED_DATE_RE.search(head)
+    if not m:
+        return None
+    try:
+        dt = datetime.strptime(m.group(1).strip(), "%b %d, %Y")
+        return dt.date().isoformat()
+    except ValueError:
+        return None
+
+
+def parse_transcript(path: Path) -> TranscriptParse:
+    # The problem is: each transcript file needs to surface three things downstream —
+    # its turns (for quoting), its line count (for stats), and its recorded date (for
+    # chronological ordering across calls).
+    # The way we solve this is: single read of the file, extract all three, return a
+    # TranscriptParse so the caller doesn't re-read.
+    # flow: build_corpus() -> parse_transcript() <-- HERE
+    content = path.read_text()
+    lines = content.splitlines()
+    return TranscriptParse(
+        n_lines=len(lines),
+        recorded_date=parse_recorded_date(content),
+        turns=_parse_turns(lines),
+    )
+
+
+def _parse_turns(lines: list[str]) -> list[Turn]:
+    # Scan line-by-line for `MM:SS | Speaker` headers, accumulate content until the
+    # next header, emit a Turn with the header line as line_start and the last
+    # non-blank content line as line_end.
     turns: list[Turn] = []
-    lines = path.read_text().splitlines()
     cur: dict[str, Any] | None = None
 
     def finalize(c: dict[str, Any]) -> Turn:
@@ -113,11 +151,23 @@ def load_usage(org_name: str | None) -> dict[str, Any] | None:
     return None
 
 
+def parse_emails(account_id: str) -> list[dict[str, Any]]:
+    # The problem is: the brief lists "email threads" as an input, but the case-study
+    # dataset ships with no emails. Downstream linking already supports them — we just
+    # need a hook here so the corpus shape includes an `emails` list (empty for now).
+    # The way we solve this is: return an empty list until real email data lands; when
+    # it does, this is where the parser slots in.
+    # flow: pipeline.run_pipeline() -> build_corpus() -> parse_emails() <-- HERE
+    _ = account_id
+    return []
+
+
 def build_corpus(account_id: str) -> dict[str, Any]:
     # The problem is: each downstream stage needs a single canonical "this is everything
-    # we know about this account" artifact rather than re-parsing transcripts each time.
-    # The way we solve this is: bundle parsed transcripts + the usage row into one
-    # JSON blob keyed by account_id.
+    # we know about this account" artifact rather than re-parsing source files each
+    # time.
+    # The way we solve this is: bundle parsed transcripts + emails + the usage row into
+    # one JSON blob keyed by account_id.
     # flow: pipeline.run_pipeline() -> build_corpus() <-- HERE -> write_corpus()
     if account_id not in ACCOUNTS:
         raise ValueError(f"Unknown account: {account_id!r}. Known: {list(ACCOUNTS)}")
@@ -125,13 +175,19 @@ def build_corpus(account_id: str) -> dict[str, Any]:
 
     transcripts = []
     for path in sorted(INPUT_DIR.glob(cfg["transcript_glob"])):
-        turns = parse_transcript(path)
+        parsed = parse_transcript(path)
         transcripts.append({
             "file": path.name,
-            "n_lines": len(path.read_text().splitlines()),
-            "turns": [asdict(t) for t in turns],
+            "n_lines": parsed.n_lines,
+            "recorded_date": parsed.recorded_date,
+            "turns": [asdict(t) for t in parsed.turns],
         })
 
+    # Chronological ordering — undated transcripts (shouldn't happen in this dataset)
+    # sort last so they don't poison the LLM's read of the relationship arc.
+    transcripts.sort(key=lambda t: t["recorded_date"] or "9999-12-31")
+
+    emails = parse_emails(account_id)
     usage = load_usage(cfg["usage_org_name"])
 
     return {
@@ -139,6 +195,7 @@ def build_corpus(account_id: str) -> dict[str, Any]:
         "account_name": cfg["name"],
         "vertical": cfg["vertical"],
         "transcripts": transcripts,
+        "emails": emails,
         "usage": usage,
     }
 

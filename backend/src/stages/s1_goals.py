@@ -6,8 +6,9 @@ from typing import Any, Literal
 
 from pydantic import BaseModel, Field
 
+from ..linking import link_quote
 from ..llm import MODEL_EXTRACTION, parse_structured
-from ..schemas import Evidence, Goal, TranscriptLocator
+from ..schemas import Evidence, Goal
 from ..store import OUTPUT_DIR
 
 PROMPT_PATH = Path(__file__).resolve().parent.parent.parent / "prompts" / "goal_extract.md"
@@ -20,12 +21,10 @@ GoalCategory = Literal[
 
 
 class _ExtractedEvidence(BaseModel):
-    # LLM output before the pipeline assigns a stable ev_NNN id.
-    file: str = Field(description="Transcript filename, e.g. call-transcript--meridian-furniture-account-review.txt")
-    line_start: int = Field(description="Starting line in the file (1-indexed, matching the transcript)")
-    line_end: int = Field(description="Last content line (inclusive)")
-    timestamp: str = Field(description="Timestamp as shown in the transcript, e.g. '30:21'")
-    quote: str = Field(description="Verbatim customer quote — do not paraphrase")
+    # LLM emits only (file, quote). The pipeline links the quote back to a parsed
+    # turn to recover line range + timestamp — this is the hallucination filter.
+    file: str = Field(description="Transcript filename, copied from a `=== FILE: ... ===` header")
+    quote: str = Field(description="Verbatim customer quote, character-for-character from the transcript")
 
 
 class _ExtractedGoal(BaseModel):
@@ -40,21 +39,22 @@ class _GoalExtractionResponse(BaseModel):
 
 
 class GoalsStageOutput(BaseModel):
-    # The shape we write to data/output/<account>/goals.json. Same Goal / Evidence
+    # The shape written to data/output/<account>/goals.json. Same Goal / Evidence
     # types as Brief uses, so stage 5 can splice these in directly.
     account_id: str
     goals: list[Goal]
     evidence: dict[str, Evidence]
+    warnings: list[str] = Field(default_factory=list)
 
 
 def extract_goals(account_id: str) -> GoalsStageOutput:
-    # The problem is: surfacing 1–4 real customer goals across 5–11 hour-long call
-    # transcripts is the bottleneck of QBR prep — and a hallucinated goal in front of
+    # The problem is: surfacing 1–4 real customer goals across 5–11 hour-long
+    # transcripts is the bottleneck of QBR prep, and a hallucinated goal in front of
     # the customer is worse than no goal at all.
-    # The way we solve this is: serialize every speaker turn with its line+timestamp
-    # locator, send to the model with a strict pydantic schema that forces verbatim
-    # quoting, then re-validate the citations against the corpus before persisting.
-    # flow: pipeline.run_pipeline() -> extract_goals() <-- HERE -> OpenAI -> write_goals()
+    # The way we solve this is: send transcripts in their native shape, ask the LLM
+    # for verbatim customer quotes only, then deterministically link each quote back
+    # to its parsed turn to recover line numbers (or drop it as hallucinated).
+    # flow: pipeline.run_pipeline() -> extract_goals() <-- HERE -> OpenAI -> link -> write
     corpus = _load_corpus(account_id)
     user_content = _format_corpus_for_prompt(corpus)
     system_prompt = PROMPT_PATH.read_text()
@@ -66,13 +66,10 @@ def extract_goals(account_id: str) -> GoalsStageOutput:
         response_format=_GoalExtractionResponse,
     )
 
-    return _assign_ids(account_id, response.goals)
+    return _link_and_assign_ids(account_id, response.goals, corpus)
 
 
 def write_goals(stage_out: GoalsStageOutput) -> Path:
-    # The problem is: a half-written goals.json read by a re-run mid-pipeline would
-    # poison stage 5's brief assembly.
-    # The way we solve this is: temp-write + atomic rename, matching store.write_brief.
     # flow: pipeline.run_pipeline() -> extract_goals() -> write_goals() <-- HERE
     path = OUTPUT_DIR / stage_out.account_id / "goals.json"
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -93,39 +90,68 @@ def _load_corpus(account_id: str) -> dict[str, Any]:
 
 
 def _format_corpus_for_prompt(corpus: dict[str, Any]) -> str:
-    # Render every transcript as a sequence of line-anchored turns so the model can
-    # cite line numbers verbatim. File headers separate transcripts so the model never
-    # confuses which file a quote came from.
+    # Render each transcript in its native `MM:SS | Speaker\ncontent` shape and each
+    # email thread in its native `From:/Date:/Subject:` + body shape. File separators
+    # double as the value the LLM emits in evidence.file.
+    n_transcripts = len(corpus.get("transcripts", []))
+    n_emails = len(corpus.get("emails", []))
     blocks: list[str] = [
         f"Account: {corpus['account_name']} ({corpus['vertical']})",
-        f"Total transcripts: {len(corpus['transcripts'])}",
+        f"Sources: {n_transcripts} transcript(s), {n_emails} email thread(s)",
         "",
     ]
-    for t in corpus["transcripts"]:
-        blocks.append(f"--- FILE: {t['file']} ---")
-        for turn in t["turns"]:
-            blocks.append(
-                f"L{turn['line_start']}-{turn['line_end']} @ {turn['timestamp']} | "
-                f"{turn['speaker']}: {turn['text']}"
-            )
+    for t in corpus.get("transcripts", []):
+        blocks.append(f"=== FILE: {t['file']} ===")
+        if t.get("recorded_date"):
+            blocks.append(f"Date: {t['recorded_date']}")
         blocks.append("")
+        for turn in t["turns"]:
+            blocks.append(f"{turn['timestamp']} | {turn['speaker']}")
+            blocks.append(turn["text"])
+            blocks.append("")
+    for e in corpus.get("emails", []):
+        blocks.append(f"=== FILE: {e['file']} ===")
+        blocks.append("")
+        for msg in e["messages"]:
+            blocks.append(f"From: {msg['sender']}")
+            blocks.append(f"Date: {msg['date']}")
+            blocks.append(f"Subject: {msg['subject']}")
+            blocks.append("")
+            blocks.append(msg["body"])
+            blocks.append("")
+            blocks.append("---")
+            blocks.append("")
     return "\n".join(blocks)
 
 
-def _assign_ids(account_id: str, extracted: list[_ExtractedGoal]) -> GoalsStageOutput:
-    # The problem is: the LLM emits goals with embedded evidence but no stable IDs;
-    # the brief.json schema expects every goal to reference evidence by id.
-    # The way we solve this is: walk the extraction in order, assign g_NNN to each
-    # goal and ev_NNN to each unique (file, line_start, line_end) tuple — same
-    # quote cited by two goals collapses to one evidence record.
+def _link_and_assign_ids(
+    account_id: str,
+    extracted: list[_ExtractedGoal],
+    corpus: dict[str, Any],
+) -> GoalsStageOutput:
+    # The problem is: the LLM emits goals with quotes but no IDs and no source
+    # locators; before persisting we need stable g_NNN / ev_NNN IDs AND we need to
+    # verify each quote exists in its named transcript.
+    # The way we solve this is: walk goals in order, link each evidence quote via
+    # the deterministic linker, drop unlinked quotes as hallucinations (with a
+    # warning), drop goals whose entire evidence set fails to link.
     goals: list[Goal] = []
     evidence: dict[str, Evidence] = {}
+    warnings: list[str] = []
+    # Same (file, line_start, line_end) tuple cited twice reuses one ev_NNN.
     seen: dict[tuple[str, int, int], str] = {}
 
-    for g_idx, g in enumerate(extracted, start=1):
+    for g in extracted:
         evidence_ids: list[str] = []
         for ev in g.evidence:
-            key = (ev.file, ev.line_start, ev.line_end)
+            locator = link_quote(ev.quote, ev.file, corpus)
+            if locator is None:
+                warnings.append(
+                    f"unlinked quote in {ev.file!r} for goal {g.statement!r}: "
+                    f"{ev.quote[:120]!r}"
+                )
+                continue
+            key = (locator.file, locator.line_start, locator.line_end)
             if key in seen:
                 evidence_ids.append(seen[key])
                 continue
@@ -135,22 +161,28 @@ def _assign_ids(account_id: str, extracted: list[_ExtractedGoal]) -> GoalsStageO
             evidence[ev_id] = Evidence(
                 id=ev_id,
                 source="transcript",
-                locator=TranscriptLocator(
-                    kind="transcript",
-                    file=ev.file,
-                    line_start=ev.line_start,
-                    line_end=ev.line_end,
-                    timestamp=ev.timestamp,
-                ),
+                locator=locator,
                 quote=ev.quote,
             )
 
+        if not evidence_ids:
+            warnings.append(
+                f"goal dropped (all {len(g.evidence)} evidence quote(s) unlinked): "
+                f"{g.statement!r}"
+            )
+            continue
+
         goals.append(Goal(
-            id=f"g_{g_idx:03d}",
+            id=f"g_{len(goals) + 1:03d}",
             statement=g.statement,
             category=g.category,
             confidence=g.confidence,
             evidence_ids=evidence_ids,
         ))
 
-    return GoalsStageOutput(account_id=account_id, goals=goals, evidence=evidence)
+    return GoalsStageOutput(
+        account_id=account_id,
+        goals=goals,
+        evidence=evidence,
+        warnings=warnings,
+    )

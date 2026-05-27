@@ -19,6 +19,7 @@ class TranscriptLocator(BaseModel):
     line_start: int
     line_end: int
     timestamp: str
+    date: str | None = None
 
 
 class UsageLocator(BaseModel):
@@ -31,6 +32,8 @@ class EmailLocator(BaseModel):
     file: str
     line_start: int
     line_end: int
+    date: str
+    sender: str
 
 
 Locator = Annotated[

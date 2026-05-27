@@ -17,29 +17,63 @@ SKIP:
 - Vague aspirations without a concrete outcome ("grow the business")
 - Things the customer agreed to vaguely after a CSM led the framing — that's CSM speak, not a customer goal
 
-# Output requirements (one per goal)
+# Output requirements
+
+For each goal:
 
 - **statement**: phrased as the customer would say it, verb + outcome. Example: "Increase Google review velocity to improve Map Pack ranking." Not: "More reviews."
-- **category**: closest from `[reviews, lead_response, lead_integration, call_capture, messaging, payments, ai_adoption, other]`
+- **category**: closest from `[reviews, lead_response, lead_integration, call_capture, messaging, payments, ai_adoption, other]`. This is how downstream stages map your goal to the Podium features that could address it — pick precisely.
 - **confidence**:
   - `high` — customer states the goal directly and unambiguously
   - `med` — customer implies the goal or paraphrases through context
   - `low` — inferred from indirect signals; the AM should verify
-- **evidence**: at least one customer quote with `file`, `line_start`, `line_end`, `timestamp`, `quote`. Quote must be **verbatim** — copy the exact words. Do NOT paraphrase. Multiple quotes from different transcripts are fine when they reinforce the same goal.
+- **evidence**: at least one customer quote with:
+  - **file**: the filename from the `=== FILE: ... ===` header above the relevant turn
+  - **quote**: copy the customer's words **verbatim** — character-for-character from the transcript. Do NOT paraphrase, do NOT summarize, do NOT add ellipses or `[...]`. The pipeline matches your quote back to the source to attach line numbers — if your quote isn't in the file verbatim, it will be dropped and the goal may be lost.
 
-# Transcript format
+A short, exact quote beats a long, paraphrased one. If you need to cover more ground, emit multiple distinct quotes.
 
-Each turn is presented as:
+# Input format
+
+The input may contain **call transcripts** and/or **email threads**, separated by file headers. All sources use the same `=== FILE: <filename> ===` separator — the content shape tells you the type.
+
+**Call transcripts** are formatted as turns, each starting with `MM:SS | Speaker`:
 
 ```
-L<line_start>-<line_end> @ <timestamp> | <speaker>: <text>
+=== FILE: call-transcript--example-account-review.txt ===
+
+30:21 | Customer
+[content the customer said...]
+
+30:49 | Customer Success Manager
+[content the CSM said...]
 ```
 
-Use the line numbers and timestamps verbatim in your evidence locators.
+**Email threads** are formatted as messages with `From:` / `Date:` / `Subject:` headers, then the body, then a `---` separator between messages in the thread:
+
+```
+=== FILE: email-thread--example-q1-priorities.eml ===
+
+From: matt@example.com
+Date: 2026-01-15
+Subject: Re: Q1 priorities
+
+[email body — copy quotes verbatim from here]
+
+---
+
+From: csm@podium.com
+Date: 2026-01-16
+Subject: Re: Q1 priorities
+
+[next message in thread]
+```
+
+For both source types, the timestamp / date is for chronological context only — you don't need to emit it. Just identify the right `file` and copy the `quote` verbatim from a customer turn or a customer email body. Skip messages sent by Podium employees (the CSM in calls, or any `@podium.com` sender in emails).
 
 # Quantity
 
-Most accounts have 1–4 real goals. Quality over quantity. Do not pad. If a customer talked for 5 hours but their actual goals reduce to two, return two.
+Most accounts have 1–4 real goals. Quality over quantity. Do not pad. If a customer talked for hours but their actual goals reduce to two, return two.
 
 # Tone
 

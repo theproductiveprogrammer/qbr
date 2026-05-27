@@ -51,9 +51,9 @@ type Evidence = {
   id: EvidenceId;
   source: "transcript" | "usage" | "email";
   locator:
-    | { kind: "transcript"; file: string; line_start: number; line_end: number; timestamp: string }
+    | { kind: "transcript"; file: string; line_start: number; line_end: number; timestamp: string; date?: string }
     | { kind: "usage"; column: string }
-    | { kind: "email"; file: string; line_start: number; line_end: number };
+    | { kind: "email"; file: string; line_start: number; line_end: number; date: string; sender: string };
   quote: string;                            // exact text from source
   context_before?: string;                  // ~3 surrounding lines for the rail expansion
   context_after?: string;

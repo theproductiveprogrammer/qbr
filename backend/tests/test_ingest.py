@@ -24,17 +24,32 @@ def test_transcript_turns_have_required_fields() -> None:
     # The problem is: stage 1 cites evidence by (file, line_start, line_end, timestamp);
     # a parser that drops one of those fields would render evidence un-verifiable.
     # The way we solve this is: pick one known-rich transcript and inspect the first
-    # few turns for the four locator fields plus text.
+    # few turns for the four locator fields plus text, plus the recorded date.
     sample = next(INPUT_DIR.glob("call-transcript--meridian-furniture-account-review.txt"), None)
     assert sample is not None, "Meridian account-review transcript is missing from data/input"
-    turns = parse_transcript(sample)
-    assert len(turns) > 10, "expected a healthy account-review transcript"
-    for t in turns[:5]:
+    parsed = parse_transcript(sample)
+    assert parsed.recorded_date == "2026-01-27"
+    assert len(parsed.turns) > 10, "expected a healthy account-review transcript"
+    for t in parsed.turns[:5]:
         assert t.line_start > 0
         assert t.line_end >= t.line_start
-        assert ":" in t.timestamp  # MM:SS-ish
+        assert ":" in t.timestamp
         assert t.speaker
         assert t.text
+
+
+def test_meridian_transcripts_sorted_chronologically() -> None:
+    # The problem is: the LLM needs to read the relationship arc in order — goals
+    # stated in onboarding evolve by the latest account review. Alphabetical sort by
+    # filename produces a scrambled order.
+    # The way we solve this is: build_corpus sorts by recorded_date; assert the first
+    # transcript is the onboarding (Oct 2025) and the last is the latest review.
+    corpus = build_corpus("meridian")
+    dates = [t["recorded_date"] for t in corpus["transcripts"]]
+    assert dates == sorted(dates), f"transcripts not in chronological order: {dates}"
+    assert "onboarding" in corpus["transcripts"][0]["file"]
+    assert corpus["transcripts"][0]["recorded_date"].startswith("2025-")
+    assert corpus["transcripts"][-1]["recorded_date"].startswith("2026-")
 
 
 def test_meridian_usage_row_loads() -> None:
