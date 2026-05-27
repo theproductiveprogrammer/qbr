@@ -1,6 +1,6 @@
 # AI Account Review & Expansion Agent
 
-Pipeline that turns one account's call transcripts + usage data into a QBR-ready brief and a customer-facing deck.
+A local LangGraph pipeline plus a React UI that turns one account's call transcripts + usage data into a QBR-ready brief and a customer-facing outline. Every claim sits next to its evidence — no tooltips, no hidden state.
 
 Built for the Podium AI GTM Engineer case study. Design rationale lives in [`DESIGN.md`](./DESIGN.md).
 
@@ -8,9 +8,14 @@ Built for the Podium AI GTM Engineer case study. Design rationale lives in [`DES
 
 For each account, the pipeline produces:
 
-1. **`qbr_brief.md`** — internal AM brief: goals, what's working, top adoption gaps, top upsell opportunities, evidence inline, confidence labels.
-2. **`qbr_deck.md`** — customer-facing QBR outline: goals → performance → gaps → recommendations.
-3. **Structured intermediates** (`goals.json`, `usage_facts.json`, `gaps.json`, `opportunities.json`) so each stage is auditable.
+1. **Internal AM brief** — goals, what's working, ranked adoption gaps, ranked upsell opportunities. Every claim carries a confidence label and inline evidence (transcript line + timestamp, or specific usage column).
+2. **Customer-facing outline** — structured QBR headings (Goals → Performance → Gaps → Recommendations) rendered in the UI.
+3. **Auditable intermediates** — `goals.json`, `usage_facts.json`, `gaps.json`, `opportunities.json`, `brief.json` written to `output/<account>/`. Each stage is independently inspectable and re-runnable.
+
+The **React UI** is the primary surface:
+- **Left pane**: list of accounts with run status.
+- **Right pane**: results for the selected account — goals, gaps, opportunities, outline, each item with a confidence badge and its evidence rendered alongside.
+- **Run button** triggers the backend pipeline synchronously and renders the brief on completion.
 
 ## How it works (one paragraph)
 
@@ -24,45 +29,59 @@ A five-stage prompt chain over structured JSON.
 ## Quickstart
 
 ```bash
-# 1. install
+# 1. install backend + frontend deps
 mise setup
+cd web && pnpm install && cd ..
 
 # 2. set the API key
 export OPENAI_API_KEY=sk-...
 
-# 3. ingest source data into data/
-python -m src.ingest
+# 3. ingest source data into backend/output/
+cd backend && python -m src.ingest
 
-# 4. run the pipeline for one account
-python -m src.pipeline --account meridian
-python -m src.pipeline --account northfield
+# 4. start the backend (FastAPI on :8000)
+python -m src.api
 
-# 5. read the output
-open output/meridian/qbr_brief.md
+# 5. start the frontend (separate terminal, Vite on :5173)
+cd web && pnpm dev
+
+# 6. open the UI and click "Run" on an account
+open http://localhost:5173
 ```
 
-`--account all` runs every account; `--stage s1` runs a single stage; `--from s3` resumes from a stage if earlier artifacts already exist.
+CLI also works for headless runs:
+
+```bash
+python -m src.pipeline --account meridian
+python -m src.pipeline --account all
+python -m src.pipeline --account meridian --from s3   # resume from a stage
+```
 
 ## Project layout
 
 ```
-data/                source transcripts, usage.xlsx, feature_catalog.json
-src/                 ingest, stages/, schemas, llm wrapper, pipeline orchestrator
-prompts/             one .md per LLM-driven stage
-output/<account>/    all generated artifacts for that account
-tests/               schema + evidence smoke tests
+backend/
+  data/              source transcripts, usage.xlsx, feature_catalog.json
+  output/<account>/  JSON artifacts written by each pipeline stage
+  src/               ingest, stages/, LangGraph wiring, schemas, llm, store, api
+  prompts/           one .md per LLM-driven stage
+  tests/             schema + evidence smoke tests
+web/
+  src/               React + Vite + TS — AccountList, ResultsPane, EvidenceRail, etc.
 DESIGN.md            architecture, decisions, eval approach
 ```
 
+**Stack**: FastAPI · LangGraph · pydantic · OpenAI (`gpt-5.5` narrative, `gpt-5.4-mini` extraction) · React · Vite · Tailwind · shadcn/ui · Lucide · Inter. No DB, no auth — JSON files on disk.
+
 ## The accounts in the dataset
 
-| Transcript name      | Usage-row name      | Vertical             | Transcripts | Notes |
-|----------------------|---------------------|----------------------|-------------|-------|
-| Meridian Furniture   | Auscraft Furniture  | Retail / Furniture   | 11          | Full lifecycle: onboarding → AI setup → phones → 3 account reviews |
-| Northfield Electrical| Mr Sparky           | Home Services / Electrical | 8     | Sales → onboarding → AI setup → upgrade review |
-| Apex                 | —                   | —                    | 1 (intro)   | Sales lead, not a customer — pipeline returns "insufficient data" |
+| Account               | Vertical                    | Transcripts | Notes |
+|-----------------------|-----------------------------|-------------|-------|
+| Meridian Furniture    | Retail / Furniture          | 11          | Full lifecycle: onboarding → AI setup → phones → 3 account reviews |
+| Northfield Electrical | Home Services / Electrical  | 8           | Sales → onboarding → AI setup → upgrade review |
+| Apex                  | (sales lead)                | 1 (intro)   | Not a customer — pipeline routes to "insufficient data" terminal |
 
-Transcript-name ↔ usage-row mapping is in `data/account_map.json`.
+Transcripts use "Meridian / Northfield" and the usage spreadsheet uses "Auscraft / Mr Sparky". Per Podium, this was a dataset error — they refer to the same accounts. Stage 0 normalizes to one canonical name.
 
 ## Design principles (short version)
 
@@ -80,5 +99,4 @@ Design document complete. Implementation in progress.
 ## Known gaps vs the brief
 
 - **No email parsing** — the dataset contains no email threads. The ingest stage supports them but isn't exercised on this submission.
-- **"Top 3" cutoff** — we rank and score, then take top-3. Variable-length output is available behind a flag.
-- **Deck rendering** — output is markdown. PPTX/PDF render is out of scope for the timebox.
+- **Deck rendering** — customer-facing deck is a structured outline rendered in the UI, not a PPTX/PDF export. Confirmed acceptable with Podium.
