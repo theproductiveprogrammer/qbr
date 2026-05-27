@@ -6,29 +6,43 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
+    /* Page surfaces */
+    --background: 220 14% 97%;          /* off-white page so white cards lift */
     --foreground: 222 47% 11%;
     --card: 0 0% 100%;
     --card-foreground: 222 47% 11%;
-    --primary: 262 47% 50%;
-    --primary-foreground: 0 0% 98%;
-    --secondary: 220 13% 96%;
+
+    /* Top navigation bar (Podium-dark) */
+    --navbar: 220 47% 10%;              /* deep navy */
+    --navbar-foreground: 0 0% 100%;
+    --navbar-muted: 220 25% 65%;        /* muted text on navbar */
+
+    /* Primary — Podium blue */
+    --primary: 224 95% 58%;             /* #2B6CFF */
+    --primary-foreground: 0 0% 100%;
+
+    /* Soft surface tokens */
+    --secondary: 220 14% 96%;
     --secondary-foreground: 222 47% 11%;
-    --muted: 220 13% 96%;
+    --muted: 220 14% 96%;
     --muted-foreground: 220 9% 46%;
-    --accent: 262 47% 96%;
-    --accent-foreground: 262 47% 30%;
+    --accent: 224 100% 97%;             /* light blue wash for hover/selected tints */
+    --accent-foreground: 224 76% 30%;
+
     --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
+
     --border: 220 13% 91%;
     --input: 220 13% 91%;
-    --ring: 262 47% 50%;
-    --radius: 0.75rem;
+    --ring: 224 95% 58%;
+
+    --radius: 0.5rem;
   }
 
   body {
     @apply bg-background text-foreground font-sans antialiased;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   }
 }

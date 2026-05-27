@@ -10,14 +10,15 @@ export function EvidenceRail({
 }) {
   // The problem is: every claim in the brief needs its source visible alongside, not
   // hidden behind a tooltip. The AM should verify a claim in one eye-movement.
-  // The way we solve this is: render each evidence item inline next to its claim with
-  // the locator (file:line@timestamp or usage column) and the verbatim quote.
+  // The way we solve this is: a vertical rail of evidence items pinned to the right
+  // column of each claim card — source icon, locator (file:line@timestamp or usage
+  // column), verbatim quote, expandable context.
   // flow: ResultsPane.ClaimCard -> EvidenceRail <-- HERE (right column of each card)
   if (evidenceIds.length === 0) return null
 
   return (
-    <div className="space-y-3 border-l-2 border-violet-100 pl-4">
-      <div className="text-xs font-medium uppercase tracking-wider text-violet-700">
+    <div className="space-y-3 border-l border-primary/30 pl-4">
+      <div className="text-[11px] font-semibold uppercase tracking-wider text-primary">
         Evidence ({evidenceIds.length})
       </div>
       <ul className="space-y-3">
@@ -39,25 +40,27 @@ function EvidenceItem({ ev }: { ev: Evidence }) {
 
   return (
     <li className="space-y-1.5 text-sm">
-      <div className="flex items-center gap-1.5 text-xs text-slate-500">
+      <div className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
         <Icon className="h-3.5 w-3.5" />
-        <span className="font-mono truncate" title={locator}>{locator}</span>
+        <span className="truncate font-mono" title={locator}>
+          {locator}
+        </span>
       </div>
-      <blockquote className="border-l-2 border-slate-200 pl-3 italic text-slate-700">
+      <blockquote className="border-l-2 border-border pl-3 text-[13px] italic leading-relaxed text-foreground/85">
         &ldquo;{ev.quote}&rdquo;
       </blockquote>
       {hasContext && (
-        <details className="text-xs text-slate-500">
+        <details className="text-xs text-muted-foreground">
           <summary className="cursor-pointer select-none list-none">
-            <span className="inline-flex items-center gap-1 hover:text-slate-700">
+            <span className="inline-flex items-center gap-1 transition-colors hover:text-foreground">
               <ChevronRight className="h-3 w-3" />
               Surrounding context
             </span>
           </summary>
-          <div className="mt-2 space-y-1.5 pl-4">
-            {ev.context_before && <div className="text-slate-500">… {ev.context_before}</div>}
-            <div className="text-slate-700">… {ev.quote}</div>
-            {ev.context_after && <div className="text-slate-500">… {ev.context_after}</div>}
+          <div className="mt-2 space-y-1.5 pl-4 text-[12px]">
+            {ev.context_before && <div className="text-muted-foreground">… {ev.context_before}</div>}
+            <div className="text-foreground/80">… {ev.quote}</div>
+            {ev.context_after && <div className="text-muted-foreground">… {ev.context_after}</div>}
           </div>
         </details>
       )}

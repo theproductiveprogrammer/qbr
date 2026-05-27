@@ -1,11 +1,11 @@
 import { useEffect, useState, type ComponentType, type ReactNode } from "react"
-import { Target, CheckCircle2, AlertTriangle, TrendingUp, Info } from "lucide-react"
+import { Target, CheckCircle2, AlertTriangle, TrendingUp, Info, Sparkles } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { ConfidenceBadge } from "@/components/ConfidenceBadge"
 import { EvidenceRail } from "@/components/EvidenceRail"
 import { RunButton } from "@/components/RunButton"
 import { DeckOutline } from "@/components/DeckOutline"
+import { AccountAvatar } from "@/components/AccountAvatar"
 import { getBrief } from "@/lib/api"
 import { cn } from "@/lib/utils"
 import type {
@@ -48,22 +48,22 @@ export function ResultsPane({
   }, [accountId])
 
   if (loading) {
-    return <div className="p-8 text-sm text-slate-400">Loading…</div>
+    return <div className="p-10 text-sm text-muted-foreground">Loading brief…</div>
   }
 
   if (error || !brief) {
     return (
-      <div className="space-y-4 p-8">
-        <div className="text-sm text-slate-700">No brief yet for this account.</div>
+      <div className="space-y-4 p-10">
+        <div className="text-sm text-foreground">No brief yet for this account.</div>
         <RunButton accountId={accountId} hasBrief={false} onComplete={onRunComplete} />
-        {error && <div className="text-sm text-rose-600">{error}</div>}
+        {error && <div className="text-sm text-destructive">{error}</div>}
       </div>
     )
   }
 
   if (brief.status === "insufficient_data") {
     return (
-      <div className="mx-auto max-w-3xl space-y-6 p-8">
+      <div className="mx-auto max-w-3xl space-y-6 p-10">
         <Header brief={brief} onRunComplete={onRunComplete} />
         <Card>
           <CardHeader>
@@ -72,7 +72,7 @@ export function ResultsPane({
               <CardTitle>Insufficient data for a QBR</CardTitle>
             </div>
           </CardHeader>
-          <CardContent className="text-sm text-slate-700">
+          <CardContent className="text-sm text-foreground/80">
             {brief.status_reason}
           </CardContent>
         </Card>
@@ -81,7 +81,7 @@ export function ResultsPane({
   }
 
   return (
-    <div className="mx-auto max-w-5xl space-y-6 p-8">
+    <div className="mx-auto max-w-5xl space-y-6 p-10">
       <Header brief={brief} onRunComplete={onRunComplete} />
       <ViewToggle view={view} onChange={setView} />
       {brief.review_banner && <ReviewBannerCard banner={brief.review_banner} />}
@@ -97,12 +97,25 @@ export function ResultsPane({
 function Header({ brief, onRunComplete }: { brief: Brief; onRunComplete: () => void }) {
   return (
     <div className="flex items-start justify-between gap-4">
-      <div>
-        <h2 className="text-2xl font-semibold text-slate-900">{brief.account_name}</h2>
-        <div className="mt-1 flex items-center gap-2 text-sm text-slate-500">
-          <span>{brief.vertical}</span>
-          <span>·</span>
-          <span>Generated {formatDate(brief.generated_at)}</span>
+      <div className="flex items-start gap-4">
+        <AccountAvatar id={brief.account_id} name={brief.account_name} size="lg" variant="round" />
+        <div>
+          <div className="flex items-center gap-2">
+            <h2 className="text-[22px] font-semibold leading-tight text-foreground">
+              {brief.account_name}
+            </h2>
+            <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary">
+              <Sparkles className="h-3 w-3" />
+              QBR brief
+            </span>
+          </div>
+          <div className="mt-1 flex items-center gap-2 text-sm text-muted-foreground">
+            <span>{brief.vertical}</span>
+            <span aria-hidden>·</span>
+            <span>Generated {formatDate(brief.generated_at)}</span>
+            <span aria-hidden>·</span>
+            <span className="font-mono text-xs">v{brief.pipeline_version}</span>
+          </div>
         </div>
       </div>
       <RunButton accountId={brief.account_id} hasBrief={true} onComplete={onRunComplete} />
@@ -112,7 +125,7 @@ function Header({ brief, onRunComplete }: { brief: Brief; onRunComplete: () => v
 
 function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => void }) {
   return (
-    <div className="inline-flex rounded-md border border-slate-200 bg-white p-1">
+    <div className="inline-flex items-center rounded-md border border-border bg-card p-1 shadow-sm">
       {(["internal", "customer"] as const).map(v => (
         <button
           key={v}
@@ -121,8 +134,8 @@ function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => voi
           className={cn(
             "rounded px-3 py-1.5 text-sm font-medium transition-colors",
             view === v
-              ? "bg-violet-100 text-violet-900"
-              : "text-slate-600 hover:text-slate-900"
+              ? "bg-primary text-primary-foreground"
+              : "text-muted-foreground hover:text-foreground"
           )}
         >
           {v === "internal" ? "Internal brief" : "Customer outline"}
@@ -134,19 +147,19 @@ function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => voi
 
 function ReviewBannerCard({ banner }: { banner: ReviewBannerT }) {
   const Icon = banner.severity === "warning" ? AlertTriangle : Info
-  const color =
+  const tone =
     banner.severity === "warning"
-      ? "border-amber-300 bg-amber-50"
-      : "border-violet-200 bg-violet-50"
+      ? "border-amber-200 bg-amber-50 text-amber-900"
+      : "border-primary/20 bg-primary/5 text-foreground"
   return (
-    <div className={cn("flex items-start gap-3 rounded-lg border p-4", color)}>
+    <div className={cn("flex items-start gap-3 rounded-lg border p-4", tone)}>
       <Icon
         className={cn(
           "mt-0.5 h-5 w-5 shrink-0",
-          banner.severity === "warning" ? "text-amber-700" : "text-violet-700"
+          banner.severity === "warning" ? "text-amber-600" : "text-primary"
         )}
       />
-      <div className="text-sm text-slate-800">{banner.message}</div>
+      <div className="text-sm leading-relaxed">{banner.message}</div>
     </div>
   )
 }
@@ -157,12 +170,16 @@ function InternalView({ brief }: { brief: Brief }) {
       <ConfidenceSummaryStrip summary={brief.confidence_summary} />
 
       <Section icon={Target} title="Customer goals">
-        <div className="space-y-4">
+        <div className="space-y-3">
           {brief.goals.map(goal => (
             <ClaimCard
               key={goal.id}
               title={goal.statement}
-              meta={<span className="capitalize">{goal.category.replace(/_/g, " ")}</span>}
+              meta={
+                <span className="capitalize">
+                  {goal.category.replace(/_/g, " ")}
+                </span>
+              }
               confidence={goal.confidence}
               evidenceIds={goal.evidence_ids}
               evidence={brief.evidence}
@@ -172,13 +189,17 @@ function InternalView({ brief }: { brief: Brief }) {
       </Section>
 
       <Section icon={CheckCircle2} title="What's working">
-        <div className="space-y-4">
+        <div className="space-y-3">
           {brief.whats_working.map((w, i) => (
             <ClaimCard
               key={i}
               title={w.feature}
               body={w.summary}
-              meta={<span className="font-mono text-xs">{w.signal}</span>}
+              meta={
+                <span className="font-mono text-[11px] text-muted-foreground">
+                  {w.signal}
+                </span>
+              }
               confidence={w.confidence}
               evidenceIds={w.evidence_ids}
               evidence={brief.evidence}
@@ -188,7 +209,7 @@ function InternalView({ brief }: { brief: Brief }) {
       </Section>
 
       <Section icon={AlertTriangle} title="Adoption gaps">
-        <div className="space-y-4">
+        <div className="space-y-3">
           {brief.gaps.map(gap => (
             <ClaimCard
               key={gap.id}
@@ -196,7 +217,7 @@ function InternalView({ brief }: { brief: Brief }) {
               body={gap.summary}
               footer={gap.recommended_action}
               footerLabel="Recommended action"
-              meta={<Badge variant="outline">severity {gap.severity}</Badge>}
+              meta={<ScoreChip label="severity" value={gap.severity} />}
               confidence={gap.confidence}
               evidenceIds={gap.evidence_ids}
               evidence={brief.evidence}
@@ -206,7 +227,7 @@ function InternalView({ brief }: { brief: Brief }) {
       </Section>
 
       <Section icon={TrendingUp} title="Upsell opportunities">
-        <div className="space-y-4">
+        <div className="space-y-3">
           {brief.opportunities.map(opp => (
             <ClaimCard
               key={opp.id}
@@ -214,7 +235,7 @@ function InternalView({ brief }: { brief: Brief }) {
               body={opp.rationale}
               footer={opp.signals.join(" · ")}
               footerLabel="Signals"
-              meta={<Badge variant="outline">fit {opp.fit_score}</Badge>}
+              meta={<ScoreChip label="fit" value={opp.fit_score} />}
               confidence={opp.confidence}
               evidenceIds={opp.evidence_ids}
               evidence={brief.evidence}
@@ -238,8 +259,8 @@ function Section({
   return (
     <section className="space-y-3">
       <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-slate-500" />
-        <h3 className="text-xs font-semibold uppercase tracking-wider text-slate-500">
+        <Icon className="h-4 w-4 text-muted-foreground" />
+        <h3 className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
           {title}
         </h3>
       </div>
@@ -268,22 +289,22 @@ function ClaimCard({
   evidence: Record<string, Evidence>
 }) {
   return (
-    <Card>
+    <Card className="transition-shadow hover:shadow-md">
       <CardContent className="p-5">
         <div className="grid gap-5 md:grid-cols-[1fr_minmax(260px,360px)]">
           <div className="space-y-3">
             <div className="flex items-start justify-between gap-3">
-              <div className="font-medium text-slate-900">{title}</div>
+              <div className="text-[15px] font-semibold leading-snug text-foreground">{title}</div>
               <ConfidenceBadge confidence={confidence} />
             </div>
-            {body && <p className="text-sm text-slate-700">{body}</p>}
-            {meta && <div className="text-xs text-slate-500">{meta}</div>}
+            {body && <p className="text-sm leading-relaxed text-foreground/80">{body}</p>}
+            {meta && <div className="text-xs text-muted-foreground">{meta}</div>}
             {footer && footerLabel && (
-              <div className="rounded-md border border-slate-200 bg-slate-50 p-3 text-sm">
-                <div className="mb-1 text-xs font-medium uppercase tracking-wider text-slate-500">
+              <div className="rounded-md border border-border bg-muted/50 p-3 text-sm">
+                <div className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                   {footerLabel}
                 </div>
-                <div className="text-slate-700">{footer}</div>
+                <div className="text-foreground/85">{footer}</div>
               </div>
             )}
           </div>
@@ -294,16 +315,46 @@ function ClaimCard({
   )
 }
 
+function ScoreChip({ label, value }: { label: string; value: number }) {
+  // The problem is: severity / fit scores need a glanceable chip that doesn't read as
+  // a confidence pill (different semantic).
+  // The way we solve this is: neutral chip with a tabular-numerals score, matching the
+  // Podium tag treatment.
+  return (
+    <span className="inline-flex items-center gap-1.5 rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
+      <span className="uppercase tracking-wider">{label}</span>
+      <span className="font-mono tabular-nums text-foreground">{value}</span>
+    </span>
+  )
+}
+
 function ConfidenceSummaryStrip({ summary }: { summary: ConfidenceSummaryT }) {
   const total = summary.high + summary.med + summary.low
   if (total === 0) return null
   return (
-    <div className="flex items-center gap-2 text-xs text-slate-500">
-      <span className="font-medium uppercase tracking-wider">Confidence:</span>
-      <Badge variant="success">{summary.high} high</Badge>
-      <Badge variant="warning">{summary.med} med</Badge>
-      {summary.low > 0 && <Badge variant="destructive">{summary.low} low</Badge>}
+    <div className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-2.5 text-xs">
+      <span className="font-semibold uppercase tracking-wider text-muted-foreground">
+        Confidence
+      </span>
+      <div className="flex items-center gap-2">
+        <SummaryDot count={summary.high} color="bg-emerald-500" label="high" />
+        <SummaryDot count={summary.med} color="bg-amber-500" label="med" />
+        {summary.low > 0 && <SummaryDot count={summary.low} color="bg-rose-500" label="low" />}
+      </div>
+      <span className="ml-auto text-muted-foreground">
+        {total} claim{total === 1 ? "" : "s"} traced to evidence
+      </span>
     </div>
+  )
+}
+
+function SummaryDot({ count, color, label }: { count: number; color: string; label: string }) {
+  return (
+    <span className="inline-flex items-center gap-1.5">
+      <span className={cn("h-2 w-2 rounded-full", color)} />
+      <span className="font-mono tabular-nums text-foreground">{count}</span>
+      <span className="text-muted-foreground">{label}</span>
+    </span>
   )
 }
 

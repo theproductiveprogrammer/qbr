@@ -19,16 +19,17 @@ export function DeckOutline({
   // The problem is: the customer-facing view is a different audience than the internal
   // brief — same source data, different framing (positive, action-oriented, no
   // confidence noise).
-  // The way we solve this is: render outline-shaped bullets in QBR section order.
+  // The way we solve this is: render outline-shaped bullets in QBR section order,
+  // with the title block reading as a deck cover.
   // flow: ResultsPane (view=customer) -> DeckOutline <-- HERE
   return (
     <Card>
       <CardContent className="space-y-8 p-8">
-        <div className="text-center">
-          <div className="text-xs font-medium uppercase tracking-wider text-violet-600">
+        <div className="border-b border-border pb-6 text-center">
+          <div className="text-[11px] font-semibold uppercase tracking-[0.2em] text-primary">
             Quarterly Business Review
           </div>
-          <div className="mt-2 text-2xl font-semibold text-slate-900">{accountName}</div>
+          <div className="mt-3 text-2xl font-semibold text-foreground">{accountName}</div>
         </div>
         <div className="space-y-6">
           {SECTIONS.map(section => {
@@ -38,10 +39,10 @@ export function DeckOutline({
             return (
               <div key={section.key} className="space-y-3">
                 <div className="flex items-center gap-2">
-                  <Icon className="h-4 w-4 text-violet-600" />
-                  <h3 className="font-semibold text-slate-900">{section.title}</h3>
+                  <Icon className="h-4 w-4 text-primary" />
+                  <h3 className="font-semibold text-foreground">{section.title}</h3>
                 </div>
-                <ul className="list-disc space-y-2 pl-6 text-slate-700">
+                <ul className="list-disc space-y-2 pl-6 text-[15px] leading-relaxed text-foreground/85">
                   {items.map((item, i) => (
                     <li key={i}>{item}</li>
                   ))}
