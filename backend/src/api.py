@@ -451,11 +451,11 @@ def get_settings() -> dict[str, Any]:
             "max_extraction_tokens": pipeline_config.max_extraction_tokens,
             "extraction_temperature": pipeline_config.extraction_temperature,
             "extraction_seed": pipeline_config.extraction_seed,
-            "config_file": "data/input/pipeline.config.json",
+            "config_file": "data/pipeline.config.json",
         },
         "discovery": {
             "aliases": aliases,
-            "aliases_path": "data/input/aliases.json",
+            "aliases_path": "data/aliases.json",
             "xlsx": {
                 "path": "data/input/accounts.xlsx",
                 "exists": xlsx_present,

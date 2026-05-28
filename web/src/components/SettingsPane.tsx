@@ -179,7 +179,7 @@ export function SettingsPane() {
           <>
             {settings.feature_catalog.length} Podium features the agent considers
             when detecting gaps and opportunities. Source:{" "}
-            <Code>data/input/feature_catalog.json</Code>
+            <Code>data/feature_catalog.json</Code>
           </>
         }
       >

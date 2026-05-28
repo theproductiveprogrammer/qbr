@@ -4,7 +4,7 @@ import json
 from dataclasses import dataclass
 from functools import lru_cache
 
-from .store import INPUT_DIR
+from .store import DATA_DIR
 
 CONFIG_FILENAME = "pipeline.config.json"
 
@@ -41,7 +41,7 @@ def load_pipeline_config() -> PipelineConfig:
     # The way we solve this is: optional config file at data/input/, cached
     # singleton load, sane delivery defaults. Edit + restart to apply.
     # flow: stages/s1_goals.py extract_goals() -> load_pipeline_config() <-- HERE
-    path = INPUT_DIR / CONFIG_FILENAME
+    path = DATA_DIR / CONFIG_FILENAME
     if not path.exists():
         return PipelineConfig()
     try:

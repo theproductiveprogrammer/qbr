@@ -12,7 +12,7 @@ from typing import Any
 
 import pandas as pd
 
-from .store import INPUT_DIR, OUTPUT_DIR
+from .store import DATA_DIR, INPUT_DIR, OUTPUT_DIR
 
 ACCOUNTS_XLSX_FILE = "accounts.xlsx"
 ALIASES_FILE = "aliases.json"
@@ -150,7 +150,7 @@ def _load_aliases() -> dict[str, str]:
     # "Auscraft Furniture" — Podium-confirmed data drift).
     # The way we solve this is: optional aliases.json declares the bridge. Keys
     # starting with "_" are treated as comments.
-    path = INPUT_DIR / ALIASES_FILE
+    path = DATA_DIR / ALIASES_FILE
     if not path.exists():
         return {}
     raw = json.loads(path.read_text())

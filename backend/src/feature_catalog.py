@@ -5,7 +5,7 @@ from dataclasses import dataclass
 from functools import lru_cache
 from typing import Any
 
-from .store import INPUT_DIR
+from .store import DATA_DIR
 
 CATALOG_FILENAME = "feature_catalog.json"
 
@@ -168,7 +168,7 @@ def _load_catalog_from_json() -> dict[str, Feature]:
     # the backend to pick up edits. Keys starting with "_" are treated as
     # comments and skipped.
     # flow: import-time -> _load_catalog_from_json() <-- HERE -> CATALOG
-    path = INPUT_DIR / CATALOG_FILENAME
+    path = DATA_DIR / CATALOG_FILENAME
     if not path.exists():
         raise FileNotFoundError(
             f"feature_catalog.json not found at {path}. The pipeline needs "
