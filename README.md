@@ -19,31 +19,32 @@ Reads call transcripts + a usage spreadsheet, produces a QBR brief with goals/ga
 
 ## The Pipeline
 ```
-                    Ingestion
-                        ↓
-     +------------------------------------+
-     ↓                                    ↓
-Goal Extraction                    Usage Analysis
-	 ↓                                    ↓
-     +------------------------------------+
-	                    ↓ 
-                  Gap Detection
-	                    ↓ 
-                Opportunity Mapping
-	                    ↓ 
-                Narrative Generation
-	                    ↓ 
-                       / \
-             +--------/   \-------+
-             ↓                    ↓
-        Customer Outline     Internal Brief
+                       Ingestion
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+       Goal Extraction          Usage Analysis
+              │                         │
+              └────────────┬────────────┘
+                           ▼
+                     Gap Detection
+                           │
+                           ▼
+                  Opportunity Mapping
+                           │
+                           ▼
+                  Narrative Generation
+                           │
+              ┌────────────┴────────────┐
+              ▼                         ▼
+        Customer Outline           Internal Brief
 ```
 
 A six-stage resumable pipeline chain with structured JSON artifacts.
 1. **Ingestion** walks the `<account>` folder and parses the available `/transcripts` and `/emails` and batches them for processing (based on configurable token limits).
 2. **Goal extraction** runs map-reduce over the transcripts and produces a list of customer goals with transcript-line citations.
 3. **Usage analysis** is a deterministic transform of the account data into per-feature facts (owned / active / usage / benchmark).
-4. **Gap detection** is a rule pass — features that are owned-but-underused.
+4. **Gap detection** is a rule pass — features that are owned-but-underused and map to a stated goal.
 5. **Opportunity mapping** is rules-driven candidate generation with LLM-written rationales.
 6. **Narrative generation** writes the brief and customer outline from those four artefacts.
 
