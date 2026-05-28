@@ -90,7 +90,9 @@ class Opportunity(BaseModel):
     fit_score: int = Field(ge=0, le=100)
     goal_links: list[GoalId]
     rationale: str
-    signals: list[str]
+    # Short action item the AM can put in the customer outline. Parallels
+    # Gap.recommended_action — narrated by s5, not hardcoded.
+    recommended_action: str
     confidence: Confidence
     evidence_ids: list[EvidenceId]
 

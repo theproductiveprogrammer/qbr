@@ -21,6 +21,10 @@ DEFAULT_EXTRACTION_MODEL = "gpt-5.5"
 # the goal_extract prompt at runtime so the LLM's stated upper bound matches.
 # Most accounts have 2-3 real strategic goals; 4 leaves room for one bonus.
 DEFAULT_TOP_GOALS = 4
+# Narrate gaps + opportunities. Default 0.0 = closer-to-deterministic prose
+# (best-effort per OpenAI), since internal briefs benefit from stable re-runs.
+DEFAULT_NARRATION_MODEL = "gpt-5.5"
+DEFAULT_NARRATION_TEMPERATURE = 0.0
 
 
 @dataclass(frozen=True)
@@ -39,6 +43,12 @@ class PipelineConfig:
     # cap the LLM is told to respect) AND the post-dedup truncation, so
     # changing this one number stays consistent end-to-end.
     top_goals: int = DEFAULT_TOP_GOALS
+    # s5 narration call: turns rule-detected gaps + opportunities into prose
+    # for the AM-facing brief. Independent of extraction so each can be tuned
+    # separately (extraction wants verbatim discipline, narration wants tight
+    # determinism for stable QBR re-runs).
+    narration_model: str = DEFAULT_NARRATION_MODEL
+    narration_temperature: float = DEFAULT_NARRATION_TEMPERATURE
 
 
 @lru_cache(maxsize=1)
@@ -63,4 +73,6 @@ def load_pipeline_config() -> PipelineConfig:
         extraction_seed=int(seed_val) if seed_val is not None else None,
         extraction_model=str(data.get("extraction_model", DEFAULT_EXTRACTION_MODEL)),
         top_goals=max(1, int(data.get("top_goals", DEFAULT_TOP_GOALS))),
+        narration_model=str(data.get("narration_model", DEFAULT_NARRATION_MODEL)),
+        narration_temperature=float(data.get("narration_temperature", DEFAULT_NARRATION_TEMPERATURE)),
     )

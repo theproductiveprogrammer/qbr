@@ -13,7 +13,6 @@ from .config import load_pipeline_config
 from .feature_catalog import CATALOG, describe_activity, describe_ownership
 from .graph import PIPELINE_GRAPH
 from .ingest import ACCOUNTS, INPUT_DIR, _load_aliases, _load_xlsx
-from .llm import MODEL_NARRATIVE
 from .schemas import AccountSummary, Brief
 from .stages.s5_brief import PIPELINE_VERSION
 from .store import OUTPUT_DIR, list_accounts, read_brief
@@ -446,12 +445,13 @@ def get_settings() -> dict[str, Any]:
             "pipeline_version": PIPELINE_VERSION,
             "models": {
                 "extraction": pipeline_config.extraction_model,
-                "narrative": MODEL_NARRATIVE,
+                "narrative": pipeline_config.narration_model,
             },
             "max_extraction_tokens": pipeline_config.max_extraction_tokens,
             "extraction_temperature": pipeline_config.extraction_temperature,
             "extraction_seed": pipeline_config.extraction_seed,
             "top_goals": pipeline_config.top_goals,
+            "narration_temperature": pipeline_config.narration_temperature,
             "config_file": "data/pipeline.config.json",
         },
         "discovery": {

@@ -356,8 +356,8 @@ function InternalView({ brief }: { brief: Brief }) {
               key={opp.id}
               title={opp.product}
               body={opp.rationale}
-              footer={opp.signals.join(" · ")}
-              footerLabel="Signals"
+              footer={opp.recommended_action}
+              footerLabel="Recommended action"
               meta={<ScoreChip label="fit" value={opp.fit_score} />}
               confidence={opp.confidence}
               evidenceIds={opp.evidence_ids}

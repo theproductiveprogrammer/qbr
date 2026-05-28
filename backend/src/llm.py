@@ -6,10 +6,6 @@ from typing import Any, TypeVar
 from openai import OpenAI
 from pydantic import BaseModel
 
-# Narrative-stage model default. (Extraction model is owned by PipelineConfig in
-# src/config.py so it can be A/B-tested without code changes.)
-MODEL_NARRATIVE = "gpt-5.5"
-
 # Newer reasoning-style models (gpt-5.5, o-series) reject custom temperature /
 # seed — they only support their built-in defaults. Detect by name prefix so we
 # pass-through cleanly instead of crashing on first call.

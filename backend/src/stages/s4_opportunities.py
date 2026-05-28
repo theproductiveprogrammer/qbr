@@ -11,6 +11,8 @@ from ..feature_catalog import CATALOG
 from ..schemas import Evidence, Opportunity, UsageLocator
 from ..store import OUTPUT_DIR
 
+NARRATION_PENDING = "[narration pending]"
+
 
 class OpportunitiesStageOutput(BaseModel):
     account_id: str
@@ -31,11 +33,9 @@ def detect_opportunities(account_id: str) -> OpportunitiesStageOutput:
     goals_data = _load(account_id, "goals.json")
 
     goals_by_category: dict[str, list[str]] = defaultdict(list)
-    goal_statements: dict[str, str] = {}
     goals_by_id: dict[str, dict[str, Any]] = {}
     for g in goals_data.get("goals", []):
         goals_by_category[g["category"]].append(g["id"])
-        goal_statements[g["id"]] = g["statement"]
         goals_by_id[g["id"]] = g
 
     opps: list[Opportunity] = []
@@ -88,12 +88,12 @@ def detect_opportunities(account_id: str) -> OpportunitiesStageOutput:
             product=facts["label"],
             fit_score=_score_fit(facts, len(linked)),
             goal_links=sorted(linked),
-            rationale=(
-                feature.opportunity_message
-                or _default_rationale(facts, [goal_statements[gid] for gid in sorted(linked)])
-            ),
-            signals=_signal_bullets(facts),
-            confidence="med",  # rules-only confidence cap until LLM rationale lands
+            # Rationale (why) + recommended_action (short customer-outline action)
+            # are filled by s5 narration. Placeholders keep the schema valid
+            # mid-pipeline; if s5 fails after retries they become [narration failed].
+            rationale=NARRATION_PENDING,
+            recommended_action=NARRATION_PENDING,
+            confidence="med",
             evidence_ids=goal_evidence_ids + ev_ids,
         ))
 
@@ -134,20 +134,3 @@ def _score_fit(facts: dict[str, Any], n_linked_goals: int) -> int:
     return min(55 + min(20, n_linked_goals * 10), 90)
 
 
-def _default_rationale(facts: dict[str, Any], goal_statements: list[str]) -> str:
-    # Fallback used when the catalog entry has no opportunity_message.
-    label = facts["label"]
-    if not goal_statements:
-        return f"{label} aligns with goals the customer has stated this quarter."
-    joined = " and ".join(f"“{s}”" for s in goal_statements[:2])
-    return (
-        f"{label} is not currently active for this account but aligns with stated "
-        f"customer goals — including {joined}."
-    )
-
-
-def _signal_bullets(facts: dict[str, Any]) -> list[str]:
-    bullets: list[str] = []
-    for col, val in facts["signals"].items():
-        bullets.append(f"{col}: {_render_quote(val)}")
-    return bullets

@@ -72,7 +72,7 @@ export type Opportunity = {
   fit_score: number
   goal_links: string[]
   rationale: string
-  signals: string[]
+  recommended_action: string
   confidence: Confidence
   evidence_ids: string[]
 }
@@ -169,11 +169,6 @@ export type SettingsFeature = {
   goal_categories: string[]
   ownership_rule: string
   active_signal: string
-  // Optional copy from the catalog JSON. When set, these strings flow straight
-  // into the brief instead of the templated fallback.
-  gap_message: string | null
-  recommended_action: string | null
-  opportunity_message: string | null
 }
 
 export type SettingsSnapshot = {
@@ -188,6 +183,7 @@ export type SettingsSnapshot = {
     extraction_temperature: number
     extraction_seed: number | null
     top_goals: number
+    narration_temperature: number
     config_file: string
   }
   discovery: {

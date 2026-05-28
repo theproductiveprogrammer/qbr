@@ -37,10 +37,6 @@ class Feature:
     goal_categories: list[str]
     owned_when: Rule
     underused_when: Rule | None = None
-    # Optional copy. When absent, downstream stages fall back to a template.
-    gap_message: str | None = None
-    recommended_action: str | None = None
-    opportunity_message: str | None = None
 
 
 # ────────────────────────── rule parser ──────────────────────────
@@ -193,9 +189,6 @@ def _load_catalog_from_json() -> dict[str, Feature]:
                 if "underused_when" in spec
                 else None
             ),
-            gap_message=spec.get("gap_message"),
-            recommended_action=spec.get("recommended_action"),
-            opportunity_message=spec.get("opportunity_message"),
         )
     if not catalog:
         raise ValueError(f"feature_catalog.json at {path} produced 0 features")

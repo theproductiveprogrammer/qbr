@@ -11,6 +11,8 @@ from ..feature_catalog import CATALOG
 from ..schemas import Evidence, Gap, UsageLocator
 from ..store import OUTPUT_DIR
 
+NARRATION_PENDING = "[narration pending]"
+
 
 class GapsStageOutput(BaseModel):
     account_id: str
@@ -97,8 +99,11 @@ def detect_gaps(account_id: str) -> GapsStageOutput:
             feature=facts["label"],
             severity=_score_severity(facts, len(linked)),
             goal_links=sorted(linked),
-            summary=feature.gap_message or _default_summary(facts, feature, signal_value, active_col),
-            recommended_action=feature.recommended_action or _default_recommend(facts),
+            # Prose is filled in by s5 narration. The placeholder keeps the
+            # schema valid mid-pipeline and surfaces clearly in the UI if the
+            # narration call fails after retries.
+            summary=NARRATION_PENDING,
+            recommended_action=NARRATION_PENDING,
             confidence="high",
             evidence_ids=goal_evidence_ids + [ev_id],
         ))
@@ -154,18 +159,3 @@ def _underused_column(feature: Any) -> str | None:
     return col if isinstance(col, str) else None
 
 
-def _default_summary(facts: dict[str, Any], feature: Any, signal: Any, col: str) -> str:
-    # Fallback used when the catalog entry has no gap_message — generic template
-    # keyed to the actual signal value.
-    rendered = _render_quote(signal)
-    return (
-        f"{facts['label']} is enabled but the L30 signal ({col} = {rendered}) is below "
-        f"the adoption threshold. Customer has goals this feature could be serving."
-    )
-
-
-def _default_recommend(facts: dict[str, Any]) -> str:
-    return (
-        f"Audit {facts['label']} configuration with the customer this QBR — confirm it "
-        f"is set up correctly and surfaced where their workflow actually touches it."
-    )

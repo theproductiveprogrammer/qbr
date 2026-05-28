@@ -139,6 +139,32 @@ export function SettingsPane() {
             }
           />
           <KeyValue
+            label="Narration model"
+            value={
+              <span className="inline-flex items-baseline gap-2">
+                <Code>{settings.configuration.models.narrative}</Code>
+                <span className="text-xs text-muted-foreground">
+                  s5 narrates gap summaries + opportunity rationales
+                </span>
+              </span>
+            }
+          />
+          <KeyValue
+            label="Narration temperature"
+            value={
+              <span className="inline-flex items-baseline gap-2">
+                <span className="font-mono tabular-nums">
+                  {settings.configuration.narration_temperature.toFixed(2)}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {settings.configuration.narration_temperature === 0
+                    ? "near-deterministic — stable QBR re-runs"
+                    : "some variance — re-runs may surface different framings"}
+                </span>
+              </span>
+            }
+          />
+          <KeyValue
             label="Config file"
             value={<Code>{settings.configuration.config_file}</Code>}
           />
@@ -396,35 +422,8 @@ function FeatureCard({ feature }: { feature: import("@/types").SettingsFeature }
             </dd>
           </div>
         </dl>
-
-        {(feature.gap_message || feature.recommended_action || feature.opportunity_message) && (
-          <div className="space-y-2 border-t border-border pt-3">
-            {feature.gap_message && (
-              <CopyBlock label="Gap message" text={feature.gap_message} />
-            )}
-            {feature.recommended_action && (
-              <CopyBlock label="Recommended action" text={feature.recommended_action} />
-            )}
-            {feature.opportunity_message && (
-              <CopyBlock label="Opportunity message" text={feature.opportunity_message} />
-            )}
-          </div>
-        )}
       </CardContent>
     </Card>
-  )
-}
-
-function CopyBlock({ label, text }: { label: string; text: string }) {
-  return (
-    <div>
-      <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-        {label}
-      </div>
-      <p className="mt-0.5 text-[13px] leading-relaxed text-foreground/80">
-        {text}
-      </p>
-    </div>
   )
 }
 
