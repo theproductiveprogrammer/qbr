@@ -6,18 +6,25 @@ from pathlib import Path
 
 from .ingest import ACCOUNTS, build_corpus, write_corpus
 from .stages.s1_goals import extract_goals, write_goals
+from .stages.s2_usage import analyze_usage, write_usage_facts
+from .stages.s3_gaps import detect_gaps, write_gaps
+from .stages.s4_opportunities import detect_opportunities, write_opportunities
+from .stages.s5_brief import assemble_brief, write_brief_to_disk
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 
+STAGES = ["ingest", "s1", "s2", "s3", "s4", "s5"]
+
 
 def run_pipeline(account_id: str, *, only: str | None = None) -> None:
-    # The problem is: the AM wants to kick off the full pipeline for one account and
-    # see what each stage produced, ideally with the ability to re-run from a stage.
-    # The way we solve this is: linear orchestration with `only` filter for re-runs;
-    # Apex short-circuits after ingest because it's a sales lead, not a customer.
+    # The problem is: the AM wants to kick off the QBR pipeline for one account and
+    # see what each stage produced — with the ability to re-run from any single stage.
+    # The way we solve this is: linear orchestration with an `only` filter; Apex
+    # short-circuits to an insufficient-data brief after ingest (it's a sales lead,
+    # not a customer).
     # flow: CLI `mise run pipeline -- --account meridian` -> run_pipeline() <-- HERE
     if only is None or only == "ingest":
-        _say(f"[s0 ingest] {account_id}")
+        _stage("s0 ingest", account_id)
         corpus = build_corpus(account_id)
         path = write_corpus(account_id, corpus)
         n_t = len(corpus["transcripts"])
@@ -26,17 +33,68 @@ def run_pipeline(account_id: str, *, only: str | None = None) -> None:
         _say(f"  → {_rel(path)}  ·  {n_t} transcripts, {n_lines} lines, {n_turns} turns")
 
     if account_id == "apex":
-        _say(f"[apex] sales lead — skipping s1+ (no usage data on file)")
+        # Sales lead — write the insufficient_data brief, no s1..s4
+        _stage("apex insufficient-data", account_id)
+        brief = assemble_brief(account_id)
+        path = write_brief_to_disk(brief)
+        _say(f"  → {_rel(path)}  ·  status={brief.status}")
         return
 
     if only is None or only == "s1":
-        _say(f"[s1 goals] {account_id}  (OpenAI call — gpt-5.4-mini)")
+        _stage("s1 goals", account_id, " (OpenAI — gpt-5.4-mini)")
         stage_out = extract_goals(account_id)
         path = write_goals(stage_out)
-        _say(f"  → {_rel(path)}  ·  {len(stage_out.goals)} goals, {len(stage_out.evidence)} evidence items")
+        _say(
+            f"  → {_rel(path)}  ·  {len(stage_out.goals)} goals, "
+            f"{len(stage_out.evidence)} evidence, {len(stage_out.warnings)} warnings"
+        )
         for g in stage_out.goals:
             cites = f"{len(g.evidence_ids)} citation{'' if len(g.evidence_ids) == 1 else 's'}"
             _say(f"    • [{g.confidence}] {g.statement}  ({g.category}, {cites})")
+
+    if only is None or only == "s2":
+        _stage("s2 usage", account_id)
+        usage_out = analyze_usage(account_id)
+        path = write_usage_facts(usage_out)
+        owned = sum(1 for f in usage_out.facts.values() if f.owned)
+        active = sum(1 for f in usage_out.facts.values() if f.active is True)
+        _say(f"  → {_rel(path)}  ·  {len(usage_out.facts)} features, {owned} owned, {active} active")
+
+    if only is None or only == "s3":
+        _stage("s3 gaps", account_id)
+        gaps_out = detect_gaps(account_id)
+        path = write_gaps(gaps_out)
+        _say(
+            f"  → {_rel(path)}  ·  {len(gaps_out.gaps)} gaps, "
+            f"{len(gaps_out.warnings)} warnings"
+        )
+        for g in gaps_out.gaps:
+            goals = ", ".join(g.goal_links)
+            _say(f"    • [{g.severity}] {g.feature}  → goals[{goals}]")
+
+    if only is None or only == "s4":
+        _stage("s4 opportunities", account_id)
+        opps_out = detect_opportunities(account_id)
+        path = write_opportunities(opps_out)
+        _say(f"  → {_rel(path)}  ·  {len(opps_out.opportunities)} opportunities")
+        for o in opps_out.opportunities:
+            goals = ", ".join(o.goal_links)
+            _say(f"    • [{o.fit_score}] {o.product}  → goals[{goals}]")
+
+    if only is None or only == "s5":
+        _stage("s5 brief", account_id)
+        brief = assemble_brief(account_id)
+        path = write_brief_to_disk(brief)
+        _say(
+            f"  → {_rel(path)}  ·  status={brief.status}, "
+            f"{len(brief.goals)} goals, {len(brief.whats_working)} working, "
+            f"{len(brief.gaps)} gaps, {len(brief.opportunities)} opps, "
+            f"{len(brief.evidence)} evidence items"
+        )
+
+
+def _stage(label: str, account_id: str, suffix: str = "") -> None:
+    _say(f"[{label}] {account_id}{suffix}")
 
 
 def _rel(p: Path) -> str:
@@ -51,14 +109,11 @@ def _say(msg: str) -> None:
 
 
 def main() -> None:
-    parser = argparse.ArgumentParser(
-        prog="pipeline",
-        description="Run the QBR pipeline for one account",
-    )
+    parser = argparse.ArgumentParser(prog="pipeline", description="Run the QBR pipeline for one account")
     parser.add_argument("--account", required=True, choices=list(ACCOUNTS.keys()))
     parser.add_argument(
         "--only",
-        choices=["ingest", "s1"],
+        choices=STAGES,
         help="Run only one stage (others must already have artifacts on disk)",
     )
     args = parser.parse_args()

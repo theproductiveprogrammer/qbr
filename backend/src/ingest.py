@@ -9,7 +9,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any
 
-import openpyxl
+import pandas as pd
 
 from .store import INPUT_DIR, OUTPUT_DIR
 
@@ -128,27 +128,30 @@ def _parse_turns(lines: list[str]) -> list[Turn]:
 
 def load_usage(org_name: str | None) -> dict[str, Any] | None:
     # The problem is: the xlsx has 100+ columns and we only want the row matching a
-    # specific account, normalized to a {column: value} dict.
-    # The way we solve this is: stream rows looking for ORGANIZATION NAME match,
-    # zip with headers, return None if not found (so Apex flows through cleanly).
+    # specific account, normalized to a JSON-serializable {column: value} dict.
+    # The way we solve this is: pandas reads the whole sheet, we slice the row by
+    # ORGANIZATION NAME, then convert numpy/pandas scalars to native Python types and
+    # NaN to None so JSON serialization is clean downstream.
     # flow: pipeline -> build_corpus() -> load_usage() <-- HERE
     if org_name is None:
         return None
-    wb = openpyxl.load_workbook(INPUT_DIR / "accounts.xlsx", data_only=True)
-    ws = wb.active
-    if ws is None:
-        raise RuntimeError("accounts.xlsx has no active worksheet")
-    rows = ws.iter_rows(values_only=True)
-    headers = [str(h) if h is not None else "" for h in next(rows)]
-    name_idx = headers.index(ORG_NAME_COL)
-    for row in rows:
-        if row[name_idx] == org_name:
-            out: dict[str, Any] = {}
-            for i, h in enumerate(headers):
-                if h:
-                    out[h] = row[i]
-            return out
-    return None
+    df = pd.read_excel(INPUT_DIR / "accounts.xlsx")
+    matches = df[df[ORG_NAME_COL] == org_name]
+    if matches.empty:
+        return None
+    row = matches.iloc[0]
+    out: dict[str, Any] = {}
+    for col in df.columns:
+        if not isinstance(col, str):
+            continue
+        val = row[col]
+        if pd.isna(val):
+            out[col] = None
+        elif hasattr(val, "item"):  # numpy scalar → native Python
+            out[col] = val.item()
+        else:
+            out[col] = val
+    return out
 
 
 def parse_emails(account_id: str) -> list[dict[str, Any]]:
