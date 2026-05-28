@@ -223,6 +223,7 @@ function StageCard({
                 <div className={cn("inline-flex items-center gap-1.5 text-[11px]", meta.color)}>
                   <Icon className={cn("h-3.5 w-3.5", visual === "running" && "animate-spin")} />
                   <span>{meta.label}</span>
+                  {visual === "running" && <StageElapsed />}
                 </div>
               </div>
               {stage.description && (
@@ -286,6 +287,31 @@ function StageCard({
         </CardContent>
       </Card>
     </li>
+  )
+}
+
+// ─────────────────────────── elapsed time ───────────────────────────
+
+function StageElapsed() {
+  // The problem is: s1 takes 60-120s with gpt-5.5 on a real-sized corpus, and
+  // staring at a spinner without progress feedback feels like the pipeline has
+  // hung. The user has no way to tell "actively waiting on the LLM" from
+  // "frozen".
+  // The way we solve this is: mount-on-running counter that ticks every second.
+  // Unmounts when the stage transitions to complete (the parent stops rendering
+  // this branch), so each running stage gets its own fresh counter.
+  const [elapsedMs, setElapsedMs] = useState(0)
+  useEffect(() => {
+    const start = Date.now()
+    const id = setInterval(() => setElapsedMs(Date.now() - start), 1000)
+    return () => clearInterval(id)
+  }, [])
+  const totalSeconds = Math.floor(elapsedMs / 1000)
+  const minutes = Math.floor(totalSeconds / 60)
+  const seconds = totalSeconds % 60
+  const label = minutes > 0 ? `${minutes}m ${seconds.toString().padStart(2, "0")}s` : `${seconds}s`
+  return (
+    <span className="font-mono tabular-nums opacity-70">· {label}</span>
   )
 }
 
