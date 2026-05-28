@@ -98,7 +98,7 @@ export function PipelinePane({
         total={stages.length}
         liveRun={liveRun}
       />
-      <ol className="space-y-3">
+      <ol className="space-y-2.5">
         {stages.map(stage => (
           <StageCard
             key={stage.id}
@@ -193,11 +193,11 @@ function StageCard({
   return (
     <li>
       <Card className={cardClass}>
-        <CardContent className="space-y-3 p-5">
+        <CardContent className="space-y-2.5 p-4">
           <div className="flex items-start gap-3">
             <div
               className={cn(
-                "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md font-mono text-[12px] font-semibold tabular-nums transition-colors duration-300",
+                "mt-0.5 flex h-8 w-8 shrink-0 items-center justify-center rounded-md font-mono text-[11px] font-semibold tabular-nums transition-colors duration-300",
                 visual === "running"
                   ? "bg-primary text-primary-foreground shadow-sm shadow-primary/30"
                   : visual === "complete"
@@ -211,22 +211,22 @@ function StageCard({
             </div>
             <div className="min-w-0 flex-1">
               <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2 font-semibold text-foreground">
+                <div className="flex items-center gap-2 text-sm font-semibold text-foreground">
                   {stage.name}
                   {stage.is_llm && (
-                    <Badge variant="outline" className="gap-1">
+                    <Badge variant="outline" className="gap-1 text-[10.5px]">
                       <Sparkles className="h-3 w-3" />
                       LLM
                     </Badge>
                   )}
                 </div>
-                <div className={cn("inline-flex items-center gap-1.5 text-xs", meta.color)}>
-                  <Icon className={cn("h-4 w-4", visual === "running" && "animate-spin")} />
+                <div className={cn("inline-flex items-center gap-1.5 text-[11px]", meta.color)}>
+                  <Icon className={cn("h-3.5 w-3.5", visual === "running" && "animate-spin")} />
                   <span>{meta.label}</span>
                 </div>
               </div>
               {stage.description && (
-                <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{stage.description}</p>
+                <p className="mt-0.5 text-[13px] leading-relaxed text-muted-foreground">{stage.description}</p>
               )}
               {stage.artifact && (
                 <div className="mt-1.5 inline-flex items-center gap-1 font-mono text-[11px] text-muted-foreground">

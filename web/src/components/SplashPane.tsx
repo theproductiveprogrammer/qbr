@@ -56,10 +56,6 @@ const COMPONENTS: Components = {
     <li className="pl-1 text-[17px] leading-[1.7] text-foreground/85">{children}</li>
   ),
   code: ({ children, className }) => {
-    // Fenced blocks come with a language-* className OR with newline content (fenced
-    // without a language tag, like the README's Project layout block). Either way
-    // they're block — let the parent <pre> handle styling. Only single-line untagged
-    // strings get the inline chip.
     const text = String(children ?? "")
     const isBlock = !!className || text.includes("\n")
     if (isBlock) {
@@ -112,14 +108,14 @@ export function SplashPane({
   accounts: AccountSummary[]
   onSelectAccount: (id: string) => void
 }) {
-  // The problem is: when the app opens with no account selected, the reviewer should
-  // see the project README — that way editing README.md propagates to the splash
-  // without a code change, keeping one source of truth.
+  // The problem is: when the app opens with no account selected, the reviewer
+  // wants project context (what is this, how it works) — not yet-another
+  // table of the same accounts already in the sidebar.
   // The way we solve this is: Vite `?raw` import of /README.md rendered through
-  // react-markdown with explicit component mappings tuned to editorial typography:
-  // Instrument Serif display H1, blue-square H2 markers, restrained prose body.
-  // Account navigation stays in the left pane — splash is content-only.
-  // flow: App (selectedId === null) -> SplashPane <-- HERE
+  // react-markdown with explicit component mappings tuned to editorial
+  // typography. The Accounts top-level view owns the inventory dashboard;
+  // splash stays as project documentation.
+  // flow: App (view=briefs, selectedId === null) -> SplashPane <-- HERE
   return (
     <div className="mx-auto max-w-3xl px-6 pb-24 pt-16 sm:px-10">
       <div

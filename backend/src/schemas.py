@@ -200,3 +200,9 @@ class AccountSummary(BaseModel):
     status: Status | Literal["not_run"]
     last_run_at: str | None = None
     error: str | None = None
+    # Source-data context. Computed at /accounts time from data/input/<id>/.
+    # is_lead = True for accounts not in accounts.xlsx (Apex pattern — a sales
+    # prospect, not a Podium customer yet, so no usage data exists).
+    transcript_count: int = 0
+    email_count: int = 0
+    is_lead: bool = False

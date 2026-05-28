@@ -1,6 +1,6 @@
 import { Sparkles, HelpCircle, Settings } from "lucide-react"
 
-export type TopLevelView = "briefs" | "settings"
+export type TopLevelView = "briefs" | "accounts" | "settings"
 
 export function TopBar({
   view,
@@ -29,6 +29,9 @@ export function TopBar({
         <nav className="ml-8 hidden items-center gap-1 md:flex">
           <NavTab active={view === "briefs"} onClick={() => onViewChange("briefs")}>
             Briefs
+          </NavTab>
+          <NavTab active={view === "accounts"} onClick={() => onViewChange("accounts")}>
+            Accounts
           </NavTab>
           <NavTab active={view === "settings"} onClick={() => onViewChange("settings")}>
             Settings

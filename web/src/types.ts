@@ -121,6 +121,9 @@ export type AccountSummary = {
   status: Status | "not_run"
   last_run_at?: string | null
   error?: string | null
+  transcript_count: number
+  email_count: number
+  is_lead: boolean
 }
 
 export type PipelineStage = {

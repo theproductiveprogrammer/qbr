@@ -52,6 +52,8 @@ def list_accounts() -> list[AccountSummary]:
     from .ingest import ACCOUNTS  # lazy import — ingest imports from store
     out: list[AccountSummary] = []
     for info in sorted(ACCOUNTS.values(), key=lambda i: i.id):
+        n_t, n_e = _count_sources(info.id)
+        is_lead = info.xlsx_org_name is None
         brief_path = OUTPUT_DIR / info.id / "brief.json"
         if not brief_path.exists():
             out.append(AccountSummary(
@@ -59,6 +61,9 @@ def list_accounts() -> list[AccountSummary]:
                 name=info.display_name,
                 vertical=info.vertical,
                 status="not_run",
+                transcript_count=n_t,
+                email_count=n_e,
+                is_lead=is_lead,
             ))
             continue
         try:
@@ -72,6 +77,9 @@ def list_accounts() -> list[AccountSummary]:
                 vertical=info.vertical,
                 status=brief.status,
                 last_run_at=brief.generated_at,
+                transcript_count=n_t,
+                email_count=n_e,
+                is_lead=is_lead,
             ))
         except Exception as exc:  # broken brief on disk
             out.append(AccountSummary(
@@ -80,5 +88,22 @@ def list_accounts() -> list[AccountSummary]:
                 vertical=info.vertical,
                 status="failed",
                 error=f"brief.json invalid: {exc!s}",
+                transcript_count=n_t,
+                email_count=n_e,
+                is_lead=is_lead,
             ))
     return out
+
+
+def _count_sources(account_id: str) -> tuple[int, int]:
+    # The problem is: the Briefs dashboard wants to show how much source data
+    # each account has before asking the user to run the pipeline.
+    # The way we solve this is: cheap glob count of transcripts/*.txt and
+    # emails/*.eml. Called once per /accounts request — handful of dirs, no
+    # caching needed.
+    account_dir = INPUT_DIR / account_id
+    t_dir = account_dir / "transcripts"
+    e_dir = account_dir / "emails"
+    n_t = sum(1 for _ in t_dir.glob("*.txt")) if t_dir.exists() else 0
+    n_e = sum(1 for _ in e_dir.glob("*.eml")) if e_dir.exists() else 0
+    return n_t, n_e

@@ -2,9 +2,9 @@ import { cn } from "@/lib/utils"
 import type { Confidence } from "@/types"
 
 const STYLES: Record<Confidence, string> = {
-  high: "bg-emerald-50 text-emerald-700 ring-emerald-200",
-  med: "bg-amber-50 text-amber-700 ring-amber-200",
-  low: "bg-rose-50 text-rose-700 ring-rose-200",
+  high: "text-emerald-700 ring-emerald-200",
+  med: "text-amber-700 ring-amber-200",
+  low: "text-rose-700 ring-rose-200",
 }
 
 const LABELS: Record<Confidence, string> = {

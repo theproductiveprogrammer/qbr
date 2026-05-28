@@ -112,7 +112,7 @@ export function ResultsPane({
     // tick. handleRun() also sets view="pipeline" so this branch picks up.
     if (run.status === "idle") {
       return (
-        <div className="mx-auto max-w-5xl space-y-6 p-10">
+        <div className="mx-auto max-w-5xl space-y-5 p-8">
           <PendingHeader account={account} accountId={accountId} runStatus={run.status} onRun={handleRun} />
           <Card>
             <CardContent className="space-y-3 p-6">
@@ -129,7 +129,7 @@ export function ResultsPane({
       )
     }
     return (
-      <div className="mx-auto max-w-5xl space-y-6 p-10">
+      <div className="mx-auto max-w-5xl space-y-5 p-8">
         <PendingHeader account={account} accountId={accountId} runStatus={run.status} onRun={handleRun} />
         <PipelinePane accountId={accountId} liveRun={run} />
       </div>
@@ -138,7 +138,7 @@ export function ResultsPane({
 
   if (brief.status === "insufficient_data") {
     return (
-      <div className="mx-auto max-w-3xl space-y-6 p-10">
+      <div className="mx-auto max-w-3xl space-y-5 p-8">
         <Header brief={brief} runStatus={run.status} onRun={handleRun} />
         <Card>
           <CardHeader>
@@ -156,7 +156,7 @@ export function ResultsPane({
   }
 
   return (
-    <div className="mx-auto max-w-5xl space-y-6 p-10">
+    <div className="mx-auto max-w-5xl space-y-5 p-8">
       <Header brief={brief} runStatus={run.status} onRun={handleRun} />
       <ViewToggle view={view} onChange={setView} />
       {brief.review_banner && view !== "pipeline" && <ReviewBannerCard banner={brief.review_banner} />}
@@ -185,7 +185,7 @@ function Header({
             <h2 className="text-[22px] font-semibold leading-tight text-foreground">
               {brief.account_name}
             </h2>
-            <span className="inline-flex items-center gap-1 rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary">
+            <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium text-primary ring-1 ring-inset ring-primary/30">
               <Sparkles className="h-3 w-3" />
               QBR brief
             </span>
@@ -232,7 +232,7 @@ function PendingHeader({
             <h2 className="text-[22px] font-semibold leading-tight text-foreground">
               {name}
             </h2>
-            <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
+            <span className="inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-medium text-muted-foreground ring-1 ring-inset ring-border">
               <Info className="h-3 w-3" />
               {runStatus === "idle" ? "Not run yet" : "Pipeline running"}
             </span>
@@ -249,14 +249,14 @@ function PendingHeader({
 
 function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => void }) {
   return (
-    <div className="inline-flex items-center rounded-md border border-border bg-card p-1 shadow-sm">
+    <div className="inline-flex items-center rounded-md border border-border bg-card p-0.5 shadow-sm">
       {VIEW_ORDER.map(v => (
         <button
           key={v}
           type="button"
           onClick={() => onChange(v)}
           className={cn(
-            "rounded px-3 py-1.5 text-sm font-medium transition-colors",
+            "rounded px-2.5 py-1 text-[13px] font-medium transition-colors",
             view === v
               ? "bg-primary text-primary-foreground"
               : "text-muted-foreground hover:text-foreground"
@@ -290,13 +290,13 @@ function ReviewBannerCard({ banner }: { banner: ReviewBannerT }) {
 
 function InternalView({ brief }: { brief: Brief }) {
   return (
-    <div className="space-y-9">
+    <div className="space-y-7">
       <ConfidenceSummaryStrip summary={brief.confidence_summary} />
 
       <Section icon={Target} title="Customer goals">
-        <div className="space-y-3">
+        <ClaimGroup>
           {brief.goals.map(goal => (
-            <ClaimCard
+            <ClaimRow
               key={goal.id}
               title={goal.statement}
               meta={<GoalMeta goal={goal} />}
@@ -306,13 +306,13 @@ function InternalView({ brief }: { brief: Brief }) {
               accountId={brief.account_id}
             />
           ))}
-        </div>
+        </ClaimGroup>
       </Section>
 
       <Section icon={CheckCircle2} title="What's working">
-        <div className="space-y-3">
+        <ClaimGroup>
           {brief.whats_working.map((w, i) => (
-            <ClaimCard
+            <ClaimRow
               key={i}
               title={w.feature}
               body={w.summary}
@@ -327,13 +327,13 @@ function InternalView({ brief }: { brief: Brief }) {
               accountId={brief.account_id}
             />
           ))}
-        </div>
+        </ClaimGroup>
       </Section>
 
       <Section icon={AlertTriangle} title="Adoption gaps">
-        <div className="space-y-3">
+        <ClaimGroup>
           {brief.gaps.map(gap => (
-            <ClaimCard
+            <ClaimRow
               key={gap.id}
               title={gap.feature}
               body={gap.summary}
@@ -346,13 +346,13 @@ function InternalView({ brief }: { brief: Brief }) {
               accountId={brief.account_id}
             />
           ))}
-        </div>
+        </ClaimGroup>
       </Section>
 
       <Section icon={TrendingUp} title="Upsell opportunities">
-        <div className="space-y-3">
+        <ClaimGroup>
           {brief.opportunities.map(opp => (
-            <ClaimCard
+            <ClaimRow
               key={opp.id}
               title={opp.product}
               body={opp.rationale}
@@ -365,9 +365,21 @@ function InternalView({ brief }: { brief: Brief }) {
               accountId={brief.account_id}
             />
           ))}
-        </div>
+        </ClaimGroup>
       </Section>
     </div>
+  )
+}
+
+function ClaimGroup({ children }: { children: ReactNode }) {
+  // Single card with divider rows — homogeneous lists (goals/gaps/etc.) read
+  // as one group instead of a stack of disconnected cards.
+  return (
+    <Card>
+      <CardContent className="p-0">
+        <div className="divide-y divide-border">{children}</div>
+      </CardContent>
+    </Card>
   )
 }
 
@@ -386,10 +398,10 @@ function Section({
   // a primary-blue icon. The size + color contrast carries the sectioning weight
   // on its own without needing rules or background tints.
   return (
-    <section className="space-y-3.5">
-      <div className="flex items-center gap-2.5">
-        <Icon className="h-[18px] w-[18px] text-primary" />
-        <h3 className="text-[17px] font-semibold tracking-tight text-foreground">
+    <section className="space-y-3">
+      <div className="flex items-center gap-2">
+        <Icon className="h-4 w-4 text-primary" />
+        <h3 className="text-[15px] font-semibold tracking-tight text-foreground">
           {title}
         </h3>
       </div>
@@ -398,7 +410,7 @@ function Section({
   )
 }
 
-function ClaimCard({
+function ClaimRow({
   title,
   body,
   meta,
@@ -420,29 +432,27 @@ function ClaimCard({
   accountId: string
 }) {
   return (
-    <Card className="transition-shadow hover:shadow-md">
-      <CardContent className="p-5">
-        <div className="grid gap-5 md:grid-cols-[1fr_minmax(260px,360px)]">
-          <div className="space-y-3">
-            <div className="flex items-start justify-between gap-3">
-              <div className="text-[15px] font-semibold leading-snug text-foreground">{title}</div>
-              <ConfidenceBadge confidence={confidence} />
-            </div>
-            {body && <p className="text-sm leading-relaxed text-foreground/80">{body}</p>}
-            {meta && <div className="text-xs text-muted-foreground">{meta}</div>}
-            {footer && footerLabel && (
-              <div className="rounded-md border border-border bg-muted/50 p-3 text-sm">
-                <div className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                  {footerLabel}
-                </div>
-                <div className="text-foreground/85">{footer}</div>
-              </div>
-            )}
+    <div className="p-4">
+      <div className="grid gap-4 md:grid-cols-[1fr_minmax(260px,360px)]">
+        <div className="space-y-2.5">
+          <div className="text-sm font-semibold leading-snug text-foreground">{title}</div>
+          {body && <p className="text-[13px] leading-relaxed text-foreground/80">{body}</p>}
+          {meta && <div className="text-[11px] text-muted-foreground">{meta}</div>}
+          <div>
+            <ConfidenceBadge confidence={confidence} />
           </div>
-          <EvidenceRail evidenceIds={evidenceIds} evidence={evidence} accountId={accountId} />
+          {footer && footerLabel && (
+            <div className="rounded-md border border-border bg-muted/50 p-2.5 text-[13px]">
+              <div className="mb-0.5 text-[10.5px] font-semibold uppercase tracking-wider text-muted-foreground">
+                {footerLabel}
+              </div>
+              <div className="text-foreground/85">{footer}</div>
+            </div>
+          )}
         </div>
-      </CardContent>
-    </Card>
+        <EvidenceRail evidenceIds={evidenceIds} evidence={evidence} accountId={accountId} />
+      </div>
+    </div>
   )
 }
 
@@ -488,7 +498,7 @@ function ScoreChip({ label, value }: { label: string; value: number }) {
   // The way we solve this is: neutral chip with a tabular-numerals score, matching the
   // Podium tag treatment.
   return (
-    <span className="inline-flex items-center gap-1.5 rounded-md bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
+    <span className="inline-flex items-center gap-1.5 rounded-md px-2 py-0.5 text-[11px] font-medium text-muted-foreground ring-1 ring-inset ring-border">
       <span className="uppercase tracking-wider">{label}</span>
       <span className="font-mono tabular-nums text-foreground">{value}</span>
     </span>
@@ -499,7 +509,7 @@ function ConfidenceSummaryStrip({ summary }: { summary: ConfidenceSummaryT }) {
   const total = summary.high + summary.med + summary.low
   if (total === 0) return null
   return (
-    <div className="flex items-center gap-3 rounded-lg border border-border bg-card px-4 py-2.5 text-xs">
+    <div className="flex items-center gap-3 rounded-lg border border-border bg-card px-3.5 py-2 text-[11px]">
       <span className="font-semibold uppercase tracking-wider text-muted-foreground">
         Confidence
       </span>

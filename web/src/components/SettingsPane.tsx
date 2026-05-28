@@ -2,7 +2,6 @@ import { useEffect, useState, type ComponentType, type ReactNode } from "react"
 import {
   SlidersHorizontal,
   ArrowRight,
-  Users,
   Layers,
   FolderOpen,
   Check,
@@ -160,28 +159,6 @@ export function SettingsPane() {
           ])}
           emptyMessage="No aliases declared — folder names must slug-match the xlsx."
           columnWidths={["35%", "1%", "auto"]}
-        />
-      </Section>
-
-      <Section
-        icon={Users}
-        title="Resolved accounts"
-        description="What discovery produced after applying aliases + slug fallback against the xlsx."
-      >
-        <DataTable
-          headers={["ID", "Display name (xlsx)", "Vertical", "Transcripts", "Emails", "Status"]}
-          rows={settings.discovery.accounts.map(a => [
-            <Code key="id">{a.id}</Code>,
-            <span key="dn" className="text-foreground">{a.display_name}</span>,
-            <span key="v" className="text-muted-foreground">{a.vertical}</span>,
-            <span key="tc" className="font-mono tabular-nums text-foreground">{a.transcript_count}</span>,
-            <span key="ec" className="font-mono tabular-nums text-muted-foreground">{a.email_count}</span>,
-            a.is_lead ? (
-              <StatusPill key="s" tone="warn">sales lead</StatusPill>
-            ) : (
-              <StatusPill key="s" tone="ok">linked</StatusPill>
-            ),
-          ])}
         />
       </Section>
 
@@ -356,9 +333,9 @@ function StatusPill({
   children: ReactNode
 }) {
   const styles = {
-    ok: "bg-emerald-50 text-emerald-700 ring-emerald-200",
-    warn: "bg-amber-50 text-amber-700 ring-amber-200",
-    err: "bg-rose-50 text-rose-700 ring-rose-200",
+    ok: "text-emerald-700 ring-emerald-200",
+    warn: "text-amber-700 ring-amber-200",
+    err: "text-rose-700 ring-rose-200",
   }[tone]
   const dot = {
     ok: "bg-emerald-500",

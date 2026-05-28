@@ -1,4 +1,4 @@
-import { CheckCircle2, AlertCircle, Circle, XCircle, Plus, Settings } from "lucide-react"
+import { CheckCircle2, AlertCircle, Circle, XCircle, ExternalLink } from "lucide-react"
 import type { AccountSummary } from "@/types"
 import { AccountAvatar } from "@/components/AccountAvatar"
 import { cn } from "@/lib/utils"
@@ -14,23 +14,40 @@ export function AccountList({
   accounts,
   selectedId,
   onSelect,
+  onOpenInventory,
 }: {
   accounts: AccountSummary[]
   selectedId: string | null
   onSelect: (id: string) => void
+  onOpenInventory: () => void
 }) {
   // The problem is: the AM needs a Podium-shaped sidebar that reads like the rest of
   // the suite — colored avatar thumbnails, dense rows, solid-blue selection state.
+  // The header doubles as a navigation gesture to the full Accounts inventory.
   // The way we solve this is: tight row layout with the account avatar on the left,
   // name + vertical stacked, status icon on the right; selected row gets primary-blue
-  // background + white foreground per the Podium "All Conversations" pattern.
+  // background + white foreground per the Podium "All Conversations" pattern. The
+  // "Accounts" header is a button — hover reveals an arrow hint that clicking opens
+  // the inventory view.
   // flow: App renders -> AccountList <-- HERE (left pane below top bar)
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between px-4 pb-3 pt-5">
-        <h1 className="text-lg font-semibold text-foreground">Accounts</h1>
-        <span className="text-xs font-medium text-muted-foreground">{accounts.length}</span>
-      </div>
+      <button
+        type="button"
+        onClick={onOpenInventory}
+        className="group flex items-center justify-between px-4 pb-3 pt-5 text-left transition-colors hover:text-primary"
+        title="Open full inventory"
+      >
+        <span className="inline-flex items-center gap-1.5">
+          <h1 className="text-[15px] font-semibold tracking-tight text-foreground group-hover:text-primary">
+            Accounts
+          </h1>
+          <ExternalLink className="h-3 w-3 text-muted-foreground/60 opacity-0 transition-opacity group-hover:opacity-100" />
+        </span>
+        <span className="text-[11px] font-medium tabular-nums text-muted-foreground">
+          {accounts.length}
+        </span>
+      </button>
 
       <SectionLabel>Active reviews</SectionLabel>
       <ul className="px-2">
@@ -78,12 +95,6 @@ export function AccountList({
         )}
       </ul>
 
-      <SectionLabel className="mt-6">Tools</SectionLabel>
-      <ul className="px-2 pb-4">
-        <ToolRow icon={Plus} label="New review" />
-        <ToolRow icon={Settings} label="Pipeline settings" />
-      </ul>
-
       <div className="mt-auto border-t border-border bg-muted/50 px-4 py-3">
         <div className="text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
           Pipeline
@@ -116,22 +127,3 @@ function SectionLabel({
   )
 }
 
-function ToolRow({
-  icon: Icon,
-  label,
-}: {
-  icon: React.ComponentType<{ className?: string }>
-  label: string
-}) {
-  return (
-    <li>
-      <button
-        type="button"
-        className="flex w-full items-center gap-3 rounded-md px-2.5 py-2 text-left text-sm text-foreground transition-colors hover:bg-muted"
-      >
-        <Icon className="h-4 w-4 text-muted-foreground" />
-        <span>{label}</span>
-      </button>
-    </li>
-  )
-}
