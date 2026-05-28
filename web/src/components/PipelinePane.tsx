@@ -105,6 +105,7 @@ export function PipelinePane({
             stage={stage}
             visual={stageVisualState(stage, liveRun, nextUpNode)}
             mergedEvidence={snapshot?.merged_evidence ?? {}}
+            accountId={accountId}
           />
         ))}
       </ol>
@@ -160,10 +161,12 @@ function StageCard({
   stage,
   visual,
   mergedEvidence,
+  accountId,
 }: {
   stage: PipelineStage
   visual: StageVisualState
   mergedEvidence: Record<string, Evidence>
+  accountId: string
 }) {
   const meta = VISUAL_META[visual]
   const Icon = meta.icon
@@ -265,6 +268,7 @@ function StageCard({
               <EvidenceRail
                 evidenceIds={resolvedEvidenceIds}
                 evidence={mergedEvidence}
+                accountId={accountId}
               />
             </Disclosure>
           )}

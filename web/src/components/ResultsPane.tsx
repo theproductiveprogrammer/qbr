@@ -222,6 +222,7 @@ function InternalView({ brief }: { brief: Brief }) {
               confidence={goal.confidence}
               evidenceIds={goal.evidence_ids}
               evidence={brief.evidence}
+              accountId={brief.account_id}
             />
           ))}
         </div>
@@ -242,6 +243,7 @@ function InternalView({ brief }: { brief: Brief }) {
               confidence={w.confidence}
               evidenceIds={w.evidence_ids}
               evidence={brief.evidence}
+              accountId={brief.account_id}
             />
           ))}
         </div>
@@ -260,6 +262,7 @@ function InternalView({ brief }: { brief: Brief }) {
               confidence={gap.confidence}
               evidenceIds={gap.evidence_ids}
               evidence={brief.evidence}
+              accountId={brief.account_id}
             />
           ))}
         </div>
@@ -278,6 +281,7 @@ function InternalView({ brief }: { brief: Brief }) {
               confidence={opp.confidence}
               evidenceIds={opp.evidence_ids}
               evidence={brief.evidence}
+              accountId={brief.account_id}
             />
           ))}
         </div>
@@ -317,6 +321,7 @@ function ClaimCard({
   confidence,
   evidenceIds,
   evidence,
+  accountId,
 }: {
   title: string
   body?: string
@@ -326,6 +331,7 @@ function ClaimCard({
   confidence: Confidence
   evidenceIds: string[]
   evidence: Record<string, Evidence>
+  accountId: string
 }) {
   return (
     <Card className="transition-shadow hover:shadow-md">
@@ -347,7 +353,7 @@ function ClaimCard({
               </div>
             )}
           </div>
-          <EvidenceRail evidenceIds={evidenceIds} evidence={evidence} />
+          <EvidenceRail evidenceIds={evidenceIds} evidence={evidence} accountId={accountId} />
         </div>
       </CardContent>
     </Card>
