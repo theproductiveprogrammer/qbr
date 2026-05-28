@@ -119,7 +119,8 @@ web/
 - **Backend**: Python 3.12, FastAPI, LangGraph, pandas, pydantic.
 - **Frontend**: React + Vite + TypeScript, Tailwind, shadcn/ui.
 - **State**: filesystem-only — no DB, no auth.
-- **Models**: gpt-5.5, gpt-5.5-mini
+- **Recommended Model**: gpt-5.5
+- **Build System**: mise
 
 
 ---
