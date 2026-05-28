@@ -6,6 +6,7 @@ import { EvidenceRail } from "@/components/EvidenceRail"
 import { RunButton } from "@/components/RunButton"
 import { DeckOutline } from "@/components/DeckOutline"
 import { AccountAvatar } from "@/components/AccountAvatar"
+import { PipelinePane } from "@/components/PipelinePane"
 import { getBrief } from "@/lib/api"
 import { cn } from "@/lib/utils"
 import type {
@@ -16,7 +17,13 @@ import type {
   ReviewBanner as ReviewBannerT,
 } from "@/types"
 
-type View = "internal" | "customer"
+type View = "internal" | "customer" | "pipeline"
+
+const VIEW_LABELS: Record<View, string> = {
+  internal: "Internal brief",
+  customer: "Customer outline",
+  pipeline: "Pipeline",
+}
 
 export function ResultsPane({
   accountId,
@@ -84,12 +91,10 @@ export function ResultsPane({
     <div className="mx-auto max-w-5xl space-y-6 p-10">
       <Header brief={brief} onRunComplete={onRunComplete} />
       <ViewToggle view={view} onChange={setView} />
-      {brief.review_banner && <ReviewBannerCard banner={brief.review_banner} />}
-      {view === "internal" ? (
-        <InternalView brief={brief} />
-      ) : (
-        <DeckOutline outline={brief.outline} accountName={brief.account_name} />
-      )}
+      {brief.review_banner && view !== "pipeline" && <ReviewBannerCard banner={brief.review_banner} />}
+      {view === "internal" && <InternalView brief={brief} />}
+      {view === "customer" && <DeckOutline outline={brief.outline} accountName={brief.account_name} />}
+      {view === "pipeline" && <PipelinePane accountId={brief.account_id} />}
     </div>
   )
 }
@@ -126,7 +131,7 @@ function Header({ brief, onRunComplete }: { brief: Brief; onRunComplete: () => v
 function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => void }) {
   return (
     <div className="inline-flex items-center rounded-md border border-border bg-card p-1 shadow-sm">
-      {(["internal", "customer"] as const).map(v => (
+      {(["internal", "customer", "pipeline"] as const).map(v => (
         <button
           key={v}
           type="button"
@@ -138,7 +143,7 @@ function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => voi
               : "text-muted-foreground hover:text-foreground"
           )}
         >
-          {v === "internal" ? "Internal brief" : "Customer outline"}
+          {VIEW_LABELS[v]}
         </button>
       ))}
     </div>

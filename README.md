@@ -31,7 +31,7 @@ A five-stage prompt chain over structured JSON.
 All commands are mise tasks — run them from the repo root.
 
 ```bash
-# 1. install backend (uv sync) + frontend (pnpm install) dependencies
+# 1. install backend (uv sync) + frontend (npm install) dependencies
 mise run setup
 
 # 2. set the OpenAI key — either export it or drop it into backend/.env
@@ -74,7 +74,7 @@ web/
 
 | Account               | Vertical                    | Transcripts | Notes |
 |-----------------------|-----------------------------|-------------|-------|
-| Meridian Furniture    | Retail / Furniture          | 11          | Full lifecycle: onboarding → AI setup → phones → 3 account reviews |
+| Meridian Furniture    | Retail / Furniture          | 10          | Full lifecycle: onboarding → AI setup → phones → 3 account reviews |
 | Northfield Electrical | Home Services / Electrical  | 8           | Sales → onboarding → AI setup → upgrade review |
 | Apex                  | (sales lead)                | 1 (intro)   | Not a customer — pipeline routes to "insufficient data" terminal |
 

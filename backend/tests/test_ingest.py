@@ -25,8 +25,8 @@ def test_transcript_turns_have_required_fields() -> None:
     # a parser that drops one of those fields would render evidence un-verifiable.
     # The way we solve this is: pick one known-rich transcript and inspect the first
     # few turns for the four locator fields plus text, plus the recorded date.
-    sample = next(INPUT_DIR.glob("call-transcript--meridian-furniture-account-review.txt"), None)
-    assert sample is not None, "Meridian account-review transcript is missing from data/input"
+    sample = INPUT_DIR / "meridian" / "transcripts" / "call-transcript--meridian-furniture-account-review.txt"
+    assert sample.exists(), f"Meridian account-review transcript missing at {sample}"
     parsed = parse_transcript(sample)
     assert parsed.recorded_date == "2026-01-27"
     assert len(parsed.turns) > 10, "expected a healthy account-review transcript"

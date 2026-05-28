@@ -66,7 +66,37 @@ def extract_goals(account_id: str) -> GoalsStageOutput:
         response_format=_GoalExtractionResponse,
     )
 
+    # Persist the LLM trace so the Pipeline tab can show exactly what was sent and
+    # what came back — separately from the linked-and-validated goals.json.
+    _write_trace(account_id, system_prompt, user_content, response)
+
     return _link_and_assign_ids(account_id, response.goals, corpus)
+
+
+def _write_trace(
+    account_id: str,
+    system_prompt: str,
+    user_content: str,
+    response: "_GoalExtractionResponse",
+) -> None:
+    # The problem is: the Pipeline tab needs to surface what the LLM was asked and
+    # what it returned BEFORE pipeline post-processing — so a reviewer can audit the
+    # extraction quality, not just the final filtered output.
+    # The way we solve this is: write a sibling s1_trace.json carrying the system
+    # prompt, the rendered user prompt, the model id, and the raw structured response.
+    trace = {
+        "stage": "s1_goals",
+        "model": MODEL_EXTRACTION,
+        "system_prompt": system_prompt,
+        "user_prompt": user_content,
+        "user_prompt_chars": len(user_content),
+        "raw_response": response.model_dump(),
+    }
+    path = OUTPUT_DIR / account_id / "s1_trace.json"
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(".json.tmp")
+    tmp.write_text(json.dumps(trace, indent=2))
+    tmp.replace(path)
 
 
 def write_goals(stage_out: GoalsStageOutput) -> Path:

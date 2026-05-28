@@ -118,3 +118,26 @@ export type AccountSummary = {
   last_run_at?: string | null
   error?: string | null
 }
+
+export type PipelineStage = {
+  id: string
+  name: string
+  description: string
+  artifact: string
+  is_llm: boolean
+  status: "ok" | "missing"
+  data: unknown | null
+  trace: {
+    stage: string
+    model: string
+    system_prompt: string
+    user_prompt: string
+    user_prompt_chars: number
+    raw_response: unknown
+  } | null
+}
+
+export type PipelineSnapshot = {
+  account_id: string
+  stages: PipelineStage[]
+}

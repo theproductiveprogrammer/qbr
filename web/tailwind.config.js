@@ -1,4 +1,5 @@
 import animate from "tailwindcss-animate"
+import typography from "@tailwindcss/typography"
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -7,6 +8,8 @@ export default {
     extend: {
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "sans-serif"],
+        display: ["Instrument Serif", "ui-serif", "Georgia", "serif"],
+        mono: ["ui-monospace", "SFMono-Regular", "Menlo", "Consolas", "monospace"],
       },
       colors: {
         border: "hsl(var(--border))",
@@ -51,5 +54,5 @@ export default {
       },
     },
   },
-  plugins: [animate],
+  plugins: [animate, typography],
 }

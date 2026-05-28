@@ -1,4 +1,4 @@
-import type { AccountSummary, Brief } from "@/types"
+import type { AccountSummary, Brief, PipelineSnapshot } from "@/types"
 
 async function jsonOrThrow<T>(res: Response): Promise<T> {
   // The problem is: silent non-2xx responses would render as empty UI without explaining
@@ -20,6 +20,11 @@ export async function listAccounts(): Promise<AccountSummary[]> {
 export async function getBrief(accountId: string): Promise<Brief> {
   // flow: UI account-select -> ResultsPane.useEffect -> getBrief() <-- HERE -> GET /brief
   return jsonOrThrow(await fetch(`/accounts/${accountId}/brief`))
+}
+
+export async function getPipeline(accountId: string): Promise<PipelineSnapshot> {
+  // flow: UI Pipeline tab -> PipelinePane.useEffect -> getPipeline() <-- HERE -> GET /pipeline
+  return jsonOrThrow(await fetch(`/accounts/${accountId}/pipeline`))
 }
 
 export async function runAccount(accountId: string): Promise<Brief> {

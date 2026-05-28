@@ -17,19 +17,19 @@ ACCOUNTS: dict[str, dict[str, Any]] = {
     "meridian": {
         "name": "Meridian Furniture Group",
         "vertical": "Retail / Furniture",
-        "transcript_glob": "call-transcript--meridian-furniture-*.txt",
+        "input_dir": "meridian",
         "usage_org_name": "Auscraft Furniture",
     },
     "northfield": {
         "name": "Northfield Electrical",
         "vertical": "Home Services / Electrical",
-        "transcript_glob": "call-transcript--northfield-electrical-*.txt",
+        "input_dir": "northfield",
         "usage_org_name": "Mr Sparky",
     },
     "apex": {
         "name": "Apex",
         "vertical": "Sales lead — no usage data on file",
-        "transcript_glob": "call-transcript--apex-*.txt",
+        "input_dir": "apex",
         "usage_org_name": None,
     },
 }
@@ -154,14 +154,19 @@ def load_usage(org_name: str | None) -> dict[str, Any] | None:
     return out
 
 
-def parse_emails(account_id: str) -> list[dict[str, Any]]:
+def parse_emails(account_dir: Path) -> list[dict[str, Any]]:
     # The problem is: the brief lists "email threads" as an input, but the case-study
-    # dataset ships with no emails. Downstream linking already supports them — we just
-    # need a hook here so the corpus shape includes an `emails` list (empty for now).
-    # The way we solve this is: return an empty list until real email data lands; when
-    # it does, this is where the parser slots in.
+    # dataset currently ships with no emails. Downstream linking already supports them —
+    # we just need a hook here so the corpus shape includes an `emails` list (empty
+    # until real .eml files land in the per-account emails/ folder).
+    # The way we solve this is: glob the account's emails/ subfolder and (for now)
+    # return an empty list when no parser is wired up. When emails arrive, this is
+    # where the parser slots in.
     # flow: pipeline.run_pipeline() -> build_corpus() -> parse_emails() <-- HERE
-    _ = account_id
+    emails_dir = account_dir / "emails"
+    if not emails_dir.exists():
+        return []
+    # Real parser goes here when email files arrive.
     return []
 
 
@@ -170,27 +175,30 @@ def build_corpus(account_id: str) -> dict[str, Any]:
     # we know about this account" artifact rather than re-parsing source files each
     # time.
     # The way we solve this is: bundle parsed transcripts + emails + the usage row into
-    # one JSON blob keyed by account_id.
+    # one JSON blob keyed by account_id. Sources live under data/input/<account>/.
     # flow: pipeline.run_pipeline() -> build_corpus() <-- HERE -> write_corpus()
     if account_id not in ACCOUNTS:
         raise ValueError(f"Unknown account: {account_id!r}. Known: {list(ACCOUNTS)}")
     cfg = ACCOUNTS[account_id]
+    account_dir = INPUT_DIR / cfg["input_dir"]
 
     transcripts = []
-    for path in sorted(INPUT_DIR.glob(cfg["transcript_glob"])):
-        parsed = parse_transcript(path)
-        transcripts.append({
-            "file": path.name,
-            "n_lines": parsed.n_lines,
-            "recorded_date": parsed.recorded_date,
-            "turns": [asdict(t) for t in parsed.turns],
-        })
+    transcripts_dir = account_dir / "transcripts"
+    if transcripts_dir.exists():
+        for path in sorted(transcripts_dir.glob("*.txt")):
+            parsed = parse_transcript(path)
+            transcripts.append({
+                "file": path.name,
+                "n_lines": parsed.n_lines,
+                "recorded_date": parsed.recorded_date,
+                "turns": [asdict(t) for t in parsed.turns],
+            })
 
     # Chronological ordering — undated transcripts (shouldn't happen in this dataset)
     # sort last so they don't poison the LLM's read of the relationship arc.
     transcripts.sort(key=lambda t: t["recorded_date"] or "9999-12-31")
 
-    emails = parse_emails(account_id)
+    emails = parse_emails(account_dir)
     usage = load_usage(cfg["usage_org_name"])
 
     return {
