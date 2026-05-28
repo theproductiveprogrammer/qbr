@@ -55,3 +55,22 @@
 .splash-fade-up {
   animation: splash-fade-up 0.5s ease-out both;
 }
+
+/* Print: let the page flow at its natural height and strip chrome. The app's
+   default layout uses h-screen + overflow-hidden + overflow-y-auto to create a
+   fixed-viewport scroll, which makes Ctrl+P capture only the first page. In
+   print, release those constraints and hide nav + sidebar so what you save as
+   PDF is just the content (e.g. the rendered README on the Briefs splash). */
+@media print {
+  html, body, #root {
+    height: auto !important;
+    overflow: visible !important;
+  }
+  .h-screen { height: auto !important; }
+  .overflow-hidden { overflow: visible !important; }
+  .overflow-y-auto { overflow: visible !important; }
+  /* Hide app chrome — TopBar and the sidebar aside. The main content stays. */
+  header, aside { display: none !important; }
+  /* Kill the fade-up animation so each section isn't a snapshotted blank. */
+  .splash-fade-up { animation: none !important; opacity: 1 !important; transform: none !important; }
+}
