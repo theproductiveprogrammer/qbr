@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
 
-from ..ingest import ACCOUNTS
+from ..ingest import ACCOUNTS, AccountInfo
 from ..schemas import (
     Brief,
     ConfidenceSummary,
@@ -31,12 +31,15 @@ def assemble_brief(account_id: str) -> Brief:
     # The way we solve this is: load each stage's artifact, project fields into the
     # Brief shape, synthesize the customer-facing outline from structured data
     # (no LLM call here in v0), merge all evidence maps under one set of stable IDs,
-    # let pydantic's @model_validator catch any drift.
-    # flow: pipeline.run_pipeline() -> assemble_brief() <-- HERE -> write_brief()
-    cfg = ACCOUNTS[account_id]
+    # let pydantic's @model_validator catch any drift. The "is this a sales lead?"
+    # decision is read from the corpus (no usage row → insufficient_data), so no
+    # account-name literal lives anywhere in this file.
+    # flow: graph.node_assemble_brief() -> assemble_brief() <-- HERE -> write_brief()
+    info = ACCOUNTS[account_id]
+    corpus = _load(account_id, "corpus.json")
 
-    if account_id == "apex":
-        return _insufficient_data_brief(account_id, cfg)
+    if corpus.get("usage") is None:
+        return _insufficient_data_brief(info)
 
     goals_data = _load(account_id, "goals.json")
     usage_data = _load(account_id, "usage_facts.json")
@@ -61,8 +64,8 @@ def assemble_brief(account_id: str) -> Brief:
 
     return Brief(
         account_id=account_id,
-        account_name=cfg["name"],
-        vertical=cfg["vertical"],
+        account_name=info.display_name,
+        vertical=info.vertical,
         run_id=str(uuid.uuid4()),
         generated_at=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         pipeline_version=PIPELINE_VERSION,
@@ -175,18 +178,18 @@ def _synthesize_outline(
     )
 
 
-def _insufficient_data_brief(account_id: str, cfg: dict[str, Any]) -> Brief:
+def _insufficient_data_brief(info: "AccountInfo") -> Brief:
     return Brief(
-        account_id=account_id,
-        account_name=cfg["name"],
-        vertical=cfg["vertical"],
+        account_id=info.id,
+        account_name=info.display_name,
+        vertical=info.vertical,
         run_id=str(uuid.uuid4()),
         generated_at=datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         pipeline_version=PIPELINE_VERSION,
         status="insufficient_data",
         status_reason=(
-            f"{cfg['name']} is a sales lead (single intro call, no usage data on file). "
-            "QBRs require an active customer relationship — there is nothing to review yet."
+            f"{info.display_name} has no usage row on file — likely a sales lead. "
+            "QBRs require an active customer relationship; there is nothing to review yet."
         ),
         confidence_summary=ConfidenceSummary(high=0, med=0, low=0),
         goals=[],

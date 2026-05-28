@@ -6,6 +6,7 @@ import re
 import sys
 from dataclasses import asdict, dataclass
 from datetime import datetime
+from functools import lru_cache
 from pathlib import Path
 from typing import Any
 
@@ -13,30 +14,27 @@ import pandas as pd
 
 from .store import INPUT_DIR, OUTPUT_DIR
 
-ACCOUNTS: dict[str, dict[str, Any]] = {
-    "meridian": {
-        "name": "Meridian Furniture Group",
-        "vertical": "Retail / Furniture",
-        "input_dir": "meridian",
-        "usage_org_name": "Auscraft Furniture",
-    },
-    "northfield": {
-        "name": "Northfield Electrical",
-        "vertical": "Home Services / Electrical",
-        "input_dir": "northfield",
-        "usage_org_name": "Mr Sparky",
-    },
-    "apex": {
-        "name": "Apex",
-        "vertical": "Sales lead — no usage data on file",
-        "input_dir": "apex",
-        "usage_org_name": None,
-    },
-}
+ACCOUNTS_XLSX_FILE = "accounts.xlsx"
+ALIASES_FILE = "aliases.json"
+
+ORG_NAME_COL = "ORGANIZATION NAME"
+VERTICAL_COL = "ORGANIZATION VERTICAL"
+SUBVERTICAL_COL = "ORGANIZATION SUB-VERTICAL"
 
 TURN_HEADER_RE = re.compile(r"^(\d+:\d+)\s*\|\s*(.+?)\s*$")
 RECORDED_DATE_RE = re.compile(r"Recorded on\s+([A-Za-z]+\s+\d+,\s*\d{4})")
-ORG_NAME_COL = "ORGANIZATION NAME"
+
+
+@dataclass(frozen=True)
+class AccountInfo:
+    # Identity used internally + in URLs (= the on-disk directory name)
+    id: str
+    # Human-facing name. xlsx ORGANIZATION NAME when available, else title-cased dir.
+    display_name: str
+    # "VERTICAL / SUB-VERTICAL" from xlsx, or "Sales lead" when no xlsx row.
+    vertical: str
+    # The xlsx ORGANIZATION NAME this account resolves to. None = no usage row (lead).
+    xlsx_org_name: str | None
 
 
 @dataclass
@@ -126,16 +124,110 @@ def _parse_turns(lines: list[str]) -> list[Turn]:
     return turns
 
 
-def load_usage(org_name: str | None) -> dict[str, Any] | None:
-    # The problem is: the xlsx has 100+ columns and we only want the row matching a
-    # specific account, normalized to a JSON-serializable {column: value} dict.
-    # The way we solve this is: pandas reads the whole sheet, we slice the row by
-    # ORGANIZATION NAME, then convert numpy/pandas scalars to native Python types and
-    # NaN to None so JSON serialization is clean downstream.
-    # flow: pipeline -> build_corpus() -> load_usage() <-- HERE
-    if org_name is None:
-        return None
-    df = pd.read_excel(INPUT_DIR / "accounts.xlsx")
+# ─────────────────────────── account discovery ───────────────────────────
+
+
+def _slug(s: str) -> str:
+    # Lowercase + non-alphanumeric runs collapsed to "-". Used for fuzzy folder ↔
+    # xlsx-name matching so accounts whose folder is already named after the xlsx org
+    # don't need an aliases.json entry.
+    return re.sub(r"[^a-z0-9]+", "-", s.lower()).strip("-")
+
+
+@lru_cache(maxsize=1)
+def _load_xlsx() -> pd.DataFrame:
+    # The problem is: every discovery + usage lookup hits the xlsx; re-reading it
+    # for each call wastes time when the file is the same.
+    # The way we solve this is: lru_cache so we read once per process. If the file
+    # changes the dev server restart will reset the cache.
+    return pd.read_excel(INPUT_DIR / ACCOUNTS_XLSX_FILE)
+
+
+@lru_cache(maxsize=1)
+def _load_aliases() -> dict[str, str]:
+    # The problem is: some on-disk folder names don't match any xlsx ORGANIZATION
+    # NAME (e.g. transcripts call the customer "Meridian" but the xlsx row is
+    # "Auscraft Furniture" — Podium-confirmed data drift).
+    # The way we solve this is: optional aliases.json declares the bridge. Keys
+    # starting with "_" are treated as comments.
+    path = INPUT_DIR / ALIASES_FILE
+    if not path.exists():
+        return {}
+    raw = json.loads(path.read_text())
+    return {k: v for k, v in raw.items() if not k.startswith("_") and isinstance(v, str)}
+
+
+def _resolve_xlsx_org(dir_name: str) -> str | None:
+    # The problem is: given a folder name, find its xlsx ORGANIZATION NAME — first
+    # via explicit aliases, then via slug fuzzy match, else give up (account is a
+    # sales lead with no usage row).
+    aliases = _load_aliases()
+    if dir_name in aliases:
+        return aliases[dir_name]
+
+    df = _load_xlsx()
+    org_names = [n for n in df[ORG_NAME_COL].dropna().unique() if isinstance(n, str)]
+    dir_slug = _slug(dir_name)
+    for org in org_names:
+        if _slug(org) == dir_slug:
+            return org
+    return None
+
+
+def _vertical_from_xlsx(row: dict[str, Any]) -> str:
+    parts: list[str] = []
+    v = row.get(VERTICAL_COL)
+    sv = row.get(SUBVERTICAL_COL)
+    if isinstance(v, str) and v.strip():
+        parts.append(v.strip())
+    if isinstance(sv, str) and sv.strip():
+        parts.append(sv.strip())
+    return " / ".join(parts) if parts else "(unknown vertical)"
+
+
+def _is_account_dir(p: Path) -> bool:
+    # An account directory has a transcripts/ or emails/ subfolder. This skips
+    # accidental folders or future siblings (e.g. a future _archive/).
+    return p.is_dir() and ((p / "transcripts").exists() or (p / "emails").exists())
+
+
+def discover_accounts() -> dict[str, AccountInfo]:
+    # The problem is: hard-coding the account list and per-account metadata in this
+    # file means adding a new account requires a code change, and inevitably drifts
+    # from the xlsx source of truth.
+    # The way we solve this is: scan data/input/ for account directories, resolve
+    # each one's xlsx row via aliases.json + slug fallback, pull display name and
+    # vertical FROM the xlsx. No-xlsx-row folders become sales leads with no QBR.
+    # flow: import-time -> discover_accounts() <-- HERE -> ACCOUNTS dict
+    accounts: dict[str, AccountInfo] = {}
+    for child in sorted(INPUT_DIR.iterdir()):
+        if not _is_account_dir(child):
+            continue
+        dir_name = child.name
+        xlsx_org = _resolve_xlsx_org(dir_name)
+        if xlsx_org is not None:
+            row = _xlsx_row(xlsx_org) or {}
+            display_name = xlsx_org
+            vertical = _vertical_from_xlsx(row)
+        else:
+            display_name = dir_name.replace("-", " ").replace("_", " ").title()
+            vertical = "Sales lead"
+        accounts[dir_name] = AccountInfo(
+            id=dir_name,
+            display_name=display_name,
+            vertical=vertical,
+            xlsx_org_name=xlsx_org,
+        )
+    return accounts
+
+
+def _xlsx_row(org_name: str) -> dict[str, Any] | None:
+    # The problem is: pandas iloc returns numpy scalars; the resulting dict must be
+    # JSON-serializable so downstream stages can persist and the API can serve it.
+    # The way we solve this is: convert numpy scalars to Python natives and NaN to
+    # None at the boundary.
+    # flow: load_usage / discover_accounts -> _xlsx_row() <-- HERE
+    df = _load_xlsx()
     matches = df[df[ORG_NAME_COL] == org_name]
     if matches.empty:
         return None
@@ -147,42 +239,52 @@ def load_usage(org_name: str | None) -> dict[str, Any] | None:
         val = row[col]
         if pd.isna(val):
             out[col] = None
-        elif hasattr(val, "item"):  # numpy scalar → native Python
+        elif hasattr(val, "item"):
             out[col] = val.item()
         else:
             out[col] = val
     return out
 
 
+# Resolve once at import time; downstream code uses this dict. Restart the process
+# to pick up filesystem changes (new account folders, edited aliases.json).
+ACCOUNTS: dict[str, AccountInfo] = discover_accounts()
+
+
+# ─────────────────────────── corpus assembly ───────────────────────────
+
+
+def load_usage(org_name: str | None) -> dict[str, Any] | None:
+    if org_name is None:
+        return None
+    return _xlsx_row(org_name)
+
+
 def parse_emails(account_dir: Path) -> list[dict[str, Any]]:
-    # The problem is: the brief lists "email threads" as an input, but the case-study
-    # dataset currently ships with no emails. Downstream linking already supports them —
-    # we just need a hook here so the corpus shape includes an `emails` list (empty
-    # until real .eml files land in the per-account emails/ folder).
-    # The way we solve this is: glob the account's emails/ subfolder and (for now)
-    # return an empty list when no parser is wired up. When emails arrive, this is
-    # where the parser slots in.
-    # flow: pipeline.run_pipeline() -> build_corpus() -> parse_emails() <-- HERE
+    # The problem is: the brief lists "email threads" as an input but the dataset
+    # currently ships none. Downstream linking already supports them — we need a
+    # hook here so corpus shape includes an `emails` list (empty for now).
+    # The way we solve this is: glob the account's emails/ subfolder; return empty
+    # until a real parser is wired up.
     emails_dir = account_dir / "emails"
     if not emails_dir.exists():
         return []
-    # Real parser goes here when email files arrive.
     return []
 
 
 def build_corpus(account_id: str) -> dict[str, Any]:
-    # The problem is: each downstream stage needs a single canonical "this is everything
-    # we know about this account" artifact rather than re-parsing source files each
-    # time.
-    # The way we solve this is: bundle parsed transcripts + emails + the usage row into
-    # one JSON blob keyed by account_id. Sources live under data/input/<account>/.
-    # flow: pipeline.run_pipeline() -> build_corpus() <-- HERE -> write_corpus()
+    # The problem is: each downstream stage needs a single canonical "this is
+    # everything we know about this account" artifact rather than re-parsing source
+    # files each time.
+    # The way we solve this is: bundle parsed transcripts + emails + the resolved
+    # usage row into one JSON blob keyed by account_id.
+    # flow: graph.node_ingest() -> build_corpus() <-- HERE -> write_corpus()
     if account_id not in ACCOUNTS:
         raise ValueError(f"Unknown account: {account_id!r}. Known: {list(ACCOUNTS)}")
-    cfg = ACCOUNTS[account_id]
-    account_dir = INPUT_DIR / cfg["input_dir"]
+    info = ACCOUNTS[account_id]
+    account_dir = INPUT_DIR / info.id
 
-    transcripts = []
+    transcripts: list[dict[str, Any]] = []
     transcripts_dir = account_dir / "transcripts"
     if transcripts_dir.exists():
         for path in sorted(transcripts_dir.glob("*.txt")):
@@ -194,17 +296,17 @@ def build_corpus(account_id: str) -> dict[str, Any]:
                 "turns": [asdict(t) for t in parsed.turns],
             })
 
-    # Chronological ordering — undated transcripts (shouldn't happen in this dataset)
-    # sort last so they don't poison the LLM's read of the relationship arc.
+    # Chronological ordering — undated transcripts sort last so they don't poison
+    # the LLM's read of the relationship arc.
     transcripts.sort(key=lambda t: t["recorded_date"] or "9999-12-31")
 
     emails = parse_emails(account_dir)
-    usage = load_usage(cfg["usage_org_name"])
+    usage = load_usage(info.xlsx_org_name)
 
     return {
-        "account_id": account_id,
-        "account_name": cfg["name"],
-        "vertical": cfg["vertical"],
+        "account_id": info.id,
+        "account_name": info.display_name,
+        "vertical": info.vertical,
         "transcripts": transcripts,
         "emails": emails,
         "usage": usage,
@@ -212,10 +314,6 @@ def build_corpus(account_id: str) -> dict[str, Any]:
 
 
 def write_corpus(account_id: str, corpus: dict[str, Any]) -> Path:
-    # The problem is: writing partway through a long run would leave a half-corpus on
-    # disk that downstream stages might try to parse.
-    # The way we solve this is: write to a sibling .tmp file then atomic rename.
-    # flow: pipeline.run_pipeline() -> build_corpus() -> write_corpus() <-- HERE
     path = OUTPUT_DIR / account_id / "corpus.json"
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_suffix(".json.tmp")
@@ -225,7 +323,6 @@ def write_corpus(account_id: str, corpus: dict[str, Any]) -> Path:
 
 
 def main() -> None:
-    # flow: CLI `mise run pipeline -- --only ingest` -> ingest.main() <-- HERE
     parser = argparse.ArgumentParser(description="Ingest transcripts + usage data for one account")
     parser.add_argument("--account", required=True, choices=list(ACCOUNTS.keys()))
     args = parser.parse_args()
