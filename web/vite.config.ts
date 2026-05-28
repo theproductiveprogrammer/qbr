@@ -14,6 +14,7 @@ export default defineConfig({
     proxy: {
       "/accounts": "http://localhost:6173",
       "/evidence": "http://localhost:6173",
+      "/settings": "http://localhost:6173",
     },
   },
 })

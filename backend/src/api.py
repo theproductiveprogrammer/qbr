@@ -1,12 +1,17 @@
 from __future__ import annotations
 
 import json
+import os
 from typing import Any
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 
+from .feature_catalog import CATALOG, Feature
+from .ingest import ACCOUNTS, INPUT_DIR, _load_aliases, _load_xlsx
+from .llm import MODEL_EXTRACTION, MODEL_NARRATIVE
 from .schemas import AccountSummary, Brief
+from .stages.s5_brief import PIPELINE_VERSION
 from .store import OUTPUT_DIR, list_accounts, read_brief
 
 app = FastAPI(title="QBR Agent API", version="0.1.0")
@@ -168,6 +173,97 @@ def _summarize_corpus(data: dict[str, Any]) -> dict[str, Any]:
             len(data["usage"]) if isinstance(data.get("usage"), dict) else 0
         ),
     }
+
+
+@app.get("/settings")
+def get_settings() -> dict[str, Any]:
+    # The problem is: a reviewer (and the AM) needs to see what configuration the
+    # pipeline is running on — the alias mapping, what got resolved against the xlsx,
+    # which features the agent knows about, which models are wired up, and whether
+    # OPENAI_API_KEY is set — without grepping the filesystem.
+    # The way we solve this is: one bundled snapshot read at request time. None of
+    # this is secret; we expose the PRESENCE of OPENAI_API_KEY, never the value.
+    # flow: UI Settings tab -> SettingsPane.useEffect -> GET /settings -> get_settings() <-- HERE
+    aliases = _load_aliases()
+    xlsx_path = INPUT_DIR / "accounts.xlsx"
+    xlsx_present = xlsx_path.exists()
+
+    accounts_payload: list[dict[str, Any]] = []
+    for info in sorted(ACCOUNTS.values(), key=lambda i: i.id):
+        account_dir = INPUT_DIR / info.id
+        transcripts_dir = account_dir / "transcripts"
+        emails_dir = account_dir / "emails"
+        accounts_payload.append({
+            "id": info.id,
+            "display_name": info.display_name,
+            "vertical": info.vertical,
+            "xlsx_org_name": info.xlsx_org_name,
+            "is_lead": info.xlsx_org_name is None,
+            "transcript_count": (
+                len(list(transcripts_dir.glob("*.txt"))) if transcripts_dir.exists() else 0
+            ),
+            "email_count": (
+                len(list(emails_dir.glob("*.eml"))) if emails_dir.exists() else 0
+            ),
+        })
+
+    feature_payload: list[dict[str, Any]] = [
+        {
+            "id": f.id,
+            "label": f.label,
+            "goal_categories": f.goal_categories,
+            "ownership_rule": _describe_ownership(f),
+            "active_signal": _describe_activity(f),
+        }
+        for f in CATALOG.values()
+    ]
+
+    return {
+        "configuration": {
+            "openai_key_set": bool(os.getenv("OPENAI_API_KEY")),
+            "pipeline_version": PIPELINE_VERSION,
+            "models": {
+                "extraction": MODEL_EXTRACTION,
+                "narrative": MODEL_NARRATIVE,
+            },
+        },
+        "discovery": {
+            "aliases": aliases,
+            "aliases_path": "data/input/aliases.json",
+            "xlsx": {
+                "path": "data/input/accounts.xlsx",
+                "exists": xlsx_present,
+                "row_count": len(_load_xlsx()) if xlsx_present else 0,
+            },
+            "accounts": accounts_payload,
+        },
+        "feature_catalog": feature_payload,
+        "data_paths": {
+            "input": "data/input/",
+            "output": "data/output/",
+        },
+    }
+
+
+def _describe_ownership(f: Feature) -> str:
+    if f.ownership_rule == "always":
+        return "always owned (built-in)"
+    col = f.ownership_col or "(unset)"
+    if f.ownership_rule == "contains":
+        return f'{col} contains "{f.ownership_value}"'
+    if f.ownership_rule == "equals":
+        return f'{col} == "{f.ownership_value}"'
+    if f.ownership_rule == "gt_0":
+        return f"{col} > 0"
+    if f.ownership_rule == "any_lifetime":
+        return f"{col} ever > 0"
+    return f.ownership_rule
+
+
+def _describe_activity(f: Feature) -> str:
+    if f.active_col is None:
+        return "(no signal defined)"
+    return f"{f.active_col} ≥ {f.active_threshold:g}"
 
 
 if __name__ == "__main__":

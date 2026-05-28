@@ -141,3 +141,47 @@ export type PipelineSnapshot = {
   account_id: string
   stages: PipelineStage[]
 }
+
+export type SettingsAccount = {
+  id: string
+  display_name: string
+  vertical: string
+  xlsx_org_name: string | null
+  is_lead: boolean
+  transcript_count: number
+  email_count: number
+}
+
+export type SettingsFeature = {
+  id: string
+  label: string
+  goal_categories: string[]
+  ownership_rule: string
+  active_signal: string
+}
+
+export type SettingsSnapshot = {
+  configuration: {
+    openai_key_set: boolean
+    pipeline_version: string
+    models: {
+      extraction: string
+      narrative: string
+    }
+  }
+  discovery: {
+    aliases: Record<string, string>
+    aliases_path: string
+    xlsx: {
+      path: string
+      exists: boolean
+      row_count: number
+    }
+    accounts: SettingsAccount[]
+  }
+  feature_catalog: SettingsFeature[]
+  data_paths: {
+    input: string
+    output: string
+  }
+}
