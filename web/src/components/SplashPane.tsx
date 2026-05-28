@@ -9,7 +9,7 @@ import type { AccountSummary } from "@/types"
 // specificity for the kind of editorial typography this splash needs.
 const COMPONENTS: Components = {
   h1: ({ children }) => (
-    <h1 className="mt-0 mb-6 font-display text-[56px] font-normal leading-[1.02] tracking-[-0.015em] text-foreground sm:text-[68px]">
+    <h1 className="mt-0 mb-6 font-display text-[44px] font-normal leading-[1.04] tracking-[-0.015em] text-foreground sm:text-[52px]">
       {children}
     </h1>
   ),
@@ -23,12 +23,12 @@ const COMPONENTS: Components = {
     </h2>
   ),
   h3: ({ children }) => (
-    <h3 className="mt-10 mb-3 text-[12px] font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+    <h3 className="mt-10 mb-2 text-[18px] font-semibold leading-snug tracking-tight text-foreground">
       {children}
     </h3>
   ),
   p: ({ children }) => (
-    <p className="my-5 text-[17px] leading-[1.7] text-foreground/85">{children}</p>
+    <p className="my-5 text-[16px] leading-[1.7] text-foreground/85">{children}</p>
   ),
   strong: ({ children }) => (
     <strong className="font-semibold text-foreground">{children}</strong>
@@ -53,7 +53,7 @@ const COMPONENTS: Components = {
     </ol>
   ),
   li: ({ children }) => (
-    <li className="pl-1 text-[17px] leading-[1.7] text-foreground/85">{children}</li>
+    <li className="pl-1 text-[16px] leading-[1.7] text-foreground/85">{children}</li>
   ),
   code: ({ children, className }) => {
     const text = String(children ?? "")
@@ -133,6 +133,14 @@ export function SplashPane({
           {readmeContent}
         </ReactMarkdown>
       </article>
+      <div
+        className="splash-fade-up mt-20 flex justify-center"
+        style={{ animationDelay: "160ms" }}
+      >
+        <div className="flex h-10 w-10 items-center justify-center rounded-md bg-primary/95 text-primary-foreground shadow-sm">
+          <Sparkles className="h-5 w-5" />
+        </div>
+      </div>
     </div>
   )
 }
