@@ -40,40 +40,44 @@ def write_brief(account_id: str, brief: Brief) -> None:
 
 
 def list_accounts() -> list[AccountSummary]:
-    # The problem is: the UI's left pane needs a lightweight summary per account
-    # without loading every pipeline artifact.
-    # The way we solve this is: scan output/ for subdirs, peek at each brief.json
-    # (or mark "not run" if absent), return the minimal projection the UI needs.
+    # The problem is: the left pane lists accounts the user can pick from. Driving
+    # it off output/ meant an account that exists but hasn't been run was invisible
+    # — the user couldn't open it to click Run. That's wrong: the "existence" of an
+    # account is determined by its source data (data/input/<account>/), not by
+    # whether the pipeline has produced artifacts yet.
+    # The way we solve this is: list every account that ingest discovered (which
+    # scans data/input/), then layer in run status from output/<account>/brief.json
+    # (status="not_run" when absent, "failed" when the file is broken).
     # flow: UI mounts -> AccountList.useEffect -> GET /accounts -> list_accounts() <-- HERE
-    if not OUTPUT_DIR.exists():
-        return []
+    from .ingest import ACCOUNTS  # lazy import — ingest imports from store
     out: list[AccountSummary] = []
-    for account_dir in sorted(OUTPUT_DIR.iterdir()):
-        if not account_dir.is_dir():
-            continue
-        brief_path = account_dir / "brief.json"
+    for info in sorted(ACCOUNTS.values(), key=lambda i: i.id):
+        brief_path = OUTPUT_DIR / info.id / "brief.json"
         if not brief_path.exists():
             out.append(AccountSummary(
-                id=account_dir.name,
-                name=account_dir.name,
-                vertical="(unknown)",
+                id=info.id,
+                name=info.display_name,
+                vertical=info.vertical,
                 status="not_run",
             ))
             continue
         try:
-            brief = read_brief(account_dir.name)
+            brief = read_brief(info.id)
             out.append(AccountSummary(
                 id=brief.account_id,
-                name=brief.account_name,
-                vertical=brief.vertical,
+                # Prefer the discovered identity over the brief's stored values —
+                # if you edit aliases.json or the xlsx, the sidebar should reflect
+                # the new truth even before a re-run.
+                name=info.display_name,
+                vertical=info.vertical,
                 status=brief.status,
                 last_run_at=brief.generated_at,
             ))
-        except Exception as exc:  # broken fixture
+        except Exception as exc:  # broken brief on disk
             out.append(AccountSummary(
-                id=account_dir.name,
-                name=account_dir.name,
-                vertical="(unknown)",
+                id=info.id,
+                name=info.display_name,
+                vertical=info.vertical,
                 status="failed",
                 error=f"brief.json invalid: {exc!s}",
             ))
