@@ -32,8 +32,10 @@ def detect_gaps(account_id: str) -> GapsStageOutput:
     goals_data = _load(account_id, "goals.json")
 
     goals_by_category: dict[str, list[str]] = defaultdict(list)
+    goals_by_id: dict[str, dict[str, Any]] = {}
     for g in goals_data.get("goals", []):
         goals_by_category[g["category"]].append(g["id"])
+        goals_by_id[g["id"]] = g
 
     gaps: list[Gap] = []
     evidence: dict[str, Evidence] = {}
@@ -70,6 +72,23 @@ def detect_gaps(account_id: str) -> GapsStageOutput:
             quote=_render_quote(signal_value),
         )
 
+        # The problem is: a gap card with only the usage signal as evidence forces the
+        # AM to mentally connect "feature underused" → "customer goal this blocks". They
+        # need both halves visible side by side.
+        # The way we solve this is: prepend each linked goal's transcript evidence IDs
+        # to this gap's evidence list (deduped). The brief assembler merges all stage
+        # evidence into one map, so these IDs resolve in the UI without any extra work.
+        goal_evidence_ids: list[str] = []
+        seen: set[str] = set()
+        for goal_id in sorted(linked):
+            goal = goals_by_id.get(goal_id)
+            if not goal:
+                continue
+            for goal_ev_id in goal.get("evidence_ids", []):
+                if goal_ev_id not in seen:
+                    seen.add(goal_ev_id)
+                    goal_evidence_ids.append(goal_ev_id)
+
         gaps.append(Gap(
             id=f"gap_{len(gaps) + 1:03d}",
             feature=facts["label"],
@@ -78,7 +97,7 @@ def detect_gaps(account_id: str) -> GapsStageOutput:
             summary=_summarize(facts, feature, signal_value),
             recommended_action=_recommend(facts, feature),
             confidence="high",
-            evidence_ids=[ev_id],
+            evidence_ids=goal_evidence_ids + [ev_id],
         ))
 
     gaps.sort(key=lambda g: g.severity, reverse=True)

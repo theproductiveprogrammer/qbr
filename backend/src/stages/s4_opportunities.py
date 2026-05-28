@@ -32,9 +32,11 @@ def detect_opportunities(account_id: str) -> OpportunitiesStageOutput:
 
     goals_by_category: dict[str, list[str]] = defaultdict(list)
     goal_statements: dict[str, str] = {}
+    goals_by_id: dict[str, dict[str, Any]] = {}
     for g in goals_data.get("goals", []):
         goals_by_category[g["category"]].append(g["id"])
         goal_statements[g["id"]] = g["statement"]
+        goals_by_id[g["id"]] = g
 
     opps: list[Opportunity] = []
     evidence: dict[str, Evidence] = {}
@@ -65,6 +67,22 @@ def detect_opportunities(account_id: str) -> OpportunitiesStageOutput:
             )
             ev_ids.append(ev_id)
 
+        # The problem is: opportunity cards need to show both the usage signals proving
+        # the product isn't owned AND the customer's own words motivating the pitch.
+        # The way we solve this is: prepend the linked goals' transcript evidence IDs
+        # to the opportunity's evidence list (deduped). The brief assembler merges
+        # everything into one evidence map at write time.
+        goal_evidence_ids: list[str] = []
+        seen: set[str] = set()
+        for goal_id in sorted(linked):
+            goal = goals_by_id.get(goal_id)
+            if not goal:
+                continue
+            for goal_ev_id in goal.get("evidence_ids", []):
+                if goal_ev_id not in seen:
+                    seen.add(goal_ev_id)
+                    goal_evidence_ids.append(goal_ev_id)
+
         opps.append(Opportunity(
             id=f"opp_{len(opps) + 1:03d}",
             product=facts["label"],
@@ -73,7 +91,7 @@ def detect_opportunities(account_id: str) -> OpportunitiesStageOutput:
             rationale=_rationale(facts, [goal_statements[gid] for gid in sorted(linked)]),
             signals=_signal_bullets(facts),
             confidence="med",  # rules-only confidence cap until LLM rationale lands
-            evidence_ids=ev_ids,
+            evidence_ids=goal_evidence_ids + ev_ids,
         ))
 
     opps.sort(key=lambda o: o.fit_score, reverse=True)
