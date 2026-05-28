@@ -88,6 +88,23 @@ export function SettingsPane() {
             label="Narrative model"
             value={<Code>{settings.configuration.models.narrative}</Code>}
           />
+          <KeyValue
+            label="Max extraction tokens"
+            value={
+              <span className="inline-flex items-baseline gap-2">
+                <span className="font-mono tabular-nums">
+                  {settings.configuration.max_extraction_tokens.toLocaleString()}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  per LLM call · transcripts beyond this are batched + deduped
+                </span>
+              </span>
+            }
+          />
+          <KeyValue
+            label="Config file"
+            value={<Code>{settings.configuration.config_file}</Code>}
+          />
         </KeyValueCard>
       </Section>
 

@@ -50,9 +50,25 @@ def test_link_hallucinated_quote_returns_none() -> None:
     assert link_quote(quote, file, corpus) is None
 
 
-def test_link_unknown_file_returns_none() -> None:
+def test_link_unknown_file_with_unique_quote_recovers_via_cross_file_fallback() -> None:
+    # The problem is: the LLM often confuses similarly-named files (e.g. names a
+    # quote as being in `account-review.txt` when it actually lives in
+    # `account-review-session-b.txt`).
+    # The way we solve this is: when the named file doesn't match, search all
+    # other transcripts; if exactly ONE contains the quote, use it.
     corpus = build_corpus("meridian")
+    # This quote exists in exactly one Meridian transcript — cross-file fallback
+    # should recover it even when the named file is wrong.
     quote = "We sent them always like SMS"
+    loc = link_quote(quote, "call-transcript--does-not-exist.txt", corpus)
+    assert loc is not None
+    assert loc.kind == "transcript"
+    assert "account-review" in loc.file
+
+
+def test_link_unknown_file_with_nonexistent_quote_returns_none() -> None:
+    corpus = build_corpus("meridian")
+    quote = "Our quarterly OKR is to launch the AI-powered retention engine by Q3"
     assert link_quote(quote, "call-transcript--does-not-exist.txt", corpus) is None
 
 
@@ -95,6 +111,60 @@ def test_link_email_quote_returns_email_locator() -> None:
     assert loc.line_end == 12
     assert loc.date == "2026-01-15"
     assert loc.sender == "matt@meridian.example"
+
+
+def test_link_quote_with_ellipsis_matches_fragments_in_order() -> None:
+    # The problem is: the LLM often emits a quote like "foo... bar" to indicate
+    # elided text mid-quote, even when told not to. The linker should match this
+    # to a single source turn that contains "foo [some words] bar".
+    # The way we solve this is: ellipsis-aware fallback that splits on the marker
+    # and checks each fragment appears in the same turn in the original order.
+    corpus = {
+        "transcripts": [{
+            "file": "test.txt",
+            "recorded_date": "2026-01-01",
+            "turns": [{
+                "line_start": 10,
+                "line_end": 12,
+                "timestamp": "1:23",
+                "speaker": "Customer",
+                "text": "I really want to grow our Google review count to push the map pack ranking up this quarter",
+            }],
+        }],
+    }
+    quote_with_ellipsis = "I really want to grow our Google review count to push the map pack"
+    loc = link_quote(quote_with_ellipsis, "test.txt", corpus)
+    assert loc is not None
+    assert loc.line_start == 10
+
+    # Now with an actual ellipsis in the middle
+    elided = "I really want to grow our Google review count… push the map pack"
+    loc2 = link_quote(elided, "test.txt", corpus)
+    assert loc2 is not None
+    assert loc2.line_start == 10
+
+
+def test_link_quote_ellipsis_requires_fragments_in_order() -> None:
+    # The problem is: ellipsis matching shouldn't allow fragments to appear in
+    # reverse order (that would be unfaithful to the source).
+    # The way we solve this is: _fragments_in_order advances `pos` past each
+    # match so subsequent fragments must come after.
+    corpus = {
+        "transcripts": [{
+            "file": "test.txt",
+            "recorded_date": "2026-01-01",
+            "turns": [{
+                "line_start": 1,
+                "line_end": 1,
+                "timestamp": "0:00",
+                "speaker": "Customer",
+                "text": "We want bar before foo in this order",
+            }],
+        }],
+    }
+    # Quote tries to claim foo comes before bar — should NOT match
+    quote_reversed = "foo… bar"
+    assert link_quote(quote_reversed, "test.txt", corpus) is None
 
 
 def test_link_hallucinated_email_quote_returns_none() -> None:

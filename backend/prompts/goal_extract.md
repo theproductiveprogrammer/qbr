@@ -42,7 +42,15 @@ For each goal:
   - `low` — inferred from indirect signals; the AM should verify before raising
 - **evidence**: at least one customer quote with:
   - **file**: the filename from the `=== FILE: ... ===` header above the relevant turn
-  - **quote**: copy the customer's words **verbatim** — character-for-character from the transcript. Do NOT paraphrase, do NOT summarize, do NOT add ellipses or `[...]`. The pipeline matches your quote back to the source — if your quote isn't in the file verbatim, it will be dropped.
+  - **quote**: copy the customer's words **verbatim** — character-for-character from the transcript. The pipeline does a literal substring match against the source — if your quote isn't in the file verbatim, it gets dropped.
+
+## Verbatim discipline — common LLM mistakes that cause your quote to be dropped
+
+- **Do NOT add `…` or `...` or `[...]`** to indicate elided text. If the powerful part of a quote is one sentence, quote that one sentence. If you need to cover two thoughts, emit **two separate quotes** with the same file, not one quote with an ellipsis joining them.
+- **Do NOT "fix" the transcript.** These are ASR outputs; they contain typos, mis-heard proper nouns ("auscraft" might appear as "allscraft" or "scene seven" as "sin7"), and ungrammatical phrasing. Copy what the file says, even if it looks wrong. The pipeline matches the file's text, not the corrected version.
+- **Do NOT abbreviate speaker labels** inside a quote. If the text says "Customer Success Manager", keep "Customer Success Manager" — don't shorten to "Customer".
+- **Do NOT join across speaker turns.** Each turn is one `MM:SS | Speaker` block. A quote must come from inside one block.
+- **Pick the shortest exact span that carries the meaning.** A clean 8-word substring is worth more than a 40-word approximation.
 
 A short exact quote beats a long paraphrased one. If a goal is supported across multiple transcripts, emit one short quote from each — that strengthens both the goal and the temporal trail the pipeline derives.
 

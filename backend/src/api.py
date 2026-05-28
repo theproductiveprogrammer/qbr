@@ -9,6 +9,7 @@ from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, StreamingResponse
 
+from .config import load_pipeline_config
 from .feature_catalog import CATALOG, Feature
 from .graph import PIPELINE_GRAPH
 from .ingest import ACCOUNTS, INPUT_DIR, _load_aliases, _load_xlsx
@@ -435,6 +436,7 @@ def get_settings() -> dict[str, Any]:
         for f in CATALOG.values()
     ]
 
+    pipeline_config = load_pipeline_config()
     return {
         "configuration": {
             "openai_key_set": bool(os.getenv("OPENAI_API_KEY")),
@@ -443,6 +445,8 @@ def get_settings() -> dict[str, Any]:
                 "extraction": MODEL_EXTRACTION,
                 "narrative": MODEL_NARRATIVE,
             },
+            "max_extraction_tokens": pipeline_config.max_extraction_tokens,
+            "config_file": "data/input/pipeline.config.json",
         },
         "discovery": {
             "aliases": aliases,

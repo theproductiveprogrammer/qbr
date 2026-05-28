@@ -176,6 +176,8 @@ export type SettingsSnapshot = {
       extraction: string
       narrative: string
     }
+    max_extraction_tokens: number
+    config_file: string
   }
   discovery: {
     aliases: Record<string, string>
