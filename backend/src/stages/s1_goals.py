@@ -20,9 +20,19 @@ GoalCategory = Literal[
     "messaging", "payments", "ai_adoption", "other",
 ]
 
-# After dedup, cap at this many goals (matches the prompt cap). Prevents
-# multi-batch accounts from blowing past the cap if many categories surface.
-FINAL_GOAL_CAP = 4
+def _render_prompt(template: str, top_goals: int) -> str:
+    # The problem is: the prompt body and the code's post-dedup cap have to
+    # agree on the same N. Hardcoding "4" in both places meant changing it took
+    # two edits and drift was easy.
+    # The way we solve this is: the prompt file ships with {{TOP_GOALS}} /
+    # {{TOP_GOALS_PLUS_ONE}} placeholders that this function substitutes at
+    # runtime using pipeline.config.json's top_goals. One number, one source.
+    # flow: extract_goals() -> _render_prompt() <-- HERE
+    return (
+        template
+        .replace("{{TOP_GOALS}}", str(top_goals))
+        .replace("{{TOP_GOALS_PLUS_ONE}}", str(top_goals + 1))
+    )
 
 
 class _ExtractedEvidence(BaseModel):
@@ -61,7 +71,7 @@ def extract_goals(account_id: str) -> GoalsStageOutput:
     corpus = _load_corpus(account_id)
     config = load_pipeline_config()
     batches = _batch_transcripts(corpus.get("transcripts", []), config.max_extraction_tokens)
-    system_prompt = PROMPT_PATH.read_text()
+    system_prompt = _render_prompt(PROMPT_PATH.read_text(), config.top_goals)
 
     all_raw_goals: list[_ExtractedGoal] = []
     batch_traces: list[dict[str, Any]] = []
@@ -95,7 +105,7 @@ def extract_goals(account_id: str) -> GoalsStageOutput:
     # Dedup across batches, then cap. For single-batch accounts this is a no-op
     # unless the LLM emits duplicates within the batch (rare with the prompt).
     deduped = _dedupe_goals(all_raw_goals)
-    capped = _cap_goals(deduped, FINAL_GOAL_CAP)
+    capped = _cap_goals(deduped, config.top_goals)
 
     _write_trace(account_id, system_prompt, batches, batch_traces, all_raw_goals, capped)
     return _link_and_assign_ids(account_id, capped, corpus)

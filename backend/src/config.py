@@ -17,6 +17,10 @@ DEFAULT_MAX_EXTRACTION_TOKENS = 80_000
 DEFAULT_EXTRACTION_TEMPERATURE = 0.3
 DEFAULT_EXTRACTION_SEED: int | None = None
 DEFAULT_EXTRACTION_MODEL = "gpt-5.5"
+# Final cap on goals surfaced per brief AFTER cross-batch dedup. Mirrored into
+# the goal_extract prompt at runtime so the LLM's stated upper bound matches.
+# Most accounts have 2-3 real strategic goals; 4 leaves room for one bonus.
+DEFAULT_TOP_GOALS = 4
 
 
 @dataclass(frozen=True)
@@ -31,6 +35,10 @@ class PipelineConfig:
     # discipline + better instruction-following; gpt-5.4-mini = cheaper, more
     # variable. Other LLM stages (when they land) have their own config knobs.
     extraction_model: str = DEFAULT_EXTRACTION_MODEL
+    # Final goal cap surfaced per brief. Threaded into both the prompt (hard
+    # cap the LLM is told to respect) AND the post-dedup truncation, so
+    # changing this one number stays consistent end-to-end.
+    top_goals: int = DEFAULT_TOP_GOALS
 
 
 @lru_cache(maxsize=1)
@@ -54,4 +62,5 @@ def load_pipeline_config() -> PipelineConfig:
         extraction_temperature=float(data.get("extraction_temperature", DEFAULT_EXTRACTION_TEMPERATURE)),
         extraction_seed=int(seed_val) if seed_val is not None else None,
         extraction_model=str(data.get("extraction_model", DEFAULT_EXTRACTION_MODEL)),
+        top_goals=max(1, int(data.get("top_goals", DEFAULT_TOP_GOALS))),
     )

@@ -184,6 +184,7 @@ export type SettingsSnapshot = {
     max_extraction_tokens: number
     extraction_temperature: number
     extraction_seed: number | null
+    top_goals: number
     config_file: string
   }
   discovery: {

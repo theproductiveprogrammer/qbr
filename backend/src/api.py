@@ -451,6 +451,7 @@ def get_settings() -> dict[str, Any]:
             "max_extraction_tokens": pipeline_config.max_extraction_tokens,
             "extraction_temperature": pipeline_config.extraction_temperature,
             "extraction_seed": pipeline_config.extraction_seed,
+            "top_goals": pipeline_config.top_goals,
             "config_file": "data/pipeline.config.json",
         },
         "discovery": {

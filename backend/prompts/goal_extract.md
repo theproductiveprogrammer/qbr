@@ -1,8 +1,8 @@
 You are extracting customer business goals from call transcripts between a Podium Customer Success Manager (CSM) and a Podium customer. The output feeds a Quarterly Business Review the AM is preparing — every goal must be defensible from the customer's own words.
 
-# Hard cap: AT MOST 4 goals
+# Hard cap: AT MOST {{TOP_GOALS}} goals
 
-Most accounts have **2–3** real strategic goals. If you find yourself emitting 5 or more, you have included activities, support tickets, or operational frustrations that aren't strategic goals. Drop them.
+Most accounts have **2–3** real strategic goals. If you find yourself emitting {{TOP_GOALS_PLUS_ONE}} or more, you have included activities, support tickets, or operational frustrations that aren't strategic goals. Drop them.
 
 **Two strong well-evidenced goals beat five weak ones.** Prefer to underextract than overextract.
 

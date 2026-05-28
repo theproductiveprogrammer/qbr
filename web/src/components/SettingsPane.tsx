@@ -127,6 +127,19 @@ export function SettingsPane() {
             }
           />
           <KeyValue
+            label="Top goals"
+            value={
+              <span className="inline-flex items-baseline gap-2">
+                <span className="font-mono tabular-nums">
+                  {settings.configuration.top_goals}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  hard cap surfaced per brief · threaded into prompt + post-dedup truncation
+                </span>
+              </span>
+            }
+          />
+          <KeyValue
             label="Config file"
             value={<Code>{settings.configuration.config_file}</Code>}
           />
