@@ -54,6 +54,7 @@ export function App() {
               ) : selectedId ? (
                 <ResultsPane
                   accountId={selectedId}
+                  account={accounts.find(a => a.id === selectedId)}
                   onRunComplete={() => setRefreshKey(k => k + 1)}
                 />
               ) : (

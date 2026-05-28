@@ -17,9 +17,15 @@ export async function listAccounts(): Promise<AccountSummary[]> {
   return jsonOrThrow(await fetch("/accounts"))
 }
 
-export async function getBrief(accountId: string): Promise<Brief> {
+export async function getBrief(accountId: string): Promise<Brief | null> {
+  // The problem is: an account that exists but has never been run returns 404
+  // from /brief — that's a normal state, not an error. Throwing on 404 made the
+  // UI show "404 Not Found" instead of an empty-state with a Run button.
+  // The way we solve this is: 404 → null. Real errors (5xx, network) still throw.
   // flow: UI account-select -> ResultsPane.useEffect -> getBrief() <-- HERE -> GET /brief
-  return jsonOrThrow(await fetch(`/accounts/${accountId}/brief`))
+  const res = await fetch(`/accounts/${accountId}/brief`)
+  if (res.status === 404) return null
+  return jsonOrThrow(res)
 }
 
 export async function getSettings(): Promise<SettingsSnapshot> {

@@ -11,6 +11,7 @@ import { getBrief } from "@/lib/api"
 import { useRunPipeline } from "@/lib/useRunPipeline"
 import { cn } from "@/lib/utils"
 import type {
+  AccountSummary,
   Brief,
   Confidence,
   ConfidenceSummary as ConfidenceSummaryT,
@@ -32,9 +33,11 @@ const VIEW_LABELS: Record<View, string> = {
 
 export function ResultsPane({
   accountId,
+  account,
   onRunComplete,
 }: {
   accountId: string
+  account: AccountSummary | undefined
   onRunComplete: () => void
 }) {
   // The problem is: the right pane has to coordinate three live concerns —
@@ -90,12 +93,45 @@ export function ResultsPane({
     run.start()
   }
 
-  if (error || !brief) {
+  if (error) {
+    // Real network/parse error (not a 404 — that's handled as brief=null below).
     return (
       <div className="space-y-4 p-10">
-        <div className="text-sm text-foreground">No brief yet for this account.</div>
+        <div className="text-sm text-destructive">Failed to load brief: {error}</div>
         <RunButton status={run.status} hasBrief={false} onRun={handleRun} />
-        {error && <div className="text-sm text-destructive">{error}</div>}
+      </div>
+    )
+  }
+
+  if (!brief) {
+    // The problem is: a freshly-discovered account (no output/<id>/brief.json
+    // yet) needs to be runnable — and once the user clicks Run, they should see
+    // the pipeline progress, not stay stuck on the empty state.
+    // The way we solve this is: idle → empty state with Run; running/complete/
+    // failed → render the Pipeline view directly so the user can watch stages
+    // tick. handleRun() also sets view="pipeline" so this branch picks up.
+    if (run.status === "idle") {
+      return (
+        <div className="mx-auto max-w-5xl space-y-6 p-10">
+          <PendingHeader account={account} accountId={accountId} runStatus={run.status} onRun={handleRun} />
+          <Card>
+            <CardContent className="space-y-3 p-6">
+              <div className="text-sm text-foreground">
+                No brief yet for this account. Run the pipeline to generate one.
+              </div>
+              <div className="text-xs text-muted-foreground">
+                Source data lives in <code className="font-mono">data/input/{accountId}/</code>.
+                Outputs land in <code className="font-mono">data/output/{accountId}/</code>.
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      )
+    }
+    return (
+      <div className="mx-auto max-w-5xl space-y-6 p-10">
+        <PendingHeader account={account} accountId={accountId} runStatus={run.status} onRun={handleRun} />
+        <PipelinePane accountId={accountId} liveRun={run} />
       </div>
     )
   }
@@ -164,6 +200,49 @@ function Header({
         </div>
       </div>
       <RunButton status={runStatus} hasBrief={true} onRun={onRun} />
+    </div>
+  )
+}
+
+function PendingHeader({
+  account,
+  accountId,
+  runStatus,
+  onRun,
+}: {
+  account: AccountSummary | undefined
+  accountId: string
+  runStatus: import("@/lib/useRunPipeline").RunStatus
+  onRun: () => void
+}) {
+  // The problem is: the running/empty states need the same visual scaffolding
+  // as a loaded brief (avatar + name + vertical + Run button) but without
+  // brief-derived fields (generated_at, pipeline_version).
+  // The way we solve this is: read identity from AccountSummary (which comes
+  // from input-side discovery, so it's available before any run has happened)
+  // and show a "Not run yet" pill in place of the QBR-brief pill.
+  const name = account?.name ?? accountId
+  const vertical = account?.vertical
+  return (
+    <div className="flex items-start justify-between gap-4">
+      <div className="flex items-start gap-4">
+        <AccountAvatar id={accountId} name={name} size="lg" variant="round" />
+        <div>
+          <div className="flex items-center gap-2">
+            <h2 className="text-[22px] font-semibold leading-tight text-foreground">
+              {name}
+            </h2>
+            <span className="inline-flex items-center gap-1 rounded-full bg-muted px-2 py-0.5 text-[11px] font-medium text-muted-foreground">
+              <Info className="h-3 w-3" />
+              {runStatus === "idle" ? "Not run yet" : "Pipeline running"}
+            </span>
+          </div>
+          {vertical && (
+            <div className="mt-1 text-sm text-muted-foreground">{vertical}</div>
+          )}
+        </div>
+      </div>
+      <RunButton status={runStatus} hasBrief={false} onRun={onRun} />
     </div>
   )
 }
