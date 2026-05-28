@@ -34,8 +34,8 @@ All commands are mise tasks — run them from the repo root.
 # 1. install backend (uv sync) + frontend (pnpm install) dependencies
 mise run setup
 
-# 2. set the OpenAI key — either export it or drop it into .env at the repo root
-echo "OPENAI_API_KEY=sk-..." > .env
+# 2. set the OpenAI key — either export it or drop it into backend/.env
+echo "OPENAI_API_KEY=sk-..." > backend/.env
 
 # 3. start backend + frontend together (Ctrl+C stops both)
 mise run dev
@@ -57,15 +57,15 @@ mise tasks          # list everything
 ## Project layout
 
 ```
-backend/
-  data/              source transcripts, usage.xlsx, feature_catalog.json
+data/
+  input/             source transcripts, usage.xlsx, feature_catalog.json
   output/<account>/  JSON artifacts written by each pipeline stage
+backend/
   src/               ingest, stages/, LangGraph wiring, schemas, llm, store, api
   prompts/           one .md per LLM-driven stage
   tests/             schema + evidence smoke tests
 web/
   src/               React + Vite + TS — AccountList, ResultsPane, EvidenceRail, etc.
-DESIGN.md            architecture, decisions, eval approach
 ```
 
 **Stack**: FastAPI · LangGraph · pydantic · OpenAI (`gpt-5.5` narrative, `gpt-5.4-mini` extraction) · React · Vite · Tailwind · shadcn/ui · Lucide · Inter. No DB, no auth — JSON files on disk.
