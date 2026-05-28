@@ -7,7 +7,7 @@ node = "20"
 python.uv_venv_auto = true
 
 [env]
-_.file = ".env"
+_.file = "backend/.env"
 
 [tasks.setup]
 description = "Install backend (uv sync) + frontend (npm install) dependencies"
