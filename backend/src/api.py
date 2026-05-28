@@ -171,9 +171,9 @@ PIPELINE_STAGES = [
         "id": "s5",
         "node": "generate_narrative",
         "name": "Narrative generation",
-        "description": "Compose goals + working + gaps + opportunities + evidence into the final brief.json the UI renders.",
+        "description": "One LLM call narrates each gap (summary + recommended action) and each opportunity (rationale + recommended action) keyed by id; then compose the final brief.json.",
         "artifact": "brief.json",
-        "is_llm": False,
+        "is_llm": True,
         "summarize": False,
     },
 ]
