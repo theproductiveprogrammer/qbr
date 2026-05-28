@@ -431,9 +431,6 @@ def get_settings() -> dict[str, Any]:
             "goal_categories": f.goal_categories,
             "ownership_rule": describe_ownership(f),
             "active_signal": describe_activity(f),
-            "gap_message": f.gap_message,
-            "recommended_action": f.recommended_action,
-            "opportunity_message": f.opportunity_message,
         }
         for f in CATALOG.values()
     ]
