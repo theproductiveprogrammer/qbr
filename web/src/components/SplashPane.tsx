@@ -56,8 +56,12 @@ const COMPONENTS: Components = {
     <li className="pl-1 text-[17px] leading-[1.7] text-foreground/85">{children}</li>
   ),
   code: ({ children, className }) => {
-    // Fenced blocks come with a language-* className; inline code does not.
-    const isBlock = !!className
+    // Fenced blocks come with a language-* className OR with newline content (fenced
+    // without a language tag, like the README's Project layout block). Either way
+    // they're block — let the parent <pre> handle styling. Only single-line untagged
+    // strings get the inline chip.
+    const text = String(children ?? "")
+    const isBlock = !!className || text.includes("\n")
     if (isBlock) {
       return <code className={className}>{children}</code>
     }
