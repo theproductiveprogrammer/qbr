@@ -33,12 +33,80 @@ export async function getPipeline(accountId: string): Promise<PipelineSnapshot> 
 }
 
 export async function runAccount(accountId: string): Promise<Brief> {
-  // The problem is: the Run button needs to trigger the pipeline and block until the
-  // brief is fresh.
-  // The way we solve this is: synchronous POST that returns the completed brief — the
-  // UI just awaits it with a spinner.
-  // flow: UI Run button -> RunButton.onClick -> runAccount() <-- HERE -> POST /run
+  // The problem is: callers that don't need streaming (CLI / scripts) still want a
+  // simple awaitable that returns the final brief.
+  // The way we solve this is: synchronous POST that returns the completed brief.
+  // flow: callers -> runAccount() <-- HERE -> POST /run
   return jsonOrThrow(
     await fetch(`/accounts/${accountId}/run`, { method: "POST" })
   )
+}
+
+// ── SSE streaming run ──────────────────────────────────────────────────
+
+export type PipelineRunEvent =
+  | { type: "start"; data: { account_id: string; stages: string[] } }
+  | { type: "stage"; data: { node: string; completed: string[] } }
+  | { type: "done"; data: Brief }
+  | { type: "error"; data: { message: string; completed: string[] } }
+
+export async function runAccountStreamed(
+  accountId: string,
+  onEvent: (event: PipelineRunEvent) => void,
+  signal?: AbortSignal,
+): Promise<void> {
+  // The problem is: the UI wants live stage-by-stage progress while the LangGraph
+  // pipeline runs (~30-90s for a real account). EventSource only supports GET; we
+  // need POST. Solution: fetch() with streaming response body + a small SSE parser.
+  // The way we solve this is: read the body as chunks via ReadableStream, accumulate
+  // into a buffer, split on \n\n (the SSE event terminator), parse each event, and
+  // hand it to onEvent.
+  // flow: RunButton onClick -> useRunPipeline.start() -> runAccountStreamed() <-- HERE
+  const res = await fetch(`/accounts/${accountId}/run/stream`, {
+    method: "POST",
+    signal,
+  })
+  if (!res.ok || !res.body) {
+    const body = await res.text().catch(() => "")
+    throw new Error(`${res.status} ${res.statusText}: ${body || "(no body)"}`)
+  }
+
+  const reader = res.body.getReader()
+  const decoder = new TextDecoder()
+  let buffer = ""
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read()
+      if (done) break
+      buffer += decoder.decode(value, { stream: true })
+
+      let sepIdx: number
+      while ((sepIdx = buffer.indexOf("\n\n")) !== -1) {
+        const chunk = buffer.slice(0, sepIdx)
+        buffer = buffer.slice(sepIdx + 2)
+        const parsed = parseSSEChunk(chunk)
+        if (parsed) onEvent(parsed as PipelineRunEvent)
+      }
+    }
+  } finally {
+    reader.releaseLock()
+  }
+}
+
+function parseSSEChunk(chunk: string): { type: string; data: unknown } | null {
+  // Per SSE spec: lines starting with `event:` set the type; lines starting with
+  // `data:` are concatenated (newline-separated) and parsed as JSON.
+  let type = "message"
+  const dataLines: string[] = []
+  for (const line of chunk.split("\n")) {
+    if (line.startsWith("event:")) type = line.slice(6).trim()
+    else if (line.startsWith("data:")) dataLines.push(line.slice(5).trim())
+  }
+  if (dataLines.length === 0) return null
+  try {
+    return { type, data: JSON.parse(dataLines.join("\n")) }
+  } catch {
+    return null
+  }
 }

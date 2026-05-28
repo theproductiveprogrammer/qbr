@@ -121,6 +121,7 @@ export type AccountSummary = {
 
 export type PipelineStage = {
   id: string
+  node: string
   name: string
   description: string
   artifact: string
@@ -140,6 +141,9 @@ export type PipelineStage = {
 export type PipelineSnapshot = {
   account_id: string
   stages: PipelineStage[]
+  // Merged evidence map from brief.json — lets the UI resolve cross-stage
+  // evidence_ids (e.g. s4 referencing s1's transcript quotes).
+  merged_evidence: Record<string, Evidence>
 }
 
 export type SettingsAccount = {

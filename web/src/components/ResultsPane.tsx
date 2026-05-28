@@ -8,6 +8,7 @@ import { DeckOutline } from "@/components/DeckOutline"
 import { AccountAvatar } from "@/components/AccountAvatar"
 import { PipelinePane } from "@/components/PipelinePane"
 import { getBrief } from "@/lib/api"
+import { useRunPipeline } from "@/lib/useRunPipeline"
 import { cn } from "@/lib/utils"
 import type {
   Brief,
@@ -32,37 +33,62 @@ export function ResultsPane({
   accountId: string
   onRunComplete: () => void
 }) {
-  // The problem is: the right pane has to swap between three states (loading, no-brief,
-  // brief) and across two views (internal brief / customer outline) without flicker.
-  // The way we solve this is: fetch on accountId change with a clear loading/error
-  // gate, then branch on brief.status for the empty/insufficient case.
-  // flow: App.selectedId -> ResultsPane <-- HERE -> GET /accounts/{id}/brief
+  // The problem is: the right pane has to coordinate three live concerns —
+  // (1) hydrating the brief on account-select, (2) swapping between three views
+  // (internal / customer / pipeline), (3) running the pipeline with live SSE
+  // progress and consuming the fresh brief that comes back.
+  // The way we solve this is: on accountId change, fetch the on-disk brief; on
+  // Run click, useRunPipeline opens an SSE stream and on `done` we swap in its
+  // brief in-place (no separate refetch). Account-list refresh is fired via
+  // onRunComplete so the left-pane status icons update.
+  // flow: App.selectedId -> ResultsPane <-- HERE -> getBrief / useRunPipeline
   const [brief, setBrief] = useState<Brief | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [view, setView] = useState<View>("internal")
+
+  const run = useRunPipeline(accountId)
 
   useEffect(() => {
     let cancelled = false
     setLoading(true)
     setError(null)
     setBrief(null)
+    run.reset()
     getBrief(accountId)
       .then(b => { if (!cancelled) setBrief(b) })
       .catch(err => { if (!cancelled) setError(err instanceof Error ? err.message : String(err)) })
       .finally(() => { if (!cancelled) setLoading(false) })
     return () => { cancelled = true }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [accountId])
+
+  // When a streamed run completes, swap in the fresh brief and let the parent
+  // refresh the account list (status icons).
+  useEffect(() => {
+    if (run.status === "complete" && run.brief) {
+      setBrief(run.brief)
+      onRunComplete()
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [run.status, run.brief])
 
   if (loading) {
     return <div className="p-10 text-sm text-muted-foreground">Loading brief…</div>
+  }
+
+  // Wrap run.start so clicking Run pops the user to the Pipeline tab — that's
+  // where the live progress (and post-run artifacts) actually render.
+  function handleRun() {
+    setView("pipeline")
+    run.start()
   }
 
   if (error || !brief) {
     return (
       <div className="space-y-4 p-10">
         <div className="text-sm text-foreground">No brief yet for this account.</div>
-        <RunButton accountId={accountId} hasBrief={false} onComplete={onRunComplete} />
+        <RunButton status={run.status} hasBrief={false} onRun={handleRun} />
         {error && <div className="text-sm text-destructive">{error}</div>}
       </div>
     )
@@ -71,7 +97,7 @@ export function ResultsPane({
   if (brief.status === "insufficient_data") {
     return (
       <div className="mx-auto max-w-3xl space-y-6 p-10">
-        <Header brief={brief} onRunComplete={onRunComplete} />
+        <Header brief={brief} runStatus={run.status} onRun={handleRun} />
         <Card>
           <CardHeader>
             <div className="flex items-center gap-2">
@@ -89,17 +115,25 @@ export function ResultsPane({
 
   return (
     <div className="mx-auto max-w-5xl space-y-6 p-10">
-      <Header brief={brief} onRunComplete={onRunComplete} />
+      <Header brief={brief} runStatus={run.status} onRun={handleRun} />
       <ViewToggle view={view} onChange={setView} />
       {brief.review_banner && view !== "pipeline" && <ReviewBannerCard banner={brief.review_banner} />}
       {view === "internal" && <InternalView brief={brief} />}
       {view === "customer" && <DeckOutline outline={brief.outline} accountName={brief.account_name} />}
-      {view === "pipeline" && <PipelinePane accountId={brief.account_id} />}
+      {view === "pipeline" && <PipelinePane accountId={brief.account_id} liveRun={run} />}
     </div>
   )
 }
 
-function Header({ brief, onRunComplete }: { brief: Brief; onRunComplete: () => void }) {
+function Header({
+  brief,
+  runStatus,
+  onRun,
+}: {
+  brief: Brief
+  runStatus: import("@/lib/useRunPipeline").RunStatus
+  onRun: () => void
+}) {
   return (
     <div className="flex items-start justify-between gap-4">
       <div className="flex items-start gap-4">
@@ -123,7 +157,7 @@ function Header({ brief, onRunComplete }: { brief: Brief; onRunComplete: () => v
           </div>
         </div>
       </div>
-      <RunButton accountId={brief.account_id} hasBrief={true} onComplete={onRunComplete} />
+      <RunButton status={runStatus} hasBrief={true} onRun={onRun} />
     </div>
   )
 }

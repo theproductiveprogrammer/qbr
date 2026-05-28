@@ -6,8 +6,10 @@ from typing import Any
 
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import StreamingResponse
 
 from .feature_catalog import CATALOG, Feature
+from .graph import PIPELINE_GRAPH
 from .ingest import ACCOUNTS, INPUT_DIR, _load_aliases, _load_xlsx
 from .llm import MODEL_EXTRACTION, MODEL_NARRATIVE
 from .schemas import AccountSummary, Brief
@@ -37,16 +39,71 @@ def get_accounts() -> list[AccountSummary]:
 
 @app.post("/accounts/{account_id}/run", response_model=Brief)
 def run_account(account_id: str) -> Brief:
-    # The problem is: clicking Run needs to trigger the pipeline and block until the
-    # brief is ready for render.
-    # The way we solve this is: scaffold returns the existing fixture; once the
-    # LangGraph pipeline lands this will invoke it synchronously and write the result.
-    # flow: UI Run button -> RunButton.onClick -> POST /run -> run_account() <-- HERE
-    # TODO: replace stub with graph.run(account_id) once src/graph.py exists
+    # The problem is: callers that just want a brief without streaming need a sync
+    # path (CLI / tests / scripts).
+    # The way we solve this is: invoke the compiled LangGraph end-to-end, then read
+    # the brief.json that s5 wrote.
+    # flow: callers -> POST /run -> run_account() <-- HERE -> PIPELINE_GRAPH.invoke()
+    if account_id not in ACCOUNTS:
+        raise HTTPException(status_code=404, detail=f"Account '{account_id}' not found")
     try:
+        PIPELINE_GRAPH.invoke({"account_id": account_id})
         return read_brief(account_id)
     except FileNotFoundError:
+        raise HTTPException(status_code=500, detail="Pipeline finished but no brief.json was written")
+
+
+PIPELINE_NODES = [
+    "ingest",
+    "extract_goals",
+    "analyze_usage",
+    "detect_gaps",
+    "detect_opportunities",
+    "assemble_brief",
+]
+
+
+@app.post("/accounts/{account_id}/run/stream")
+async def run_stream(account_id: str):
+    # The problem is: the LangGraph pipeline takes 30-90s for a real account (one
+    # LLM call dominates); the user clicking Run needs to feel like something is
+    # happening, not stare at a spinner.
+    # The way we solve this is: SSE endpoint that streams a `start` event with the
+    # known stage list, one `stage` event per node as the graph finishes it, and a
+    # final `done` event carrying the full Brief so the UI re-renders without an
+    # extra fetch. Errors flow through as `error` events instead of HTTP 500 so the
+    # client always knows where the stream ended.
+    # flow: UI Run button -> runAccountStreamed() -> POST /run/stream -> run_stream() <-- HERE
+    if account_id not in ACCOUNTS:
         raise HTTPException(status_code=404, detail=f"Account '{account_id}' not found")
+
+    async def event_gen():
+        yield _sse("start", {"account_id": account_id, "stages": PIPELINE_NODES})
+        completed: list[str] = []
+        try:
+            async for event in PIPELINE_GRAPH.astream(
+                {"account_id": account_id}, stream_mode="updates"
+            ):
+                for node_name in event.keys():
+                    completed.append(node_name)
+                    yield _sse("stage", {"node": node_name, "completed": completed})
+            brief = read_brief(account_id)
+            yield _sse("done", brief.model_dump(mode="json"))
+        except Exception as exc:  # noqa: BLE001 — surface to client over SSE
+            yield _sse("error", {"message": str(exc), "completed": completed})
+
+    return StreamingResponse(
+        event_gen(),
+        media_type="text/event-stream",
+        headers={
+            "Cache-Control": "no-cache, no-transform",
+            "X-Accel-Buffering": "no",
+        },
+    )
+
+
+def _sse(event: str, data: dict[str, Any]) -> str:
+    return f"event: {event}\ndata: {json.dumps(data, default=str)}\n\n"
 
 
 @app.get("/accounts/{account_id}/brief", response_model=Brief)
@@ -65,6 +122,7 @@ def get_brief(account_id: str) -> Brief:
 PIPELINE_STAGES = [
     {
         "id": "s0",
+        "node": "ingest",
         "name": "Ingest",
         "description": "Parse transcripts (per-account) + load usage row from xlsx.",
         "artifact": "corpus.json",
@@ -73,6 +131,7 @@ PIPELINE_STAGES = [
     },
     {
         "id": "s1",
+        "node": "extract_goals",
         "name": "Goal extraction",
         "description": "LLM extracts customer goals with verbatim citations; pipeline links each quote back to its source turn.",
         "artifact": "goals.json",
@@ -82,6 +141,7 @@ PIPELINE_STAGES = [
     },
     {
         "id": "s2",
+        "node": "analyze_usage",
         "name": "Usage analysis",
         "description": "Apply feature catalog to the account's usage row → per-feature {owned, active, signals}.",
         "artifact": "usage_facts.json",
@@ -90,6 +150,7 @@ PIPELINE_STAGES = [
     },
     {
         "id": "s3",
+        "node": "detect_gaps",
         "name": "Gap detection",
         "description": "Rules over usage × goals × catalog. Feature owned-but-inactive AND maps to a stated goal → gap.",
         "artifact": "gaps.json",
@@ -98,6 +159,7 @@ PIPELINE_STAGES = [
     },
     {
         "id": "s4",
+        "node": "detect_opportunities",
         "name": "Opportunity mapping",
         "description": "Inverse rules: feature NOT owned AND maps to a stated goal → upsell opportunity.",
         "artifact": "opportunities.json",
@@ -106,6 +168,7 @@ PIPELINE_STAGES = [
     },
     {
         "id": "s5",
+        "node": "assemble_brief",
         "name": "Brief assembly",
         "description": "Compose goals + working + gaps + opportunities + evidence into the final brief.json the UI renders.",
         "artifact": "brief.json",
@@ -129,6 +192,7 @@ def get_pipeline(account_id: str) -> dict[str, Any]:
         artifact_path = OUTPUT_DIR / account_id / stage_def["artifact"]
         entry: dict[str, Any] = {
             "id": stage_def["id"],
+            "node": stage_def["node"],
             "name": stage_def["name"],
             "description": stage_def["description"],
             "artifact": stage_def["artifact"],
@@ -147,7 +211,28 @@ def get_pipeline(account_id: str) -> dict[str, Any]:
             if trace_path.exists():
                 entry["trace"] = json.loads(trace_path.read_text())
         stages.append(entry)
-    return {"account_id": account_id, "stages": stages}
+
+    # The problem is: per-stage files only carry the evidence each stage CREATES,
+    # but stages cross-reference earlier stages' evidence by id (gap.evidence_ids
+    # often points to s1 quotes). Reading a stage's JSON in isolation makes those
+    # references look dangling.
+    # The way we solve this is: include the merged evidence map from brief.json —
+    # the post-s5 union — so the Pipeline tab can resolve any evidence_id from any
+    # stage without having to chain-fetch.
+    merged_evidence: dict[str, Any] = {}
+    brief_path = OUTPUT_DIR / account_id / "brief.json"
+    if brief_path.exists():
+        try:
+            brief_data = json.loads(brief_path.read_text())
+            merged_evidence = brief_data.get("evidence", {}) or {}
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    return {
+        "account_id": account_id,
+        "stages": stages,
+        "merged_evidence": merged_evidence,
+    }
 
 
 def _summarize_corpus(data: dict[str, Any]) -> dict[str, Any]:
