@@ -171,35 +171,40 @@ function StageCard({
   const meta = VISUAL_META[visual]
   const Icon = meta.icon
   const hasData = stage.data !== null
-  const dimmed = visual === "pending" || visual === "skipped" || visual === "missing"
   // Walk this stage's data, collect every evidence_id it references, then resolve
   // each against the merged evidence map (handles cross-stage refs like s4
   // pointing at s1's transcript quotes).
   const referencedEvidenceIds = hasData ? collectEvidenceIds(stage.data) : []
   const resolvedEvidenceIds = referencedEvidenceIds.filter(id => id in mergedEvidence)
 
+  // Drama: future stages fade well back, the running stage pops with a blue glow
+  // + slight bloom, completed stages settle with a quiet emerald hairline, failed
+  // stages get a red glow for visibility.
+  const cardClass = cn(
+    "transition-all duration-300 ease-out",
+    visual === "pending" && "opacity-40 grayscale",
+    visual === "missing" && "opacity-50",
+    visual === "skipped" && "opacity-45 grayscale",
+    visual === "running" && "scale-[1.015] ring-2 ring-primary shadow-lg shadow-primary/15",
+    visual === "complete" && "ring-1 ring-emerald-200/70",
+    visual === "failed" && "ring-2 ring-rose-300 shadow-lg shadow-rose-200/40",
+  )
+
   return (
     <li>
-      <Card
-        className={cn(
-          "transition-all",
-          dimmed && "opacity-70",
-          visual === "running" && "ring-2 ring-primary/30",
-          visual === "failed" && "border-rose-200",
-        )}
-      >
+      <Card className={cardClass}>
         <CardContent className="space-y-3 p-5">
           <div className="flex items-start gap-3">
             <div
               className={cn(
-                "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md font-mono text-[12px] font-semibold tabular-nums",
+                "mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-md font-mono text-[12px] font-semibold tabular-nums transition-colors duration-300",
                 visual === "running"
-                  ? "bg-primary/10 text-primary"
+                  ? "bg-primary text-primary-foreground shadow-sm shadow-primary/30"
                   : visual === "complete"
-                  ? "bg-emerald-50 text-emerald-700"
+                  ? "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200"
                   : visual === "failed"
-                  ? "bg-rose-50 text-rose-700"
-                  : "bg-muted text-foreground",
+                  ? "bg-rose-50 text-rose-700 ring-1 ring-rose-200"
+                  : "bg-muted text-muted-foreground",
               )}
             >
               {stage.id}

@@ -18,11 +18,15 @@ import type {
   ReviewBanner as ReviewBannerT,
 } from "@/types"
 
-type View = "internal" | "customer" | "pipeline"
+type View = "customer" | "internal" | "pipeline"
+
+// Order matters — this is the ViewToggle's left-to-right order. Reads as a
+// drill-down: customer-facing → AM working brief → raw pipeline trace.
+const VIEW_ORDER: readonly View[] = ["customer", "internal", "pipeline"] as const
 
 const VIEW_LABELS: Record<View, string> = {
-  internal: "Internal brief",
   customer: "Customer outline",
+  internal: "Internal brief",
   pipeline: "Pipeline",
 }
 
@@ -45,7 +49,9 @@ export function ResultsPane({
   const [brief, setBrief] = useState<Brief | null>(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
-  const [view, setView] = useState<View>("internal")
+  // Default to the customer-facing view — it's the highest-level surface and the
+  // first thing an AM (or reviewer) wants to see; deeper views are drill-downs.
+  const [view, setView] = useState<View>("customer")
 
   const run = useRunPipeline(accountId)
 
@@ -165,7 +171,7 @@ function Header({
 function ViewToggle({ view, onChange }: { view: View; onChange: (v: View) => void }) {
   return (
     <div className="inline-flex items-center rounded-md border border-border bg-card p-1 shadow-sm">
-      {(["internal", "customer", "pipeline"] as const).map(v => (
+      {VIEW_ORDER.map(v => (
         <button
           key={v}
           type="button"
@@ -205,7 +211,7 @@ function ReviewBannerCard({ banner }: { banner: ReviewBannerT }) {
 
 function InternalView({ brief }: { brief: Brief }) {
   return (
-    <div className="space-y-6">
+    <div className="space-y-9">
       <ConfidenceSummaryStrip summary={brief.confidence_summary} />
 
       <Section icon={Target} title="Customer goals">
@@ -295,11 +301,16 @@ function Section({
   title: string
   children: ReactNode
 }) {
+  // The problem is: the old micro-cap headers (11px tracked uppercase) read as
+  // category labels, not section dividers — the brief looked like one long page.
+  // The way we solve this is: bump to a real section heading (17px regular) with
+  // a primary-blue icon. The size + color contrast carries the sectioning weight
+  // on its own without needing rules or background tints.
   return (
-    <section className="space-y-3">
-      <div className="flex items-center gap-2">
-        <Icon className="h-4 w-4 text-muted-foreground" />
-        <h3 className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+    <section className="space-y-3.5">
+      <div className="flex items-center gap-2.5">
+        <Icon className="h-[18px] w-[18px] text-primary" />
+        <h3 className="text-[17px] font-semibold tracking-tight text-foreground">
           {title}
         </h3>
       </div>
