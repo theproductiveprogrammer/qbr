@@ -88,7 +88,10 @@ def detect_opportunities(account_id: str) -> OpportunitiesStageOutput:
             product=facts["label"],
             fit_score=_score_fit(facts, len(linked)),
             goal_links=sorted(linked),
-            rationale=_rationale(facts, [goal_statements[gid] for gid in sorted(linked)]),
+            rationale=(
+                feature.opportunity_message
+                or _default_rationale(facts, [goal_statements[gid] for gid in sorted(linked)])
+            ),
             signals=_signal_bullets(facts),
             confidence="med",  # rules-only confidence cap until LLM rationale lands
             evidence_ids=goal_evidence_ids + ev_ids,
@@ -131,7 +134,8 @@ def _score_fit(facts: dict[str, Any], n_linked_goals: int) -> int:
     return min(55 + min(20, n_linked_goals * 10), 90)
 
 
-def _rationale(facts: dict[str, Any], goal_statements: list[str]) -> str:
+def _default_rationale(facts: dict[str, Any], goal_statements: list[str]) -> str:
+    # Fallback used when the catalog entry has no opportunity_message.
     label = facts["label"]
     if not goal_statements:
         return f"{label} aligns with goals the customer has stated this quarter."

@@ -175,21 +175,19 @@ export function SettingsPane() {
       <Section
         icon={Layers}
         title="Feature catalog"
-        description={`${settings.feature_catalog.length} Podium features the agent considers when detecting gaps and opportunities.`}
+        description={
+          <>
+            {settings.feature_catalog.length} Podium features the agent considers
+            when detecting gaps and opportunities. Source:{" "}
+            <Code>data/input/feature_catalog.json</Code>
+          </>
+        }
       >
-        <DataTable
-          headers={["Feature", "Goal categories", "Ownership", "Activity signal"]}
-          rows={settings.feature_catalog.map(f => [
-            <span key="l" className="font-medium text-foreground">{f.label}</span>,
-            <div key="g" className="flex flex-wrap gap-1">
-              {f.goal_categories.map(c => (
-                <CategoryChip key={c}>{c}</CategoryChip>
-              ))}
-            </div>,
-            <Code key="o" wrap>{f.ownership_rule}</Code>,
-            <Code key="a" wrap>{f.active_signal}</Code>,
-          ])}
-        />
+        <div className="space-y-3">
+          {settings.feature_catalog.map(f => (
+            <FeatureCard key={f.id} feature={f} />
+          ))}
+        </div>
       </Section>
 
       <Section icon={FolderOpen} title="Data sources">
@@ -366,6 +364,77 @@ function StatusPill({
       <Icon className="h-3 w-3" />
       {children}
     </span>
+  )
+}
+
+function FeatureCard({ feature }: { feature: import("@/types").SettingsFeature }) {
+  // The problem is: the catalog has structural rules (ownership/activity) AND
+  // optional copy (gap/opportunity/recommendation). A flat table hid the copy.
+  // The way we solve this is: per-feature card with the structural data inline
+  // and the optional messages as labeled blocks underneath. When a message is
+  // missing, the brief falls back to a generic template — show that explicitly.
+  return (
+    <Card>
+      <CardContent className="space-y-3 p-5">
+        <div className="flex items-start justify-between gap-3">
+          <div className="space-y-1">
+            <div className="font-semibold text-foreground">{feature.label}</div>
+            <div className="flex flex-wrap gap-1">
+              {feature.goal_categories.map(c => (
+                <CategoryChip key={c}>{c}</CategoryChip>
+              ))}
+            </div>
+          </div>
+          <Code>{feature.id}</Code>
+        </div>
+
+        <dl className="grid gap-2 text-sm sm:grid-cols-2">
+          <div>
+            <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+              Ownership
+            </dt>
+            <dd className="mt-0.5">
+              <Code wrap>{feature.ownership_rule}</Code>
+            </dd>
+          </div>
+          <div>
+            <dt className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+              Activity signal
+            </dt>
+            <dd className="mt-0.5">
+              <Code wrap>{feature.active_signal}</Code>
+            </dd>
+          </div>
+        </dl>
+
+        {(feature.gap_message || feature.recommended_action || feature.opportunity_message) && (
+          <div className="space-y-2 border-t border-border pt-3">
+            {feature.gap_message && (
+              <CopyBlock label="Gap message" text={feature.gap_message} />
+            )}
+            {feature.recommended_action && (
+              <CopyBlock label="Recommended action" text={feature.recommended_action} />
+            )}
+            {feature.opportunity_message && (
+              <CopyBlock label="Opportunity message" text={feature.opportunity_message} />
+            )}
+          </div>
+        )}
+      </CardContent>
+    </Card>
+  )
+}
+
+function CopyBlock({ label, text }: { label: string; text: string }) {
+  return (
+    <div>
+      <div className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
+        {label}
+      </div>
+      <p className="mt-0.5 text-[13px] leading-relaxed text-foreground/80">
+        {text}
+      </p>
+    </div>
   )
 }
 

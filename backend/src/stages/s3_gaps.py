@@ -63,7 +63,10 @@ def detect_gaps(account_id: str) -> GapsStageOutput:
 
         ev_id = f"ev_gap_{ev_counter:03d}"
         ev_counter += 1
-        active_col = feature.active_col or ""
+        # The underused-when rule names the column we cite as gap evidence. If a
+        # feature has no underused rule (e.g. paid_phones), it can't surface a
+        # gap (s2 returns active=None for it), so we never reach this branch.
+        active_col = _underused_column(feature) or ""
         signal_value = facts["signals"].get(active_col)
         evidence[ev_id] = Evidence(
             id=ev_id,
@@ -94,8 +97,8 @@ def detect_gaps(account_id: str) -> GapsStageOutput:
             feature=facts["label"],
             severity=_score_severity(facts, len(linked)),
             goal_links=sorted(linked),
-            summary=_summarize(facts, feature, signal_value),
-            recommended_action=_recommend(facts, feature),
+            summary=feature.gap_message or _default_summary(facts, feature, signal_value, active_col),
+            recommended_action=feature.recommended_action or _default_recommend(facts),
             confidence="high",
             evidence_ids=goal_evidence_ids + [ev_id],
         ))
@@ -142,20 +145,27 @@ def _score_severity(facts: dict[str, Any], n_linked_goals: int) -> int:
     return min(score, 95)
 
 
-def _summarize(facts: dict[str, Any], feature: Any, signal: Any) -> str:
-    label = facts["label"]
-    col = feature.active_col
+def _underused_column(feature: Any) -> str | None:
+    # The column the underused_when rule checks. Used as the gap's evidence locator.
+    rule = feature.underused_when
+    if rule is None:
+        return None
+    col = getattr(rule, "col", None)
+    return col if isinstance(col, str) else None
+
+
+def _default_summary(facts: dict[str, Any], feature: Any, signal: Any, col: str) -> str:
+    # Fallback used when the catalog entry has no gap_message — generic template
+    # keyed to the actual signal value.
     rendered = _render_quote(signal)
     return (
-        f"{label} is enabled but the L30 activity signal ({col} = {rendered}) is below "
-        f"the adoption threshold of {feature.active_threshold:g}. Customer has goals "
-        f"this feature could be serving."
+        f"{facts['label']} is enabled but the L30 signal ({col} = {rendered}) is below "
+        f"the adoption threshold. Customer has goals this feature could be serving."
     )
 
 
-def _recommend(facts: dict[str, Any], feature: Any) -> str:
-    label = facts["label"]
+def _default_recommend(facts: dict[str, Any]) -> str:
     return (
-        f"Audit {label} configuration with the customer this QBR — confirm it is set up "
-        f"correctly and surfaced where their workflow actually touches it."
+        f"Audit {facts['label']} configuration with the customer this QBR — confirm it "
+        f"is set up correctly and surfaced where their workflow actually touches it."
     )

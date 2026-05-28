@@ -10,7 +10,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, StreamingResponse
 
 from .config import load_pipeline_config
-from .feature_catalog import CATALOG, Feature
+from .feature_catalog import CATALOG, describe_activity, describe_ownership
 from .graph import PIPELINE_GRAPH
 from .ingest import ACCOUNTS, INPUT_DIR, _load_aliases, _load_xlsx
 from .llm import MODEL_NARRATIVE
@@ -430,8 +430,11 @@ def get_settings() -> dict[str, Any]:
             "id": f.id,
             "label": f.label,
             "goal_categories": f.goal_categories,
-            "ownership_rule": _describe_ownership(f),
-            "active_signal": _describe_activity(f),
+            "ownership_rule": describe_ownership(f),
+            "active_signal": describe_activity(f),
+            "gap_message": f.gap_message,
+            "recommended_action": f.recommended_action,
+            "opportunity_message": f.opportunity_message,
         }
         for f in CATALOG.values()
     ]
@@ -468,25 +471,6 @@ def get_settings() -> dict[str, Any]:
     }
 
 
-def _describe_ownership(f: Feature) -> str:
-    if f.ownership_rule == "always":
-        return "always owned (built-in)"
-    col = f.ownership_col or "(unset)"
-    if f.ownership_rule == "contains":
-        return f'{col} contains "{f.ownership_value}"'
-    if f.ownership_rule == "equals":
-        return f'{col} == "{f.ownership_value}"'
-    if f.ownership_rule == "gt_0":
-        return f"{col} > 0"
-    if f.ownership_rule == "any_lifetime":
-        return f"{col} ever > 0"
-    return f.ownership_rule
-
-
-def _describe_activity(f: Feature) -> str:
-    if f.active_col is None:
-        return "(no signal defined)"
-    return f"{f.active_col} ≥ {f.active_threshold:g}"
 
 
 if __name__ == "__main__":
