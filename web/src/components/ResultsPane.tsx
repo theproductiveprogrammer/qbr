@@ -156,13 +156,29 @@ export function ResultsPane({
   }
 
   return (
-    <div className="mx-auto max-w-5xl space-y-5 p-8">
-      <Header brief={brief} runStatus={run.status} onRun={handleRun} />
-      <ViewToggle view={view} onChange={setView} />
-      {brief.review_banner && view !== "pipeline" && <ReviewBannerCard banner={brief.review_banner} />}
-      {view === "internal" && <InternalView brief={brief} />}
-      {view === "customer" && <DeckOutline outline={brief.outline} accountName={brief.account_name} />}
-      {view === "pipeline" && <PipelinePane accountId={brief.account_id} liveRun={run} />}
+    <div className="mx-auto max-w-5xl">
+      {/* The problem is: with the whole brief in one scroll, the account
+          identity + view toggle scroll out of view as soon as the user reads
+          past Customer goals — they lose context on which account they're in
+          and lose the ability to switch views without scrolling back.
+          The way we solve this is: sticky region pinned to the top of the
+          main scroll container. It contains Header + ViewToggle always, plus
+          the ConfidenceSummaryStrip when we're on Internal Brief (where the
+          strip is contextual). bg-background occludes scrolling content. */}
+      <div className="sticky top-0 z-20 space-y-4 border-b border-border/60 bg-background px-8 pb-4 pt-8">
+        <Header brief={brief} runStatus={run.status} onRun={handleRun} />
+        <ViewToggle view={view} onChange={setView} />
+        {view === "internal" && (
+          <ConfidenceSummaryStrip summary={brief.confidence_summary} />
+        )}
+      </div>
+
+      <div className="space-y-5 px-8 pb-8 pt-5">
+        {brief.review_banner && view !== "pipeline" && <ReviewBannerCard banner={brief.review_banner} />}
+        {view === "internal" && <InternalView brief={brief} />}
+        {view === "customer" && <DeckOutline outline={brief.outline} accountName={brief.account_name} />}
+        {view === "pipeline" && <PipelinePane accountId={brief.account_id} liveRun={run} />}
+      </div>
     </div>
   )
 }
@@ -289,10 +305,10 @@ function ReviewBannerCard({ banner }: { banner: ReviewBannerT }) {
 }
 
 function InternalView({ brief }: { brief: Brief }) {
+  // ConfidenceSummaryStrip is rendered by ResultsPane up in the sticky header
+  // region — it should stay pinned with the view toggle as the user scrolls.
   return (
     <div className="space-y-7">
-      <ConfidenceSummaryStrip summary={brief.confidence_summary} />
-
       <Section icon={Target} title="Customer goals">
         <ClaimGroup>
           {brief.goals.map(goal => (
