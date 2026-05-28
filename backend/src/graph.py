@@ -66,10 +66,10 @@ def node_detect_opportunities(state: QBRState) -> dict[str, Any]:
     return {"stages_completed": _bump(state, "s4_opportunities")}
 
 
-def node_assemble_brief(state: QBRState) -> dict[str, Any]:
+def node_generate_narrative(state: QBRState) -> dict[str, Any]:
     brief = assemble_brief(state["account_id"])
     write_brief_to_disk(brief)
-    return {"stages_completed": _bump(state, "s5_brief")}
+    return {"stages_completed": _bump(state, "s5_narrative")}
 
 
 # ──────────────────────────── routing ────────────────────────────
@@ -81,7 +81,7 @@ def route_after_ingest(state: QBRState) -> str:
     # The way we solve this is: branch on `has_usage` set by ingest. The "no usage"
     # path jumps straight to s5 which writes an insufficient_data brief based on
     # the corpus alone (no apex-or-anything literal in the code).
-    return "extract_goals" if state.get("has_usage") else "assemble_brief"
+    return "extract_goals" if state.get("has_usage") else "generate_narrative"
 
 
 # ─────────────────────────── compiled graph ───────────────────────────
@@ -108,7 +108,7 @@ def build_graph():
     g.add_node("analyze_usage", node_analyze_usage)
     g.add_node("detect_gaps", node_detect_gaps)
     g.add_node("detect_opportunities", node_detect_opportunities)
-    g.add_node("assemble_brief", node_assemble_brief)
+    g.add_node("generate_narrative", node_generate_narrative)
 
     g.add_edge(START, "ingest")
     g.add_conditional_edges(
@@ -116,14 +116,14 @@ def build_graph():
         route_after_ingest,
         {
             "extract_goals": "extract_goals",
-            "assemble_brief": "assemble_brief",
+            "generate_narrative": "generate_narrative",
         },
     )
     g.add_edge("extract_goals", "analyze_usage")
     g.add_edge("analyze_usage", "detect_gaps")
     g.add_edge("detect_gaps", "detect_opportunities")
-    g.add_edge("detect_opportunities", "assemble_brief")
-    g.add_edge("assemble_brief", END)
+    g.add_edge("detect_opportunities", "generate_narrative")
+    g.add_edge("generate_narrative", END)
 
     return g.compile()
 

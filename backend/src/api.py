@@ -61,7 +61,7 @@ PIPELINE_NODES = [
     "analyze_usage",
     "detect_gaps",
     "detect_opportunities",
-    "assemble_brief",
+    "generate_narrative",
 ]
 
 
@@ -170,8 +170,8 @@ PIPELINE_STAGES = [
     },
     {
         "id": "s5",
-        "node": "assemble_brief",
-        "name": "Brief assembly",
+        "node": "generate_narrative",
+        "name": "Narrative generation",
         "description": "Compose goals + working + gaps + opportunities + evidence into the final brief.json the UI renders.",
         "artifact": "brief.json",
         "is_llm": False,

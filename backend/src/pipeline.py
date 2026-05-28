@@ -73,7 +73,7 @@ def _run_single_stage(account_id: str, stage: str) -> None:
         path = write_opportunities(out)
         _say(f"  → {_rel(path)}  ·  {len(out.opportunities)} opportunities")
     elif stage == "s5":
-        _stage("s5 brief", account_id)
+        _stage("s5 narrative", account_id)
         brief = assemble_brief(account_id)
         path = write_brief_to_disk(brief)
         _say(f"  → {_rel(path)}  ·  status={brief.status}")

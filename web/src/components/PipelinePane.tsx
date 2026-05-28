@@ -31,7 +31,7 @@ const CANONICAL_NODES = [
   { id: "s2", node: "analyze_usage", name: "Usage analysis", is_llm: false },
   { id: "s3", node: "detect_gaps", name: "Gap detection", is_llm: false },
   { id: "s4", node: "detect_opportunities", name: "Opportunity mapping", is_llm: false },
-  { id: "s5", node: "assemble_brief", name: "Brief assembly", is_llm: false },
+  { id: "s5", node: "generate_narrative", name: "Narrative generation", is_llm: false },
 ] as const
 
 export function PipelinePane({

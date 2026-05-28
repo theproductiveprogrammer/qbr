@@ -12,7 +12,7 @@ const STAGE_LABEL: Record<string, string> = {
   analyze_usage: "Usage",
   detect_gaps: "Gaps",
   detect_opportunities: "Opps",
-  assemble_brief: "Brief",
+  generate_narrative: "Narrative",
 }
 
 type ChipState = "pending" | "running" | "complete" | "skipped" | "failed"
