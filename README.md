@@ -1,35 +1,79 @@
 # AI Account Review & Expansion Agent
 
-A local LangGraph pipeline plus a React UI that turns one account's call transcripts + usage data into a QBR-ready brief and a customer-facing outline. Every claim sits next to its evidence — no tooltips, no hidden state.
+> Unifying fragmented customer data into a clear, actionable account narrative to help Account Managers prepare QBRs.
 
-Built for the Podium AI GTM Engineer case study. Design rationale lives in [`DESIGN.md`](./DESIGN.md).
+Reads call transcripts + a usage spreadsheet, produces a QBR brief with goals/gaps/upsell each traceable and cited to sources.
 
-## What it does
+## What is Success?
+> ### Goal: Save Account Managers 30–60 minutes per account and improve QBR quality.
+### Metrics
+| Leading                                                      | Lagging                                                     |
+|--------------------------------------------------------------|-------------------------------------------------------------|
+| 1. Time saved per QBR<br>2. % accounts with identified gaps<br>3. AM adoption | 1. Expansion revenue<br>2. Feature adoption<br>3. Retention |
 
-For each account, the pipeline produces:
+## Deviations Handled
+| Deviation                                                    | Handled                                                      |
+|--------------------------------------------------------------|--------------------------------------------------------------|
+| Transcripts use “Meridian / Northfield” and the usage spreadsheet uses “Auscraft / Mr Sparky”. | Added an `data/aliases.json` to handle name mappings so we can reconcile slightly differing names. |
+| The brief mentions emails and call transcripts but the data provided consisted of only call transcripts.  | Added both `/transcripts` and `/emails`  support in prompts. **No email parsing yet** but can easily be slotted in when emails are available. |
 
-1. **Internal AM brief** — goals, what's working, ranked adoption gaps, ranked upsell opportunities. Every claim carries a confidence label and inline evidence (transcript line + timestamp, or specific usage column).
-2. **Customer-facing outline** — structured QBR headings (Goals → Performance → Gaps → Recommendations) rendered in the UI.
-3. **Auditable intermediates** — `goals.json`, `usage_facts.json`, `gaps.json`, `opportunities.json`, `brief.json` written to `output/<account>/`. Each stage is independently inspectable and re-runnable.
+## The Pipeline
+```
+                    Ingestion
+                        ↓
+     +------------------------------------+
+     ↓                                    ↓
+Goal Extraction                    Usage Analysis
+	 ↓                                    ↓
+     +------------------------------------+
+	                    ↓ 
+                  Gap Detection
+	                    ↓ 
+                Opportunity Mapping
+	                    ↓ 
+                Narrative Generation
+	                    ↓ 
+                       / \
+             +--------/   \-------+
+             ↓                    ↓
+        Customer Outline     Internal Brief
+```
 
-The **React UI** is the primary surface:
-- **Left pane**: list of accounts with run status.
-- **Right pane**: results for the selected account — goals, gaps, opportunities, outline, each item with a confidence badge and its evidence rendered alongside.
-- **Run button** triggers the backend pipeline synchronously and renders the brief on completion.
+A six-stage resumable pipeline chain with structured JSON artifacts.
+1. **Ingestion** walks the `<account>` folder and parses the available `/transcripts` and `/emails` and batches them for processing (based on configurable token limits).
+2. **Goal extraction** runs map-reduce over the transcripts and produces a list of customer goals with transcript-line citations.
+3. **Usage analysis** is a deterministic transform of the account data into per-feature facts (owned / active / usage / benchmark).
+4. **Gap detection** is a rule pass — features that are owned-but-underused.
+5. **Opportunity mapping** is rules-driven candidate generation with LLM-written rationales.
+6. **Narrative generation** writes the brief and customer outline from those four artefacts.
 
-## How it works (one paragraph)
+## Risk Mitigations
+| Risk                     | Mitigation                                                   |
+|--------------------------|--------------------------------------------------------------|
+| Noisy/Incomplete data    | Ingestion pass can clean up noise. Pipeline can be re-run when additional data available. |
+| Incorrect goal inference | **Citations.** Every claim made by the LLM is traced back to the source (citations). These citations are auto-checked by a “linker” component that discards any incorrectly linked claims. |
+| Low trust in AI outputs  | **Evidence** for every output detail in the brief are displayed to the Account Manager and **traceable** back to the source transcript/email by clicking to review. |
+|                          | **Confidence labels** are shown to the Account Manager which help clarify if the given claim (goal/performance/gap/upsell) is low or medium confidence and needs AM judgement. |
+| Hallucinations           | Every claim generated by the LLM has a corresponding citation which is auto-checked by a “linker” component. The final report is prepared only from quotes gathered in previous stages and so the final narration cannot invent claims either. |
+|                          | **Rules judge, the LLM writes.** Gaps and opportunities are surfaced by deterministic rules over usage + goals + the feature catalog. The LLM narrates the rule outputs — it does not decide what to output. |
 
-A five-stage prompt chain over structured JSON.
-1. **Goal extraction** runs map-reduce over the transcripts and produces a list of customer goals with transcript-line citations.
-2. **Usage analysis** is a deterministic transform of the spreadsheet row into per-feature facts (owned / active / usage / benchmark).
-3. **Gap detection** is a rule pass — features that are owned-but-underused AND map to a stated goal.
-4. **Opportunity mapping** is rules-driven candidate generation with LLM-written rationales.
-5. **Narrative generation** writes the brief and deck from those four artifacts; it cannot invent claims because it only quotes from evidence the prior stages collected.
+## Key Architectural Decisions
+1. **Category-based dedup** over **similarity scoring**. Goals are dedupe by category (a controlled set that maps to features), not by texual similarity. Two different goals in the same category map to the same recommendation and reduces clutter in the brief.
+2. **Linker component** for LLM reliability. Every quote is substring-matched against the source. Failed matches get dropped (with a warning). Cross-file fallback handles the rare case where the LLM mis-labels which transcript the quote came from.
+6. **Configurable Feature Mapping** — Available Podium features are defined in`feature_catalog.json`  so we can use tweak and update actual Podium features and usage flexibly without changing the code.
+3. **JSON tiny feature rules**. The `feature_catalog.json` contains a "mini-DSL" that allows us to define a deterministic mapping between the account data and feature usage.
+4. **Rules vs LLM**. The LLM only extracts goals + narrates the rule outputs. This gives reliability, speed, cost benefits, and makes it easy to change quickly without needing prompt engineering.
+5. Temperature `0.3`, not `0`. Slight variance occasionally surfaces new goals.
+6. **Durable Pipeline** — Stages with intermediate state stored as pointers. Uses LangGraph for durability, reliability, and retries. Each stage is independently inspectable and re-runnable.
+7. **Traceable & Auditable** — `goals.json`, `usage_facts.json`, `gaps.json`, `opportunities.json`, `brief.json` written to `output/<account>/`. 
+
+## Non-Goals for this build
+*  auth, multi-tenant, real email parsing (stub in place), cross-account benchmarks, Slack/Notion integration, CRM integration, scheduled re-runs.
+
+
 
 ## Quickstart
-
-All commands are mise tasks — run them from the repo root.
-
+All commands are [mise](https://mise.jdx.dev/) tasks (install [mise](https://mise.jdx.dev/) or manually run the commands found in `mise.toml`).
 ```bash
 # 1. install backend (uv sync) + frontend (npm install) dependencies
 mise run setup
@@ -52,48 +96,29 @@ mise run web        # frontend only on :5173
 mise run test       # backend schema + pipeline tests
 mise run typecheck  # frontend type check
 mise tasks          # list everything
+mise run pipeline -- --account apex  # run pipeline from CLI instead of UI
 ```
 
-## Project layout
+## Folder Layout
 
 ```
-data/
-  input/             source transcripts, usage.xlsx, feature_catalog.json
-  output/<account>/  JSON artifacts written by each pipeline stage
 backend/
-  src/               ingest, stages/, LangGraph wiring, schemas, llm, store, api
-  prompts/           one .md per LLM-driven stage
-  tests/             schema + evidence smoke tests
+  src/             # FastAPI + LangGraph pipeline
+  prompts/         # s1 goal_extract.md (only LLM stage)
+  tests/           # 52 tests covering schema, linking, batching
+data/
+  input/<account>/ # source: transcripts/, emails/, accounts.xlsx
+  output/<account>/# generated: corpus, goals, usage_facts, gaps, opportunities, brief
+  *.json           # config: aliases, feature_catalog, pipeline.config
 web/
-  src/               React + Vite + TS — AccountList, ResultsPane, EvidenceRail, etc.
+  src/             # React + Tailwind + shadcn UI
 ```
 
-**Stack**: FastAPI · LangGraph · pydantic · OpenAI (`gpt-5.5` narrative, `gpt-5.4-mini` extraction) · React · Vite · Tailwind · shadcn/ui · Lucide · Inter. No DB, no auth — JSON files on disk.
+## Tech Stack
+- **Backend**: Python 3.12, FastAPI, LangGraph, pandas, pydantic.
+- **Frontend**: React + Vite + TypeScript, Tailwind, shadcn/ui.
+- **State**: filesystem-only — no DB, no auth.
+- **Models**: gpt-5.5, gpt-5.5-mini
 
-## The accounts in the dataset
 
-| Account               | Vertical                    | Transcripts | Notes |
-|-----------------------|-----------------------------|-------------|-------|
-| Meridian Furniture    | Retail / Furniture          | 10          | Full lifecycle: onboarding → AI setup → phones → 3 account reviews |
-| Northfield Electrical | Home Services / Electrical  | 8           | Sales → onboarding → AI setup → upgrade review |
-| Apex                  | (sales lead)                | 1 (intro)   | Not a customer — pipeline routes to "insufficient data" terminal |
-
-Transcripts use "Meridian / Northfield" and the usage spreadsheet uses "Auscraft / Mr Sparky". Per Podium, this was a dataset error — they refer to the same accounts. Stage 0 normalizes to one canonical name.
-
-## Design principles (short version)
-
-- **JSON is the contract between stages.** Prose only at the final step.
-- **Every claim cites evidence.** Transcript line+timestamp or specific usage column.
-- **Rules judge, the LLM writes.** Gaps and opportunities are surfaced by deterministic rules over usage + goals + the feature catalog. The LLM narrates what the rules surface — it does not decide what counts.
-- **Confidence labels everywhere.** Low-confidence claims surface in a "needs AM review" section, not the main brief.
-
-Full reasoning in [`DESIGN.md`](./DESIGN.md).
-
-## Status
-
-Design document complete. Implementation in progress.
-
-## Known gaps vs the brief
-
-- **No email parsing** — the dataset contains no email threads. The ingest stage supports them but isn't exercised on this submission.
-- **Deck rendering** — customer-facing deck is a structured outline rendered in the UI, not a PPTX/PDF export. Confirmed acceptable with Podium.
+---
