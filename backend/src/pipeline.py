@@ -48,7 +48,8 @@ def _run_single_stage(account_id: str, stage: str) -> None:
         n_turns = sum(len(t["turns"]) for t in corpus["transcripts"])
         _say(f"  → {_rel(path)}  ·  {n_t} transcripts, {n_turns} turns")
     elif stage == "s1":
-        _stage("s1 goals", account_id, " (OpenAI — gpt-5.4-mini)")
+        from .config import load_pipeline_config
+        _stage("s1 goals", account_id, f" (OpenAI — {load_pipeline_config().extraction_model})")
         out = extract_goals(account_id)
         path = write_goals(out)
         _say(f"  → {_rel(path)}  ·  {len(out.goals)} goals, {len(out.evidence)} evidence, {len(out.warnings)} warnings")

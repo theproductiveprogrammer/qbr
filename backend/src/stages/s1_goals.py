@@ -9,7 +9,7 @@ from pydantic import BaseModel, Field
 
 from ..config import load_pipeline_config
 from ..linking import link_quote
-from ..llm import MODEL_EXTRACTION, parse_structured
+from ..llm import parse_structured
 from ..schemas import Evidence, Goal, TranscriptLocator
 from ..store import OUTPUT_DIR
 
@@ -74,10 +74,12 @@ def extract_goals(account_id: str) -> GoalsStageOutput:
         user_content = _format_corpus_for_prompt(batch_corpus)
 
         response = parse_structured(
-            model=MODEL_EXTRACTION,
+            model=config.extraction_model,
             system_prompt=system_prompt,
             user_content=user_content,
             response_format=_GoalExtractionResponse,
+            temperature=config.extraction_temperature,
+            seed=config.extraction_seed,
         )
 
         all_raw_goals.extend(response.goals)
@@ -217,7 +219,7 @@ def _write_trace(
     # of what actually fed into linking.
     trace = {
         "stage": "s1_goals",
-        "model": MODEL_EXTRACTION,
+        "model": load_pipeline_config().extraction_model,
         "system_prompt": system_prompt,
         "n_batches": len(batches),
         "batches": batch_traces,

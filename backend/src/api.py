@@ -13,7 +13,7 @@ from .config import load_pipeline_config
 from .feature_catalog import CATALOG, Feature
 from .graph import PIPELINE_GRAPH
 from .ingest import ACCOUNTS, INPUT_DIR, _load_aliases, _load_xlsx
-from .llm import MODEL_EXTRACTION, MODEL_NARRATIVE
+from .llm import MODEL_NARRATIVE
 from .schemas import AccountSummary, Brief
 from .stages.s5_brief import PIPELINE_VERSION
 from .store import OUTPUT_DIR, list_accounts, read_brief
@@ -442,10 +442,12 @@ def get_settings() -> dict[str, Any]:
             "openai_key_set": bool(os.getenv("OPENAI_API_KEY")),
             "pipeline_version": PIPELINE_VERSION,
             "models": {
-                "extraction": MODEL_EXTRACTION,
+                "extraction": pipeline_config.extraction_model,
                 "narrative": MODEL_NARRATIVE,
             },
             "max_extraction_tokens": pipeline_config.max_extraction_tokens,
+            "extraction_temperature": pipeline_config.extraction_temperature,
+            "extraction_seed": pipeline_config.extraction_seed,
             "config_file": "data/input/pipeline.config.json",
         },
         "discovery": {

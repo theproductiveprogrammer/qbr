@@ -102,6 +102,31 @@ export function SettingsPane() {
             }
           />
           <KeyValue
+            label="Extraction temperature"
+            value={
+              <span className="inline-flex items-baseline gap-2">
+                <span className="font-mono tabular-nums">
+                  {settings.configuration.extraction_temperature.toFixed(2)}
+                </span>
+                <span className="text-xs text-muted-foreground">
+                  {settings.configuration.extraction_temperature === 0
+                    ? "deterministic"
+                    : "some run-to-run variance — surfaces new framings"}
+                </span>
+              </span>
+            }
+          />
+          <KeyValue
+            label="Extraction seed"
+            value={
+              settings.configuration.extraction_seed === null ? (
+                <span className="text-muted-foreground">not pinned</span>
+              ) : (
+                <Code>{String(settings.configuration.extraction_seed)}</Code>
+              )
+            }
+          />
+          <KeyValue
             label="Config file"
             value={<Code>{settings.configuration.config_file}</Code>}
           />
