@@ -361,15 +361,17 @@ function Disclosure({
   )
 }
 
+// Shared <pre> base. whitespace-pre-wrap preserves newlines AND wraps long
+// lines; break-words breaks unbroken tokens (URLs, long JSON string values) so
+// they don't blow out the layout. Vertical scroll still kicks in past max-h.
+const CODE_BLOCK_BASE =
+  "overflow-y-auto rounded-md border border-border bg-slate-50 p-3 text-[12px] leading-relaxed whitespace-pre-wrap break-words"
+
 function PromptBlock({ text, maxLines }: { text: string; maxLines?: number }) {
   const lines = text.split("\n")
   const needsClip = maxLines !== undefined && lines.length > maxLines
   if (!needsClip) {
-    return (
-      <pre className="max-h-[400px] overflow-auto rounded-md border border-border bg-slate-50 p-3 text-[12px] leading-relaxed text-slate-700">
-        {text}
-      </pre>
-    )
+    return <pre className={cn(CODE_BLOCK_BASE, "max-h-[400px] text-slate-700")}>{text}</pre>
   }
   const preview = lines.slice(0, maxLines).join("\n") + "\n…"
   return (
@@ -378,10 +380,10 @@ function PromptBlock({ text, maxLines }: { text: string; maxLines?: number }) {
         <span className="group-open:hidden">Show full ({lines.length.toLocaleString()} lines)</span>
         <span className="hidden group-open:inline">Collapse to preview</span>
       </summary>
-      <pre className="mt-2 max-h-[300px] overflow-auto rounded-md border border-border bg-slate-50 p-3 text-[12px] leading-relaxed text-slate-700 group-open:hidden">
+      <pre className={cn(CODE_BLOCK_BASE, "mt-2 max-h-[300px] text-slate-700 group-open:hidden")}>
         {preview}
       </pre>
-      <pre className="mt-2 hidden max-h-[600px] overflow-auto rounded-md border border-border bg-slate-50 p-3 text-[12px] leading-relaxed text-slate-700 group-open:block">
+      <pre className={cn(CODE_BLOCK_BASE, "mt-2 hidden max-h-[600px] text-slate-700 group-open:block")}>
         {text}
       </pre>
     </details>
@@ -390,7 +392,7 @@ function PromptBlock({ text, maxLines }: { text: string; maxLines?: number }) {
 
 function JsonBlock({ data }: { data: unknown }) {
   return (
-    <pre className="max-h-[480px] overflow-auto rounded-md border border-border bg-slate-50 p-3 font-mono text-[12px] leading-relaxed text-slate-800">
+    <pre className={cn(CODE_BLOCK_BASE, "max-h-[480px] font-mono text-slate-800")}>
       {JSON.stringify(data, null, 2)}
     </pre>
   )
