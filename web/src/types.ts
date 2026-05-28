@@ -41,6 +41,10 @@ export type Goal = {
   category: string
   confidence: Confidence
   evidence_ids: string[]
+  // Temporal trail derived from linked evidence in stage 1
+  mentioned_in_files?: string[]
+  first_mentioned_date?: string | null
+  last_mentioned_date?: string | null
 }
 
 export type WorkingItem = {

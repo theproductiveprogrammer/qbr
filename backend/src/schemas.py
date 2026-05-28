@@ -57,6 +57,12 @@ class Goal(BaseModel):
     category: str
     confidence: Confidence
     evidence_ids: list[EvidenceId]
+    # Temporal trail — derived deterministically from the dates on linked evidence
+    # in stage 1. Lets the UI render "Oct 2025 → Apr 2026 · 5 calls" so the AM can
+    # see at a glance whether a goal is a recurring theme or a one-off mention.
+    mentioned_in_files: list[str] = Field(default_factory=list)
+    first_mentioned_date: str | None = None
+    last_mentioned_date: str | None = None
 
 
 class WorkingItem(BaseModel):

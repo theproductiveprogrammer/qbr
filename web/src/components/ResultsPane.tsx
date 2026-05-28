@@ -1,5 +1,5 @@
 import { useEffect, useState, type ComponentType, type ReactNode } from "react"
-import { Target, CheckCircle2, AlertTriangle, TrendingUp, Info, Sparkles } from "lucide-react"
+import { Target, CheckCircle2, AlertTriangle, TrendingUp, Info, Sparkles, Calendar } from "lucide-react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { ConfidenceBadge } from "@/components/ConfidenceBadge"
 import { EvidenceRail } from "@/components/EvidenceRail"
@@ -214,11 +214,7 @@ function InternalView({ brief }: { brief: Brief }) {
             <ClaimCard
               key={goal.id}
               title={goal.statement}
-              meta={
-                <span className="capitalize">
-                  {goal.category.replace(/_/g, " ")}
-                </span>
-              }
+              meta={<GoalMeta goal={goal} />}
               confidence={goal.confidence}
               evidenceIds={goal.evidence_ids}
               evidence={brief.evidence}
@@ -358,6 +354,42 @@ function ClaimCard({
       </CardContent>
     </Card>
   )
+}
+
+function GoalMeta({ goal }: { goal: import("@/types").Goal }) {
+  // The problem is: a goal card needs to show its category AND (when available)
+  // the temporal arc so the AM can see "this is a recurring theme across 5 calls
+  // since Oct 2025" vs "mentioned once in March 2026".
+  // The way we solve this is: a small chip line — category plus a Calendar-icon
+  // badge showing date range and call count when the s1 linker populated them.
+  const trail = formatGoalTimeline(goal)
+  return (
+    <div className="flex flex-wrap items-center gap-x-2 gap-y-1">
+      <span className="capitalize">{goal.category.replace(/_/g, " ")}</span>
+      {trail && (
+        <>
+          <span aria-hidden className="text-foreground/30">·</span>
+          <span className="inline-flex items-center gap-1 text-muted-foreground">
+            <Calendar className="h-3 w-3" />
+            {trail}
+          </span>
+        </>
+      )}
+    </div>
+  )
+}
+
+function formatGoalTimeline(goal: import("@/types").Goal): string | null {
+  if (!goal.first_mentioned_date) return null
+  const n = goal.mentioned_in_files?.length ?? 0
+  const first = new Date(goal.first_mentioned_date)
+  const last = goal.last_mentioned_date ? new Date(goal.last_mentioned_date) : first
+  const fmt = (d: Date) => d.toLocaleDateString(undefined, { month: "short", year: "numeric" })
+  const firstStr = fmt(first)
+  const lastStr = fmt(last)
+  const callsLabel = `${n} call${n === 1 ? "" : "s"}`
+  if (firstStr === lastStr) return `${firstStr} · ${callsLabel}`
+  return `${firstStr} → ${lastStr} · ${callsLabel}`
 }
 
 function ScoreChip({ label, value }: { label: string; value: number }) {

@@ -65,6 +65,13 @@ type Goal = {
   category: string;                         // feature_catalog goal-type, e.g. "reviews"
   confidence: Confidence;
   evidence_ids: EvidenceId[];
+  // Temporal trail — derived deterministically by s1 from the dates on linked
+  // transcript evidence (deduped by file, ordered chronologically). Lets the UI
+  // surface whether a goal is recurring (multiple touchpoints across months) or
+  // a one-off mention.
+  mentioned_in_files?: string[];
+  first_mentioned_date?: string;            // ISO YYYY-MM-DD
+  last_mentioned_date?: string;             // ISO YYYY-MM-DD
 };
 
 type WorkingItem = {

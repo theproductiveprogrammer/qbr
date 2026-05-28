@@ -8,7 +8,7 @@ from pydantic import BaseModel, Field
 
 from ..linking import link_quote
 from ..llm import MODEL_EXTRACTION, parse_structured
-from ..schemas import Evidence, Goal
+from ..schemas import Evidence, Goal, TranscriptLocator
 from ..store import OUTPUT_DIR
 
 PROMPT_PATH = Path(__file__).resolve().parent.parent.parent / "prompts" / "goal_extract.md"
@@ -202,12 +202,34 @@ def _link_and_assign_ids(
             )
             continue
 
+        # Derive temporal trail from linked evidence dates. We look at each
+        # linked evidence's TranscriptLocator.date, dedupe by file (so multiple
+        # quotes in one call still count as one touchpoint), order by date.
+        files_with_dates: list[tuple[str, str]] = []
+        for ev_id in evidence_ids:
+            ev = evidence[ev_id]
+            loc = ev.locator
+            if isinstance(loc, TranscriptLocator) and loc.date:
+                files_with_dates.append((loc.file, loc.date))
+        files_with_dates.sort(key=lambda t: t[1])
+        seen_files: set[str] = set()
+        ordered_files: list[str] = []
+        for f, _ in files_with_dates:
+            if f not in seen_files:
+                seen_files.add(f)
+                ordered_files.append(f)
+        first_date = files_with_dates[0][1] if files_with_dates else None
+        last_date = files_with_dates[-1][1] if files_with_dates else None
+
         goals.append(Goal(
             id=f"g_{len(goals) + 1:03d}",
             statement=g.statement,
             category=g.category,
             confidence=g.confidence,
             evidence_ids=evidence_ids,
+            mentioned_in_files=ordered_files,
+            first_mentioned_date=first_date,
+            last_mentioned_date=last_date,
         ))
 
     return GoalsStageOutput(
