@@ -116,6 +116,21 @@ web/
   src/             # React + Tailwind + shadcn UI
 ```
 
+## Adding an Account
+
+To add a new account to the pipeline:
+
+1. **Drop call transcripts** as `.txt` files into `data/input/<account_id>/transcripts/`
+2. **Drop email threads** as `.eml` files into `data/input/<account_id>/emails/`
+3. **Update `data/input/accounts.xlsx`** with the account's usage row — feature ownership, signal counts, status columns. This is what s2-s4 read for gap detection + opportunity mapping.
+4. **Optional:** if the folder name (`<account_id>`) doesn't slug-match the xlsx `ORGANIZATION NAME` column, add an alias to `data/aliases.json`:
+   ```json
+   { "meridian": "Auscraft Furniture" }
+   ```
+5. **Restart the backend** (`mise run api`) so account discovery picks up the new folder.
+
+Accounts with no xlsx row are treated as sales leads — they get an `insufficient_data` brief from transcripts alone, no gap/opportunity analysis.
+
 ## Tech Stack
 - **Backend**: Python 3.12, FastAPI, LangGraph, pandas, pydantic.
 - **Frontend**: React + Vite + TypeScript, Tailwind, shadcn/ui.
