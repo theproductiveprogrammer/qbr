@@ -1,0 +1,39 @@
+{
+  "account_id": "meridian",
+  "gaps": [
+    {
+      "id": "gap_001",
+      "feature": "Webchat",
+      "severity": 80,
+      "goal_links": [
+        "g_001",
+        "g_002"
+      ],
+      "summary": "[narration pending]",
+      "recommended_action": "[narration pending]",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_001",
+        "ev_002",
+        "ev_003",
+        "ev_004",
+        "ev_005",
+        "ev_gap_001"
+      ]
+    }
+  ],
+  "evidence": {
+    "ev_gap_001": {
+      "id": "ev_gap_001",
+      "source": "usage",
+      "locator": {
+        "kind": "usage",
+        "column": "WEBCHAT LEADS RECEIVED LAST 30DAYS"
+      },
+      "quote": "8",
+      "context_before": null,
+      "context_after": null
+    }
+  },
+  "warnings": []
+}

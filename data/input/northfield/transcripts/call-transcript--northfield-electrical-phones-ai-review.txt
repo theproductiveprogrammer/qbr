@@ -1,0 +1,1152 @@
+Podium / Northfield Electrical Co. - Phones / AI Review
+
+Customer Success Manager with Customer company
+Recorded on Jul 17, 2025 via Zoom, 1h 10m
+
+
+
+Participants
+
+Podium
+Customer Success Manager
+
+Northfield Electrical Co.
+Customer
+
+
+
+Transcript
+
+0:00| Customer
+morning, mate. 
+
+0:01 | Customer Success Manager
+Morning, Customer. How are you? 
+
+0:03| Customer
+Yeah, pretty good. Thanks. I didn't realize you sent the invoice to contact, which I didn't check that up and I was looking for the. 
+
+0:13 | Customer Success Manager
+Oh, yeah. I think I just, whatever one I had on file. I just sent it to you. 
+
+0:18| Customer
+Yeah, it's OK. Next. 
+
+0:20 | Customer Success Manager
+Time I'll send it to you directly. 
+
+0:22| Customer
+Yeah, man. I just got to say, I remember, I updated my contact, just use my email address. It's probably, yeah, yeah, I get it on my phone all of them, but I get on the computer, just the one which I, 
+
+0:32 | Customer Success Manager
+yeah, that's fine. That's fine. No, sweet. Sweet. So, and, 
+
+0:37| Customer
+another thing. Sorry, I just realized when I was looking at contact, there was an email forwarded for the phone number porting, which I haven't replied back to. Is that, yes, has anyone talked to you about it or is there something I need to address? 
+
+0:52 | Customer Success Manager
+So that's something for you. Yeah. So Rochelle from our porting team would have sent you an email. So she just needs you to action, that email. So it's just to let them know what numbers you're bringing into podium and it's the most recent bill for that number. And once you send it to her, she sends you like a letter of authority to sign and then, which basically gives us permission to port the numbers over. And then she does the rest and then, yeah. 
+
+1:24| Customer
+All right. Where do you want to start with today? Let's start. 
+
+1:27 | Customer Success Manager
+With the AI agent. 
+
+1:29| Customer
+Yes, you're. 
+
+1:30 | Customer Success Manager
+doing two tests. 
+
+1:31| Customer
+I've read some tests. I've identified a couple of issues that we can see how we can address them. 
+
+1:41 | Customer Success Manager
+Yeah, sure. 
+
+1:45| Customer
+Do you want me to share my screen with you? 
+
+1:47 | Customer Success Manager
+Yeah. Go for it. I'll have it open here as well. So, if you want to share yours and you can just drive it and I'll assist. 
+
+1:56| Customer
+I'm just on a podcast, we've got a conversation happening now. 
+
+2:00 | Customer Success Manager
+Oh, nice. 
+
+2:08| Customer
+OK. I'm just gonna watch him do whatever they do. So, what I've noticed? 
+
+2:22| Customer
+Or start with what I started with… and I'll share my screen. 
+
+2:37| Customer
+How's that? 
+
+2:40 | Customer Success Manager
+Yeah, I can see now. Yeah. 
+
+2:41| Customer
+So, one thing I'd like to do first, maybe reduce the response time to 10 to 15 seconds. I think 30 seconds seems a bit too long. 
+
+2:51 | Customer Success Manager
+15. Yeah, absolutely. 
+
+2:55| Customer
+Just, how do we do that again? Well, it's. 
+
+2:58 | Customer Success Manager
+on the back, that part of it is done on our side. Yeah. So you want it to be 15 seconds? 
+
+3:04| Customer
+It doesn't seem too long, but if you're in the middle of, it is a bit too long. 
+
+3:11 | Customer Success Manager
+Yeah, it's completely up to you how Quiq you want the response to go to. But yeah, let me just, I'll update that now. So it should be 15 seconds going forward. What was the next thing you wanted to discuss about it? 
+
+3:28| Customer
+So, one thing I'd like to know is I'm just looking at this conversation. So maybe I should just take over. It's a good job. 
+
+3:39 | Customer Success Manager
+So, yeah. So if you want to take over, right? 
+
+3:41| Customer
+I'll just type in, won't, I, yeah. 
+
+3:44 | Customer Success Manager
+You can type it in, but it's assigned to the AI. So if you want to just have a look on your computer for a minute, I'll show you, I want to do. 
+
+3:51| Customer
+It on my mobile only because it's easier and that's what I'll be using it most. 
+
+3:55 | Customer Success Manager
+Does it say on the screen? Anything about the very top AI agent? 
+
+4:00| Customer
+It's got the dots there. I can say assign to the station, and then I can select whoever I want to. 
+
+4:06 | Customer Success Manager
+Yeah, correct. So, what you do is if you want to take it over, just unassign AI and keep you and then assign to you. 
+
+4:12| Customer
+It doesn't say assign to anyone. Like when I assign it, it's blank… the boxes, can. 
+
+4:21 | Customer Success Manager
+you click, can you, yeah, can you click into, can you add in your name or anything? Because I'll just have. 
+
+4:27| Customer
+To take over? Yeah. 
+
+4:29 | Customer Success Manager
+Cool. And, 
+
+4:32| Customer
+then when I get it done. 
+
+4:44 | Customer Success Manager
+how are you finding the mobile app? In general? Is it quite easy to use, any questions or I? 
+
+4:49| Customer
+Like I just need to train the AI a bit more. So it seems to dive into the questions a little bit too quickly. I'm not sure. I'll go through one of them quickly. I was testing its perseverance, was… that? 
+
+5:06 | Customer Success Manager
+With your phone number? 
+
+5:08| Customer
+So, what I think I've realized if it doesn't have a phone number, it responds back to an email anyway and it doesn't recognize that there is no phone number. So what in that regards, what I would say? How do you make it work? It doesn't work, I'll show you one of them here. Let's just, yeah. 
+
+5:23 | Customer Success Manager
+Show me one of them there. We'll take a look. 
+
+5:34| Customer
+So this is the one I'm talking to now, but. 
+
+5:38 | Customer Success Manager
+Yeah. So see the way you've now assigned it to yourself, if you go back to Maggie for one second, you'll see the way you've assigned it to yourself. Now, see this is your name at the top there. Yeah. So now, like the AI won't text back because you're assigned to it. So like if you want to just take it over, just do that on your mobile, and then you can assign it back to AI if you want them to continue. 
+
+6:13| Customer
+But if you, yeah. So this thing here do about that? 
+
+6:31 | Customer Success Manager
+So, yeah, if it's because we have the lead forms coming in and the AI agent's responding to the lead forms. If there's no mobile number, it's going to default to send an email. So they're getting. 
+
+6:43| Customer
+Did it send an email? What did it do? Where did it send from? And where does it go to? 
+
+6:47 | Customer Success Manager
+Because you'll see the way it says email, let me just get my… see the way it says here down the bottom email. 
+
+7:03| Customer
+So. 
+
+9:04| Customer
+So, 
+
+9:05 | Customer Success Manager
+yeah. 
+
+9:08| Customer
+What happened here? So. 
+
+9:10 | Customer Success Manager
+Yeah. So basically, essentially, because we have the email connected to podium and the lead forms coming in, you'll see how you always know is the very top, it will say email conversation at the top. And then down in the actual message here, you'll be able to see where it's email, Susanna chow. So we'll always be here but only the outgoing ones will be in podium, I believe because we only want the lead forms coming in. 
+
+9:39| Customer
+Yeah. So if I go to contact that, Northfield Electrical Co. here, do I see it in send? 
+
+9:43 | Customer Success Manager
+No, you won't see the email in send? No. 
+
+9:46| Customer
+How do I check this? So, how do I know that if she replies back or how do I follow up on it? What's the process? 
+
+9:53 | Customer Success Manager
+Check the contact email address. 
+
+9:58| Customer
+You know… yeah, once. 
+
+10:04 | Customer Success Manager
+One second, there are a few things on my screen? 
+
+10:13 | Customer Success Manager
+Who's the name of that person Susanna? 
+
+10:17| Customer
+Yeah. And let me have a look at the Cecil thing because I haven't I just saw that. 
+
+10:23 | Customer Success Manager
+Yeah. Go for it. That might have just been a recent one coming. A new. 
+
+10:26| Customer
+Phone call came from. Where did this land? I don't even know a new phone call late from Google CPC was received by Northfield Electrical Co.. Cecil broke contacted using a mobile line duration of seven seconds. I don't know where this one, the call. 
+
+10:39 | Customer Success Manager
+Is that a lead? Or what do you know what that is? Is that a spam? 
+
+10:43| Customer
+No, that looks like a lead. I don't know that's the thing. 
+
+10:52 | Customer Success Manager
+Yeah, because if you click view details on that on the right hand side, you'll be able to see the detail. If you scroll down a little bit down here and… go to expand, it's the full message that it's reading from. So, it looks like it's coming through… that's what it came through as to your email. So, it looks like it's just new phone call. 
+
+11:20| Customer
+So, tracking number, destination, number, caller number. So, this number that's my once in 100 number who answered that and is podium linking to it already? How would it know? 
+
+11:33 | Customer Success Manager
+Not yet. No, because it's coming, this is an email that was sent from what converts to contact. Oh, right. So it's pulling in to podium. 
+
+11:47| Customer
+So, how do I? 
+
+11:53| Customer
+So I didn't I must have gone to pira, what was this number gone to? 
+
+12:21| Customer
+Are you joking? I don't even remember the freaking. I think that was the call on cocoaworks. 
+
+13:02| Customer
+OK. So this would have been answered by a former team member, which is this number? OK? We can ignore that for now. We know it's been answered and somebody spoke. 
+
+13:18 | Customer Success Manager
+Yes, that's fine. 
+
+13:29| Customer
+And he, she's, probably hasn't… OK. We'll… follow up on that. 
+
+13:38 | Customer Success Manager
+Yeah, sweet. So. 
+
+13:41| Customer
+First things first, I guess. OK. So, one thing to remember is that once you send the email, once it's like in this case, once an email is sent, how do I, how do I follow up from this? What do I do? So? 
+
+13:55 | Customer Success Manager
+You can, if you click on details on the right on the right hand side here… just a little bit higher than that. So this is, that's, what he is saying. So, the AI agent said, but if you click details just a little bit higher than us, just… that's the contact for the customer. Like you can email directly from podium to the, to that customer because obviously, they filled out a form. They don't we don't have a phone number for them, but yeah, if the customer responds back, it will probably come through, to your inbox because we only have it set up where, the emails from the lead forms come into podium, but not all of, the emails. So, what you can do is you want to email back for, from podium and it is possible to do that. We see the change one setting, but. 
+
+14:50| Customer
+Then that's Kinda, can we, if… we do that, if we do that, this, it will still show up here in the context. Yeah. 
+
+15:05 | Customer Success Manager
+Yeah, we'll still be in your emails, correct? Yeah. 
+
+15:07| Customer
+We'll still be in my emails, yeah. 
+
+15:08 | Customer Success Manager
+Absolutely. Maybe, yeah, exactly. Can. 
+
+15:13| Customer
+you show me where's the setup if you? 
+
+15:16 | Customer Success Manager
+Go to more top left, go to settings… then go to lead sources on the left. Yeah, and then click on emails and then just click into the contacts. Just actually click into that. And then, so what's happening is at the moment, we only have the emails from contact at Northfield Electrical Co. to contact coming in. Now, you can, if you want include emails from existing contacts in podium inbox, which then will allow emails maybe or new. So all the emails just from contact will come into podium and the AI agent can respond. 
+
+16:06| Customer
+I like that a bit there. That makes more sense. 
+
+16:07 | Customer Success Manager
+Yeah, you can keep it on and then, yeah, as I said, if it's getting too much or you don't want, you can just switch it off, you know, but it's only going to be the ones to contact. So it won't be your email, be anyone else's because you've only added that email contact that Northfield Electrical Co.. All. 
+
+16:23| Customer
+Right before then add new emails. What's this for? 
+
+16:27 | Customer Success Manager
+That's for lead forms. I'll probably turn that off. It's gonna like try and search for all different emails coming in. If you just have the top bit turned on. It's only going to focus on podium. 
+
+16:36| Customer
+Yeah. 
+
+16:37 | Customer Success Manager
+OK. 
+
+16:38| Customer
+All right. And how do you say what's saved? Just? 
+
+16:41 | Customer Success Manager
+Say it automatically, you can just click X at the top, right? OK. 
+
+16:49| Customer
+OK. So now, what will happen is I'll be able to see the email back and forth within here. 
+
+16:54 | Customer Success Manager
+Correct. But. 
+
+16:55| Customer
+What's what's good about that? Is once I'm I see a lead. I don't want to distinguish between too many things. So, if I would go to my app and I click on whoever the user is, I want to be able to see whether, yeah, whether it's email or I'll be able to tell, I guess, somehow, how do I know if it's context? It doesn't… matter too much. We'll see the customer's name. It's it's got the, yeah. 
+
+17:26 | Customer Success Manager
+Yeah, under. 
+
+17:29| Customer
+Suzanne, it's got the email address? It doesn't have a mobile number? Yeah. 
+
+17:33 | Customer Success Manager
+Because she hasn't filled the number out in the form. If she, if she filled the phone mobile number, it will come through, as a mobile on the right hand side in the computer where it says phone. And yeah, it will show up here. That's. 
+
+17:47| Customer
+good to know. OK, that's fine. So, at least we will be able to do it. And then it. 
+
+17:51 | Customer Success Manager
+Just means nothing's missed. You know, it just means nothing's going to be missed whether it's mobile or email, yeah. 
+
+17:57| Customer
+And if I look at the activity that's the email that was sent here? 
+
+18:01 | Customer Success Manager
+Correct. That. 
+
+18:03| Customer
+She wouldn't actually reply back or not. 
+
+18:05 | Customer Success Manager
+Yeah, I don't believe, so, if she replies back now and it should come into podium, OK? 
+
+18:14| Customer
+We'll keep an eye on it. OK? So that's good. How do I train the AI to do certain things? For example, where was I, if? 
+
+18:29 | Customer Success Manager
+You want to put a Kinda specific details in like, to request information? I? 
+
+18:35| Customer
+Just don't like the way it handles it first up. OK? I was just playing around with my wife last night, just sending it through. It's dinner ready. Thanks for. 
+
+18:43 | Customer Success Manager
+Yeah, we'll. 
+
+18:45| Customer
+be in contact. So it says that then, hi, anyone who has electrical questions. So, I guess that makes sense here to send that. That makes sense. It's like if you want to send some stupid request. 
+
+18:57 | Customer Success Manager
+Yeah. 
+
+18:58| Customer
+This is an electrical contractor. Yeah. 
+
+19:00 | Customer Success Manager
+It's built into like if any like time wasters come in, hey, you know, do you want to be, you know, like 500,000 followers on Instagram, like we're here to help electrical questions, you know? Yeah. 
+
+19:12| Customer
+It… was pretty good. I didn't mind this conversation here and it made sense the way… yeah, that was handled well. And then I jumped in and said, I'm back just to see what it does. You've been great. OK. I'll reply back to, yeah. 
+
+19:36 | Customer Success Manager
+Because you'll see there, it says the AI agent's detected natural conversation, Ed, no response needed. So, because we had before in the past where you'd always get the last word in. So, yeah, that's exactly. 
+
+19:47| Customer
+What we're trying to test, so. 
+
+19:48 | Customer Success Manager
+Yeah. So this has literally been a fix in the last maybe month or two. There was feedback from customers and now we've got it so that, you know, because thanks bye. He's not gonna like, you know, keep continuing the conversation. So that was one of the things that like our AI needed improvement on and the team fair play to them. They've gotten ahead and fixed it. So now it's just gonna yeah, gonna leave it as it is. Unless now, if Louisa then said actually, can you help me with this? He's gonna, he'll respond back. You know what I mean? 
+
+20:16| Customer
+What I wanted to try to get out of the podium, if we could somehow get the AI agent, to let them know that at some point to recognize that it's probably best if we get one of us, the technicians to call the customer back and, go through the pro, whatever details there is. So, because it's trying to solve a problem and I don't think it's got all the information and I feel like it's it keeps on trying different things and I'll show you what I mean by that. Here. There was like a statement. I was playing around with it there. So… so this conversation was just going nowhere. I don't. 
+
+21:07| Customer
+like this response straight away like it's not bad, but it's how do I train it so that it would well, one thing, sorry, I'll backtrack a little but, or fast forward a little because at the end, I was just trying to test it if it's an AI. And then I said my last thing was. 
+
+21:35| Customer
+OK. I said here, you should have started by stating that, and now it responds back. 
+
+21:44 | Customer Success Manager
+You're giving the AI agent a hard time. Hi, the AI agent. 
+
+21:45| Customer
+It's the AI agent from mr spike. It has, for your request. I like that that's good that it learns. So, so all of them are pretty much hi, it's the AI agent from mr spike. Yeah. 
+
+22:00 | Customer Success Manager
+Or else, he'll, yeah, he'll sign it off like, yeah, but what you can do just in regards to what you're saying there is if you go to the AI controls here, the top left for a moment… and go to services section… you can see instructions for discussing services and fees. You can add information into this white box here about, you know, when they ask about X y and Z, you know, please tell them this so you can add all this information. It could be like as long as you want in the next line, you do another bit of information and that's basically the best way to, you know, providing the AI agent with the information about the services and how to discuss the services and fees with the customer. So. 
+
+22:47| Customer
+One customer is asking… about multiple… issues or fees, direct… them or ask for. 
+
+23:10| Customer
+Ask for availability to… get one… of the service… technicians to contact them… via… phone. 
+
+23:40| Customer
+Thank you. 
+
+23:45 | Customer Success Manager
+Yeah, perfect. And what's really good about this section here, Customer is and you won't get us all done in one day. But if you have specifics about, you know, the service you do. So it could be like if customer asks about smoke alarm, ask, this is this if they ask about, you know, electrical services say this is this so you can actually type every single bit into that box and that's how you'll learn how to speak about specific services. So if you do like smoke alarms, dash and then put in what you want to say. And so maybe your key Kinda services or your most common services, you can put that in. And that's how it'll get more details and know what to respond back with. OK? 
+
+24:24| Customer
+But, OK. And that's the training space there or? 
+
+24:28 | Customer Success Manager
+This is just in the instructions for the AI agent. Yeah. So whatever instructions you want, how to speak about certain services and again fees, but I know we have the fees turned off. So just put in. Yeah, just this is like the instructions part. So yeah, you can add, you can add things as you go on with this. OK? 
+
+24:50| Customer
+All right. That's cool. We'll just, I'll keep playing with that. And there's… nothing what's the service plans again. So. 
+
+25:00 | Customer Success Manager
+Like service plans? Like if you click add, just click add service plans there for a second, so it could be like you have a plan, a cost and description. 
+
+25:24 | Customer Success Manager
+So then what you could do is like for this, you could put name the plan. And then what you could do is you could put a bit of information in that service section about that. So when they ask about it? 
+
+25:44| Customer
+I've made this, how cool this stuff is. Man created a brand logo. 
+
+25:49 | Customer Success Manager
+Yeah, nice. Yeah. 
+
+25:51| Customer
+Freaking amazing. 
+
+26:05 | Customer Success Manager
+You Kinda think like what were we doing with our lives before the chatgpt and the Aia? 
+
+26:11| Customer
+It just spits things up. It does there's. 
+
+26:16 | Customer Success Manager
+time there's money in life, you know? 
+
+26:50| Customer
+Does this include GST or does it? 
+
+26:54 | Customer Success Manager
+I… think it will just, it won't say any. I don't think it will say it, but you can put in the instructions on what to discuss? 
+
+27:06| Customer
+So, 
+
+27:06 | Customer Success Manager
+in like the service plans, you could put it's not going to differentiate just GST or not because AI is Kinda built for it. 
+
+27:15| Customer
+Can I say, can I put up there? I'll just say all processes discussed are exclusive of GSD? 
+
+27:23 | Customer Success Manager
+Yeah. 
+
+27:26| Customer
+And here a structure for discussing service and fees. 
+
+27:31 | Customer Success Manager
+I don't think that other bit you put in saved either. Sorry, I don't think that other bit saved the first bit you wrote about the asking for a call? 
+
+27:46| Customer
+Oh, was that it here now? 
+
+27:48 | Customer Success Manager
+Yeah, it was in there? Yeah. 
+
+27:51| Customer
+Oh, I didn't know. 
+
+28:11| Customer
+Yeah. 
+
+28:51| Customer
+Sorry, I won't take up too much of your time. I'll just do this. Tell me if I'm doing it, right? And then I'll just get to suggest for a call from. 
+
+29:01| Customer
+Yeah. 
+
+29:09| Customer
+Thank you. We're coming up. 
+
+29:29 | Customer Success Manager
+I think that one's images, you might change it. Yeah, I think down the bottom, does it or down here? 
+
+29:40 | Customer Success Manager
+I don't know if that makes any difference there you go. 
+
+30:11| Customer
+Should I do exactly like that? I want to understand or I don't want to say because you have requested multiple services? 
+
+30:17 | Customer Success Manager
+Yeah. Maybe what you could possibly do is you can type in the service, but when customer asks about multiple services, then you can maybe just do all this. 
+
+30:39 | Customer Success Manager
+You can also drag the bottom right of that box. You can make it bigger. See there. Yeah, it might be a little bit easier, to do. 
+
+31:04 | Customer Success Manager
+You could even say when a customer asks about, you know, when a customer asks about any service? 
+
+31:11| Customer
+When a customer asks about multiple services and, 
+
+31:18 | Customer Success Manager
+pricing. 
+
+31:19| Customer
+multiple services and pricing. 
+
+31:33| Customer
+Gather all information? 
+
+31:44| Customer
+Suggest? 
+
+32:37| Customer
+I don't know, I can keep going like this. Yeah. 
+
+32:40 | Customer Success Manager
+Then you just do next line, do a next line and then it could be a different server you're talking about. OK. And then, yeah, as I said, it's one of those things where you're going to be, you know, adding more stuff to that services page. And that's how the AI agent's… going to. 
+
+32:58| Customer
+What I'm concerned about if you put contradictory requests or anything that contradicts itself, how will it handle that? 
+
+33:09 | Customer Success Manager
+I'm not too sure to be honest, you know what I mean? Like I haven't had that before, you know, where it's. 
+
+33:15| Customer
+I'm thinking when the list goes big and you forget what's going on. You confuse yourself. That's what I like about instructions. I like people thinking. Yeah, I guess, you know, you're training, oh. 
+
+33:27 | Customer Success Manager
+We, can, we can come to that. If it ever happens, we'll be able to easily fix this. We have an example of a message where wrong information is given because what it does do as well, it gives you the source of where the message comes from. So if you go back to, if you want to save those settings, if you haven't already, yeah. And then what you can do is just go back to, you, can XX out of that and go back to just a conversation? 
+
+33:55| Customer
+Did it save? 
+
+33:56 | Customer Success Manager
+Let me just double check. I need to fix that on the system, but let me just double check. I'll be able to go on my side to see if it's there… AI services. 
+
+34:10 | Customer Success Manager
+Yeah, it has saved, so you can exit… if you just go to the conversation. So sometimes the AI will try and gather messages from particular sources if you go to maybe one… of the messages there. 
+
+34:35| Customer
+I don't know, just go to the one I was talking about. 
+
+34:43| Customer
+Have a look here. Yeah. 
+
+34:47 | Customer Success Manager
+So, it tells you like the… frequently asked questions setting is checking as well. 
+
+34:58 | Customer Success Manager
+So then you can like, you know, update… questions and answers if you're not Kinda happy with that answer, you can have a look at the sources you sent to and just maybe just make a little. 
+
+35:06| Customer
+change. I'll just click here. Click the. 
+
+35:09 | Customer Success Manager
+sources and then click the setting and you can just edit that. Yeah, like that. 
+
+35:14| Customer
+OK. Cool. 
+
+35:15 | Customer Success Manager
+So, there shouldn't be too many. But if you get one where it's like, hey, you know, this person did the wrong thing. You can find the source. You can edit the question and answer and that's essentially how it learned hopefully down the road podium. We're going to be building something where like we can have, you know, automatic learning and, but, yeah, that'll be a, yeah, that'd be good. But I know it's definitely something that we're giving feedback on what? 
+
+35:40| Customer
+What does this do when you say give Ar, response feedback? I mean, so. 
+
+35:44 | Customer Success Manager
+It gives a feedback but it's at the moment. It's not automated. So it's not good. Like if you give that feedback and then it goes back to our us product team, but it's not necessarily going to just automatically fix it. So you can definitely give feedback with… that. But I'd recommend just setting up just changing the question and answer from the AI source. But hopefully eventually we'll be able to get that thumbs up and thumbs down as automatic. But we're just waiting for our AI to grow even better. 
+
+36:19| Customer
+All right. OK. So. 
+
+36:27| Customer
+Let's OK. Well, that's good enough for me to keep going. So basically all I wanted to check here, what happens with these? How are we going to manage them? So now I've got this idea of having my va, I think I told you this, I can't remember to have my va hovering over us watching what we do. And then, so she'll be on top of all the conversations. So I want Customer here to be always… assigned to all inquiries assigned to all conversations, reason being when we get off a phone call, when we finish off from any conversation with a customer, if we get involved, I want her to go and say, OK, start doing the preparing, whatever it is that we've discussed. 
+
+37:14 | Customer Success Manager
+OK. Yeah, yeah, yeah. 
+
+37:15| Customer
+Scheduling so forth and voicemail is probably the most important part because one of the problems we have is I've spoken to the guys already. We're going to start making all phone calls through podium. 
+
+37:28 | Customer Success Manager
+Yeah, from. 
+
+37:29| Customer
+The app through our mobile phones, and I want her to have access to that file so that if I need her to do any specific instructions, I'll be saying no problem. I'll be talking to whoever I'll get the office staff to send you this form or send you more information on this or book me in for Friday to follow up with you. And that's the prompting message for the va to say, OK, Customer spoke to. So, and so it's already in service mate, schedule it for two P. M on Friday and send them the form that we discussed. 
+
+38:01 | Customer Success Manager
+Yeah. How? 
+
+38:02| Customer
+Do I streamline? I mean, yeah, what's the best way, to streamline it without creating too many? Yeah. 
+
+38:10 | Customer Success Manager
+It should be fine. We just need to have her as a user on podium. And is it Marita, Stella Cruz? Is that the person or? Yeah. 
+
+38:16| Customer
+So she's. 
+
+38:18 | Customer Success Manager
+already in podium. So she has, she is team leader status, so she'll be able to see all these conversations. And what you can even do is like, for example, if you want to see, this is a, good one to maybe leave a note in podium while you're maybe on the road on the job, see this little notepad underneath the conversation. If you click that and you can do this on your phone as well. But if you click, if you click that right just here yep. 
+
+38:50 | Customer Success Manager
+And then what you can do is you can type an internal note, do at sign and then put in her type her name. 
+
+38:57| Customer
+So, if I'm a phone here and I'll say ass. 
+
+39:01 | Customer Success Manager
+And you can do it. 
+
+39:03| Customer
+Should. 
+
+39:06 | Customer Success Manager
+have it. Yeah. 
+
+39:10| Customer
+It's got the clipboard. Is that what it is? Let… me just have? 
+
+39:18 | Customer Success Manager
+A Quiq, it definitely should be on the phone. Just give me one second. I'm just going to open my podium up here. This… is, I know it looks a little bit different. 
+
+39:25| Customer
+You're going to go to the top right hand corner, the three buttons, yeah. 
+
+39:30 | Customer Success Manager
+Add a note. And then what you do is you just, you do the at sign and then type her username should pop up. And then you can say, you can leave a note saying this customer needs echo NZ, so you can do that on the road and they still get a notification in… podium… and then she can then leave notes back to say, hey, Customer, yes, I've done this or whatnot? 
+
+40:02 | Customer Success Manager
+And that will show up like in a yellow box. Oh, it doesn't show. 
+
+40:05| Customer
+Up here. If I was talking about, Suzanne Schell, 
+
+40:16 | Customer Success Manager
+and pops up here. And then what'll happen is see this mentioned section here on the left hand side in the inbox mentioned, you'll get a notification saying someone's mentioned you. All right. Yeah. So she, and then she'll be able to look at all her mentions and then she'll be able to, you know, respond back. 
+
+40:35| Customer
+OK. It's good to know but it's not something I can use only because while you're on the phone, you're not gonna, you can't talk you're driving you're working, you're doing everything verbally? 
+
+40:46 | Customer Success Manager
+Yeah, yeah. Can. 
+
+40:47| Customer
+You do a voice? You can't do voice not, but you can't use the microphone, can't you? 
+
+40:54 | Customer Success Manager
+I think you can, yeah, one of my mates, which is actually here was only testing that out, but I don't know. 
+
+41:00| Customer
+I don't know. Hey, Customer. Can you… send a authorization form? 
+
+41:18| Customer
+It does type… at marité's… how do you make it? OK? So with the speaker, it's going to be annoying because how do you, can you make it so that? 
+
+41:37 | Customer Success Manager
+Yeah, a Guy was just saying you're trying to tag her username in it? 
+
+41:41| Customer
+OK. So you go add Meredith first and then click your marker. Hey, Meredith, can you fill out a… authorization request form for this customer? 
+
+42:06 | Customer Success Manager
+Because you can definitely use the, send out a text message to a customer and stuff, but I actually haven't tested the note one. 
+
+42:14| Customer
+Hey, Customer, check the internal note and test being mentioned? 
+
+42:24| Customer
+I've got to mention the code. So I've got all I have to do is. 
+
+42:29 | Customer Success Manager
+Nice. That works. Yeah. 
+
+42:31| Customer
+Yeah. All right. 
+
+42:34 | Customer Success Manager
+So, Elise is there like if it's within podium because what would she be doing in podium? Would she be like looking at podium and then actioning stuff in servicemate. Is that essentially what she'd be doing? Or would she be sending messages out to customers? 
+
+42:49| Customer
+No, she's going to be doing stuff in service mate. It's mainly to do with scheduling for us. And just without having to call her to say, hey, I'm just talking to this customer. Can you do this that I want to be able to put everything in podium? So she'll be basically, she'll be going over everything but. 
+
+43:07 | Customer Success Manager
+It's. 
+
+43:08| Customer
+going to be annoying because she doesn't know where to go. So at least if we can prompt her, there's something for her to do here, then she'll, 
+
+43:18 | Customer Success Manager
+ask. Yeah. Well, as I said, you can't mention, do the mention thing and she'll get no advocation that there's a mention like you did. 
+
+43:25| Customer
+There, that's a good feature to have. 
+
+43:27 | Customer Success Manager
+Yeah. So at least you can have a look into and see how it goes. 
+
+43:33| Customer
+What's all this status business? Do I need to know anything about that right now? Not? 
+
+43:37 | Customer Success Manager
+At the moment, I'd say we get the fundamentals. So this is essentially like you can add customers into specific statuses. Like if you click the funnel section at the very top underneath the new button funnels. 
+
+43:48| Customer
+Yeah. 
+
+43:49 | Customer Success Manager
+So, this is like a different view of like all the statuses, if you wanted to add, you know, a value to a customer. How is this going to? 
+
+43:58| Customer
+Help me, what does this help us with? Because we already do that with whatconverts and the good thing about whatconverts is that it… where are we here? 
+
+44:11 | Customer Success Manager
+Yeah, it's essentially like, a terminal part on podium where you can have your own Kinda like CRM view of like your jobs and stuff. So you don't have to use it if it's not going to be of any use to you if you're using it through some other system at the moment. And so for the time being, well? 
+
+44:28| Customer
+I'll tell you what I use it for, what I like about what converts, for instance, we use it because it feeds back the information into Google Adwords. And then we can give that to the agency and say these leads are working. These are, this is the value of every lead that's the keyword that we search for. And, and then we can do analysis. So, for example, if all our leads are coming from a particular… URL and URL that want to push that. And if we're getting, if all the leads coming through some other avenue, they're not eventuating into paying customers, then we don't want them. Makes sense. I don't think this will be able to manage any of that. So maybe. 
+
+45:09 | Customer Success Manager
+Not for the time, not for the time being, I suppose. But, but yeah, it's there, you don't really have to worry about it too much then. So these are just names of statuses like, so, you can view all the, if you put in, if you like update their status, you can actually edit all these statuses so you can change the names and what they are for, but it's essentially to put your customers in different categories. 
+
+45:33| Customer
+So we can edit the statuses. Yeah. 
+
+45:35 | Customer Success Manager
+So, if you click on the, yeah, customize here… and you can change it to, whatever you, whatever makes sense to you guys. And then eventually what we can do with these statuses. If let's say, when you put customers into these statuses, we can then automate some text messages to go out to them. We can do like a drip campaign of, you know, once it goes into, you know, quote sent, send a text message to them two days later, have. 
+
+46:00| Customer
+You got any ideas? What to do? Do you know anything, that would be helpful for the business? So. 
+
+46:06 | Customer Success Manager
+A lot of customers Kinda do it for… like quotes because I think you have service mate, right? That's going to be, you know, sending out text messages for you. But if you wanted to do some sort of follow ups, we can have a look to see what service mate doesn't do compared to what this could do. We can essentially make any status you want and put out any message you want. So it could be for maybe quotes that you're you've sent out. But I feel like that. A lot of it is already done through service mate. Let me just have a Quiq look here. 
+
+46:44| Customer
+All right. Look, we'll deal with that a bit later. Yeah. 
+
+46:50 | Customer Success Manager
+No worries. One of the things I didn't want to chat to you about Customer was the phones. Yep. So what we, what we're going to be able to do is when everyone, is set up that are going to be receiving phone calls, they create their podium accounts, it's important. They create a podium user. And then what we do is we can then set them to get, their call routing done. So like basically discuss, do you want them to just ring through? Say, thanks for calling Northfield Electrical Co.. Our calls may be recorded. One of our team will answer your call shortly, and then it rings through to, you know, different users. Do you want it to be a phone menu, press one for? Can? 
+
+47:26| Customer
+We do that now? Yeah? 
+
+47:28 | Customer Success Manager
+Well, we can do it, but we do need some recordings from you guys. You can record. You can record it, in podium. If you want to do it. Your own voice is actually an option to do that. I'll show you where to go. If you… go to more, go to settings and… go to phones. I'll start on the left here phones. So at the moment, we can only set it up for the podium mobile number because we can only do your numbers once they like day they port in. But essentially, if you go to the call, click into that phone number… this is where you can set up the call routing. So for example, if you click the drop down menu here. So where do you want to call to go to? We can create a call group. We can maybe you can do a phone menu. We can ring specific podium users. So depending on how you want the call. 
+
+48:35| Customer
+OK. And. 
+
+48:36 | Customer Success Manager
+Then what we do is we can then set up the voicemail option, and we can also do after hours as well. So if you scroll down a little bit more, there's like voicemail, you want to turn on the recording, the transcripts and then set up the after error calls as well. And so where you want the calls go, do you want to go to a voicemail? A lot of people in your industry might have, you might do a phone menu, hey, press one to leave a voicemail. I press two to speak to emergency contact. Then it goes through to someone, you know? So. 
+
+49:06| Customer
+With the OK. So with this, what I'm trying to understand also is, so we call… they must already around and that's fine. So what I was talking about is this I'll show you see this number here? That is a rotating number. Yeah. But I guess that's forwarded to 1,307 seven zero seven seven one. So once we're at that, it's fine. 
+
+49:29 | Customer Success Manager
+OK. I. 
+
+49:30| Customer
+was just thinking how we're gonna manage these numbers, but that's fine. Yeah. 
+
+49:33 | Customer Success Manager
+They'll come into podium and then we'll be able to set them up here. 
+
+49:36| Customer
+That's a virtual number that is connected to double seven one. OK? 
+
+49:42 | Customer Success Manager
+And. 
+
+49:42| Customer
+then double seven one's making the call. OK, perfect. So that's so you don't have to worry about it. I'll just think of that. Yeah. 
+
+49:50 | Customer Success Manager
+No, it's all, good. And. 
+
+49:52| Customer
+So what, how long? OK. Well, what do I need to do? So. 
+
+49:56 | Customer Success Manager
+What I'll do is I'll send you an email, OK? Or what record do you want to have a phone menu or do you want to have just a normal call? 
+
+50:05| Customer
+I don't think I want a phone menu. What's the point? It's more annoying. I find them annoying. 
+
+50:08 | Customer Success Manager
+No, that's fair enough. It just depends if there's different companies, different departments, whatever. So you can I'll send you an email of just a sample call script of what to say, thank you for calling, let you know calls may be recorded. So I'll send you an email and then what you can do is you can get someone to record them. You can use an AI text to voice, you know, website, to record them. And then once they're ready to go, we can upload them onto podium. And then once we have those recordings saved, we can then add them onto your, whatever numbers you're putting into podium for? 
+
+50:44| Customer
+The time being, can I give you because we've got the number? I don't before I put them, if I can pull the number… and we can go. So if we put the one 300 number? 
+
+50:57 | Customer Success Manager
+Yeah. 
+
+50:57| Customer
+I can just make it forward to. 
+
+51:05| Customer
+We can make it forward to this number and be done with it. And that's… the va's number… and then that's going to run straight to the Philippines and she's going to pick it up and handle them as normal. 
+
+51:22 | Customer Success Manager
+Yeah, because what we can do as well is you can do that as well or we can actually have, we can, Marita is a user on podium, so we can just, 
+
+51:31| Customer
+yeah, we're going to get rid of her phone system eventually. But in the meantime, while I'm setting up voicemails and all that, I'll just, I'm going to be doubling up for a couple of weeks until the end of the month, I guess. 
+
+51:42 | Customer Success Manager
+OK. OK. 
+
+51:43| Customer
+On some services. So first things first, let's get the one 300 number, because I got to do things in steps to make sure I don't fuck up. Anyway. My first step is going to be put the one 300 number away from telco works. 
+
+51:57 | Customer Success Manager
+Yep. 
+
+51:58| Customer
+Forward it to this number. And if that works, then we can start moving. But what I'm concerned about, I'm concerned about downtime? When do you do that? And how long is it going to be downtime for there'll? 
+
+52:15 | Customer Success Manager
+Be no downtime. So, as long as we have the phone routing and call set up on podium side, what normally happens is it takes about two to four weeks for the ports to happen normally. And then we're given a date to when it's done. So we'll be like when you fill the forms out, when we send them off, Rochelle will do it for you. They'll say, OK, the phones are porting on, you know, the fifth of August, and then we know, OK, that's when it happens. So, what's going to happen is nothing's going to be down. It will just stop ringing your current way and it will ring through podium. 
+
+52:49| Customer
+Yeah. 
+
+52:50 | Customer Success Manager
+So, if you go to email from? 
+
+52:57| Customer
+It must be going through. 
+
+52:58 | Customer Success Manager
+No, click back one. I think I've seen it there. 
+
+53:00| Customer
+Yeah, no, she forwarded to me. So I'm just going to go here. That was forwarded from contact. This is the original one. 
+
+53:09 | Customer Success Manager
+That one here, Customer Success Manager, Rochelle, the first one just respond back. So, if you scroll down to Rochelle's email so that's just the instructions of what we need. And if you just reply back to Rochelle, I'm in the email too. And then what I'll do is I'll send you an email of what recordings we need, you can do them. And then we'll need to make sure that people are. 
+
+53:45| Customer
+So, the bills that I have, I don't know what Kinda a bill I have, but here's what I've got, tell me if this is sufficient, yeah. 
+
+53:50 | Customer Success Manager
+Yeah. 
+
+53:52| Customer
+Invoices? 
+
+54:11 | Customer Success Manager
+Yeah, it's fine. 
+
+54:12| Customer
+It doesn't have the number anywhere? 
+
+54:14 | Customer Success Manager
+It doesn't have the number on it. No… until then. 
+
+54:24 | Customer Success Manager
+I think you can go down a bit. Can't you on that one? Does it say any numbers? 
+
+54:27| Customer
+Oh, fuck, yeah. I didn't even realize there's more than one page that's. 
+
+54:30 | Customer Success Manager
+OK. So, like you see these, right? So see the way there's all these numbers, right? So, Rochelle's going to ask you like which ones, what do you use? What don't you use? 
+
+54:41| Customer
+This is the only one I use. I've got this set up. Double seven, two, double seven, three. I bought these numbers when I had this crazy idea at one point that I want to have different departments with different numbers and tracking numbers and I don't know and I've hung on to one because then it cost me a great deal and I just want to use them for different businesses, or just, well, yeah. 
+
+55:07 | Customer Success Manager
+It's fine. You can, we can port like you can either keep paying with them or you can just port them into I. 
+
+55:12| Customer
+Might as well just port them to you guys because I'm not paying for them with you. It's part of the. 
+
+55:17 | Customer Success Manager
+Yeah, you won't. Yeah, we won't charge you for the numbers. So you'll be saving, a few dollars a month or not. And then let's say if you never need. 
+
+55:23| Customer
+To, which is a regret but I'll drive a movie to one location and be done with it. So, yeah, yeah. Send her this and say, I want to put all one, all three numbers. That would. 
+
+55:32 | Customer Success Manager
+Be, yeah, just say to them all you can say to them. All three numbers are going to be porting in… and I'll be able to chat with Rochelle because we'll all know which one you're using, which one you're not. So the one that ends in one is your main one. 
+
+55:56| Customer
+I was going to do it. If I don't freaking do it. I'm going to forget about it. 
+
+56:01 | Customer Success Manager
+I'm going to run. 
+
+56:02| Customer
+off, but I don't want to run. It's. More important to me than Thomas. 
+
+56:36| Customer
+What? 
+
+56:51| Customer
+Oh, come on in. 
+
+57:40 | Customer Success Manager
+I just checked with you, Customer that these numbers are just your phones. They're not related to your internet. 
+
+57:45| Customer
+Pardon. 
+
+57:46 | Customer Success Manager
+these numbers are just related to your phone, your internet's separate. Is it my internet? 
+
+57:52| Customer
+What? 
+
+57:53 | Customer Success Manager
+It's separate like it's a different company. It's not done through these guys. Is it? 
+
+57:58| Customer
+No, no. They purchased them. All these guys. Do they're just for couriering? 
+
+58:02 | Customer Success Manager
+Yeah, perfect. That's all good. 
+
+58:23 | Customer Success Manager
+Yeah. So what she'll do is, so she'll when you send this through, she's going to email you a letter of author free to sign just your DocuSign. So once you do that, she'll be able to then get the process and then we'll be given a date to when the lines report. And then as long as we just make sure that the recordings routing everyone is comfortably using podium by then it should be a smooth switch over. 
+
+58:46| Customer
+Well, that's sent through, please confirm that for me and tell her apologies and if she can push it faster because, you know, you guys got add. So, no. 
+
+58:54 | Customer Success Manager
+Yeah, I got the email, so it should come through to her perfect. 
+
+58:57| Customer
+So, when we're doing phone calls now, OK? So one last thing I guess, is there anything else we wanted to discuss on today's? Panel or I? 
+
+59:07 | Customer Success Manager
+Think, I think it's just the phone, just the phones, and the AI really. So what you do is have you made and received calls yet? What you'll probably do is see this and activate your web phone. Just just, yeah, just click activate, and each person needs to do this just so their web phone is ready to go. Yeah, just click… allow microphone access. 
+
+59:43| Customer
+Just say. 
+
+59:44 | Customer Success Manager
+Yes. 
+
+59:52| Customer
+My extension is 200. 
+
+59:55 | Customer Success Manager
+It's not important. To be honest. You don't really need to know the extension. Just click continue. Yeah. 
+
+1:00:04 | Customer
+No, I thought I've done it already. 
+
+1:00:14 | Customer Success Manager
+That's all sorted. So now you're able to make and receive calls on computer and desktop. So probably test this in your own time with this. Just ring a few people, type in a number, call them. You'll be able to do it through your mobile. 
+
+1:00:35 | Customer
+Who are these people? 
+
+1:00:38 | Customer Success Manager
+They could be from scurvus? 
+
+1:00:44 | Customer Success Manager
+May possibly. 
+
+1:01:09 | Customer
+What happens to this phone call? Does it get mentioned here anywhere? 
+
+1:01:14 | Customer Success Manager
+Yeah, it will come through. It'll. Be in the calls, go to all conversations. You just need to change from missed to all. 
+
+1:01:27 | Customer Success Manager
+You'll see them all here. They'll be in conversations as well. We also send automatic text messages. If you miss a call from someone, sorry, we missed your call, you can actually edit this message as well yourself and what it says. When a missed call comes through, you'll be able to call them back. But the main thing is get the recordings at the moment. If someone rings a number, it's going to have like an American voice saying, you know, calls will be recorded. Once you get your recordings done, it just looks a little bit nicer when you're making calls. And as long as it's set up for when your proper number is put over, it should be sweet. 
+
+1:02:03 | Customer
+Does every user have to have their own recordings for their voicemail? 
+
+1:02:08 | Customer Success Manager
+No, no, it can just be a general one because they're going to be ringing your one 300 number. So it will just be a general voicemail. But yeah, just make sure that people who are set are going to be using the phones, set up their podium user essentially. 
+
+1:02:26 | Customer
+Well, so far, I've wanted to keep it between myself and Benitez and then add the users as I, as we use them, but I might as well just add a former team member and. 
+
+1:02:35 | Customer Success Manager
+Neil, yeah. Well, just if you want to the people who maybe are going to be answering the calls, like, you know, to start like have them set up, but, 
+
+1:02:45 | Customer
+making calls is not an issue. 
+
+1:02:47 | Customer Success Manager
+Well, then they'll need to, they'll need to log into podium to make a call. Yeah. 
+
+1:02:50 | Customer
+I realize that I'll clear that, that's fine. 
+
+1:02:52 | Customer Success Manager
+Yeah. And then we can set up who's going to receive the calls? You know, when someone rings your number, who do you want? Whose podium users do you want? Calling? Everybody's? Just you Customer? Who? Yeah. 
+
+1:03:08 | Customer
+OK. And can you do time based discrimination on the phone calls, the routing and so forth? 
+
+1:03:14 | Customer Success Manager
+How do you mean? Sorry, the, 
+
+1:03:16 | Customer
+can you time? So that say during the day, it will say, OK, so during the day, I might say it can call Customer or calls, everybody, whoever wants to answer can answer. 
+
+1:03:28 | Customer Success Manager
+So, we have it set up where, yeah, during the day, it can ring through to, we set up who it rings to. And then after hours, we can have a different call setting. 
+
+1:03:38 | Customer
+Yep. And when someone goes on a lunch break, what happens if Meredith wants to go on a lunch break? How can she pause her phone? And without having to create too many? So. 
+
+1:03:47 | Customer Success Manager
+There's nothing really at the moment, but we are working on a new system that might be like allow you to jump in and out of call queues and stuff and do hold music and everything which is coming soon. 
+
+1:03:57 | Customer
+No, not that. Just if she's on her break, let's just say we've got the phones diverted to maybe test only during the day. But then between certain hours, she has a lunch break, but it's not exactly at one o 'clock so when she leaves, what she currently does, when she's gone on her lunch break, she diverts the phone to my mobile. 
+
+1:04:14 | Customer Success Manager
+Right. OK. 
+
+1:04:16 | Customer
+Are we able to change the… OK, forget about it if she receives all the calls throughout the day and she wants to go bathroom break, toilet break whatever she wants. She can't answer the phone for 10 minutes or half an. 
+
+1:04:29 | Customer Success Manager
+Hour? Yeah. 
+
+1:04:30 | Customer
+I want her to say, send it to me in a former team member. What you can do? 
+
+1:04:35 | Customer Success Manager
+Is, you can set up a call group where it rings true to her at first and then if she doesn't answer, then we can ring it true to you. So we can set that up. You know what I mean? So if she's away and it rings it'll then just ring to your phone at, yeah, we can do that through the call groups. OK? 
+
+1:04:53 | Customer
+So, she doesn't pick up within five rings or so forth. Yeah. 
+
+1:04:56 | Customer Success Manager
+Exactly. Yeah. And you, 
+
+1:04:57 | Customer
+know how we've got the three numbers. We can do call routing. So if double seven one, someone's calling on double seven one. But then we're not answering because someone's on the phone or she's on the phone, it can react to me. And then. 
+
+1:05:10 | Customer Success Manager
+Yeah, because how it works, is it's not necessarily ringing like an, it's ringing a number, let's say someone rings your podium number or the one 200 number. It's not like diverting to different phone numbers. It's all about the podium, your podium user. So, we ring it to the podium user. So it was going to ring through your app on your mobile. So we can set it to ring to the users. OK? 
+
+1:05:28 | Customer
+Yeah. But with core reacting, my understanding is I can't remember what some of it familiar with boy. But if I've got 1,307 zero, double seven one and you already called this number and some, and while you're on the phone, somebody else is trying to call in at the same time? Yes. 
+
+1:05:42 | Customer Success Manager
+What? 
+
+1:05:43 | Customer
+Happens then, it doesn't you only need the one number and it's still diverse. Yeah. 
+
+1:05:47 | Customer Success Manager
+So, what we'll do is let's say if we have you, if me and you are on, a call group called hunt. 
+
+1:05:53 | Customer
+Used to be called call hunt. 
+
+1:05:57 | Customer Success Manager
+Yeah, I'm not too sure, but let's say we're about in a call group and I'm on the phone and someone rings the one 300 number. It's not going to ring my phone, but it will ring yours at the same time. 
+
+1:06:07 | Customer
+No, but if that number's engaged, don't, you need another number to receive the call. 
+
+1:06:12 | Customer Success Manager
+No, you can take multiple calls. 
+
+1:06:14 | Customer
+On the same number? 
+
+1:06:16 | Customer Success Manager
+Yeah, it just won't ring you because you're on the phone. Yeah. 
+
+1:06:21 | Customer
+Of course, it might pop. 
+
+1:06:22 | Customer Success Manager
+Up and say a call's coming in, correct? As long as you have multiple people in the same call group. Yeah, that should be fine. 
+
+1:06:30 | Customer
+OK. We can adjust for this later, all right? 
+
+1:06:35 | Customer Success Manager
+Great. I'll send you an email. Anyway, we just sample recordings. You can choose whatever you can say whatever you want, just let them know the calls are recorded. 
+
+1:06:42 | Customer
+Yeah. Give me the name, what it's going to be used for, where it's going to be used or something like that. And then a sample would be great. And if I feel like changing it, I will. 
+
+1:06:52 | Customer Success Manager
+Yeah, you can change, just obviously keep the important things in this. You can put in whatever you want. But just make sure that just in the call greeting that the call is recorded, you can word it whatever way you want. And I'll send you a few examples. You can use an AI text to voice website. No, we're. 
+
+1:07:05 | Customer
+happy. OK. And it's important to say this call is being recorded or can we, I mean, I'd like to, I don't care. No, it's fine. 
+
+1:07:15 | Customer Success Manager
+So, OK. Basically with that, I believe in it depends on your state laws and I believe that in new south wales, both parties have to be advised where in some states, it's only one party, which means you don't have to, you can know. So I think just put it in there to be safe and it could be, yeah, a lot of companies do it, but I'll send you a template of what you can use and any issues that may. 
+
+1:07:40 | Customer
+All it will be sorry just to, I mean, I was going legal here, but just in case, if I don't want to use it, I mean, this is only going to be used if you use it for legal matters or is it for privacy? I mean, I don't get it. 
+
+1:07:52 | Customer Success Manager
+The recordings. Yeah, I think it's just, the consumer laws. 
+
+1:07:57 | Customer
+Yeah, it's non binding agreement. But if I could record the information and I would have said something if they didn't realize it would be recorded. 
+
+1:08:06 | Customer Success Manager
+Yeah, possibly, I don't know, mate. I hate that's about my pay grade and probably, but, yeah, listen, I'll send you the samples and you can do what you need to do. And what we'll do is, you know, we'll Rochelle will do the porting stuff to give us a date and then we'll just make sure we, we'll do another call to maybe do a checkup maybe next week and make sure everything's running well with AI, and then we'll just make we'll tell the call groups and everything like that. So even for the, even for the podium mobile number, like… we can add your phone to, the call group in case someone rings that number, your phone will ring. 
+
+1:08:47 | Customer
+Just because just because. 
+
+1:08:48 | Customer Success Manager
+I think you and Customer are in that already, so that, that's going to be that's already set up to receive calls. 
+
+1:08:59 | Customer Success Manager
+So, yeah, maybe run a test with your wife or your, or someone in the business there to give you a call and you can just have a chat, have a chat for like a minute or two, and then you can see the recording. 
+
+1:09:11 | Customer
+The dog, this number, the where's the number. So. 
+
+1:09:14 | Customer Success Manager
+If you click on more, go to the settings and. 
+
+1:09:19 | Customer
+then. 
+
+1:09:21 | Customer Success Manager
+go to numbers in the left here. I, yeah… numbers. Yeah, that's… the number. So you would have just got a call from, that number as well on your phone. So, yeah, I had. 
+
+1:09:37 | Customer
+A missed call from it. Yeah. But yeah, yeah, yeah, perfect. OK. All… right. Look it's. 
+
+1:09:47 | Customer Success Manager
+gonna give me. All right. Cheers, Customer. Yeah, thanks for your time today, mate. And yeah, let's keep an eye, on the AI agent. We'll get the phones forward to dates sorted, and then we'll get the recordings and then we'll make sure that, you know, call, we'll make sure this is routed the way you want as well by the time those numbers poured over you plenty of time to get it all sorted. 
+
+1:10:08 | Customer
+OK. Easy. 
+
+1:10:10 | Customer Success Manager
+Thanks, mate. Have a good day. Speak soon. Bye bye. 

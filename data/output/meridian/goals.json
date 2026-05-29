@@ -1,0 +1,216 @@
+{
+  "account_id": "meridian",
+  "goals": [
+    {
+      "id": "g_001",
+      "statement": "Automate lead follow-up across channels to reduce manual work and convert more cold or quote-stage leads.",
+      "category": "lead_response",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_001",
+        "ev_001",
+        "ev_002",
+        "ev_003"
+      ],
+      "mentioned_in_files": [
+        "call-transcript--meridian-furniture-onboarding-kickoff.txt",
+        "call-transcript--meridian-furniture-account-review-follow-up.txt",
+        "call-transcript--meridian-furniture-account-review-session-b.txt"
+      ],
+      "first_mentioned_date": "2025-10-31",
+      "last_mentioned_date": "2026-03-31"
+    },
+    {
+      "id": "g_002",
+      "statement": "Integrate website and Podium lead data with Cin7/Sin7 so leads move without manual re-entry.",
+      "category": "lead_integration",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_004",
+        "ev_005"
+      ],
+      "mentioned_in_files": [
+        "call-transcript--meridian-furniture-onboarding-call.txt"
+      ],
+      "first_mentioned_date": "2025-11-25",
+      "last_mentioned_date": "2025-11-25"
+    },
+    {
+      "id": "g_003",
+      "statement": "Use AI to answer customer product questions after hours and eventually as a fallback during business hours.",
+      "category": "ai_adoption",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_006",
+        "ev_007",
+        "ev_008",
+        "ev_009",
+        "ev_010"
+      ],
+      "mentioned_in_files": [
+        "call-transcript--meridian-furniture-onboarding-kickoff.txt",
+        "call-transcript--meridian-furniture-account-review.txt",
+        "call-transcript--meridian-furniture-ai-setup.txt",
+        "call-transcript--meridian-furniture-ai-setup-session-2.txt"
+      ],
+      "first_mentioned_date": "2025-10-31",
+      "last_mentioned_date": "2026-02-17"
+    }
+  ],
+  "evidence": {
+    "ev_001": {
+      "id": "ev_001",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--meridian-furniture-onboarding-kickoff.txt",
+        "line_start": 180,
+        "line_end": 181,
+        "timestamp": "7:51",
+        "date": "2025-10-31"
+      },
+      "quote": "We got many leads coming from everywhere, not like on the internet on calls, Facebook, Instagram, shop visits, et cetera.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_002": {
+      "id": "ev_002",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--meridian-furniture-account-review-follow-up.txt",
+        "line_start": 245,
+        "line_end": 246,
+        "timestamp": "21:28",
+        "date": "2026-01-07"
+      },
+      "quote": "So, which is going to help me a lot like I do manually every week.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_003": {
+      "id": "ev_003",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--meridian-furniture-account-review-session-b.txt",
+        "line_start": 227,
+        "line_end": 228,
+        "timestamp": "11:57",
+        "date": "2026-03-31"
+      },
+      "quote": "At least I can tell five, six customer podium converted from cold leads.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_004": {
+      "id": "ev_004",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--meridian-furniture-onboarding-call.txt",
+        "line_start": 383,
+        "line_end": 384,
+        "timestamp": "20:34",
+        "date": "2025-11-25"
+      },
+      "quote": "Only thing. I just want to get these integrations done from podium to move as a lead to my scene seven and to get the leads from my new website that's the only I want",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_005": {
+      "id": "ev_005",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--meridian-furniture-onboarding-call.txt",
+        "line_start": 401,
+        "line_end": 402,
+        "timestamp": "23:06",
+        "date": "2025-11-25"
+      },
+      "quote": "we're stuck now because we doing everyday manual labor menu like lead creation because we can't integrate anything yet.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_006": {
+      "id": "ev_006",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--meridian-furniture-onboarding-kickoff.txt",
+        "line_start": 486,
+        "line_end": 487,
+        "timestamp": "26:37",
+        "date": "2025-10-31"
+      },
+      "quote": "Can, can we train the AI to give you some information we want to give to customer yep?",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_007": {
+      "id": "ev_007",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--meridian-furniture-account-review.txt",
+        "line_start": 319,
+        "line_end": 320,
+        "timestamp": "19:35",
+        "date": "2026-01-27"
+      },
+      "quote": "Leave it AI response for after hours now, yep.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_008": {
+      "id": "ev_008",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--meridian-furniture-ai-setup.txt",
+        "line_start": 362,
+        "line_end": 363,
+        "timestamp": "15:40",
+        "date": "2026-02-10"
+      },
+      "quote": "hypothetically think like my questions are ready. All good. Good to go with AI. Now, how we can now make the AI work?",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_009": {
+      "id": "ev_009",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--meridian-furniture-ai-setup-session-2.txt",
+        "line_start": 242,
+        "line_end": 243,
+        "timestamp": "10:29",
+        "date": "2026-02-17"
+      },
+      "quote": "podium AI answers was like really good this week.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_010": {
+      "id": "ev_010",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--meridian-furniture-ai-setup-session-2.txt",
+        "line_start": 480,
+        "line_end": 481,
+        "timestamp": "20:55",
+        "date": "2026-02-17"
+      },
+      "quote": "we'll set up the AI and go, it will be ready to go.",
+      "context_before": null,
+      "context_after": null
+    }
+  },
+  "warnings": [
+    "unlinked quote in 'call-transcript--meridian-furniture-account-review-session-b.txt' for goal 'Automate lead follow-up across channels to reduce manual work and convert more cold or quote-stage leads.': 'The conversion rate increased a lot.'",
+    "unlinked quote in 'call-transcript--meridian-furniture-phones-review.txt' for goal 'Integrate website and Podium lead data with Cin7/Sin7 so leads move without manual re-entry.': \"I don't want to just take your name, every data from podium one by one, create a new customer in sync seven, which is I \""
+  ]
+}

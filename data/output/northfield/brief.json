@@ -1,0 +1,527 @@
+{
+  "account_id": "northfield",
+  "account_name": "Mr Sparky",
+  "vertical": "Home Services / Electrical",
+  "run_id": "f7ec47dc-1156-460a-8341-8a04a844fa19",
+  "generated_at": "2026-05-28T23:21:00Z",
+  "pipeline_version": "0.2.0",
+  "status": "complete",
+  "status_reason": null,
+  "review_banner": null,
+  "confidence_summary": {
+    "high": 9,
+    "med": 1,
+    "low": 0
+  },
+  "goals": [
+    {
+      "id": "g_001",
+      "statement": "Capture and document customer phone conversations so approvals, job details, staff training, and VA handoffs are easier to manage.",
+      "category": "call_capture",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_001",
+        "ev_002",
+        "ev_003",
+        "ev_003",
+        "ev_004",
+        "ev_005",
+        "ev_006",
+        "ev_007",
+        "ev_008"
+      ],
+      "mentioned_in_files": [
+        "call-transcript--northfield-electrical-podium-overview.txt",
+        "call-transcript--northfield-electrical-sales-intro.txt",
+        "call-transcript--northfield-electrical-phones-ai-review.txt",
+        "call-transcript--northfield-electrical-phone-routing.txt",
+        "call-transcript--northfield-electrical-ai-upgrade-account-review.txt"
+      ],
+      "first_mentioned_date": "2025-07-11",
+      "last_mentioned_date": "2026-04-09"
+    },
+    {
+      "id": "g_002",
+      "statement": "Convert more existing website traffic into qualified, profitable jobs using AI-assisted lead capture and follow-up.",
+      "category": "lead_response",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_009",
+        "ev_010",
+        "ev_011",
+        "ev_011"
+      ],
+      "mentioned_in_files": [
+        "call-transcript--northfield-electrical-podium-overview.txt"
+      ],
+      "first_mentioned_date": "2025-07-11",
+      "last_mentioned_date": "2025-07-11"
+    },
+    {
+      "id": "g_003",
+      "statement": "Grow the monitored smoke alarm business by improving market education, messaging, and direct outreach.",
+      "category": "other",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_012",
+        "ev_013",
+        "ev_014",
+        "ev_011"
+      ],
+      "mentioned_in_files": [
+        "call-transcript--northfield-electrical-sales-follow-up-1.txt",
+        "call-transcript--northfield-electrical-podium-overview.txt",
+        "call-transcript--northfield-electrical-ai-setup.txt"
+      ],
+      "first_mentioned_date": "2025-06-20",
+      "last_mentioned_date": "2025-07-15"
+    },
+    {
+      "id": "g_004",
+      "statement": "Use AI and SMS to capture new-lead attention, collect basic details, and hand off cleanly without confusing customers.",
+      "category": "ai_adoption",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_015",
+        "ev_016",
+        "ev_016",
+        "ev_017"
+      ],
+      "mentioned_in_files": [
+        "call-transcript--northfield-electrical-phone-routing.txt",
+        "call-transcript--northfield-electrical-ai-upgrade-account-review.txt"
+      ],
+      "first_mentioned_date": "2025-07-21",
+      "last_mentioned_date": "2026-04-09"
+    }
+  ],
+  "whats_working": [
+    {
+      "feature": "Reviews",
+      "summary": "Reviews is actively engaged in the last 30 days.",
+      "signal": "REVIEW INVITES LAST 30DAYS: 27",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_work_001"
+      ]
+    },
+    {
+      "feature": "Messaging",
+      "summary": "Messaging is actively engaged in the last 30 days.",
+      "signal": "RECEIVED MESSAGES LAST 30DAYS: 351",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_work_002"
+      ]
+    },
+    {
+      "feature": "Webchat",
+      "summary": "Webchat is actively engaged in the last 30 days.",
+      "signal": "WEBCHAT LEADS RECEIVED LAST 30DAYS: 15",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_work_003"
+      ]
+    },
+    {
+      "feature": "Text AI",
+      "summary": "Text AI is actively engaged in the last 30 days.",
+      "signal": "AI PRODUCT NAMES: [\"Text AI\"]",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_work_004"
+      ]
+    }
+  ],
+  "gaps": [
+    {
+      "id": "gap_001",
+      "feature": "Campaigns",
+      "severity": 70,
+      "goal_links": [
+        "g_002"
+      ],
+      "summary": "Campaigns sent 0 messages in the last 30 days, below the underuse threshold of 1. That leaves no outbound follow-up motion supporting the website conversion goal, even though the customer is worried that visitors are \"not feeling like the form\" and that they \"could be sitting on a gold mine that I have no idea about.\"",
+      "recommended_action": "In the QBR, show where Campaigns would target the current website-lead follow-up gap, then agree on one simple reactivation or nurture campaign for recent website/form leads before discussing broader AI capture.",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_009",
+        "ev_010",
+        "ev_011",
+        "ev_gap_001"
+      ]
+    }
+  ],
+  "opportunities": [
+    {
+      "id": "opp_001",
+      "product": "Phones AI (Voice)",
+      "fit_score": 75,
+      "goal_links": [
+        "g_001",
+        "g_004"
+      ],
+      "rationale": "The customer wants phone calls handled in Podium: \"We're going to start making all phone calls through podium,\" with calls recorded, transcribed, and turned into jobs so there is \"One less step of verification I need to take with the client to get work orders approved.\" Phones AI fits that workflow by helping capture and document customer conversations, reducing manual note-taking when \"sometimes we do have to take notes of when we're going to do things.\" It also lines up with their routing needs when \"if they call during specific hours, we want it to go to different people.\"",
+      "recommended_action": "Propose a Phones AI workflow review centered on call recording/transcripts, job handoff, and after-hours routing, using their goal of making all phone calls through Podium as the anchor.",
+      "confidence": "med",
+      "evidence_ids": [
+        "ev_001",
+        "ev_002",
+        "ev_003",
+        "ev_004",
+        "ev_005",
+        "ev_006",
+        "ev_007",
+        "ev_008",
+        "ev_015",
+        "ev_016",
+        "ev_017",
+        "ev_opp_001"
+      ]
+    }
+  ],
+  "outline": {
+    "goals": [
+      "Capture and document customer phone conversations so approvals, job details, staff training, and VA handoffs are easier to manage.",
+      "Convert more existing website traffic into qualified, profitable jobs using AI-assisted lead capture and follow-up.",
+      "Grow the monitored smoke alarm business by improving market education, messaging, and direct outreach.",
+      "Use AI and SMS to capture new-lead attention, collect basic details, and hand off cleanly without confusing customers."
+    ],
+    "performance": [
+      "Reviews is actively engaged in the last 30 days.",
+      "Messaging is actively engaged in the last 30 days.",
+      "Webchat is actively engaged in the last 30 days.",
+      "Text AI is actively engaged in the last 30 days."
+    ],
+    "gaps": [
+      "Campaigns sent 0 messages in the last 30 days, below the underuse threshold of 1. That leaves no outbound follow-up motion supporting the website conversion goal, even though the customer is worried that visitors are \"not feeling like the form\" and that they \"could be sitting on a gold mine that I have no idea about.\""
+    ],
+    "recommendations": [
+      "In the QBR, show where Campaigns would target the current website-lead follow-up gap, then agree on one simple reactivation or nurture campaign for recent website/form leads before discussing broader AI capture.",
+      "Propose a Phones AI workflow review centered on call recording/transcripts, job handoff, and after-hours routing, using their goal of making all phone calls through Podium as the anchor."
+    ]
+  },
+  "evidence": {
+    "ev_001": {
+      "id": "ev_001",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-podium-overview.txt",
+        "line_start": 63,
+        "line_end": 64,
+        "timestamp": "1:06",
+        "date": "2025-07-11"
+      },
+      "quote": "it was more to do with the phone call, being able to take phone calls through service mate, record them and turn them into jobs and keep that transcript.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_002": {
+      "id": "ev_002",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-sales-intro.txt",
+        "line_start": 218,
+        "line_end": 219,
+        "timestamp": "10:04",
+        "date": "2025-07-11"
+      },
+      "quote": "sometimes we do have to take notes of when we're going to do things",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_003": {
+      "id": "ev_003",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-sales-intro.txt",
+        "line_start": 266,
+        "line_end": 267,
+        "timestamp": "12:44",
+        "date": "2025-07-11"
+      },
+      "quote": "One less step of verification I need to take with the client to get work orders approved.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_004": {
+      "id": "ev_004",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-phones-ai-review.txt",
+        "line_start": 590,
+        "line_end": 591,
+        "timestamp": "37:15",
+        "date": "2025-07-17"
+      },
+      "quote": "We're going to start making all phone calls through podium.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_005": {
+      "id": "ev_005",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-phone-routing.txt",
+        "line_start": 602,
+        "line_end": 603,
+        "timestamp": "39:19",
+        "date": "2025-07-21"
+      },
+      "quote": "if they call during specific hours, we want it to go to different people.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_006": {
+      "id": "ev_006",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-phone-routing.txt",
+        "line_start": 728,
+        "line_end": 729,
+        "timestamp": "47:30",
+        "date": "2025-07-21"
+      },
+      "quote": "I don't want to answer calls unless there's no one else picking them up.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_007": {
+      "id": "ev_007",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-ai-upgrade-account-review.txt",
+        "line_start": 178,
+        "line_end": 179,
+        "timestamp": "22:23",
+        "date": "2026-04-09"
+      },
+      "quote": "And the advantage of that is you want to change the hours that affect medical times so that it rings on her phone or my phone without having to fall back to the extra rings.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_008": {
+      "id": "ev_008",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-ai-upgrade-account-review.txt",
+        "line_start": 184,
+        "line_end": 185,
+        "timestamp": "22:50",
+        "date": "2026-04-09"
+      },
+      "quote": "Yeah, no, I agree.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_009": {
+      "id": "ev_009",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-podium-overview.txt",
+        "line_start": 111,
+        "line_end": 112,
+        "timestamp": "4:21",
+        "date": "2025-07-11"
+      },
+      "quote": "are people visiting my website, and not doing a, they're not feeling like the form.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_010": {
+      "id": "ev_010",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-podium-overview.txt",
+        "line_start": 599,
+        "line_end": 600,
+        "timestamp": "39:43",
+        "date": "2025-07-11"
+      },
+      "quote": "Look, I've converted already. I know the power of AI at the end of the day, I understand its benefits. I know how it can fit in this scenario.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_011": {
+      "id": "ev_011",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-podium-overview.txt",
+        "line_start": 896,
+        "line_end": 1620,
+        "timestamp": "58:56",
+        "date": "2025-07-11"
+      },
+      "quote": "I could be sitting on a gold mine that I have no idea about.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_012": {
+      "id": "ev_012",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-sales-follow-up-1.txt",
+        "line_start": 62,
+        "line_end": 63,
+        "timestamp": "2:13",
+        "date": "2025-06-20"
+      },
+      "quote": "we're trying to sell as a solution to businesses",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_013": {
+      "id": "ev_013",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-sales-follow-up-1.txt",
+        "line_start": 104,
+        "line_end": 105,
+        "timestamp": "4:04",
+        "date": "2025-06-20"
+      },
+      "quote": "we haven't been able, to get the message across clear enough.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_014": {
+      "id": "ev_014",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-ai-setup.txt",
+        "line_start": 62,
+        "line_end": 63,
+        "timestamp": "0:57",
+        "date": "2025-07-15"
+      },
+      "quote": "that's what I'm hoping podium will help us a lot with how we're going to market it",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_015": {
+      "id": "ev_015",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-phone-routing.txt",
+        "line_start": 230,
+        "line_end": 231,
+        "timestamp": "14:22",
+        "date": "2025-07-21"
+      },
+      "quote": "This is what you're going to expect from us within 24 hours, someone will contact you. We'll book a job.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_016": {
+      "id": "ev_016",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-ai-upgrade-account-review.txt",
+        "line_start": 71,
+        "line_end": 72,
+        "timestamp": "13:11",
+        "date": "2026-04-09"
+      },
+      "quote": "Usually, all we want to do is capture the attention, Keep them connected through SMS, which is great.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_017": {
+      "id": "ev_017",
+      "source": "transcript",
+      "locator": {
+        "kind": "transcript",
+        "file": "call-transcript--northfield-electrical-ai-upgrade-account-review.txt",
+        "line_start": 53,
+        "line_end": 54,
+        "timestamp": "12:01",
+        "date": "2026-04-09"
+      },
+      "quote": "if I can manage that thing and stop it from asking silly questions or show me at least how to avoid it or teach it, then that would be great.",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_gap_001": {
+      "id": "ev_gap_001",
+      "source": "usage",
+      "locator": {
+        "kind": "usage",
+        "column": "CAMPAIGN MESSAGES SENT LAST 30 DAYS"
+      },
+      "quote": "0",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_opp_001": {
+      "id": "ev_opp_001",
+      "source": "usage",
+      "locator": {
+        "kind": "usage",
+        "column": "AI PRODUCT NAMES"
+      },
+      "quote": "[\"Text AI\"]",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_work_001": {
+      "id": "ev_work_001",
+      "source": "usage",
+      "locator": {
+        "kind": "usage",
+        "column": "REVIEW INVITES LAST 30DAYS"
+      },
+      "quote": "27",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_work_002": {
+      "id": "ev_work_002",
+      "source": "usage",
+      "locator": {
+        "kind": "usage",
+        "column": "RECEIVED MESSAGES LAST 30DAYS"
+      },
+      "quote": "351",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_work_003": {
+      "id": "ev_work_003",
+      "source": "usage",
+      "locator": {
+        "kind": "usage",
+        "column": "WEBCHAT LEADS RECEIVED LAST 30DAYS"
+      },
+      "quote": "15",
+      "context_before": null,
+      "context_after": null
+    },
+    "ev_work_004": {
+      "id": "ev_work_004",
+      "source": "usage",
+      "locator": {
+        "kind": "usage",
+        "column": "AI PRODUCT NAMES"
+      },
+      "quote": "[\"Text AI\"]",
+      "context_before": null,
+      "context_after": null
+    }
+  }
+}

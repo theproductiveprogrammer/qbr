@@ -1,0 +1,837 @@
+Podium x Northfield Electrical Co. - AI Setup
+
+Customer Success Manager with Customer company
+Recorded on Jul 15, 2025 via Zoom, 1h 2m
+
+
+
+Participants
+
+Podium
+Customer Success Manager
+
+Northfield Electrical Co.
+Customer
+
+
+
+Transcript
+
+0:00 | Customer Success Manager
+hey, Customer. 
+
+0:00| Customer
+Good, mate. How you doing? 
+
+0:02 | Customer Success Manager
+Good, mate. How are you? 
+
+0:03| Customer
+I can't see you. 
+
+0:05 | Customer Success Manager
+There you go. 
+
+0:07| Customer
+Where are we? OK. That's better. 
+
+0:13 | Customer Success Manager
+Good, mate. Good. How's your day been morning? Been busy? It's. 
+
+0:16| Customer
+been a second. I'm just trying to do something here one sec, mate. 
+
+0:20 | Customer Success Manager
+Yeah, no, take your time, mate. Oh. 
+
+0:22| Customer
+Yeah. There we go. 
+
+0:32| Customer
+I love the… automation. 
+
+0:39 | Customer Success Manager
+Yeah, I've. 
+
+0:41| Customer
+got this cool equipment, right? It's amazingly good. That's that's going to be one of my next phases, but it's… how can I show you it's. 
+
+0:56 | Customer Success Manager
+on computer? 
+
+0:57| Customer
+It's a monitored smoke alarm with a bunch of relays, and it's a security system and it's so easy to install where you can just automate anything really to do whatever you want to do. So, it's got it's. Got a bit of sensors that detect motion detection, takes three shots, sends it to an, a video verification of an intruder where you can police, and they can make an arrest based on that alone. So, we have a lot of construction sites. Yeah, the smoke alarms are really trying to push through which is going to be one of your things that I'm going to be, well, that's what I'm hoping podium will help us a lot with how we're going to market it because the idea is, you know, you have a smoke alarm in your house or on your premises in your property, but it goes off in the middle of the night and if there's nothing there, then it's just the place burns down when smoke's coming out the windows, then it's too late and they call the fire brigade. Yeah, this system will, is designed to alert a alert you or any nominated person as well as somewhere critical you might want to call? What do you call it security agencies like Yates or like a marching station, and they've got guards inside. They've got mobile guards traveling around the areas and they get a, they get a response to go there and investigate. And so, it's an early detection system. 
+
+2:26 | Customer Success Manager
+Nice. How do the notifications go? Is it through an app? Is it through text? Is it through whatsapp is it through email or what is it? 
+
+2:32| Customer
+All of them? 
+
+2:34 | Customer Success Manager
+Yeah, it's. 
+
+2:35| Customer
+got an app. It's got an app. It's got a direct link to the marching station and SMS. Nice. So it's a try and it's connected via ethernet, WI fi and dual Sim cards. So it's like five, four channels of communication. So if anything well, ethernet, if you've got ethernet available, it's handy. If you haven't got ethernet nearby, you can rely on WI fi, but it, but also, it's got dual Sim cards with two different carriers. So if one is down, the other one picks it up, it's quite robust. Nice. 
+
+3:06 | Customer Success Manager
+That's good. Cool. Well, we'll definitely chat about that. When the time comes today. We're gonna get the AI agent set up. Yeah. What I'll do is I'll share my screen and I'll just show you the back end the podium on what we do, to set them up. Let's share the screen now. So it's the back end here. So we have AI agent location name, mr, sparky, time zone, correct sector. So you guys are hvac, plumbing and electrical. We're able to actually specifically choose electrical down a little bit, OK, personal name you want to as a hen, HEN or y or I hi. 
+
+3:53| Customer
+Hi. 
+
+3:54 | Customer Success Manager
+the AI agent, beautiful. And after error response, you want AI response during the day, you want AI response as well. So it means he's going to be responding all the time after hours and during hours, fallback delay doesn't really mean anything to you because this is only let's say if you, during the business there, you're like I actually want the staff to respond, but if no one responds back, then after 15 minutes, the AI agent jumps in. But in this case, he's going to be jumping in straight away and it's currently default to set to respond every 60 seconds. So a customer is going to get a text message after they've sent it, sent text within a minute. They're going to get a text. The reason why we default to a minute which I've Kinda touched on yesterday. So it's not too, you know, AI. So it's like, you know, 10 seconds. They get a text back with all this information. And so you're happy to leave with 60 seconds? 
+
+4:48| Customer
+I think so. But probably less, the problem is you can't change different. You can't automate it so that initially 10, 15 seconds and then delay it. 
+
+4:57 | Customer Success Manager
+Throughout, well, they're gonna get a text straight away saying thanks for reaching Northfield Electrical Co.. One of our team will be with you shortly. And then one minute after that, they're gonna get the text. So they'll get a text straight away saying we received your message which is within podium, and then he'll respond back. So it works pretty well for clients. And again, we can change it as we go along, but we'll leave it for now. I'm. 
+
+5:21| Customer
+just curious. Sorry, I don't want to digress too much because we might run out of time again, but if we go for, does it matter if people think it's an AI? I mean, I don't know what not really. 
+
+5:33 | Customer Success Manager
+Not really at all. Mate, to be honest, we can change it to a third if you want. That'd be fine. 
+
+5:38| Customer
+If you think it's AI and we're using good technology and we're communicating and we're honoring whatever that thing says, then what do you care if it's me or somebody else? 
+
+5:46 | Customer Success Manager
+Yeah, because what's going to happen is if someone responds like it's not going to say it's AI unless someone asks them. I think legally, if someone asks them, you have to say we're a virtual assistant, but otherwise it's going to be a normal text message. So we'll do 30 seconds. And if you don't care, then that's fine. 
+
+6:04| Customer
+I don't care about anything that matters. Does it? It doesn't anyway? And like you said, if someone specifically asks, you have to give them the honest? 
+
+6:10 | Customer Success Manager
+Answer. Yeah, exactly. So it's fine. Once you have all the information uploaded to them, it's fine. So it's going to respond to all these Webchat, text, Facebook, Instagram. If you have it lead drive… everything. So like what we can do is we can not only we did the essay, but we can set up where your inquiry forms come into podium. And then the AI agent responds, so we can get that set up as well. I believe that like if you, if someone puts out a form on your website, it's gonna, it sends an email to you. Doesn't it saying here's all the details. Yeah. So we just plug in the email and then the AI agent will respond to that. So we'll set that up after. Do you guys have any hiring links you want to pop in here? 
+
+6:53| Customer
+Yeah, I'd love to. I mean we do. So this link is for hiring page. I think it's we do. 
+
+7:02 | Customer Success Manager
+Yeah. What you can do is pop it in, the zoom chat and I'll pop it in here. It's only if someone says, hey, I'm looking for a job and they'll say, hey, yeah, you can do it here. 
+
+7:44| Customer
+Yeah, good. 
+
+8:12| Customer
+What is the chat thing? 
+
+8:14 | Customer Success Manager
+Do it in the bottom beside where you share your screen. It should be a chat, just paste it in there. 
+
+8:23 | Customer Success Manager
+Sweet. Yeah. So I'll pop it in here. 
+
+8:33 | Customer Success Manager
+Cool. Don't worry about the Jerry version too. So this one here, you guys are just mainly just electrical. Do you have anything else or just like, do we have different types? 
+
+8:43| Customer
+No, just electrical. 
+
+8:44 | Customer Success Manager
+Electrical. Perfect. So the tone and voice, so it's going to say default informal yet professional, adopt a conversational tone that's friendly and approachable. We normally pop that in for everyone in terms of like pricing. You said to me yesterday, you don't really have pricing? Is that more you speak to the customer, find out the details of what they need to be doing, and then you Kinda quote them. Is that right? 
+
+9:13| Customer
+We do the only thing if they insist we could somehow give them like a call at fee price to go and invest. 
+
+9:19 | Customer Success Manager
+Yeah, we can update that down below, but I'll have to update that. Yeah, yeah, we can do it. So exclude homeowner status. So if this is turned on, the AI agent will not ask the customer if they're homeowners, do you need to ask people? Their homeowners? I. 
+
+9:37| Customer
+think it might be worthwhile early because if they're not home, I don't know. I mean, what's your experience? I really don't know. 
+
+9:46 | Customer Success Manager
+Well, some companies, they don't need to know if the person is the homeowner normally, if it's just like a general fix, they can go through the tenant. I suppose… I know sometimes you guys might have property managers that reach out to you, but I suppose it's no harm in asking them at least you have that data. So if we keep this off, it'll just ask them out of the homeowner. It's not going to say we can't do it without the homeowner it's just going to ask the question. 
+
+10:14| Customer
+All right. Yeah, I think it's good information to keep anyway. 
+
+10:17 | Customer Success Manager
+Yeah, cool. Do you have any like online appointments? Scheduling? We don't. 
+
+10:25| Customer
+utilize it. We want to eventually, but something else, yeah. 
+
+10:28 | Customer Success Manager
+Yeah, we can pop that in once it's ready. So in relation to like organizing or getting data from a customer for a job, it's going to ask for the, we know, we put name, last name, phone number, email address. Now, if podium have that information as a contact. So let's say it's someone who's already on podium and we know their name, we know their number, they'll say, hey, Customer, we got your number, what's your email? If they're missing a piece of information? 
+
+11:05| Customer
+OK. 
+
+11:08 | Customer Success Manager
+We have the option for them to upsell maintenance plans after appointments, so they can try and schedule some maintenance plans for them. If you guys do that. 
+
+11:21| Customer
+We don't have specific maintenance plans. We could be upselling smoke alarm certification and verification. 
+
+11:28 | Customer Success Manager
+Yeah. OK. And, 
+
+11:31| Customer
+we could do that as part of the appointment. So for an extra 35 bucks, we can test your smoke alarm and give you a fire safety certificate or something like. 
+
+11:41 | Customer Success Manager
+That, yeah, yeah, that's cool. So we won't do this then for now because he'll probably ask us different information and we can detail stuff because we can actually add as like a question and an answer. Like do you do smoke alarms? And we can have an answer that has all that information in it. So we can do that in the question and answers part. So in terms of excluded services, so we need to have at least one thing so, and we can add more. So it's basically letting the AI agent know if someone asks what you don't do, so it could be like round ball plumbing could be one thing or things like that. I would. 
+
+12:17| Customer
+Say that the plumbing, but we definitely would not do solar. 
+
+12:20 | Customer Success Manager
+Solar. Yeah. 
+
+12:21| Customer
+So you can just put something there. 
+
+12:23 | Customer Success Manager
+That's solar, is there anything else that we can put in here off the top of your head… that you might get asked a lot about? 
+
+12:31| Customer
+Appliances, repairs. So we don't repair appliances. 
+
+12:36 | Customer Success Manager
+Yeah. 
+
+12:39| Customer
+Typically, that's all that I've come across things that I do, I mean, if it's an automotive, it's obviously not automotive, but sometimes we get the three Adwords, we get automotive questions, but again, having said that we do home motor vehicles and we do electrical in them as well. Maybe. 
+
+12:59 | Customer Success Manager
+We'll keep that out. Yeah, we'll just do these two. And then as I said, we'll be able to add more and more details to this as the AI agent is learning. 
+
+13:11| Customer
+Sorry, mate. Do you mind if I get this quickly? 
+
+13:13 | Customer Success Manager
+Yeah, go for it, mate. Go for it. 
+
+13:15| Customer
+Hello, Customer speaking. Hi, Kerry dufresne, I've been thinking about. I've been trying to figure something out for you the last three days. I can't find anything online or anything that I would recommend. They all seem to be more or less the same, but that's what you've got. 
+
+13:38| Customer
+You want to just get the same, what brand was it? Again? It seems to be hella. Yeah, hella's, not a bad brand like we keep, I supply my suppliers, stock it. It seems to be the most reasonable just because probably it broke. I wouldn't be… I can get you the exact same one if you like. 
+
+14:03| Customer
+We can get 1,500 as well. OK. So you're happy with hella. I just don't want to recommend the same brand that you, that you're not happy with, but exactly. 
+
+14:17| Customer
+Yeah, the Google stuff. Yeah… it's leaking through. Yeah, no, you should get rid of that, that's it that's conductive. Oh, we'll get that replaced. When we do that. Just try not to plug anything in. It. Was it coming out of the? Yeah… send me a photo of it for me. I'm just on a zoom meeting. Send me a photo of that powerpoint, and I'll tell the boys to replace it when they do, when they replace the actual script, you know? 
+
+14:49| Customer
+We can do it this way or early next week at the latest. Let me pick one up and then I'll tell you how many watts it is and we'll take it. I'll text you all right. Thank you. Cheers, bye. 
+
+15:07| Customer
+It's like, man, I feel bad, but they just take up so much time and they don't do anything. 
+
+15:15 | Customer Success Manager
+I don't know it's not cool. So, you have solar appliances, repair in the excluded services. As I said, if there's ones that come in, we… will. 
+
+15:26| Customer
+Well, we can do obvious plumbing and air. Conditioning. I mean, air, conditioning we don't do installations, but we give power to the air. Conditioning so… sometimes. 
+
+15:36 | Customer Success Manager
+Air conditioning install. Do you want to just leave it at these two and then we can. 
+
+15:41| Customer
+Yeah, we'll come back and read the final. 
+
+15:43 | Customer Success Manager
+Yeah, because we don't want to put it in and then Harry says we don't do this and you guys do, and it's happened before. So we just want to make sure that it's something you don't do. Then we just pop it in here. Do you have any service plans? 
+
+15:57| Customer
+We could, but I don't have that right now. Sorry, Luke, it's OK. Hey, you need me or I can. 
+
+16:11| Customer
+None of that in the world's, house or the girls. Yep. No, no, no, I don't know. I went to zoom meeting. I'll talk to you later. Bye, sorry, mate. 
+
+16:26 | Customer Success Manager
+No, it's all good. So the next one is like we have services and pricing. So you can put stuff in here. If you have like this is what I was saying yesterday about, you know, customers will put in different services they have, and the price of that particular service. If you go down a little bit, we have like service call fees, maybe a general diagnostic fee, stuff like that. But in this section here, this is where we can actually put in detailed instructions for discussing services and fees. So providing information about services that are offered and how you want the agent to respond to the questions about pricing and fees. So we could put in like information like a service will cost this X amount. But there's also a, you know, diagnostic fee of 50 dollars before we go outside or blah blah blah. Do you have any details that you have in terms of the services and fees we pop into this window here? 
+
+17:24| Customer
+Well, generally, the way we quote is we quote over the phone based on the information they give us after we have a conversation with the client. And then that fee is not set in stone. So, for instance, you might call me and say, hey, I've got a, I don't know a remove and replace three downlights, something like that. I'll say, OK, it's gonna cost you 300 bucks. 
+
+17:46 | Customer Success Manager
+Yeah. 
+
+17:47| Customer
+But then when we get there, we then obviously, it's like a little bit of an open ended, the quiet where when we go there, we'll confirm it. And if it is any different, then you have no obligation to go ahead with it. The idea is that we don't spend too much time traveling to quote. We know we've secured with 300 bucks worth of work. And if we get there and it's going to be 400 for whatever reason. Yeah. Then you can Kinda gauge and say, look, is it worth? You might say it? But then they say, look, I'm only happy to go for 300 and you get the job done then there, yeah, or if it's something maybe significantly higher, then you give them a reason why? And if they don't accept it, then so be it, you just move on. 
+
+18:28 | Customer Success Manager
+Yeah, a lot of time, those would be, those would be conversations over the phone like that you'd be chatting to them about, yeah, but. 
+
+18:37| Customer
+it's not something that the bot can do, but we can say something if they're discussing fees, we can say that look, we will give you a technician. Will… you know, we'll get a service technician to give you a call and confirm some details with you. They'll be able to give you a price over the phone. It's obligation free to be confirmed when we go to site. OK? 
+
+19:04 | Customer Success Manager
+Perfect. 
+
+19:05| Customer
+If, if that, if that's what you're trying to do there, we're gonna take, yeah, yeah. 
+
+19:12 | Customer Success Manager
+We, can, we can add more information in here that's absolutely fine. But we also have down the bottom. It's like, the file. I know I should have a chance to look at the file I sent you yesterday, but this is basically, yeah… these are all like the, I put into chat gpt, got some questions and answers. And again, a lot of it is just general Kinda questions. It wouldn't necessarily see. This is one about the handle smoke alarm installation. Now, we can add more detail into this answer like with the pricing and stuff, you know, but it's just what chat gpt got me switchboard upgrades. 
+
+19:55| Customer
+What I was thinking with this, I was gonna, because I use chat gpt and I've got the subscription for it after I've got the pro or whatever. 
+
+20:03 | Customer Success Manager
+Yeah. So do I, this is using the pro one as well, but it's just well. 
+
+20:08| Customer
+The reason I'm thinking here I would be uploading all the conversations from podium with the clients. OK, here's, how it's gonna be. I think it's gonna work out this way. So we go through and we, whatever conversation is locked, right? And then we know if this conversation has led to a job or not. Yeah. And then what I would, what I'm planning on doing after a month or so is to go through and just select all these conversations and in one of the, one of these columns will be job, you know, turn into a job, or become a dead lead and then get chatgpt to go through the conversation that was, that had taken place and then create a new ways of teaching the AI agent on how to handle it because I think chatgpt is more advanced than. I don't know how advanced is, your AI or does it use chatgpt at all? 
+
+21:15 | Customer Success Manager
+It doesn't use chatgpt. No, it's our own AI, you know, system like it works pretty well, but you need to have. 
+
+21:22| Customer
+Because when I used it yesterday for replying to reviews, it was, very genetic. They're. 
+
+21:30 | Customer Success Manager
+applying to review ones. Yeah, because it's just, because we deal with so many… different industries, it's going to be quite generic for that one. But this one is specific for your industry. So we're going to be able to upload questions and answers. Like we need to upload like minimum 17 questions and answers to get you guys started. But I feel like this has all been scraped from the website, so we could upload these to start off. Yeah. And, and then what we can do is we can always turn off question and answers, change them on your side and podium. You'll have access to do all this as well. So, yeah, and these are just Kinda generic ones and that we can add in like for example, for the local arm one. So, do you want to maybe put more information, on that answer? Possibly I? 
+
+22:19| Customer
+Will be, I will be like, you know… we installed TSM, a tan, hardware, and wireless smoke alarms according with aes. Which one… is that smoke alarm? 37, 86, 37, 86. Yeah. 
+
+22:43| Customer
+Five six. Yep. So we'll put the standards but… you want to do it now? 
+
+22:54 | Customer Success Manager
+Yeah, I can just write it here. I'll. 
+
+22:55| Customer
+have to go through this more thoroughly that's OK? 
+
+22:58 | Customer Success Manager
+I'll have. 
+
+22:58| Customer
+To do it as well. 
+
+22:59 | Customer Success Manager
+Yeah. So again, what we'll do is you can go to, I sent you this exact file so you can go through like these. Again, it's just using chatgpt to scrape the website and get questions and answers. It's going to have like, you know, all these payments. What, what will really help is like more detailed. So in terms of maybe like you'll probably have more answers to put into like, you know, these questions, you know, dimmer switches, exhaust fans, you know, all these ones, you'll know more detailed about it and yeah, and we can upload them. I. 
+
+23:36| Customer
+Lost you for a bit. I don't know if you could hear me but I lost you for a bit. Yeah, I see what you're saying. Yeah, yeah, look, we'll have to play it by ear, I guess. But if I've got access to it later, I can just apply them. Yeah. 
+
+23:48 | Customer Success Manager
+Correct, correct. I'll show you where to do it. So, any general service call fees? 
+
+23:58| Customer
+Try not to, but yeah, we could see there's emergency non emergency there is if you want it. Now, it depends on where they are. So. 
+
+24:08 | Customer Success Manager
+What we, what we would do is we would put like the, if that information in here. So, see, this is actually a new setting. These ones are just defaulted, but you can put in, you know, it's a 300 dollar service fee for depending on, you know, where you are, where you're located and the issue. And then you could do the next line where it's you know, in regards to, you know, aircon system or whatever you put in like different bits of information, so you'll be able to access some podium side and you can run through it all. So we'll just go through a little bit more. You… have emergency service call phone number, or is it just your normal phone number? 
+
+24:52| Customer
+The one 300 number or the mobile number? I mean, it will convert. It will divert to my mobile when it's after hours or somebody else's so. 
+
+25:00 | Customer Success Manager
+Yeah. What's it? What's the number one, 300 double? 
+
+25:03| Customer
+Seven zero, double seven one? 
+
+25:07 | Customer Success Manager
+Double seven, zero, double seven one. 
+
+25:15 | Customer Success Manager
+Cool. The radius that you would service from your office, right? Roughly like a 50 kilometers, 80 kilometers Sydney. 
+
+25:27| Customer
+Metro, we're not in the office. We've got staff all over. We're Kinda spread out and we're just let's just say Sydney metro. What does that work out? 
+
+25:37 | Customer Success Manager
+To be? Yeah, let me check. 
+
+26:01 | Customer Success Manager
+Using square kilometers. Where are you guys? 
+
+26:08| Customer
+Bagville? Two two three four. 
+
+26:28 | Customer Success Manager
+Let's have a look here. 
+
+26:34 | Customer Success Manager
+This one was also done in Miles. We did it in Miles because it's a us company. 
+
+26:41| Customer
+Let's put, let's put 30. 
+
+26:45 | Customer Success Manager
+Yeah. All right. That's, Miles kilometers. 
+
+27:00 | Customer Success Manager
+What do I put in 20? 
+
+27:08 | Customer Success Manager
+And yeah, we can also add in like a number of postcodes that you cover as well. So you have a list of postcodes and there's probably a lot of postcodes you cover, but we can add them in here as well. 
+
+27:27 | Customer Success Manager
+The voice AI settings not relevant at the moment, but we will be having voice AI really released quite soon, which will actually allow AI to answer calls, book appointments for you, book jobs. We only listened to like the 70 percent release version of it and it was pretty impressive. So we're hoping it's going to be available next month, September time. We'll be able to go through that with you as well. So then this is the instant answers part where we upload the file. I'm just going to create the agent of what we've done now, which will then will allow it to be visible within, your podium. 
+
+28:16 | Customer Success Manager
+If we log in here. 
+
+28:28 | Customer Success Manager
+So if you refresh your page, we haven't actually turned the AI agent on yet. But if you refresh your page, you should see a sign to the AI agent here in your inbox on the left hand side, Adrian podium. 
+
+29:22 | Customer Success Manager
+And then we also have like AI control settings. This is where you, what's. 
+
+29:28| Customer
+going on with this internet? 
+
+29:30 | Customer Success Manager
+The internet? 
+
+30:11| Customer
+OK. So I'm in podium. Where am I looking for? 
+
+30:14 | Customer Success Manager
+So you'll see when on the left hand side, when the conversation comes into podium, on the left hand side, it should say assigned to the AI agent. 
+
+30:22| Customer
+Oh, yeah. 
+
+30:23 | Customer Success Manager
+So all the conversations will go in there. So if you want to look at what the AI is talking about, you go in there, you'll be able to see all the conversations, read through it and then just reach out to the customers after the AI agent's warmed them up and where you can actually control the settings is at the very top of the page. In the middle of the Kinda dashboard, there's an AI control section. So if you click the AI control section, it'll… bring you then to Kinda a front end way where you can update, you can add your questions and answers… control with any escalations that are required. Change the name of your employee. But the main thing is Kinda like the service areas services. So this is where you'll put in details in here about what you want the AI to say about. So different Kinda information… like you were saying earlier about the specific jobs or what you want them to, basically to know you pop in, pop into this part of it here. 
+
+31:39| Customer
+OK. So. 
+
+31:41 | Customer Success Manager
+Before we actually turn the AI agent on, we'd want to up, if you can see where I am on yours on your computer, you'd want to go into the instant answers. And this is where you would upload… some questions and answers. There's. Already some detailed ones. And we can turn this one off because we don't want them to say service plans. 
+
+32:08| Customer
+I will turning on service plans, which we will offer smoke alarm, yearly, smoke alarm maintenance, maybe even thermal imaging. And… so we could do thermal imaging, smoke alarm maintenance, and RCD testing. And we could, this could be as an upsell, but would that be a service plan or how does the service plans work? I'm not familiar with them. 
+
+32:35 | Customer Success Manager
+Yeah. Like I'm not either too. To be honest, it's like depending on some people might have as you said, you know, it could be, you know, annual service plans for, I know some people will get their air, conditioners, you know, checked every 12 months, six months, the smoke alarms, I suppose would go into a service plan. So it could be something like as you said, smoke alarm testing, do you say? 
+
+33:03| Customer
+All right. Let me, I'll just make some notes here and I'll have a think of service bands. OK? We can do service bands. I'll make a list if you want to leave her off, leave her off. I'll let you know how. Yeah. 
+
+33:17 | Customer Success Manager
+Because at the moment he's saying we don't offer him because the reason why is because we've left this blank, you know? OK. And you'll see some of the Kinda questions, that have come up already just from, I think the information we put in and podium. But if you, this is where you upload the list of questions. So it has to be a CSV file. And all you have to do for the question and answers is have column a as the question and column B as the answer. Now, if someone answers a question, what electrical services do you offer? It's not going to respond with this question. It will say, hey, Customer the AI agent from Northfield Electrical Co.. Yeah, we handled everything. So we'll actually like introduce himself, sign off the answer. That Kinda thing. What we would also need to do is as I said, if you're in podium and you go to AI controls, I'd say give a bit of time yourself and go through each of these settings. Some you don't have to read already because you have your AI employee name already. We'll pop in maybe services in this detail here. This is where you can put in your service plans if you want to enable upselling after scheduling. And so you can pop in the information here that you, want… to basically as if you're training a new staff member in the business about what you do, you're just going to type it in here, the AI agent will know and then we can turn it on. So once we have some services in here, answers uploaded, we'll be able, to switch them on. There's. No point turning them on if you didn't have too much information, if that makes sense. All. 
+
+34:56| Customer
+Right. Well, let me work on that for a minute. What else do you want to go through now? 
+
+35:04 | Customer Success Manager
+The only thing we could do is it's. 
+
+35:08| Customer
+all sent via SMS. Yeah, SMS. 
+
+35:11 | Customer Success Manager
+What we can do as well is you're able to get emails in podium as well. And the AI agent will be able to respond via email. What main people use it for is just bringing in their lead forms. So when a lead form is filled out, the AI agent reads the form and then he can respond back automatically about the inquiry. So that could be quite handy as well to set up. 
+
+35:37| Customer
+OK. 
+
+35:38 | Customer Success Manager
+If you want to share your screen, I'll show you where you can do this in podium. 
+
+35:49| Customer
+OK. I'll just. 
+
+35:59| Customer
+That's not it. 
+
+36:21 | Customer Success Manager
+You can go maybe log into podium, the inbox up here, the podium? 
+
+38:08 | Customer Success Manager
+Hey, Customer. You back? Yeah. 
+
+38:10| Customer
+Can you hear me? 
+
+38:11 | Customer Success Manager
+Yeah, I think you just froze. I'm just sure what happened? Yeah. 
+
+38:16| Customer
+Yeah. 
+
+38:23 | Customer Success Manager
+I think you're trying to log into the podium if you want to share your screen again, yeah. 
+
+38:27| Customer
+I just couldn't see the screen. So, where is my podium? 
+
+38:48 | Customer Success Manager
+Cool. Yeah. So that, this is where you'll obviously update, the details you need if you need any help with me setting them up or have any questions, let me know. But once you get all this filled out, you can do is maybe today or in over the next 24 hours or so. And as soon as we have data for the AI agent, we can turn the AI agent on and we'll be able to turn the Webchat as well on. So you start getting new inquiries in and then how you can, the AI agent can work with the other things we can do is the contact form. So, if you want to go to more, the top left… go to settings. 
+
+39:27 | Customer Success Manager
+Go to lead sources on the left. Yeah… and then go to emails. So, what we'll do is I do all the leads come into contact, yes. 
+
+39:41| Customer
+So, 
+
+39:42 | Customer Success Manager
+if you want to click, add an account… and then you'll just sign in to whether it's outlook or Google. 
+
+40:19 | Customer Success Manager
+And what you want to do is see this box here. Just this just said turn this off because that's going to bring all emails in the podium. We don't want that. All we want is to get the lead form sources here. So you can keep that one turned on when they come in to come into contact. Do you know what email they come from? That you receive them from? Do you have an example one open? 
+
+41:20| Customer
+One, two, three guys. 
+
+41:34| Customer
+Wow. 
+
+41:37 | Customer Success Manager
+So today? 
+
+41:38| Customer
+It's just really slow, but it's I do have a few windows open, but it doesn't matter. 
+
+41:45 | Customer Success Manager
+Yeah, it shouldn't really, but. 
+
+41:48| Customer
+Maybe because of this window open as well. It's. 
+
+42:04| Customer
+really? Are they even gone? Wow… zoom is not responding? OK, that's it, have I got video on no? 
+
+42:19 | Customer Success Manager
+There's no video now. 
+
+42:21| Customer
+Yeah, it's probably better. It just makes it faster. 
+
+42:25 | Customer Success Manager
+Fair enough. 
+
+42:28| Customer
+So we get web inquiry. This is the tag. 
+
+42:32 | Customer Success Manager
+Yeah. Click into that. So, with this now, like it will, when we have the AI agent set up, the AI agent can like respond to these clients. Now, it's obviously important that you or the team log into podium and just have a look at the AI agent's conversations. And when you guys need to jump in and call them, and then when the podium phones come over, you'll be able to, you'll be working on the same Kinda inbox… it's taking time to load, isn't it? It's. 
+
+43:04| Customer
+a little internet connection today. I don't know what it is. Yeah. 
+
+43:07 | Customer Success Manager
+And… what will happen as well is see for that when you're clicking into Thomas alexandrov, so like he's given a own nine eight number. So, I don't believe that I won't be able to text apple that he'll send an email though. the AI agent will respond by email that's. 
+
+43:26| Customer
+rubbish. This is spam? 
+
+43:30 | Customer Success Manager
+That one spam, this? 
+
+43:32| Customer
+Is a spam mail? OK? So. 
+
+43:36 | Customer Success Manager
+It come, yeah, but these come from the web forms. 
+
+43:41| Customer
+Yeah. 
+
+43:41 | Customer Success Manager
+But they come from contact at Northfield Electrical Co. to contact at Northfield Electrical Co.. Com, au don't. They, it looks like it. Yeah. 
+
+43:47| Customer
+Yeah. 
+
+43:48 | Customer Success Manager
+Beautiful. So that's all we need to know. So you go back to podium. 
+
+44:00 | Customer Success Manager
+You can just X that one. I think it's the one where it says inbox podium. 
+
+44:08 | Customer Success Manager
+And what you'll do is add email source, the blue box, the blue button there. 
+
+44:23 | Customer Success Manager
+I'm just pasting it's. 
+
+44:26| Customer
+Not doing anything. It's frozen. 
+
+44:31 | Customer Success Manager
+Just paste in the email. 
+
+44:37 | Customer Success Manager
+And then that's the nicknames you could do like Northfield Electrical Co. lead form or something or…, web forms… yeah, and click add. So now, when we receive an email from contact to contact at the podium, it'll come in as a lead form and podium. And then when we have the AI agent turned on, he's going to read the form and respond back to the customer by a text message. Sometimes he might say the reason why it's important for you guys to monitor… everything because the AI agent's not going to book jobs in or schedule them in unless he might have a link that we can put in but he'll be able to warm them up and say, yeah, we can do this. And then if it gets to a stage where he needs you guys to help, he'll just let the customer know and say, hey, thanks. Yeah, one of our team will contact you shortly and that's when you maybe give him a call, book the job in? 
+
+45:35| Customer
+Can the AI agent group SMS at all? 
+
+45:38 | Customer Success Manager
+Group SMS? 
+
+45:41 | Customer Success Manager
+No, but we have bulk messages add on as Customer Success Manager mentioned yesterday, no, no. 
+
+45:45| Customer
+No. What I'm hoping for, I would, I mean, it's going to send me mad, but initially, it would be a good idea. If I get SMS, you know, you can send two smses, like a group, you create a group and you send an SMS. So I would be on the conversation with the AI agent. The three of us, me, the AI agent and the customer? 
+
+46:03 | Customer Success Manager
+Yeah. 
+
+46:04| Customer
+You'll be getting the SMS's. 
+
+46:08 | Customer Success Manager
+no, I get you. Well, you can like, you can be in the conversation and respond because it's coming from the one number, if that makes sense. So it won't essentially be like a group message, but you'll be able to log in and take over the conversation from the AI agent if you need to. Yeah. 
+
+46:25| Customer
+I know, but that's I'll have to log into the app and take over. Yeah? 
+
+46:30 | Customer Success Manager
+You'll need to respond to customers, yeah, in the app? Yeah. So. 
+
+46:33| Customer
+Through the app, not through SMS? 
+
+46:36 | Customer Success Manager
+No, through the, yeah, through the app. Yeah, the podium app in your mobile? 
+
+46:39| Customer
+And can I hand it back over to the AI agent when I'm if I don't want to deal with it anymore, yeah? 
+
+46:44 | Customer Success Manager
+You can. So if you go to, if you X, we'll. 
+
+46:49| Customer
+deal with the app later? 
+
+46:52 | Customer Success Manager
+Yeah, correct. You can, you can. So if you X out of these settings for the top, right? For a second. 
+
+46:59| Customer
+Yep. So. 
+
+47:01 | Customer Success Manager
+When a conversation comes in, let's have a look here. It will say assigned to the AI agent and you'll be able to jump in and respond. The message will still be assigned to the AI agent. You can only, so see the way it says this one here, you, that came through, do? 
+
+47:18| Customer
+You see the way? Yeah. 
+
+47:19 | Customer Success Manager
+So, see the way your name at the top, Customer, at… the top of here, it says Customer, if you click that you'll be able to sign to AI and yourself. So every conversation that comes in is going to be assigned to the AI agent automatically. And then all you have to do is just, you know, if you want to take over yourself, you can just remove AI from that conversation. If you want to text the customer and the AI text the customer, you can just, yeah, you can just respond that way and it will still text the customer. The AI will still continue the conversation. 
+
+48:00| Customer
+But how does it work in practice? So once I'm signed in, I'm not going to be in front of a computer. So we'll need podium installed on the app. Is there something you want to go through now or do you want to wait till later? 
+
+48:14 | Customer Success Manager
+Well, you can download the podium app on your mobile right now and you can log in and do a few tests that way if you have any of your staff members, you want to test it, but the AI agent's not switched on yet because we need to input more information into him. But once he's done, I can just turn him on. 
+
+48:31| Customer
+So, where am I looking? Podium? Small business tools? Yep? 
+
+48:35 | Customer Success Manager
+So if you go to your app store on your phone to search in podium? 
+
+48:40| Customer
+So, should we sign in with what am I, would we sign in with contact MSS? Yeah. 
+
+48:45 | Customer Success Manager
+I believe you're a contact. Yeah. 
+
+49:06| Customer
+Hey, did you check your email for a verification card? 
+
+49:37| Customer
+So in my inbox, I've got, yep. 
+
+49:50 | Customer Success Manager
+So if you're on the road or out and about, and you want to check, you know, conversations, you can just do it on your mobile app. And then eventually when the phones move over. So when Rochelle reaches out to you to port them in, you'll be able to make a receipt? I got an. 
+
+50:05| Customer
+SMS as well. Yeah. 
+
+50:09 | Customer Success Manager
+Because you're texting from the podium number to your actual mobile number, do you know what I mean? 
+
+50:16| Customer
+Yes. So, and then if I've got my va sitting here saying, hold… on, stay back. 
+
+50:29 | Customer Success Manager
+Yeah. 
+
+50:36 | Customer Success Manager
+You'll be texting that'll, be a customer's number. They'll be texting to and from, 
+
+50:47| Customer
+I think it is doing what I'm talking about. Can I… when we turn it on? I might get you to, I might get you to fill out a form, start a conversation. I'll be texting from. I just want to, I think it is what I think you're the customer. It won't be coming through to me at all. 
+
+51:12 | Customer Success Manager
+Yes. So like a customer filled out a form. When we turn AI, I'll be happy to do it. I can also text from my podium number. You can do some tests that way but you'll be able to, once the AI is turned on. 
+
+51:27| Customer
+I know exactly what's going on. It's always matt. I get confused with this shit because I'm always testing different things with different apps and I've got two different mobiles just for that. And it still fucks my head because, yeah. So you're getting what I'm seeing on the SMS or whoever the customer. 
+
+51:46 | Customer Success Manager
+Is correct. They're just getting a text message. Yeah, it's like a text conversation and you're just texting from your podium mobile number. Yeah, it doesn't. 
+
+51:55| Customer
+distinguish, where is it coming from for you? As the end user is concerned, they just see the messages come through. 
+
+52:01 | Customer Success Manager
+They just see the text messages exactly. They don't see anything else. There's like a normal text conversation over mobile to them. And then the same with the phone calls, when you're able to use the phones that'll be, the next thing to run through is the podium phones. So, yeah, I know Rochelle from our porting team will reach out to help get this ported over. And then we'll just do help with the setup of the phones. 
+
+52:31| Customer
+OK. 
+
+52:33 | Customer Success Manager
+So, yeah. So the only thing you need just to focus on for next is just go to AI controls and then just maybe start filling out some information. There. Have a look through the file of questions and answers I sent through to you. If you want to delete some questions and answers, add a bit of it more, do your own list. But yeah, just before we turn on the AI agent, we just need to put some information into the podium. I know you'll know what to say. Maybe you and your team will know what information you want to put in the AI controls, and then we upload those question and answers. Then we'll turn them on. And then we'll turn the Webchat on. And then we'll that's the best way we can monitor them once it's Kinda live on the website. 
+
+53:16| Customer
+And just, well, OK. OK. So a couple of questions, I guess, yeah. 
+
+53:31| Customer
+So, with your list, what is your list? Can I see your list here or is it just in the email Bonnie? 
+
+53:38 | Customer Success Manager
+Yeah, I emailed it to you, but I can, if you just want to. 
+
+53:42| Customer
+Type it… there? It? 
+
+53:46 | Customer Success Manager
+Is there, I think mr, sparky faqs? Yeah. 
+
+54:03| Customer
+Oh, 
+
+54:14| Customer
+and it doesn't link to a Google docs. It has to be a file uploader. Is that correct? 
+
+54:19 | Customer Success Manager
+Yeah, it has to be a CSV file uploader. But if you download that CSV file I sent you, you'll be able to upload it directly? 
+
+54:28| Customer
+So, if we're on the software, it has to be AB, only we can't have more than two columns. 
+
+54:35 | Customer Success Manager
+No, it can be, yeah, it can be, it can be, any, as much information as you want in this one, you know, line, you know what I mean? You can put as much information as you want, but then within, I understand. But. 
+
+54:46| Customer
+OK. What electrical services do you offer? We have everything from one repair to additional, Da. But if I type anything in, you can see what I'm saying. So, if I put anything in like this will be taken into account, it's column three, obviously. 
+
+55:02 | Customer Success Manager
+Correct. If you want to. 
+
+55:04| Customer
+If I want the AI agent or the AI to consider whatever I put in here, it has to be in column B. 
+
+55:10 | Customer Success Manager
+That's correct? Yeah, column a is the question and column B is the answer. 
+
+55:14| Customer
+OK. And if I have multiple, can I have some of this? And I'm asking this for later, I'll tell you why it's at one row below. Let's just say, and then my… columns… switchboard upgrades, see how there's two questions that are the same. 
+
+55:40 | Customer Success Manager
+Yeah. 
+
+55:41| Customer
+Is it going to confuse the AI or it will know to respond to pick from these two? 
+
+55:48 | Customer Success Manager
+I'd probably recommend putting it in like for example, I'd probably instead of this question, you could probably change the question name. Do, you know, to like, do you do smoke alarms or what other services do you do and put that in? I mean, I probably just changed slightly changed the question. Well. 
+
+56:07| Customer
+The reason I'm saying is, if we double up on the question, is it gonna stuff it up? 
+
+56:15 | Customer Success Manager
+But I probably recommend. Yeah, just changing, the question slightly or just adjusting what the question is. So, instead of what electrical services you offer, it could be what services do you offer? And then you can put in, you can add in different things, you know, and, 
+
+56:32| Customer
+what if I go like this one and then what does it offer? Two? Would that be enough? No, no, I'll tell you why I'm thinking like that. Yeah, because I'm… gonna be working on it. I'm gonna get my other staff members to working on it. I'm gonna get my va to work on them and fill them up and I need to be able to at some point say, OK, look, give me all this list and I'm gonna go through all this and then we can amalgamate because what we could potentially do… I guess if I did, if that's all the answer have to be in one line here. So everything is related to cells or do we just like this can be as big as you want it to be? For example? Yeah, it. 
+
+57:23 | Customer Success Manager
+Can be big as you want to be. What you can also do is within podium. If you go back to podium for a second, because we have, a section because these are just Kinda general faqs and answers. If you go to the inbox one and click on AI controls… and then if you go to the section that says services… just in the middle, services. 
+
+57:49| Customer
+Services? 
+
+57:50 | Customer Success Manager
+Yeah, just in the middle. 
+
+57:59 | Customer Success Manager
+Just click AI controls again. Yeah. And then services… this is where you can put in, see in here, instructions for discussing services and fees is box. This is where you can put in, you know, your specific details in here. Doesn't have to be question and answer. You can just do one line, smoke alarms, see that at the top of the box? 
+
+58:19| Customer
+Where that? 
+
+58:20 | Customer Success Manager
+Box? Yeah, this is where you can put in smoke alarms, dash. This is what we do with smoke alarms. This is a servicing. It's a, you know, it's meets the requirements of xyz. Next line could be another specific service. You want to add more details into. This is the box you should use. 
+
+58:39| Customer
+If all it is the bot, more questions, more if I queues? 
+
+58:49| Customer
+What if we go to, if I wanted to analyze the conversations but not through podium and go through it like this? Can I export all this information out? 
+
+58:59 | Customer Success Manager
+That press, I know, you can definitely, you can. When you have the calls… I don't see any way you can do. I don't get a simple way, to do that. However, I know with the phone calls, you're able to like copy and paste the scrap, the transcript until and put in the chat gbt if you wanted to. But in terms of exporting the conversation, I don't believe it's like our support team might need to do it. But yeah, I think it's a simple way of doing it. It's Kinda a back end support thing that they do. But like for this information, for the stuff you need to put in that box in a, in podium is more just general information that you guys would know and you can constantly add more information to this as well and get it from old conversations too. 
+
+59:53| Customer
+Well. 
+
+59:56 | Customer Success Manager
+Yeah. So what I recommend is just go through those questions and answers in terms of detailed stuff… about your services, do it in the AI controls, and then we can pop it in the services section, and then we can turn the AI agent on and add more details as we go along. 
+
+1:00:18 | Customer
+Look, I'll play around with it because, yeah, I don't know. Yeah, fair enough. We'll just. 
+
+1:00:24 | Customer Success Manager
+Yeah. Have a play. I can give you a call tomorrow even to see how you got on or you can send me through a message or email or whatnot? 
+
+1:00:32 | Customer
+Yep. 
+
+1:00:33 | Customer Success Manager
+Before we. 
+
+1:00:34 | Customer
+How about doing AI controls? 
+
+1:00:36 | Customer Success Manager
+AI controls, correct? And this is where you can upload the instant answers and then do the services. 
+
+1:00:44 | Customer
+OK. You, 
+
+1:00:45 | Customer Success Manager
+can go through each one of those. But the main ones for the information is the instant answers and the services. 
+
+1:00:53 | Customer
+OK. And what are these emergency services who do I do them? 
+
+1:01:13 | Customer
+Yeah, there's no fear at all. 
+
+1:01:19 | Customer Success Manager
+Yeah. Have a play around with those settings and as I said, the services and instant answers are the main ones with the details in it. 
+
+1:01:26 | Customer
+How do you go back from here? 
+
+1:01:28 | Customer Success Manager
+Just click the AI. Yeah, just there. Yeah. 
+
+1:01:33 | Customer
+We'll come back around with the rest of the day and we'll get back to you. 
+
+1:01:37 | Customer Success Manager
+Yeah, let me know and we can then switch it on and we'll then turn the Webchat on. So everything's switched on at the same time. And then you can use podium here or your mobile app to have a look at conversations, jump in if needs be. And yeah, we'll go from there. 
+
+1:01:54 | Customer
+OK. Thanks. 
+
+1:01:55 | Customer Success Manager
+Perfect. Customer, I'll speak to you shortly. OK. Have a good one. 
+
+1:01:58 | Customer
+Nice man. 
+
+1:02:00 | Customer Success Manager
+Bye bye. 

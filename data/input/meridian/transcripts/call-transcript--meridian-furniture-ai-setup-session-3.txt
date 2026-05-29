@@ -1,0 +1,258 @@
+Podium x Meridian Furniture Group: AI Set Up
+
+Customer Success Manager with Customer company
+Recorded on Mar 4, 2026 via Zoom, 11m
+
+
+
+Participants
+
+Podium
+Customer Success Manager
+
+Meridian Furniture Group
+Customer
+
+
+
+Transcript
+
+0:06| Customer
+hi, Customer Success Manager. How are you? 
+
+0:08 | Customer Success Manager
+Not too bad at all. How about yourself? I'm good. 
+
+0:11| Customer
+Mate, thank you so much mate. I was in Melbourne just came back last night. 
+
+0:15 | Customer Success Manager
+Oh, really? You were in Melbourne? 
+
+0:16| Customer
+Yeah, I was in Melbourne for a couple of days. 
+
+0:18 | Customer Success Manager
+Ah, lovely for business or leisure? 
+
+0:22| Customer
+It's just a holiday like for family trip. 
+
+0:26 | Customer Success Manager
+Ah, nice. Did you do any sightseeing or was it just family? 
+
+0:31| Customer
+Ah, no, we just went to actually ballarat, the sovereign hills. Yeah, more CBD tours, Richmond. Yeah, I took them to also peninsularia… like on the beach drive. 
+
+0:49 | Customer Success Manager
+Wow, you went everywhere. 
+
+0:50| Customer
+It was fun, but the weather wasn't good weather. 
+
+0:53 | Customer Success Manager
+Yeah, it was atrocious. Yeah. Oh, man. That's a good. I have such fond memories at sovereign hill in ballarat. We pretty much everyone because I went to school in Melbourne, a classic school camp maybe like year five or year six. You go and stay over there so much fun. Yeah, it's so good. Oh, and I'm glad. Well, it sounds like you got around a bit. Yeah, it. 
+
+1:20| Customer
+Was good for me as well. Like I came to work today, like after three or four days off, just refresh yourself. It's good. 
+
+1:29 | Customer Success Manager
+Yeah, I missed. 
+
+1:30| Customer
+The appointment. I really apologize. I didn't let you know. 
+
+1:34 | Customer Success Manager
+No, that's OK. Sometimes, I don't mind it because it means I can just get some admin done and get on top of everything else that's happening. So, yeah, not a wasted session at all. 
+
+1:46| Customer
+Fair enough. So, like, there are not much to do. I've got only a couple of issues and the questions my business partner sent me today for the… or, AI gave prices to customers. But then I realized it wasn't prices. It was like starting from thing, which is, let me check what? 
+
+2:07 | Customer Success Manager
+Was the, do you remember the customer's name? Yes, I know. 
+
+2:14| Customer
+I'm going to find the customer name. 
+
+2:21| Customer
+S, INGH. 
+
+2:24 | Customer Success Manager
+S, IJSI his. 
+
+2:28| Customer
+Name is J slash S, INGH. 
+
+2:33 | Customer Success Manager
+J slash SINGH. All right. Let's have a look. Yeah. OK. I mean, not a bad answer. It says from four nine nine from 940, but pricing depending on size, finished delivery. I mean, I'd probably say that's a pretty good answer to be honest. Good. 
+
+2:53| Customer
+Answer, but he didn't ask outdoor sets. Even he didn't ask anything, which is, this is three pieces sets starting from. 
+
+3:01 | Customer Success Manager
+Yeah, OK, big. 
+
+3:02| Customer
+Table prices as well. Like, it doesn't make me, it doesn't give me any problem, which is good. It's really good answer. My business partner only asked me like why? Like it? Just, we didn't assign to AI. This one, it was automatic. I don't know why it. 
+
+3:19 | Customer Success Manager
+Happened. Let's have a look at the assignment rule. I'm sure we can update this somewhere… 
+
+3:37 | Customer Success Manager
+Postconversation. 
+
+3:48 | Customer Success Manager
+OK. So, I think it's because… so that, if you follow the message down, so it goes, how much, then you've got that autoresponder which I think we should update anyway. Let's make that a bit punchier. And you can see that it looks like the AI agent was assigned to the conversation. It's then responded… you've been closed off the conversation, and then the AI was unassigned. So, somebody, whether it was yourself or whether I think you might have reassigned it to yourself? 
+
+4:29| Customer
+AI is, it just generally happens like once we don't respond, or maybe is it, OK. I can tell why it happened because he texts at 822 P. M, and then it assigns to AI, and next day, it's still AI. So we didn't assign to ourselves. OK? Fair. 
+
+4:47 | Customer Success Manager
+Enough. Yeah, correct. So the, for that autoresponder where it says, thanks for texting us, we'll be with you shortly because you've got Jerry. I generally recommend changing this autoresponder just to say, thanks for texting us. How can we help? Because you don't need, you don't need any of this like information because, you know, whether you're free or whether you know, whether Jerry's on the line, you're going to get a response fairly quickly anyway. So, I would actually give, 
+
+5:18| Customer
+how can I change that answer? Like do you? 
+
+5:21 | Customer Success Manager
+Know, where is it? So that's under, yeah. So that's under settings and then under lead sources. 
+
+5:26| Customer
+Lead sources? All right. Lead sources. And. 
+
+5:32 | Customer Success Manager
+And then we're going to go to Webchat. 
+
+5:34| Customer
+Webchat, OK? 
+
+5:35 | Customer Success Manager
+And if you click that Webchat, it's under autoresponder. OK? So, you've got a period. 
+
+5:41| Customer
+OK. Thanks for texting us, how we can help you. You suggested? Yeah, yeah. 
+
+5:48 | Customer Success Manager
+Because what really you're trying to do there is you're trying to Fish for engagement from that customer to then get them to reply with a bit more information. Hopefully, you know, maybe they come back with how much for a classic set or, you know, whatever the question is, at least, then you get a little bit more information from them that then gives Jerry a bit more of a fighting chance to be able to answer their inquiry. 
+
+6:09| Customer
+Let me try. I've done it now… like its parents. 
+
+6:23 | Customer Success Manager
+Bye. How does that one come through? Let's have a look? 
+
+6:39 | Customer Success Manager
+Oh, for that one, oh, we just need to turn off. There should be a toggle that says contact card. We just need to turn that off. 
+
+6:52 | Customer Success Manager
+Yes. So, yeah, just untick that box where it says contact card and so just go, how… can we help you? All right, perfect. I've just updated that. 
+
+7:05| Customer
+Have you updated that? 
+
+7:07 | Customer Success Manager
+Yeah, I'll update it for you. OK? 
+
+7:09| Customer
+Thanks, man. 
+
+7:11 | Customer Success Manager
+Thanks for texting us. How can we help you? I might just, thanks for texting. I might just go. What are your thoughts on it? Saying? Thanks for texting ozcraft furniture. How can we help you? I? 
+
+7:21| Customer
+Think, I think better, like I always trust you. You always, you've got good experience with this type. 
+
+7:28 | Customer Success Manager
+Of answer it's also because when the, that autoresponder is, then what comes up on their phone? And so at least they then know that first message is from you. 
+
+7:38| Customer
+Yeah, 100 percent. All right. 
+
+7:41 | Customer Success Manager
+Let me just make sure I spelled that correctly. All right. Perfect. I've just updated that now that should be a bit better if you do. Yeah. Do one more. 
+
+7:49| Customer
+I'll do one more. Also. I've got another problem after this. 
+
+7:57 | Customer Success Manager
+No such thing as problems matt. 
+
+7:59| Customer
+Yes. OK. Perfect. That's I think much better. Yeah, it's also give us a time to understand what customer wants instead of just, they will keep replying yes, which is, doesn't give anything. So, yeah. 
+
+8:11 | Customer Success Manager
+Perfect. 
+
+8:12| Customer
+That's much better now, so. 
+
+8:14 | Customer Success Manager
+My business. 
+
+8:16| Customer
+Partner, he's like if you call me, I see here, Robin or sales et cetera. And it's how it rings. If someone calls him. It just only shows here, Oscar furniture, podium. He picks up the phone, AI talks to him. Hey, this is Robin account manager. I want to speak with you. Yes, if you want to speak one, if you want to like why he receives like this and I should, it's. 
+
+8:47 | Customer Success Manager
+because he has a feature turned on called call over cellular. He needs to turn that off. 
+
+8:52| Customer
+OK, done. 
+
+8:54 | Customer Success Manager
+Sorry, it's what's the, 
+
+8:55| Customer
+problem? Yeah. 
+
+8:56 | Customer Success Manager
+It's in phone preferences and there should be an option for call over cellular. I know. 
+
+9:01| Customer
+That one. Yep. OK. It's easy. So, good to know. Perfect. Thanks, man. I didn't know it's an easy solution. Make me? 
+
+9:06 | Customer Success Manager
+Happy. No, that's right? I told you no such thing as problem done. 
+
+9:10| Customer
+That's the, another thing was it? And oh, last thing was then I'll let you go, man, the questions I'm just gonna, I can't export the questions. I just put on the gpt, all of them. There are many repeats. And rather than one by one, I can't remember which one was the repeat? 
+
+9:30 | Customer Success Manager
+Yep. I want to. 
+
+9:32| Customer
+Delight them all, how or take first to take them and delight them all. Do you know how to make bulk? 
+
+9:39 | Customer Success Manager
+I'm not, I don't think I can bulk delete it. Look, what I can do is I can make a bit of a start for you like, you know, next meeting that I'm in, I can Kinda sit and just like keep clicking, delete. 
+
+9:54| Customer
+it's I can delete myself too. I'll try to start as well. 
+
+9:57 | Customer Success Manager
+Yeah. Even if you just say even if you send me a message and be like, hey, deleting some now and then next time that I go in or next time I've got an opportunity to, I'm just having a look when my next like meeting that I can pretend that. 
+
+10:11| Customer
+I'm busy. Thank you so much man. I was thinking maybe you have a different portal, you know, maybe you've got some accessibility that's what I was checking. 
+
+10:18 | Customer Success Manager
+Yeah. So you, so we're going to delete absolutely everything. Is that correct? 
+
+10:23| Customer
+Leave it to me like I'll you know what? I'm going to do that myself? I'll do, are you sure I'll check? Yeah, yeah, and that like I'll take them all first. Firstly. Let me just save them all. And yeah, I'm going to like repeat it, repeat once because there's so many repeat questions. 
+
+10:44 | Customer Success Manager
+Yeah, of course. And. 
+
+10:46| Customer
+Then, yeah, let me just firstly think like today. I'm fasting my brain doesn't work properly. So, of course, but thank you so much. Robin. I really appreciate it. Turn off the cellular. Yep. Thanks for also fixing us this problem. 
+
+11:01 | Customer Success Manager
+Yeah, no, that's OK. I've got, I have a meeting on Friday morning that like I'm just watching if you do want me to just send me a message and say, hey, finny, please start deleting and I can just sit there and start deleting some, just let me know and I'll have to, yeah, perfect. It's not a particularly fun task but I can just do it while I'm watching another meeting. 
+
+11:22| Customer
+Another problem man. So, what I'm going to do next week? We don't need to make a booking so we can, yeah, I can sort out and I can text you. I've got your number from podium, yep, and I can text you how it goes. Then we can make the appointment. 
+
+11:36 | Customer Success Manager
+Yeah, perfect. Let's do it. Thank you so much man. Thanks, mate. Always a pleasure, mate. Take care. Thank. 
+
+11:41| Customer
+You, mate. Bye. 

@@ -1,0 +1,27 @@
+{
+  "account_id": "apex",
+  "account_name": "Apex",
+  "vertical": "Sales lead",
+  "run_id": "792b6b75-3409-4e1a-b213-e79c024e0681",
+  "generated_at": "2026-05-29T00:33:59Z",
+  "pipeline_version": "0.2.0",
+  "status": "insufficient_data",
+  "status_reason": "Apex has no usage row on file — likely a sales lead. QBRs require an active customer relationship; there is nothing to review yet.",
+  "review_banner": null,
+  "confidence_summary": {
+    "high": 0,
+    "med": 0,
+    "low": 0
+  },
+  "goals": [],
+  "whats_working": [],
+  "gaps": [],
+  "opportunities": [],
+  "outline": {
+    "goals": [],
+    "performance": [],
+    "gaps": [],
+    "recommendations": []
+  },
+  "evidence": {}
+}

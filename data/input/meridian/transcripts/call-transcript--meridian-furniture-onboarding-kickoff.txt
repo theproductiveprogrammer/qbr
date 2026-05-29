@@ -1,0 +1,742 @@
+Podium & Meridian Furniture Group | Onboarding Kick-Off
+
+Customer Success Manager with Customer company
+Recorded on Oct 31, 2025 via Zoom, 56m
+
+
+
+Participants
+
+Podium
+Customer Success Manager
+
+Meridian Furniture Group
+Customer company
+Customer
+
+
+
+Transcript
+
+1:39 | Customer Success Manager
+hello? I'm so sorry, I just had another customer on the phone. 
+
+1:42 | Customer Success Manager
+Oh, how dare you? 
+
+1:44 | Customer Success Manager
+It's because I've got a lunch today as well. So, I'm just trying to shove everything in. 
+
+1:48 | Customer Success Manager
+Oh, off the view to lunch, very nice. 
+
+1:50 | Customer Success Manager
+Yes, Customer Success Manager, yes. Is that clear? 
+
+1:52 | Customer Success Manager
+That's pretty nice. Well, everybody else here is doing work. No? 
+
+1:57 | Customer Success Manager
+I don't I need to be here. This is why I've been on the phone since I got in today. Is he in the waiting room yet? Yeah. 
+
+2:05 | Customer Success Manager
+Yes. Let me just quickly double check. So, we've got phones integration with Shopify. No, AI. Yeah. 
+
+2:13 | Customer Success Manager
+So, can I just flag? I've been with, I've been speaking to him since may. He's going to throw a whole bunch of shit at you. Yeah, I've got it all written down, don't stress too much because he thinks he wants all this stuff and realistically, it's actually not that extensive. Yeah. So it literally is just AI faqs where they can load up all their stock prices. 
+
+2:38 | Customer Success Manager
+Wait, they do have AI they? 
+
+2:40 | Customer Success Manager
+Have faqs. Yeah. 
+
+2:41 | Customer Success Manager
+Yeah. And phones? 
+
+2:42 | Customer Success Manager
+Yeah, they've got phones. Phones is a buyer. He needs to speak to his provider. He needs to speak to telstra, because he's got hardware attached to his phone built. So, again, I've made it very clear that that's going to be a slow process. There'll be no downtime but we'll work with you on that. So, I just wanted him to meet you first, and then we'll get the porting process going? 
+
+3:03 | Customer Success Manager
+Right. 
+
+3:03 | Customer Success Manager
+The only other thing to flag is they're going to be doing synseven, for their CRM. 
+
+3:08 | Customer Success Manager
+Ah, yes, that's right? Yes. 
+
+3:10 | Customer Success Manager
+Yes, but they don't currently have it. 
+
+3:13 | Customer Success Manager
+Cool. 
+
+3:15 | Customer Success Manager
+Love it. OK. 
+
+3:17 | Customer Success Manager
+I have both a Customer and a, matt. Does that sound about right? It's. 
+
+3:20 | Customer Success Manager
+so, he goes by matt. 
+
+3:22 | Customer Success Manager
+Right. Yeah. Let him in. 
+
+3:24 | Customer Success Manager
+It's Customer? 
+
+3:26 | Customer Success Manager
+All right. Lovely. 
+
+3:37 | Customer Success Manager
+You're on two devices, just by the way? 
+
+3:47 | Customer Success Manager
+You got it. 
+
+3:48| Matt
+OK. Can you, I'm just gonna, I think I logged into meeting with Matthew account. 
+
+3:54 | Customer Success Manager
+Yeah, I think. 
+
+3:55| Matt
+You did, can you kick the other one? 
+
+3:59 | Customer Success Manager
+Just get rid of like, have you got one up on your phone or a different computer? 
+
+4:03| Matt
+I'll try to kick. 
+
+4:05 | Customer Success Manager
+the other one, one sec. I think I can, I think I can kick out your other one, one sec. Let's see if, 
+
+4:10| Matt
+Yeah, Customer, you kicked the wrong one? 
+
+4:13 | Customer Success Manager
+Yeah, that's all right. Oh, no, we can. We can. 
+
+4:16| Matt
+Try it one. You can try it on this one. 
+
+4:18 | Customer Success Manager
+How. 
+
+4:20| Matt
+are you guys? 
+
+4:23 | Customer Success Manager
+OK. We're. 
+
+4:27 | Customer Success Manager
+excited. Have you got everything ready? Like all your logins and everything? 
+
+4:32| Matt
+Not everything. The payment links or something I haven't looked in yet. I'm… just gonna have a look. 
+
+4:44 | Customer Success Manager
+I can see I was just jumped into the account and I can see there is messages already coming through. So you've already done some work already. Is that right? No? 
+
+4:54| Matt
+Yeah, we just connected some apps, not any categorization or workflow yet, and we haven't started to use it yet. We don't have testing, call, testing etc. I wasn't sure like how it's working. 
+
+5:14 | Customer Success Manager
+Wow. This is, I honestly recommend this is probably the most I've ever seen someone come prepared for a onboarding. So I'm or I'm thoroughly impressed already. 
+
+5:25| Matt
+Thanks, man. Yeah. 
+
+5:26 | Customer Success Manager
+He doesn't muck around that's. 
+
+5:28 | Customer Success Manager
+good man. And. 
+
+5:29 | Customer Success Manager
+I said to Customer Success Manager Customer that you and I have been talking for six months, so we're best friends now. 
+
+5:36| Matt
+Yeah, kind. 
+
+5:38 | Customer Success Manager
+So, OK. I'll lay out how today is going to run. I'll be around for any questions, anything like that, but ideally, what I want to do is leave you guys to do the technical setup. So I just spoke to Customer Success Manager about the fact that we've got a couple of integrations to do, but I think the biggest thing is your AI faqs. So if we can focus on that today, and then maybe gently start some workflows obviously bearing in mind that we're going to have a couple of meetings. So we're not gonna just like it's 45 minutes. So we'll like we said on the phone, let's prioritize different things for our implementation once you, I've already explained to Customer Success Manager that you're looking at sin seven. So once that's all up and running, we'll also look to integrate that. And then also when you change websites, we'll just put the piece of code back into the new website. So that's really easy for today. We want to get make sure your payments are set up and make sure your AI faqs, we've started the process. Yeah. OK. Amazing. Some. 
+
+6:42| Matt
+Like interview for future like I'll prepare you the documents, like what workflows and automations we want? Yeah, yeah… yeah. 
+
+6:55 | Customer Success Manager
+Perfect. Well, what we can do today is I can certainly show you how we can start to make them. I can of course set up a couple of templates and examples for you and then, you know, a lot of that stuff, you know, you'll be able to go in and it's pretty simple and easy to Kinda set up. So that's what I'll be here for absolutely… just for want to make this a formal introduction. Matt, my name is Customer Success Manager. I'm going to be looking after both your onboarding as well as going to be your ongoing account manager. So we're going to probably spend a fair bit of time together. I'm also going to show you today how contactable I am. So if you have any questions, comments, concerns or if you want to chat conspiracy theories, I'm more than happy to jump on any time you like. 
+
+7:36| Matt
+He's good. 
+
+7:38 | Customer Success Manager
+In saying that though before Customer Success Manager jumps off that, I'm keen to hear mate as you were having Kinda a chat and signing up to podium. What was the thing that got you most excited? What's the thing that you're looking forward to most about podium? 
+
+7:51| Matt
+We do everything from in home like the marketing sales, logistics, all the operations, me and only my business partner and the company grow up too Quiq and we can't do anything else. We have an E commerce system… like they make in Korea and we have to contact them to identify. And we don't have a proper follow up system because also we use MRP, we do the production as well. And I was looking CRM for a long time. We were building a show mirror like another ERP, but we had a problem with implementation team. So we got many leads coming from everywhere, not like on the internet on calls, Facebook, Instagram, shop visits, et cetera. Communication. And the follow up process was really hard then Customer Success Manager contacted with us our log podium which is really convenient to send them like a payment, give them info, AI et cetera. Like it's Kinda I see like as a Kinda personal… assistant like it's… just not many things convenient. And the other thing we do many complicated things on our end because we're not only selling something ready, we manufacture, we do, we arranged operation logistic case management problems. So all the processes to give too much headache. I think podium can help that's it. Yeah. 
+
+9:23 | Customer Success Manager
+Yeah, yeah, perfect. Right. 
+
+9:25 | Customer Success Manager
+I will say Customer is the busiest man I've ever met. He's also just had he's just had kittens. He's just birthed some kittens. 
+
+9:37 | Customer Success Manager
+So, congratulations. I'm… a cat dad as well of two very fluffy cats. 
+
+9:45 | Customer Success Manager
+So, Customer, just so you know, Customer Success Manager and I are literally 10 meters down the hallway from each other. I'm gonna leave you guys to do your onboarding today. Call me if you need anything. It will be a little bit of a process knowing how specific your workflows are going to be. So get in and do as much as you like, but also flag with us if you need support at any time. Like Customer Success Manager said, he's super contactable. We're all here obviously all on the same time zone as well. So pop your onboarding meetings in. So we know what we're working towards. And then once milestones come up like sin seven new website, etc, we can work forward from there. 
+
+10:21| Matt
+Perfect. That's great. 
+
+10:22 | Customer Success Manager
+Awesome. Hey, last thing with phones, I'm going to send you a letter now, just for your last phone bill, we will work through that process with you around the porting, just to make sure that it doesn't interrupt your internet or your hardware. So we'll move through that together Quiq. 
+
+10:38| Matt
+Question is the porting, it's just like my physical phone number, which is the ending with five to seven. It will be connected to your soft phone or they will be different phone. 
+
+10:49 | Customer Success Manager
+Numbers. It will be ported through. So then when people call that number, I. 
+
+10:56| Matt
+Will receive on my physical phone. 
+
+10:58 | Customer Success Manager
+Yes, you'll see it on your physical phone. So you'll actually see when they're calling through to that number, it will say podium, and then it will have the contact. OK? So you'll know whether it's a work call or a, you know what I mean? 
+
+11:12| Matt
+Whatever number we're using, I still receive SMS and phone calls. Does it also go to podium as well or so we? 
+
+11:22 | Customer Success Manager
+Want your work number through for podium. So, you know, how you said you had two phones? 
+
+11:26| Matt
+So, this? 
+
+11:28 | Customer Success Manager
+Will just be your work phone and yes, you can, you will receive all of your phone calls and messages through there, but, 
+
+11:37| Matt
+like, 
+
+11:39 | Customer Success Manager
+what do you, so you're. 
+
+11:41| Matt
+my question is like still this number ending with five to seven, but your number ending is different on the photo map. So. 
+
+11:49 | Customer Success Manager
+Yes. Yep. So, when you get a podium account created to be able to instantly enable two way text messaging, we just generate a number for you. So you'll actually that number is now yours part of your business, you know, ability, to have that, you know, if down the track you did say or decide to leave podium, you can actually bring that number with you. So it's just, it's an artifact of the fact of creating a podium account. OK? So you'll actually have two. Yeah, you'll have actually have two numbers. You'll have your business number as well as the podium number, all will go to you all messages, all calls or everything? OK? 
+
+12:29| Matt
+Perfect. And all the phone calls I receive from my actual current number will go to podium. Yeah, yes. 
+
+12:35 | Customer Success Manager
+Correct. For the business number? Yes? 
+
+12:38| Matt
+Yeah, thank you all. 
+
+12:43 | Customer Success Manager
+Right. Let me know how you go. Feel free to give me a call afterwards? 
+
+12:45 | Customer Success Manager
+I'll see you later. Customer Success Manager, bye. 
+
+12:48 | Customer Success Manager
+Guys. See you later. Yeah. 
+
+12:51 | Customer Success Manager
+All right. Beautiful. Now, it's just us. Now, the fun can start. What was. 
+
+12:58| Matt
+that? 
+
+12:59 | Customer Success Manager
+Sorry? 
+
+13:00| Matt
+You lead me, you tell me where we'd like to start? 
+
+13:03 | Customer Success Manager
+Yeah, perfect. So, I've got a couple of things that we just need to tick off just to make sure that they're set up and done right from the start. I know that you've already done a fair bit. So, let me just quickly go through and almost like just tick off to make sure that everything's done. Did you connect your Google page? Yes, perfect. Lovely. Let me tick that off. And did you have you yet connected? Any of your social medias? Instagram? 
+
+13:36| Matt
+And Facebook connected, Instagram? 
+
+13:37 | Customer Success Manager
+Yes, perfect. Lovely. Let me tick that off, mate. We're flying through this. This is great. Now for your website, let's have a look. Do we have the, yes, no, no, we don't let's do that one. Where, is your website hosted? Is it a, it's a Shopify? Is that right? 
+
+14:02| Matt
+Can I show you one thing shortly, Roland? Can I share my screen because, yeah. 
+
+14:05 | Customer Success Manager
+Yeah, absolutely. Yeah. It's yeah, it's big green button down the bottom, so. 
+
+14:08| Matt
+OK. The second one is ready for a long time. It was connected integrated with ERP, but ERP, wasn't ready. We will make this one live later. OK? Yep. This is the new website. The old website is on Shopify. The old website is the current website which we use at the moment. Yeah. 
+
+14:27 | Customer Success Manager
+When's the swapover going to happen to the new website? 
+
+14:32| Matt
+Once the sin seven is ready because all the products have been integrated with inventory. So we can't make it live, right? 
+
+14:41 | Customer Success Manager
+OK. 
+
+14:42| Matt
+It goes to ERP, not to the website. 
+
+14:46 | Customer Success Manager
+Yeah, yeah. Of course. Well, look, what we might do is the integration process for Shopify is pretty easy, but once you do then swap over to your new website, it'll be pretty easy for us to just swap that code over to the new website. What I might get you to do is if you head to your Shopify, sorry, into your podium account. 
+
+15:10| Matt
+Before we go, our products on Shopify are different. Normally, it's an E commerce website, but we're using a third party app, which is this one in uxs. Are you able to see us ultimately? 
+
+15:25 | Customer Success Manager
+Yeah, yeah, yeah, yeah. Can you just so I can see whether this is going to work? Could you please go on the left hand side where it says online store, it's under sales channels, go to themes. 
+
+15:42| Matt
+Preferences. 
+
+15:43 | Customer Success Manager
+no themes. 
+
+15:44| Matt
+Themes. Yeah. 
+
+15:45 | Customer Success Manager
+OK. Yeah, perfect. I'll be able to work with that. I just wanted to make sure that you have a theme set up and that it's the current theme. So that's perfect. I'll be able to work with that. 
+
+15:58| Matt
+Because the app takes hides the prices and makes the, it's like a I'll show you like normally, there's a price here with this code right here. It makes either quote or a card there's a price, but it hides the price there's a form. They fill the form. So we're able to see what they get like this one here. 
+
+16:20 | Customer Success Manager
+These are the right? I see. And so you don't everything's done by quote, right? 
+
+16:26| Matt
+Yes, I see the pricing. I can still send a quote here shortly with one customer. Happy I call, make sure he wants this one. I can send the quote so that's how it works at the moment and we want to see what they want to get as well. Yes. And this type of things. Yeah, I'll leave it to you. 
+
+16:44 | Customer Success Manager
+I just want to make sure, yeah, awesome. Do you ship Australia wise? 
+
+16:52| Matt
+Yeah. I ship Australia wise through bitpost but not from Shopify. 
+
+16:58 | Customer Success Manager
+Yeah. OK. OK. I actually just bought a new place and I'm actually in a market for a table like this. So I might hit you up. 
+
+17:08| Matt
+100 percent man. Let me know. Yeah. 
+
+17:10 | Customer Success Manager
+Yeah, yeah. 100 percent. All right. Well, what I might get you to do then is keep sharing your screen if that's all right, because there'll be pop ups that I just need to have a look at. And if you can head to your podium account, I'm going to guide you through the process of getting this Webchat set up. 
+
+17:26| Matt
+Should you want me to open the podium account? 
+
+17:29 | Customer Success Manager
+So go into more in that top left hand corner, and then we're going to go into settings… left hand side under lead sources, it's like the fifth from the bottom there. Then, right? We've got Webchat that's second to last Webchat and we'll create… we'll just go continue on this for the moment. We'll customize this once it's installed. So we're going to continue at the bottom. And then I'll get you to type in your website URL, please. Yeah, perfect. This should now identify that we're on Shopify, perfect. And we'll go continue… copy that code for me in a new tab or back into your Shopify. We're going to do the, where it says the current theme there's a little dot next to where the word customize is where it says copy of format. 
+
+18:34| Matt
+OK. Where is it? 
+
+18:36 | Customer Success Manager
+Further down, just below where the example is, it says copy of format current theme. And then on the right hand side, there's a little dot button and customize. So keep going further to the right. Yep. We're going to go edit code. 
+
+18:57| Matt
+That was probably fun. 
+
+19:05 | Customer Success Manager
+On the left hand side one… sec. Let me just quickly find. 
+
+19:23 | Customer Success Manager
+We should have a button that says something to the effect of. 
+
+19:30 | Customer Success Manager
+Layouts. Oh, yeah. Do the drop down for layouts. And then theme liquid, perfect, scroll all the way down to the bottom for me, please. And before… that last body tag, yeah, create a space there at line four four two two, and just paste that code that you copied before… perfect, top right hand corner, click save for me… and, let's see if that works. Perfect. OK. Lovely, that is looking good. So that's on your website. Now, what we'll just need to do is turn off the inbuilt text widget as well. So see how down the bottom, right there's that text us that's the podium one. You've still got that green one sitting behind. So I want to make sure that we turn that one off. 
+
+20:36| Matt
+Yeah, that's nice… mate. I love it. 
+
+20:44 | Customer Success Manager
+So, what I'll get you to do back into your Shopify account. Do you know where that green widget lives? 
+
+20:53| Matt
+Sorry? 
+
+20:55 | Customer Success Manager
+So, see down the bottom right hand corner of your website, you've got the text us that's the podium widget, and that's sitting on top of the previous widget, do you know where that one lives in your settings at all? 
+
+21:08| Matt
+Let's have a look maybe app? 
+
+21:11 | Customer Success Manager
+Might be in like apps or, yeah. 
+
+21:23 | Customer Success Manager
+Wow. 
+
+21:29 | Customer Success Manager
+All right, perfect. Let's see. Let me just refresh and see what this looks like. 
+
+21:39 | Customer Success Manager
+It's still there, but it's also not letting me click it. 
+
+21:47| Matt
+I didn't save it yet. Hold on. I'll save it now. So, disabled. 
+
+22:02| Matt
+Now, I've done something, right? But still, it's there… and apps again or let's. 
+
+22:11 | Customer Success Manager
+OK. 
+
+22:13| Matt
+Hold on. I'll put on the bottom left, but… hold on. Can you try now? 
+
+22:27 | Customer Success Manager
+Nope. Still there? 
+
+22:29| Matt
+Hold on a second. I'll go apps again, another one, maybe… whatsapp button, that one I turned off photos of other rockets Katana. 
+
+22:44| Matt
+These are the apps. Do you want me to give you any desk or something to access? 
+
+22:51 | Customer Success Manager
+We're not able to, unfortunately… let's just have a look. 
+
+23:08| Matt
+I'm just going to try from the team. Is it on here apps? 
+
+23:14 | Customer Success Manager
+It might be on the, that's… already happening? 
+
+23:30| Matt
+Is. 
+
+23:30 | Customer Success Manager
+that, the one, is it? 
+
+23:33| Matt
+I'm pretty sure it is. Let's see. 
+
+23:37 | Customer Success Manager
+Yeah, that's it that's perfect. What we can do now is let's customize this as well. Is there a particular color that your business is, what color did you want me to make that button? 
+
+23:53| Matt
+This is beige and black. I'll show you it's like this color… for example, this is the new colors? 
+
+24:06 | Customer Success Manager
+Yeah, that's… yeah, perfect. 
+
+24:11| Matt
+You don't have to beige and the beige black and the orange is your name colors? 
+
+24:17 | Customer Success Manager
+Yeah. Gotcha. All right. Let me just update this. I've just pulled that color. Let me see. 
+
+24:31| Matt
+Oh, 
+
+24:31 | Customer Success Manager
+that looks great. Perfect. All right. Nice. That's good. Let me just pull your logo as well. Image downloader. 
+
+24:43| Matt
+I'll be back in five seconds mate. 
+
+24:46 | Customer Success Manager
+Yeah, of course. Mate. All good. Yeah. 
+
+25:16 | Customer Success Manager
+No, you're good. I'm just trying to find a nice high quality logo. Maybe I might even jump onto your socials. I just pull it off Facebook. 
+
+25:28| Matt
+Maybe Facebook, yeah. 
+
+25:35 | Customer Success Manager
+You're the social media buttons on your website actually just take you back to your website? 
+
+25:46| Matt
+Which one? 
+
+25:49 | Customer Success Manager
+On your website, the buttons at the bottom, they actually just take you straight back to your website. Like if you please click Facebook. 
+
+25:57| Matt
+It doesn't work. OK? 
+
+25:59 | Customer Success Manager
+Yeah, no, it's all right. I'm going to download the Instagram one once. 
+
+26:10| Matt
+On the… Facebook. 
+
+26:24 | Customer Success Manager
+There we go. Got it. All right. Found the one that I need. Yeah, perfect. That's the one that I've called. 
+
+26:37| Matt
+Wrong. Quiq, Quiq, Quiq question. Also, you know, the website we have the products and the product has the prices as well. Can, can we train the AI to give you some information we want to give to customer yep? 
+
+26:54 | Customer Success Manager
+Yeah, absolutely. So you'll have full control over the, I guess the bank of information that the AI pulls from. So I think we're almost up to that point. Let me just quickly check off. So we've got Webchat, which is perfect. Let me just check whether we have, how we went with. So you did the integration with meta. How much longer are you going to be using Shopify as your online store? Are we talking like… two months? All right. In that case, let's integrate your Shopify account into podium just because we can start to run automations. Perfect. You click down on there on the left bottom hand side integrations for me and I'll get you to search Shopify. Yeah, perfect. 
+
+27:58 | Customer Success Manager
+Actually, you know what? I, I've just remembered that, this setup takes us probably about 20 minutes. What I reckon we might do is, let's do this, our next session because I really want to get this faq set up for you just so you can start to have a play with that. OK? Sure. Because, yeah, that's probably the more important one. And then, yeah, we'll at the end of today, we'll book our next session. You know, hopefully maybe Monday, Tuesday is a public holiday in Victoria, but maybe even Wednesday just depending on what your availability is, and we can Kinda keep it rolling and. 
+
+28:37| Matt
+Today, I just want to learn also how many folders I can make it here and how many like workflows? I can like funnels. Yeah, only one funnel or can we make different funnels like here? 
+
+28:50 | Customer Success Manager
+So it's one funnel but you can, you have unlimited statuses like I think there is a limit but it might be like 30 or something like that. So those statuses can be then paired with automated messages as well. And so, yeah, if you prefer to be able to then moving that customer, along, the funnel, that's a great way to do it. But you can also do it from the actual conversation view as well. Yeah… correct. 
+
+29:27 | Customer Success Manager
+And so you've got a couple of filters there mentioned is like say if you left an internal note, you can then tag someone and then you have multiple people working across the same customer. On the far right hand side. You've got see where it says Customer Success Manager podium, that second conversation… that's myself. So if you get click that second conversation, Customer Success Manager podium account manager, that goes straight to me. So if you do ever have any questions or concerns or anything that's probably going to be the fastest way to reach me. You know, if you completely forget my name, you can just search the word podium just makes it nice and easy to be able to then contact me. And that goes straight to my podium account because I use podium as well to help my customers. On the top right hand side, you can see where it says new leads. Yeah… one sec. So no, no, no, sorry. So click my, what I might do is I'm actually gonna take over screen sharing just for a sec just so I can show you exactly what I want need to. So… when you were playing around with the funnels before, in the top right hand corner here where you've got new lead. This will also mimic those statuses. So you can also change it from this section here as well. But, you know, you can imagine you're coming through these conversations, Customer Success Manager's in, you know, delivery, Samantha, you know, updating to estimation like you'll be able to go through these quite quickly. The other thing that I want to try to instill from you right from the start is what we call open and closed conversations. So I can see that you've already done a few of these. But as much as possible once you've finished that conversation with the customer, we want to be closing them out in the top right hand corner. This is essentially like an archive button. And what it does is it simply just moves it to closed. And then if I was to reply one sec where's my podium. If I was to reply. 
+
+31:40 | Customer Success Manager
+He's waiting for mine to load. 
+
+31:45 | Customer Success Manager
+Cool. So if I then reply back, it's then going to pop back into open. And so it's not like you ever are going to miss a conversation. So as much as possible when you come in at the start of the day or sorry, when you finish at the end of the day or go to lunch or, you know, go on your weekend as much as possible. We really want to try to see that these open conversations are all closed out, waiting for customer replies. Cool. Does that Kinda make sense? Not really? But I think it's going to take some time to understand. It just means that when you go in this open column of customers are just people that, you know, you need to reply to because the people that get the most value out of podium that, you know, see the benefits as quickly as possible are the people that really work nice and cleanly and tidy that they're closing off the conversations, they're categorizing their customers, all that Kinda fun stuff. OK, perfect. Perfect. What I'm going to do is I'm going to just quickly do a bit of setup to be able to enable the AI. I saw that before you had clicked suggest to reply, this is just like a little baby version of AI. You've got like the full AI. So I want to make sure that we get this set up for you now. 
+
+33:11 | Customer Success Manager
+OK. Now, it's real. Now we're talking. I have a very important question for you matt, what is your AI's name going to be? Can I change the name after or just one name? Yeah, you can… maybe I'll leave it as Jerry. The only thing I would say is don't call it something that is the name of somebody else associated with the business. It's got to be someone completely separate. Otherwise, it causes all kinds of confusion. What are we doing here? Let's do furniture? 
+
+33:56 | Customer Success Manager
+There we go. Nice. That's whatever is… one sec. Why is this instant answers? 
+
+34:15 | Customer Success Manager
+And so service area? 
+
+34:21 | Customer Success Manager
+Yes, absolutely. Absolutely. Why is that not letting me say some answers? 
+
+34:37 | Customer Success Manager
+Bye. 
+
+34:44 | Customer Success Manager
+All right then. 
+
+34:55 | Customer Success Manager
+All right. This should all be correct. Perfect. OK. Awesome. You will now have in your settings, some sections for the AI employee in here. This is going to be where we manage the database of questions that your AI pulls from. Now. If there's anything you take away from today, the thing that I want you to really Kinda understand is that you've got to treat the AI like an employee, not like a piece of software. You've you've it's not just Kinda plug and play it's we are going to plug in information. Imagine you've hired a new receptionist. They, they are going to try their absolute best based on the information that has been provided. However if the information is correct or they don't have the information, you know, it's going to be then an opportunity for us to make sure that then it does have the information. OK. OK. So what I have done already is I have gone onto your website and we have a tool that essentially estimates what people, what it would expect people to ask based on your website. So I've actually already generated this for you now. So I'm going to upload this into your faqs into your database, and I'm going to show you how you can start editing this… yeah. 
+
+36:40 | Customer Success Manager
+So, yeah, we're going to start off with 33 questions that's just how many it's pulled from your website. But in all honesty, the more the better, so if you see an obvious gap in information or, you know, maybe something's not quite right. I'm going to show you how to start adding questions in. I have customers that honestly probably have 150 questions. They've really spent the effort to then train their AI to have as much human, much information as humanly possible for it to then deliver the best answer. So… again, going under your AI employee, we go to your instant answers which is your database of questions. And in here are all of the questions that it's going to try to pull on to then respond to customers. So what I'm going to do is set, I guess a bit of homework for you to go through and just make sure that this is as close as possible to how you would answer these questions? Perfect. 
+
+37:41| Matt
+OK. 
+
+37:44 | Customer Success Manager
+So… two categories of questions that I would say are like most important, first one is just like operational, how do you guys operate? What's your warranty period? What's delivery times, you know, what's the best number to contact, what's your opening hours, like as a business, how do you operate? But then also what are your products? What are you? You know, why are your products better than everybody else's? What, you know, what timbers do you use? What styles do you have? Like all of that like product questions that customers might ask when trying to consider to purchase with you also add that in as well. So you can see here, there's a whole bunch of questions. And at the moment, I've just turned it on just to, I guess have that database. It's not going to start responding to any customers just yet just until you've given me the OK that all of those questions are correct? 
+
+38:40| Matt
+Most of them are still wrong, but we haven't because all the websites we haven't done any updates for a long time. We were planning to be live on July website. So, yeah, I can update if you can send me the spreadsheet. If you don't mind, I can update and I can upload again after fixing the. 
+
+38:59 | Customer Success Manager
+I would recommend. So, I would just go because this, these, I would, yeah, you can just edit these. So let's say, for example, you wanted to change this, you just do the dot and just go edit there. You. 
+
+39:18| Matt
+Can put iron life. That one. For example, you don't use black, yes. 
+
+39:22 | Customer Success Manager
+Yeah, exactly. Right. Or if, yeah, if it's semi, if it's slightly wrong, just go in and edit it or if it's completely wrong, just delete it. OK? 
+
+39:33| Matt
+Similarly, if. 
+
+39:35 | Customer Success Manager
+there are questions that you are obvious that you, that are not in there, you can go in here and add a question. The, the, I guess, the art form in this, if it does have to be in like a question and answer format, but it doesn't have to be exactly what the customer would say. It's it's like the AI will understand like if somebody says, why do you use blackbuff? But yeah, yeah. But, the customer actually asks why do you, why as a woods, do you use black? But it, it's going to use common phrase keywords rather than word for word, make? 
+
+40:16| Matt
+Sense? All right. Also, I use like open AI to create that question and ask performance, for you. 
+
+40:24 | Customer Success Manager
+Yeah, yeah, perfect. Yeah, exactly. So, yeah, go through that. As I said, at the moment, it's just set to suggestion. So it's not going to start responding to customers just yet. But I guess the goal for our next session will, for it to be at a point where we can turn it on. OK? My. 
+
+40:41| Matt
+Question. The most important question is I've got a couple questions before you go. 
+
+40:45 | Customer Success Manager
+Yeah, of course, that. 
+
+40:47| Matt
+Third part of the athletes, are we going to integrate to AI on the, next session? Should we leave for next session? 
+
+40:54 | Customer Success Manager
+For third party, like which one? Sorry, third? 
+
+40:57| Matt
+Party app, I'll share my screenshot, right? So. 
+
+41:00 | Customer Success Manager
+Which is, yeah, I'll stop sharing and I'll let you share. Yep. 
+
+41:07| Matt
+I'm very sorry. OK. 
+
+41:18| Matt
+Not this one. 
+
+41:24| Matt
+Sorry, man. I think this one. Yes. So, you remember on here, the quote list, the third party, sa, request quote? 
+
+41:36 | Customer Success Manager
+Yep. 
+
+41:37| Matt
+How would you integrate this type of format? The leads coming now from Shopify in this format? 
+
+41:45 | Customer Success Manager
+Yep. So what we can do is we will set up the Shopify integration on our… next session. I just need to check for the integration for Shopify, but a lot of the integration with Shopify is based on an order event. And so let me just say we should, once a quote is created, we should be able to then send a message. We just check the exact wording of it. 
+
+42:23| Matt
+So this also third party app has integrations as well. But I don't know, do these guys have open API? 
+
+42:31 | Customer Success Manager
+Yeah. So the, so for the, so… I'm… gonna stop you sharing and share me back again. No, that's the wrong that's the wrong sheet one second. So the Shopify… integration works mostly on order events. And so. 
+
+43:02| Matt
+So what. 
+
+43:05 | Customer Success Manager
+we might be able to do is let me just quickly check… it's. Checking one of my other customers that uses us to, sorry, that uses Shopify and I'm pretty sure we'll be able to just swap out the, rather than it being an order event, right? It be, a quote event. Let me just quickly check. 
+
+43:36 | Customer Success Manager
+Let's do a day… would it be either of these checked out, updated or fulfillment updated? 
+
+43:49| Matt
+Sorry? 
+
+43:51 | Customer Success Manager
+That quote actually, one second, let me just check this order event and then can I filter for? 
+
+44:03 | Customer Success Manager
+So depending on what we set up, the trigger, it will not fulfillment. 
+
+44:11| Matt
+The problem is they're not purchasing on Shopify. We get the code and we move to data to Katana, MRP, they purchase on the MRP. 
+
+44:22 | Customer Success Manager
+OK. 
+
+44:28 | Customer Success Manager
+Is that, does… that, then send a like notification email? Like when somebody creates a quote, does that send you an email? 
+
+44:38| Matt
+No, like I'll show, I'll do one sample for you. OK? Like this? 
+
+44:42 | Customer Success Manager
+Yeah. One sec, I've, can you share your screen again? Swap back to it? 
+
+44:47| Matt
+I'm just gonna make some more. Yeah, picking tables. You want to get a one piece like heavy duty commercial grade. You choose the size and you choose the product, add a quote. It goes to the quote here. Yep. The last time we got one as well. So it's on your cart. So you add to YouTube, you fill the form, Customer Success Manager (work email on file).
+
+45:12 | Customer Success Manager
+It is the Customer Success Manager work email. Com… it's R o W a N, not EN. 
+
+45:24| Matt
+Like this? 
+
+45:25 | Customer Success Manager
+Yep. Nice. Correct. O4, eight, nine, two, six, eight, seven, four, nine. 
+
+45:38| Matt
+OK. You heard from here? Hey, I'm looking… urgent and deliver to port. OK, submit request. Yeah. Now, nothing is related to Shopify, it's related, all third party, which is this one. It's all requested quite RSC, very male like this a customer contact. Hey, I'm looking, this one didn't give it one number here. But if I go to app on here now, a customer contact here. So once I click this one, Robin, yeah, number and what items he wants also, I know like he's a good customer, important customer. So it might be 15 like we do bulk orders mostly. So, can I give priority like straight away call? Because every day I'm receiving 10 leads, so I can't be straight away, call everyone sometimes. But if I see too many tables, yeah, I'll leave everything in a customer. 
+
+46:34 | Customer Success Manager
+Yeah. OK. Gotcha. Because then, cause that's I guess like that order? 
+
+46:45| Matt
+Cause. 
+
+46:46 | Customer Success Manager
+then what happens? So once you, then once you then are happy with the pricing, then what happens? Do you then send me a quote or how does that then work? 
+
+46:57| Matt
+So, if they're happy with the pricing, they might change the product, I'll tell them, hey, Customer, one point is too small. I recommend one point eight, and I say, OK, I changed the product here. 
+
+47:07 | Customer Success Manager
+Yeah, one. 
+
+47:08| Matt
+Point eight, for example, right? Choose the product. I say, let's go. One point eight. We update the code. Would you like delivery? Yes, I want delivery and standard delivery. Yeah, I couldn't come up. Yeah, I check the postcode. It's close. Yeah, I'll do 400 dollars, then it's a draft order. 
+
+47:37 | Customer Success Manager
+Right? And. 
+
+47:39| Matt
+then we have another third party app. This is a Shopify version. This is the first option on this app. The draft order is coming. So I didn't create it yet but I can send the email customer straight away. 
+
+47:53 | Customer Success Manager
+That's. 
+
+47:54| Matt
+why we're moving podium as in seven or if customers really like, I know keen, I know he's like really, but like he's really, he's gonna buy today or tomorrow or next day and the MRP we use. So I'll… show you shortly and it will make more sense because I explained everything to me. Yeah. 
+
+48:21 | Customer Success Manager
+Yeah, because I can see because I guess, the actual like quoting of the order. There will still always be some part of that needs to happen on your E commerce platform side, right? Because podium is the, is managing the customer and the customer's conversation. And so there will always be some part of this whether you're in sin seven or Shopify that you need to manage, that customer, that order. Sorry. But then in podium, I guess, the goal will be through the integration is to be able to then communicate to the customer all from one place, whether that's in whether that's in email, or text message. That then that all comes into podium. OK? 
+
+49:13| Matt
+I'll show you one thing. OK? I explained the mapping before. Yeah, and she said yes for most of them. So which… is… I'll find my one actually? 
+
+49:42| Matt
+OK. Where is it? I want… to know what podium wants to do in the future as well, but for now currently, we can find an alternative first touch which AI email and whatsapp… price per, use by a BTP question, etc, lead creation and email for supplies tests and follow ups. This is, I know like we can't send automatic payment link, but we can manually do when payment clears update list that is pushing to the CRM order or customer. All right. So this is, yeah, podium six CRM cycles, bi directional visitable lead compensation, somebody's transcript, payment driven pay to receive this all mirror set. Yes one back. We already taught. So or just in the future, we want to integrate with scene seven. I want to, I explained mirror, I said yes to this. I don't know. I want to double check with you on the technical side and we have the old inventory on scene seven. All right. So it will be like Katana now. So this products… here will be integrated with website, new website in the future. Yeah, everything and there is SQ will be SQ. Let's say SQ is SQ one zero two. And we'll ask Customer Success Manager once the customer request, I choose the product and request the code. I want to podium, hook the data of that SQ. And Customer Success Manager said we can upload the cloud to SQ's so, you know, what customer wants to get on the conversation and I can send the price estimates if they want to buy. I want to podium, give that SQ to sin seven as well. That's how we sign the contract. 
+
+51:39 | Customer Success Manager
+Right. OK. Look what I reckon just in the interest of time. And now seeing that there is a bit of a back and forth with the email. I'm gonna, as Customer Success Manager said, I, we literally sit about 10 meters away from each other. Let me work with her and let me just confirm the approach that she was, that you guys had agreed on, but there might be some I guess like additional parts that maybe I'm not quite seeing how she thought it would work together. So, let me have a talk to her. Look in terms of, the progress of the actual communication side. I mean, we've got pretty much all of the connections done. We've got your website connected up. You've got your socials, your Google reviews, all of that Kinda stuff. We've got the database of questions in there as well, which is great. So we can start working on that and then follow, yeah, let's book in our next session where we can then start to go through some of, the integration side. OK? 
+
+52:39| Matt
+So, Quiq question. Another thing, can I add user on podium? The last question, how can I add a user? Yes. Yeah. 
+
+52:50 | Customer Success Manager
+Yeah, absolutely. So, yeah, if you head to back to podium and then go to your settings? 
+
+53:18| Matt
+Click on find upload, you make it. OK. Here you go. OK settings. 
+
+53:21 | Customer Success Manager
+So, yep settings more than settings. Yeah, great. Top left hand corner, you've got users. So fourth one down and then top right hand corner, you can invite users. So you can invite multiple people in here. There's no limit. And you can also then set their admission level. If you go back one page for a second and so go back to users. 
+
+53:47| Matt
+Where is it? 
+
+53:47 | Customer Success Manager
+OK. So go back to settings. 
+
+53:52| Matt
+So under. 
+
+53:54 | Customer Success Manager
+More so under more in the top left hand corner, then settings, and then we'll go to users on the left hand side where it says roles and permissions. You can then see the access that each of those permit our roles have. So you can both use those three, but you can also enable custom ones as well. So if you did have a specific person that only needs to see specific things, you then have full control over that as well. 
+
+54:17| Matt
+Perfect. Thank you so much. 
+
+54:21 | Customer Success Manager
+Let's well in the last couple of minutes, let's book our next session just so we can Kinda keep our progress going. Monday is a sorry, Tuesday, the public holiday here in Melbourne, but I do have some time on Monday afternoon around three. Would that work for you at all? 
+
+54:46| Matt
+Was that, what would you say? Sorry, 100 percent. Perfect. Yeah, yeah, perfect. All right. Perfect. My priority is just let's to keep running with the podium now currently, so we can manage the link and then, the prop has set up all the automations and the workflows. We have time. Let's do like Shopify that quotation part will sort it out and the CRM integration part, we have time, no rush. 
+
+55:10 | Customer Success Manager
+Yes, yes, of course. 
+
+55:14| Matt
+And all the like workflows, technical part. I've got it tuned to help us as well on the soft programming. So. 
+
+55:20 | Customer Success Manager
+OK. Beautiful. All right. Let me just do this just making sure that we then, because, my calendar is open for all of my other customers to book me. So I just want to make sure that, if we say three PM that I've definitely got you locked in. Perfect. All right. Nice. Three P. M. So what I might even do, I might even give myself a little bit of a buffer afterwards because it only books me for 45 minutes. So that is good. So I'll have a little bit of extra time. I'll send a bit of a recap email through to you. Yeah, before Monday, if you have a chance, go through those questions, just make sure they're as close as humanly possible. And then we can Kinda start to layer on more and more. Yep, I'll get your integrations going, get some of the I'll show you how we can start to level up those funnels because as you move your customers through those different statuses, we can then start to send automated messages as well. 
+
+56:18| Matt
+Perfect. That's great. Matt, what I'm going to do on the weekend? I'll prepare nice like the, what we're planning all the work map and the work. Yeah, automations, workflow, what we want, all the like workflow, I'll explain till end, but you can take it on the podium sides and we can work one by one what we should do and I'll do the step by step project timeline for us. All right. Yep. Perfect. That sounds great. Man. Have a great day. It's. 
+
+56:45 | Customer Success Manager
+so lovely to meet you man. Really looking forward to getting this up and running for you, cheers, man. Have a good one. All right. Take care. See you later. 

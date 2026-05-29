@@ -1,0 +1,484 @@
+Podium x Meridian Furniture Group: AI Set Up
+
+Customer Success Manager with Customer company
+Recorded on Feb 17, 2026 via Zoom, 21m
+
+
+
+Participants
+
+Podium
+Customer Success Manager
+
+Meridian Furniture Group
+Customer
+
+
+
+Transcript
+
+0:00 | Customer Success Manager
+institution hope you did well, bye. 
+
+0:11 | Customer Success Manager
+How are you, matt? How you doing, mate? 
+
+0:13| Customer
+I'm good mate. How are you? 
+
+0:15 | Customer Success Manager
+Doing well. Thank you. How's your week been? It's. 
+
+0:18| Customer
+been all right, mate. Busy, really busy, but no complaints. Oh, awesome. 
+
+0:21 | Customer Success Manager
+Mate, that's good. Busy's. Good. 
+
+0:23| Customer
+Busy's always good mate. 
+
+0:25 | Customer Success Manager
+That's good man. Every time I drive past a, you know, a lovely looking park bench. I'm like I always think of you now. 
+
+0:34| Customer
+And. 
+
+0:35 | Customer Success Manager
+then I say that they, you know, they're not made by you and I think if I just go, maybe I'll go, you know, vandalize those ones and then slip your business card and be like here's. Where to get your replacements. 
+
+0:44| Customer
+Oh, thanks. I'll give you some cards and we can trade reference agreement. 
+
+0:51 | Customer Success Manager
+Yeah, I'll go destroy the competitors you build the replacements. 
+
+0:55| Customer
+Perfect. Thanks, man. How has your week been? Everything's all right? 
+
+0:59 | Customer Success Manager
+Yeah, it's been good, busy, but good, which is always the case. But no, we're getting through it like. 
+
+1:07| Customer
+Jumping another meeting to another meeting. Yeah. 
+
+1:09 | Customer Success Manager
+We're pretty much back to back every day now. So, yeah, it's good. Someone's got to do it that's the thing that's it. I. 
+
+1:18| Customer
+Spoke with the support team on email yesterday. I gave them the information. They'll get back to me. They sent me an email. They said we'll get back to you. We're working on it, but it was a bit like it's not a small issue. I'm just waiting. They saw that. 
+
+1:34 | Customer Success Manager
+If you. 
+
+1:36| Customer
+Can share your screen? 
+
+1:37 | Customer Success Manager
+I can show you what was the issue again. Sorry. 
+
+1:39| Customer
+Are you able to share your screen? 
+
+1:42 | Customer Success Manager
+Are the contacts being merged? Yeah, yep. 
+
+1:44| Customer
+But randomly random contacts being merged with each other. It's like we didn't do manually just being sort of like random. So I'll tell you for example, I'll start the story… actually, go down duplicate profiles, you see three duplicate profiles? 
+
+2:05 | Customer Success Manager
+Yeah. So you already talked to me about this one because I raised the ticket for you. Yeah, yeah. And so, 
+
+2:14| Customer
+first one, the top one actually a merged contact record, but it's just been duplicate profiles. OK. Yep. And when I change anything, that three have changed at the same time that's OK. Yeah, I was thinking just only this two merged. Then I got a new lead yesterday before I spoke with you just before I spoke with you and it's on another saved view; you can search the lead. 
+
+2:38 | Customer Success Manager
+Yeah, that's right? Yep. And. 
+
+2:40| Customer
+Nothing related with any of these guys and the lead just gave her email address. You know, someone texts you on podium email podium, gives you notification. Would you like to update her contact details? 
+
+2:53 | Customer Success Manager
+Right. 
+
+2:54| Customer
+Because the lead, ah, yeah. There, there, bottom… you see the lead gave her. If you go top. the lead gave her email address. Now, I'll put it up manually. I'll put it up manually. OK? 
+
+3:09 | Customer Success Manager
+So, yeah. 
+
+3:11| Customer
+If you go, if you scroll up, the lead's, chat? 
+
+3:15 | Customer Success Manager
+Ah, yeah. the lead. 
+
+3:17| Customer
+Gave the email address and I just clicked the, before I spoke with the lead. I just clicked the update now… and, you know, what happened when I update the lead contact? It goes to Customer… Customer's, email changed. 
+
+3:35 | Customer Success Manager
+the lead. 
+
+3:35| Customer
+Didn't change. That was so like random. And if you go to Customer, now check Customer's email, I didn't touch… and so code details. Yeah. And look how the lead writes with. 
+
+3:50 | Customer Success Manager
+The wrong? 
+
+3:51| Customer
+Spell like big pop… went there and it was so random, like what's happening and phone number. It belongs to a merged contact record. Name is duplicate profiles email from. Yeah, yeah. 
+
+4:10 | Customer Success Manager
+Gotcha. So, I mean, we talked about this yesterday. Have any other customers now merged or has that happened again? Not? 
+
+4:20| Customer
+Happened again because I didn't I don't click the, any, like I don't click any more to automate update button or merge button. I'm scared. 
+
+4:27 | Customer Success Manager
+Yeah. If. 
+
+4:29| Customer
+I say merge button, I'll leave it for now till they solve the problem? 
+
+4:32 | Customer Success Manager
+Yeah, I. 
+
+4:33| Customer
+don't know what, which one it's gonna merge like it doesn't even tell, I didn't know. I just realized accidentally, I sent a message to Michael. Luckily, he got back to me but yeah, message went with as a Customer, then I apologize after. Yeah. 
+
+4:48 | Customer Success Manager
+Right. I see. And so then I know that. So we went through this yesterday. I then raised a support case. Looks like they then have contacted you. 
+
+5:03 | Customer Success Manager
+Let's have a look. All right. They've been replied… and then they've called you. Is that correct? They've given? 
+
+5:14| Customer
+You a call, they called me back. I was on the phone, I couldn't pick up then we contacted by email. Like I kept speaking with them on the email. 
+
+5:23 | Customer Success Manager
+Right. And I. 
+
+5:24| Customer
+gave them like all the contacts, what happened and. 
+
+5:29 | Customer Success Manager
+All the expectations. 
+
+5:30| Customer
+Yeah. And what they told me podium first… hi, Customer. Thank you for reaching out. We are currently investigating this issue and we'll get back to you as soon as we can. That's it that's the last message. 
+
+5:44 | Customer Success Manager
+Yeah. Gotcha. OK. Let's just have a look. I just want to make sure that the right people are being looped in on this one. 
+
+5:58 | Customer Success Manager
+Get back to you as soon as we can. All right. So it looks like maybe both of us raised the case. I can see that internally, there's some back and forth in terms of like people talking about trying to fix it. So it sounds like the right people are looking at us. I personally, I don't have an update to share just because like the team are looking at it? 
+
+6:26| Customer
+Technical. It's not your thing. It's technical. It's not your thing. So I just want to share. 
+
+6:32 | Customer Success Manager
+Yeah, of course. Look, what I might even do as well is to share the recording from this meeting just with them just so that they then have the examples just so that they don't have to like keep going back and you don't have to keep explaining yourself. I wanted to try to, you know, just get them to jump straight into it and fix it. Yeah, I haven't seen it before. So I don't know what is the solution, whether they can recommend it. I. 
+
+6:58| Customer
+Sent, if you scroll up, I sent you the SMS on first. I sent you the photo of what I sent them. I sent them to all the right informations on the Snapchat. Yep. 
+
+7:10 | Customer Success Manager
+That's all come through. Yeah, I can see all of that. We can access all of the support cases as well. So, I'm reading it as you as we go as well. All right. Well, it looks like it's in the right people's hands. So, in terms of, is there anything else Kinda outstanding that I can help you with today at all? Or is that Kinda just the main thing? 
+
+7:29| Customer
+I think we're going to postpone for next thing, but we have an issue with the phone calls all goes to another user? Still, I don't know why can we, and I think something like once we backed up something, you know, the questions were we lost the questions? 
+
+7:47 | Customer Success Manager
+Oh, yes. Yes. What happened? 
+
+7:49| Customer
+Then, so, 
+
+7:51 | Customer Success Manager
+the questions that have been, I don't think we can get back the original questions. What I can do is I can send out again the document that I sent that had them. 
+
+8:04| Customer
+If you can, that would be great. Yeah. 
+
+8:08 | Customer Success Manager
+I just want to the team have confirmed though that there's no limit in terms of the numbers of questions. So, I look, in all honesty, I might need to raise another case just to see if we can get one sec. Let's just see if we can keep scrolling here, see if we can get a reason why that you're somehow hitting that limit. But I mean, I. 
+
+8:37| Customer
+didn't upload any more yet, but I'm going to try to upload 100 more if it doesn't upload it. I'll let you know we can create another case. So, I tested first, but I was so busy this week, sorry, mate. I couldn't do. 
+
+8:49 | Customer Success Manager
+It, no mate. That's fine. Mate. That's fine. That's all good. Let me just triple check. 
+
+8:55| Customer
+Yep. And after this, can we set up the phone thing again? Because it's just being confused and I couldn't fix it up. It just goes to like another… user and all the phone calls goes a bonded call. So. 
+
+9:23 | Customer Success Manager
+I mean, I have copied everybody… this year. It looks like there's 218 questions. 
+
+9:34| Customer
+So, OK. So, we have, because. 
+
+9:38 | Customer Success Manager
+I, I've just copied, all of the questions and each one of these has then, is that my phone ringing or your phone? Oh, it's mine? One sec. Let me just dismiss this. All of these then have to go to all locations. So, I'm just checking. I'm pretty sure. 
+
+10:03| Customer
+That's good then. So all uploaded? 
+
+10:06 | Customer Success Manager
+Yeah, I think. 
+
+10:07| Customer
+So, uploaded total, roughly 218, correct? Perfect. 
+
+10:11 | Customer Success Manager
+Just making sure that there's no like weirdness in terms of the format thing, you know, maybe this all looks pretty, there might. 
+
+10:19| Customer
+Be technical thing, done something. And they all came back after because I checked many times and it wasn't yeah, no, that's OK. If. 
+
+10:26 | Customer Success Manager
+It's all. Yeah. All right, perfect. Looks like we're good. 
+
+10:29| Customer
+Done because podium AI answers was like really good this week. 
+
+10:34 | Customer Success Manager
+Oh, fantastic. 
+
+10:35| Customer
+All the questions came back maybe anyway, let's. 
+
+10:38 | Customer Success Manager
+Have a look. All right, beautiful. 
+
+10:39| Customer
+I'll let you go. So, until next meeting, you can have a bit free time. Yeah, all. 
+
+10:44 | Customer Success Manager
+right. So, what's happening with the phones at the moment? That isn't good. What do we need to fix? I, 
+
+10:51| Customer
+want to get to all phone calls to allscraft, but it goes to Customer and it's being abandoned. I don't know how come all my phone calls since yesterday abandoned? And it goes to Customer, not to me. 
+
+11:07 | Customer Success Manager
+All right. Let's have a look. So when people call this number, they get… phone menu that either goes to primary or existing. I. 
+
+11:19| Customer
+Changed the primary today because. 
+
+11:22 | Customer Success Manager
+It was going to, OK. But, 
+
+11:24| Customer
+can we set up like from scratch again? Can we check like everything is on? Everything is set up, right? Well. 
+
+11:31 | Customer Success Manager
+Let's primary, OK? Rather than setting up in scratch, let's just audit it. Let's have a look. So somebody calls through sales, goes to primary, existing, goes to existing sales, goes to primary, existing, goes to existing. Let's just listen to this recording. Let's just confirm. I just want to make sure that this is, thanks for calling ozcraft furniture. So we can assist you. Best. Please choose from one of the following menu options. Press one for new sales, press two for existing customers. All right. Perfect. That sounds good so far. So sales goes to primary, existing goes to existing. So goes to primary. So primary for new customers goes to yourself and a team member and existing goes to, yeah, gotcha. OK. If then it misses either of you guys for either group, it then just goes to voicemail. 
+
+12:29| Customer
+So, 
+
+12:30 | Customer Success Manager
+that's for the five two seven number. If Customer gives out his number, thanks for calling ozcraft furniture, please stay on the line. It then goes to Customer. Second sales group just has Customer in there. OK? So the setup looks good. We don't use. 
+
+12:54| Customer. At the moment, Customer is not on board yet. 
+
+12:57 | Customer Success Manager
+Oh, OK. So in that case, should we just… rouse… this? So, what did you say? Sorry, Customer's not working. 
+
+13:10| Customer's not working. It's just in the future. He's going to start not started yet. So it's. 
+
+13:14 | Customer Success Manager
+how far away is he from starting maybe? 
+
+13:16| Customer
+A couple of weeks, three weeks, four weeks. All right. Not certain yet. 
+
+13:19 | Customer Success Manager
+In that case, what we'll do rather than it going to this straight to him, let's just rouse this. If somebody somehow gets this number or like, you know, somehow let's just rouse this to the main ozcraft number. So. 
+
+13:34| Customer
+That then that will be better. 
+
+13:37 | Customer Success Manager
+Let's go. Phone numbers. Yep. Ozcraft… don't ask permission to afford it. So, if somehow this number comes is called, it will then just go straight to ozcraft. Normal rules apply then one for new two for existing flows through to you guys. OK? 
+
+13:56| Customer
+Perfect. So, if I'm on my phone call, if I call someone, is it going from Customer or is it going from my user from five to seven for example? 
+
+14:05 | Customer Success Manager
+When you call out at the top, it should tell you the number that you're calling from? 
+
+14:11| Customer
+Robin, I'll check Robin, please. 
+
+14:17 | Customer Success Manager
+OK. Now, it's ozcraft. 
+
+14:20| Customer
+OK. You know what? Maybe I'll I changed my phone last… week, maybe it was today because I realized it was zero six eight. I was calling the people maybe they were trying to get back. 
+
+14:33 | Customer Success Manager
+It was. 
+
+14:34| Customer
+Going abundant. Yeah. 
+
+14:36 | Customer Success Manager
+Very well, potentially it will default from the last number that you've called from. So, but you might have accidentally done it. And then it's Kinda you've done a couple in a row. I mean, now, it's not the end of the world because we're then going to route it back to the ozcraft anyway. But then because you then let's say, for example, I called the zero six eight number, it routes through to five two seven. If you then miss the call, all of the automations are going to come out of the five two seven number anyway. So it almost Kinda course, corrects? 
+
+15:06| Customer
+Fair enough. Yeah. Perfect. Now, it's all set up. 
+
+15:08 | Customer Success Manager
+Yep. That's looking much better. 
+
+15:11| Customer
+I'll have a Quiq question, tell me, should I put on the end of the greeting in the beginning. In the end. Should I put like all calls are recorded for quality and coaching purposes? 
+
+15:21 | Customer Success Manager
+So you actually or, oh, OK. I turned. 
+
+15:26| Customer
+off that one. I'll tell you why if it was on the beginning before it was in the beginning, all calls are recorded and people were hanging up. It was a negative experience. Yeah. 
+
+15:35 | Customer Success Manager
+Or would you recommend we? 
+
+15:39| Customer
+Should do this manually to make us safer? 
+
+15:43 | Customer Success Manager
+Given that… you operate out of new south wales, it is actually a requirement that you announce it. I would personally, I would add it as a part of this in here because what this is that they've already heard, this greeting here. They've already chosen what path to go through to that then having this then plays once they've already chosen. So it's pretty. 
+
+16:12| Customer
+Hi, it is Meridian Furniture Group for, I would, but I would. 
+
+16:16 | Customer Success Manager
+Also cut this down. So, at the moment, it's pretty like lengthy hi. 
+
+16:20| Customer
+It is Meridian Furniture Group. Please note that calls may be recorded for quality and coaching purposes. Can we just only do? Yes? 
+
+16:27 | Customer Success Manager
+Cut that down. I would just say, please… note that calls may be recorded. That's all I would do. OK? 
+
+16:36| Customer
+Can I try now? 
+
+16:38 | Customer Success Manager
+One sec, let me just save it for this menu. All right. So, it's Charlie, it's craft furniture, so we can assist, please note that calls from one of the following menu options, press one for new sales. All right. Give that a shot. Please note that calls may be recorded like that. 
+
+16:59| Customer
+It's good. It's much better. Yes for loads. Yeah, because it's a big, like we can get a big, it was, yeah. 
+
+17:05 | Customer Success Manager
+It was too long. You just need a Quiq notification. Calls are recorded. See you later. Get into the call. 
+
+17:12| Customer
+Can we delete? Please note? 
+
+17:18| Customer
+All calls, can? 
+
+17:18 | Customer Success Manager
+We just make. 
+
+17:19| Customer
+It, all calls may be recorded. Yeah… all calls like all calls, your English better. I'm not from Australia all better. 
+
+17:35 | Customer Success Manager
+I would just go… I would do, please be aware our calls. I would go, our calls are recorded because it's not whether they may be or not. They are, our calls are recorded. I would do this personally, please be aware our calls are recorded. 
+
+17:57| Customer
+Let me try because please note was too long that's why? 
+
+18:01 | Customer Success Manager
+Please be aware. 
+
+18:07 | Customer Success Manager
+Let's go. Yeah. Say what you think of that. 
+
+18:10| Customer
+Let's try it. 
+
+18:17 | Customer Success Manager
+Thanks for calling Meridian Furniture Group, so we can please. 
+
+18:21| Customer
+Be aware our calls. 
+
+18:22 | Customer Success Manager
+Are recorded… pretty snappy. 
+
+18:26| Customer
+Pretty simple. I think as. 
+
+18:29 | Customer Success Manager
+Well, because now the voice for both of those greetings are the same. It just flows a bit nicer. Previously, it swapped to a female's voice and it sounded a bit like a bit jarring. So, I think. 
+
+18:39| Customer
+Yeah, like people were hanging up before a lot, so. 
+
+18:45 | Customer Success Manager
+Yeah, yeah, totally. 
+
+18:47| Customer
+But without that note, it's illegal to record them, yeah. 
+
+18:52 | Customer Success Manager
+It's yes… whilst I can't specifically give out legal advice you, I would advise in your circumstance to make sure that there's an announcement. 
+
+19:03| Customer
+Anyway, so look, when I was working in a call center Kinda call center, we were doing a lot of calls instead of doing this one on the phone like greeting, they were telling us do manually. When I started the call. Hi, this is matt from Oscar furniture. Am I speaking? For example, Robin? Hi, Robin, by the way, all calls are recorded for qualitative and coaching purposes, I was letting them manually. 
+
+19:27 | Customer Success Manager
+But this is. 
+
+19:29| Customer
+Let's, we try if people hang up. So I'm going to see the abandoned call I'll do manually. Yeah. 
+
+19:36 | Customer Success Manager
+Of course, it's worth noting. If you do get abandoned calls, it's because they haven't even made it to this greeting. So, if somebody's still keyed through, heard that calls are recorded and then hung up, I'm pretty sure that comes through as a missed call, but, 
+
+19:51| Customer
+it shows how many seconds they stayed on the line. Yeah. 
+
+19:54 | Customer Success Manager
+Like this one here, like the ones that you put through, you've hung up at the point of calls are recorded. They come through as missed calls versus abandoned call. If they haven't even got through to the ring rings yet. OK? Fair? 
+
+20:08| Customer
+Fair. 
+
+20:09 | Customer Success Manager
+Let's, see how you go. Yeah? 
+
+20:12| Customer
+Let's see how we go. And then we can just go that way. Perfect. So at the moment, everything is very happy. So far. The questions problems solved. I'm just waiting for the, it team to solve the other problems. 
+
+20:23 | Customer Success Manager
+Yep. And. 
+
+20:25| Customer
+questions. OK. Next week, we can all be posting about, OK, like set up the AI properly. Yep. And because I couldn't get a chance to test, I apologize. No. 
+
+20:35 | Customer Success Manager
+No man that's OK. Don't apologize at. 
+
+20:37| Customer
+All I saw a couple of times nighttime people texted the answers were great, man like after your at question, if you see the answers, how great they are, perfect. All right. 
+
+20:46 | Customer Success Manager
+Awesome. I'm so happy to hear that. That's perfect. Thank. 
+
+20:49| Customer
+You so much, Robin. I wish you a great week all the best. 
+
+20:53 | Customer Success Manager
+Same time next week, same time next. 
+
+20:55| Customer
+Week, definitely. I'll definitely make sure that it's being tested done and we'll set up the AI and go, it will be ready to go. Happy days. 
+
+21:02 | Customer Success Manager
+Mate, always look forward to it. Take care, mate. See you later. Have a great week. Bye, mate. You too. 

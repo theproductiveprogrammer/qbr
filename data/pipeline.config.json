@@ -1,0 +1,15 @@
+{
+  "_comment": "Pipeline tuning knobs. Edit and restart the backend to apply. All fields optional — defaults in backend/src/config.py.",
+  "_model_help": "extraction_model: gpt-5.5 = stronger verbatim discipline, ~5x cost vs mini. gpt-5.4-mini = cheap, more variable.",
+  "_temperature_help": "extraction_temperature: 0 = greedy (most stable, still not byte-identical per OpenAI seed best-effort). 0.2-0.5 = some variance, occasionally surfaces new framings. 1.0 = max creativity.",
+  "_seed_help": "extraction_seed: pin to an int for closer reproducibility (best-effort per OpenAI). null = no seed.",
+  "_top_goals_help": "top_goals: hard cap on goals surfaced per brief. Threaded into both the LLM prompt AND the post-dedup truncation, so one number stays consistent end-to-end. 3-4 is the sweet spot for a QBR; 5+ usually drags in noise.",
+  "_narration_help": "narration_model + narration_temperature: s5 narrates rule-detected gaps + opportunities into AM-facing prose. Default 0.0 favours stable re-runs of the same brief. Crank to 0.3-0.5 if you want re-runs to occasionally surface different framings.",
+  "max_extraction_tokens": 80000,
+  "extraction_model": "gpt-5.5",
+  "extraction_temperature": 0.3,
+  "extraction_seed": null,
+  "top_goals": 4,
+  "narration_model": "gpt-5.5",
+  "narration_temperature": 0.0
+}

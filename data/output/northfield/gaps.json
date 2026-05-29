@@ -1,0 +1,36 @@
+{
+  "account_id": "northfield",
+  "gaps": [
+    {
+      "id": "gap_001",
+      "feature": "Campaigns",
+      "severity": 70,
+      "goal_links": [
+        "g_002"
+      ],
+      "summary": "[narration pending]",
+      "recommended_action": "[narration pending]",
+      "confidence": "high",
+      "evidence_ids": [
+        "ev_009",
+        "ev_010",
+        "ev_011",
+        "ev_gap_001"
+      ]
+    }
+  ],
+  "evidence": {
+    "ev_gap_001": {
+      "id": "ev_gap_001",
+      "source": "usage",
+      "locator": {
+        "kind": "usage",
+        "column": "CAMPAIGN MESSAGES SENT LAST 30 DAYS"
+      },
+      "quote": "0",
+      "context_before": null,
+      "context_after": null
+    }
+  },
+  "warnings": []
+}

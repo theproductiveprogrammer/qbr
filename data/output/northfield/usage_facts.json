@@ -1,0 +1,112 @@
+{
+  "account_id": "northfield",
+  "facts": {
+    "reviews": {
+      "feature_id": "reviews",
+      "label": "Reviews",
+      "goal_categories": [
+        "reviews"
+      ],
+      "owned": true,
+      "active": true,
+      "signals": {
+        "REVIEW INVITES LAST 30DAYS": 27
+      }
+    },
+    "messaging": {
+      "feature_id": "messaging",
+      "label": "Messaging",
+      "goal_categories": [
+        "messaging",
+        "lead_response"
+      ],
+      "owned": true,
+      "active": true,
+      "signals": {
+        "RECEIVED MESSAGES LAST 30DAYS": 351
+      }
+    },
+    "webchat": {
+      "feature_id": "webchat",
+      "label": "Webchat",
+      "goal_categories": [
+        "lead_response",
+        "lead_integration"
+      ],
+      "owned": true,
+      "active": true,
+      "signals": {
+        "WEBCHAT LEADS RECEIVED LAST 30DAYS": 15
+      }
+    },
+    "text_ai": {
+      "feature_id": "text_ai",
+      "label": "Text AI",
+      "goal_categories": [
+        "ai_adoption",
+        "lead_response",
+        "messaging",
+        "reviews"
+      ],
+      "owned": true,
+      "active": true,
+      "signals": {
+        "AI PRODUCT NAMES": "[\"Text AI\"]",
+        "AI Conversations L28 Days": 107.0
+      }
+    },
+    "phones_ai_voice": {
+      "feature_id": "phones_ai_voice",
+      "label": "Phones AI (Voice)",
+      "goal_categories": [
+        "call_capture",
+        "ai_adoption"
+      ],
+      "owned": false,
+      "active": null,
+      "signals": {
+        "AI PRODUCT NAMES": "[\"Text AI\"]"
+      }
+    },
+    "paid_phones": {
+      "feature_id": "paid_phones",
+      "label": "Paid Phones",
+      "goal_categories": [
+        "call_capture",
+        "lead_response"
+      ],
+      "owned": true,
+      "active": null,
+      "signals": {
+        "PHONES PRODUCT STATUS": "Paid Phones"
+      }
+    },
+    "payments": {
+      "feature_id": "payments",
+      "label": "Payments",
+      "goal_categories": [
+        "payments"
+      ],
+      "owned": false,
+      "active": false,
+      "signals": {
+        "PROCESSED AMOUNT ALL TIME": null,
+        "PROCESSED AMOUNT LAST 30 DAYS": 0.0
+      }
+    },
+    "campaigns": {
+      "feature_id": "campaigns",
+      "label": "Campaigns",
+      "goal_categories": [
+        "messaging",
+        "lead_response"
+      ],
+      "owned": true,
+      "active": false,
+      "signals": {
+        "LOCATION CAMPAIGNS SUBSCRIBER LIMIT": 250,
+        "CAMPAIGN MESSAGES SENT LAST 30 DAYS": 0
+      }
+    }
+  }
+}

@@ -1,0 +1,797 @@
+Meridian Furniture Group - Phones
+
+Customer Success Manager with Customer company
+Recorded on Nov 24, 2025 via Zoom, 51m
+
+
+
+Participants
+
+Podium
+Customer Success Manager
+
+Meridian Furniture Group
+Customer
+
+
+
+Transcript
+
+1:08 | Customer Success Manager
+hello? Hello? Hi. 
+
+1:10| Customer Success Manager, how are you mate? 
+
+1:11 | Customer Success Manager
+Yeah, doing well. Are you feeling any better? 
+
+1:15| Customer
+Oh, yeah, mate, 100 percent. Yeah, I'd like to do like even next day straight away. 
+
+1:21 | Customer Success Manager
+Yeah, it's, yeah, I was out Wednesday, Thursday and Friday mate. I was, I've been in all sorts. 
+
+1:29| Customer
+You were sick as well? 
+
+1:31 | Customer Success Manager
+Yeah, yeah, absolutely. Yeah, it's, I don't know something going around at the moment. 
+
+1:37| Customer
+I think something like, I don't know like a Kinda flu, but I was just feeling exhausted as a full body. Yes, I was sneezing a lot but my full body was like headaches, sinuses. 
+
+1:49 | Customer Success Manager
+Yeah, it wasn't fun. It's probably the only time I ever actually slow down and stop is when I'm sick. So, I don't know it was nice… just to do nothing for a couple of days, but it's made the, 
+
+2:04| Customer
+nothing I can compare with the health, mate, health is the most important. I'm glad you got back absolutely. 
+
+2:10 | Customer Success Manager
+Here we go. We're back though. 
+
+2:13| Customer
+I'm glad you're back. So phone things like we just started using, but like I definitely would like to learn the phone section. If you can just show us how to set up the other things, how to use properly, like we're using how we learned, but maybe it's not the fully right version. 
+
+2:31 | Customer Success Manager
+Yes, of course. So, yeah. 
+
+2:34| Customer
+You know, I can share my screen. I don't mind. 
+
+2:36 | Customer Success Manager
+Yeah, I might share mine. Did that number. That other number? Did that get ported out to us? 
+
+2:41| Customer
+Yep, it's been cancelled because the account number was wrong, but we didn't want to port it. 
+
+2:46 | Customer Success Manager
+Ah, yeah. Let's. 
+
+2:47| Customer
+be like learn this one very well. Then we can port that on our daftar. 
+
+2:53 | Customer Success Manager
+Yeah, perfect. OK. Easy. Perfect. Look, are, you know, you're a pretty switched on Guy. So I'll give you the pretty, you know, pretty Quiq version of it a lot of this. I guess the benefit and, the ease of it just makes it so Quiq to be able to go and make adjustments as well. So, two main things to Kinda get you across. That first one is what we call our call experience. So in you're in settings here into phones call experience, it's worth noting that each number has its own call experience. Now, typically you would set this to be the same because like no matter which number, the customer calls, they just get the, they just think that they're talking to, you know, to the business. Yeah. 
+
+3:36| Customer
+We'll. 
+
+3:37 | Customer Success Manager
+just use this number here for example. So they want any in five, two seven, we click this. And all of these settings here are essentially what happens… when that customer calls that phone number. So for example, when somebody calls through, it's going to then call our call group which I'll show you about in a second. And at the moment, there's no announcement. I think you might have you turned that off. I. 
+
+4:02| Customer
+Turned it off like it was that one. I turned it off because it was feeling like already like not available before the people listened that's why, but can we change that call greeting as well? 
+
+4:15 | Customer Success Manager
+Yes, yeah, absolutely. So all of the bits of audio that I'm about to show, you can completely customize. In all honesty. I thought I had actually set this up to be a like a nice bit of tech, a nice bit of audio. Let me, I'm just share my computer sound for a second. So at the moment, you know, it's this annoying press any key to receive a text from us. But if we go to the pencil here, you could either upload a piece of audio if you already have it or we can also do text to speech. So in here, for example, you could say, you know, thanks for calling. Is it Meridian Furniture Group? Because it is going to be AI that then tries to convert this. I just write. I was just because it'll just pronounce it better, but, you know, you could use the combination of spelling and punctuation to make it say what you want it to. So like for example. 
+
+5:15| Customer
+Thanks for calling oscraft. Stay on the line and a team member will be with you shortly. OK. Perfect. I can do this one like, yes, Kinda if you want to connect operation one or that type of things as well. Yes. 
+
+5:31 | Customer Success Manager
+Yeah, absolutely. So to do that, you would first, I'm just going to save this and to do this first rather than going straight to a call group, what we can do here is do a phone menu. And so same deal here that we would go, we would, add the audio. So you could do, you know… whoops, one second, you know, OS crafts and… then, you know, you could do something like, so we can best assist, you know, please choose from one of the following options. Please choose… from one of these. You Kinda get the idea that you could then fill out that text and. 
+
+6:14| Customer
+for example, like let's do one. Can we do same number with another? OK, perfect. We can. So, yeah, yeah, just only for example, sales. Yeah. 
+
+6:28 | Customer Success Manager
+So you go maybe call it sales and then you just need to choose what you want the action to be. So when they do press one, typically, it would then be to a call group, but you might even have an option to say switch to text. And one of the benefits of odium is that you, they could click one to switch to text. And then what would happen if we did switch to text, the customer would then get the text prompt and then they could continue messaging you rather than on the phone. Perfect. 
+
+6:59| Customer
+But for now, let me just try one thing. For example, I just want to see it the same number. Can we do like? So instead of switch the text, can you do… call group? And I want to choose, OK, just on the number? 
+
+7:16 | Customer Success Manager
+Yeah. So I'll show you in a second, but you can choose whatever call group you want. So I'll show you how that works. But once you have a list of different call groups, you could have it route to whichever call group you wanted. 
+
+7:29| Customer
+OK, perfect. Thank you so much matt. 
+
+7:31 | Customer Success Manager
+So for the moment, this is the only one that's here with the primary, but yeah, you could have a call group for sales. You could have a call group for servicing. You could have a call group for accounts. And then each one of those would have different people in it. Even if it does go to the same person, you actually can get some pretty in depth reporting around who's pushing what number, and you can actually start to then report on the volume of where people are going. Thanks for calling. Please leave a brief message. 
+
+7:58| Customer
+Perfect. I just saw the call group settings as well, which is great. Thank you so much. 
+
+8:03 | Customer Success Manager
+So what I'll do is I will not save this for the moment, but just know that that's where you can Kinda do it for the, for that text to speech. Probably the best ones are either Charlie or jess, Charlie, if you want a Guy or jess, if you want a girl, they just seem to be the best, but, you know, have a bit of a click around and a play. And I guess also the, you know, the benefit of this as well is that if you then wanted to change that audio once you've then allocated that text to speech, you can come back and edit it as well so that you don't need to type it out every time. So you could add a Quiq, you know, holiday greeting or a, you know, you can change it very quickly… in terms of the other options. You do have that message of what if the customer did choose to text that's what the message actually would be. And then you've got your voicemail options. 
+
+9:02| Customer
+We're sorry we missed your call. Please leave your name, your number and a short message and we'll get back to you as soon as we can. 
+
+9:11 | Customer Success Manager
+So that's what I set up for you. I think it must have been Wednesday or Thursday or so. But if you wanted to change that, you could just go edit audio recording, text to speech and then you could just change what it was saying. 
+
+9:23| Customer
+Yeah, perfect. No, that's good for now. Thank you so much mate. I'm happy. 
+
+9:26 | Customer Success Manager
+No, that's all right. For recordings and transcripts. Obviously, we do want it recorded and transcribed. I had then just added the announcement just to let the customer know that the call has been recorded. What I did is at the time I set it as the same voice for what your greeting was. So at least it's all the same like consistent sound. It just needs to be a little. 
+
+9:50| Customer
+Please be aware our calls are recorded, just. 
+
+9:53 | Customer Success Manager
+A Quiq bit of audio just to let them know. And then same deal essentially take everything that we've said. You can then also change how it behaves after hours as well. So, this is after… what have you got is your business hours. So after five PM on the weekend, our weekdays and two PM on Saturday, and also if somebody calls you on Sunday, you can then choose how that number behaves after hours. 
+
+10:21| Customer
+OK. So. 
+
+10:22 | Customer Success Manager
+So at the moment, it goes just straight to voicemail. Thanks for. 
+
+10:25| Customer
+Calling Meridian Furniture Group, you have called us outside of our office hours, please leave your name, your number and a short message and we'll get back to you as soon as we can. Thanks for calling. And I was saying why like after five PM? I wasn't receiving calls? Makes sense now? OK. Yeah. 
+
+10:42 | Customer Success Manager
+So, look, you could either extend your hours. Well, let's say, for example, after hours, you then want to just route it straight to, you could still route it to your call group, but it just gives you a little bit more control of maybe it's a specific call group that doesn't have people in it or you could have an after hours call group. You know, you can do whatever you want. 
+
+11:03| Customer
+Yes, it's really dynamic. I can fly around mate. Thank you so much. It's complete. 
+
+11:07 | Customer Success Manager
+Dynamic is the word absolutely. So, yeah, everything that we've said you would just need to, if you did ever make a change, you just need to make sure it's you know, as long as it applies to both numbers, you would just need to make sure that you do it to both. 
+
+11:20| Customer
+OK, perfect. Thank you so much mate. I'll do that. 
+
+11:23 | Customer Success Manager
+But, you know, for this number, people more typically know that this is your number. You could have this number, have a completely different experience. It's completely up to you. 
+
+11:32| Customer
+Perfect. 
+
+11:34 | Customer Success Manager
+On the other side, so we were talking about call experience and you've got your call groups. Call groups is essentially a group of users that when it's there, when it's that call group is rung. These are the users that then get notified. So at the moment group. 
+
+11:49| Customer
+For sales, I can make a group for operation. I can make a group for customer service, everything. 
+
+11:56 | Customer Success Manager
+Exactly, right. So, yeah, I've created a sales. The extension doesn't really matter. To be honest, you just need to make one. Then you could go in here. And maybe this just is a, you know, a full group for you. If it misses, it will go to voicemail. 
+
+12:13| Customer
+Perfect. So, every call group is still dynamic. I can put like two different separate things, customizations on every call group as well, which. 
+
+12:21 | Customer Success Manager
+is great. Correct. Absolutely. One Kinda trick that you can do is let's say, for example, for the sales call group, each one, each call group is about 15 seven. It's about five rings, say, for example, for sales, you're like look, five rings probably isn't long enough. What we could do is create a second sales group. 
+
+12:47 | Customer Success Manager
+You know, include you in it as well? Blah, blah, blah. Did I do that too quickly? And that instead of the sales group instead of if that misses you, it goes to voicemail. We could edit this and say that under the routing, if it's unanswered it goes to a second call group. So you can Kinda daily chain the call groups together. 
+
+13:11| Customer
+Another salesperson can pick up as well. 
+
+13:14 | Customer Success Manager
+Exactly, right. So you can Kinda then cascade that down maybe a list of people. I wouldn't probably do any more than two or three because by that time, each one of those is 15 seconds at like the 45 second mark, the customer's probably just like, all right, I'm ready to leave a message… but yeah, that's the way that if you want to extend how long it rings for, you could just have multiple call groups that then flow on to each other. OK? 
+
+13:40| Customer
+Perfect. 
+
+13:43 | Customer Success Manager
+I know the answer but you're feeling comfortable up to speed so far? Yeah. 
+
+13:47| Customer
+Yeah, everything is right. Yes, I can play around and play down just on the desk phones and the call queues. I just also want to learn. 
+
+13:54 | Customer Success Manager
+Yes, yeah, absolutely. So desk phones isn't currently available in Australia. This is if you had hardware like actual hardware phones, we are expecting it to come towards the start of next year. So once that is available, there'll probably be a bit of a song and a dance and a notification about that. But call views, call queues operate almost exactly the same way that call groups do. But instead of if it, if you miss, it going to voicemail, all queues then hold the customer in a queue instead. So rather it just depends, you know, would, are you going to prefer you? 
+
+14:35| Customer
+Know the government service. So probably people will won't, wait, they live. Yeah, they take some message that makes sense. 
+
+14:43 | Customer Success Manager
+Exactly… the call queue because it, because you're actually going to hold that customer on the line, there's a few more settings that you can Kinda do. So, like for example, let me just quickly do this. You can set different ring rules. So does it ring all of your users at once? Does it round Robin? Does it set up a hierarchy? You can choose one second? You can also choose what then the experience is like while you're holding the customer in the queue as well. So you can have different music, you can have reminders and you can also set limits to how many people can be in that queue at one time? OK? 
+
+15:29| Customer
+Perfect. 
+
+15:30 | Customer Success Manager
+So, this is more typical like call center, you know, if you do get an ex, if you do experience a high volume of customers and you do want to hold them, you could then have it route to a, in your call experience rather than it routing to a call group, it could route to a call queue instead. 
+
+15:48| Customer
+Makes sense. Yeah, it makes sense. Thank you so much. 
+
+15:50 | Customer Success Manager
+So, it's Kinda a it's Kinda a more advanced ball group. Yeah. 
+
+15:54| Customer
+Up here up here, yep. 
+
+15:57 | Customer Success Manager
+And then the only other one is you've got your hold music. So when you are on the phone to somebody and you put them on hold, you can choose what plays I already tried. 
+
+16:05| Customer
+That one perfect ambition. There's a nice copy on the collection. I think it goes like phone number? 
+
+16:13 | Customer Success Manager
+The phone number, privacy is whether other users on podium. So who's your other team member, a team member, whether a team member can hear your call recordings? 
+
+16:31| Customer
+OK. So I can like for example, my sales reps, I don't want them to listen to me and I can't. 
+
+16:37 | Customer Success Manager
+yeah, exactly. And you can set up the control that you can hear theirs, but they can't hear yours. 
+
+16:44| Customer
+Perfect. Yeah, perfect. That's great mate. Like it's really dynamic and I love it. Like it's so good. Yeah. 
+
+16:50 | Customer Success Manager
+Yeah, we use this ourselves and the level of control and how dynamic it is. Yeah, I love it. It's so good. 
+
+16:59| Customer
+Yeah, perfect. So we're still doing some… changes… on our status and the tech system, which is I'm trying to work on it. I've got a couple of questions and also, I want to start with you to set up our automations because I haven't done the automation yet. The system. I want to explain, I need to do a recommendation on the funnel as well. So, yep. And I'll give one example for you like, so which is I want to define like a funnel like a not CRM funnel more like a journey funnel because status is different and leads actually lead status and lead also like two separate things. I want to make a status like properly, it's like a journey. 
+
+17:50 | Customer Success Manager
+Right. OK. 
+
+17:51| Customer
+Because comes to the like payment feedback, last payment, this is starting from newly, it's attempted contact. So a couple things I still like wanna make better and need your recommendations as well. So I'll be, I'll go with the examples with you to explain what type of customers we're having. So that's what you can suggest to us at the moment. Like not the system is integrated. That's why, we use podium hybrid with the other ones, not full podium. Yeah, but too much data transfer like promotion we do, which is we want to use podium. We didn't want to like, we wait to all integrations and I created many fields as well. It's too much job for now, but in the future, maybe we can simplify and integrate that fields with that fields with the integration to get to that website. Maybe. So, so we have a couple like we got the leads… some of them like contacting phone call. I explained last time on the map, some of them contact with Facebook, some of them contact with SMS email, and some of them just make an inquiry with the product. Like too many type of customer profiles we do. And most of them are like some of them are really keen. Some of them are not, some of them just getting price inquiry and some of them just another question. I'm going to write down before forgetting. Yeah. So, and what we do, we try to engage as much as we can on the podium or normal now full podium phone calls and some of them, we're not able to reach them or we don't have a time to call them when they make an inquiry with the product. Yeah, I'm talking about who wants like who choose the product? And we send them a quote, but we haven't engaged them yet. And once we send them a quote, they nibble it, but quote sent, but we haven't engaged with them. We just want to send an SMS from podium and still, we move them to quotesend and we take them like not engaged. You can go to funnel or you can go to like. 
+
+20:12 | Customer Success Manager
+So, what are we doing? Not engaged? 
+
+20:14| Customer
+Not there. It's the status we sent them. If you send the quote, we send quotesend, follow up but quotesend… follow up. 
+
+20:23 | Customer Success Manager
+Yep. 
+
+20:25| Customer
+And you can go roll and you can choose yourself. We. 
+
+20:27 | Customer Success Manager
+Yes, let's do that. 
+
+20:32| Customer
+So make yourself like I sent you a quote, but I wasn't able to reach you, so. 
+
+20:37 | Customer Success Manager
+Yep. 
+
+20:38| Customer
+And then after I sent the quote, I sent you an SMS, hey, Customer, we tried to reach you about your inquiry and I made a template as well on the SMS templates. 
+
+20:48 | Customer Success Manager
+Yep. 
+
+20:50| Customer
+We sent you like, no, which one I'll tell you, no for answer quote sent. 
+
+20:58 | Customer Success Manager
+Gotcha. Yep. 
+
+21:00| Customer
+And it's like earlier about code records for the pick and give you're just going to be able to code when you get the chance to have a look. If you've got any questions about team options, finishes, delivery timing. Just let me know. Happy to help. 
+
+21:10 | Customer Success Manager
+OK, perfect. 
+
+21:11| Customer
+It's a code sent follow up and details. We go to details of the customer and we tag them to see on the funnel because you said like we can't put another field on the funnel. We choose it like follow up one because it's the first follow up… and we choose not engaged on the text. 
+
+21:39 | Customer Success Manager
+And what are we doing? Not? Engaged? 
+
+21:42| Customer
+Not engaged. Yep. Like we weren't able to engage with you. So I'm co, attending it. So if nifs up as nifs up as queensland doesn't matter if we have the possibility of anything, we choose the other ones. 
+
+21:54 | Customer Success Manager
+Yeah. OK. OK. 
+
+21:56| Customer
+And, yeah. So, but. 
+
+21:59 | Customer Success Manager
+That whole process, we could automate, yes. 
+
+22:03| Customer
+All things like we have about the engaged ones who we engage. We also send them still code, we choose them code sent, but yeah, tags, we choose engage and needs identified, not there. It's still code sent all of them because code sent already, we need to follow up. 
+
+22:20 | Customer Success Manager
+Yeah, I. 
+
+22:22| Customer
+can maybe then add more status, but before I start this, I want to speak with you if I engage with you heroine, how are you? You choose the tables? We have this table? Yeah, this table is good. OK. What size one point eight? OK. And on the way on the website, you made an in care for three meters, maybe three meters too big for you. We recommend you the two point one and you're happy. OK. So we identify your needs and we choose here need identified. 
+
+22:52 | Customer Success Manager
+Yeah. OK. And, 
+
+22:55| Customer
+engaged. 
+
+22:55 | Customer Success Manager
+Yeah. OK. So we'll get rid of this. So it'd be needs identified and engaged still, but I would still be in this status. 
+
+23:05| Customer
+Yes, but still, I have to choose the follow up one. Follow up one means like the first follow up if you want on the text on the text? 
+
+23:12 | Customer Success Manager
+Yeah, on a text? No. 
+
+23:15| Customer
+No tag. 
+
+23:17 | Customer Success Manager
+Tag. Sorry, what's… the, yes, follow up one? You? 
+
+23:23| Customer
+Were happy, but we couldn't hear anything else. And next week I send you an SMS or I called you and I close the follow up one. I choose Fu two. So follow up two. Yeah. 
+
+23:36 | Customer Success Manager
+OK. 
+
+23:37| Customer
+Respond again and I call you next week. You didn't respond. I call you another week and then you're going to the code lead on the status, right? 
+
+23:48 | Customer Success Manager
+OK. And what's this one close? 
+
+23:51| Customer
+Cold lead now because cold. 
+
+23:53 | Customer Success Manager
+Late. Yeah, you? 
+
+23:54| Customer
+Didn't get back to me in my text message or you didn't or maybe you replied, you said I'm not interested anymore. Now, you lost in the end? Yeah. 
+
+24:03 | Customer Success Manager
+OK. I see one. 
+
+24:05| Customer
+And then what I do, you can go to funnel on the left for left. As you can see now, I can see the tag which is followed one, I can filter, which is price chopper, not your phone number. 
+
+24:20 | Customer Success Manager
+Sorry? 
+
+24:21| Customer
+Filter. I can filter a follow up one or if I need to. Yeah. 
+
+24:26 | Customer Success Manager
+OK. Engage. 
+
+24:28| Customer
+Ones, I can choose on the engaged. If I need to call another engagement, I can, that's the, how I made like how I thought and made the system for me to run with podium. What do you think? Yes? 
+
+24:39 | Customer Success Manager
+Should. 
+
+24:40| Customer
+I just, 
+
+24:43 | Customer Success Manager
+I love it. Yeah, I think having those tags there, I think it's a good Kinda, yeah, probably the best solution on. 
+
+24:51| Customer
+The funnel, where I am and like which customer, like what part? And if I get a sales rep, I tell them just called like not engaged once. So he can choose not engaged once. And he can see also how many times they called follow up one follow up two, he can, but this is all has to be manual because we can't automatize because there is no another thing. How many times we call them. So, yeah, to change tags but which is some things can be manual, which is fair. Yep. 
+
+25:22 | Customer Success Manager
+OK. 
+
+25:23| Customer
+That's only how I was able to use the, what, like how to remind us how many times we called, what's the up, did we engage or not? OK. Yeah. 
+
+25:36 | Customer Success Manager
+OK. 
+
+25:37| Customer
+So, now we need to send automatic auto, like SMS or emails, my questions before I go, I have a two, I have a one question. We have a one Customer Success Manager, but as a Customer Success Manager, like you're a customer, but if you text me and if you send me a mail, it is two conversation. It makes two things on there. So both. So I can merge it. I can merge you. 
+
+26:04 | Customer Success Manager
+That's so weird. 
+
+26:06| Customer
+Yeah. So we can't like make them together as that's the first question, like I have to move both. Like if I move you, if I move, you approved, I have to move the email approved as well. So, two conversations stays on the status and, yeah, I don't know how to merge the conversation because text and the email is separate because. 
+
+26:31 | Customer Success Manager
+this is both… this is both a text conversation and they're both… let's just have a look whether. 
+
+26:49| Customer
+So, that makes a bit like complicated… sometimes two conversations with the same Guy. And so. 
+
+27:00 | Customer Success Manager
+Weird because then when you search by phone number, let's try. 
+
+27:09| Customer
+And you didn't send us an email? I did, I blocked you because I was keep receiving your notifications. Yeah. 
+
+27:15 | Customer Success Manager
+And because. 
+
+27:18| Customer
+all like even Google notifications was coming to as a notification here. So. 
+
+27:24 | Customer Success Manager
+Yeah, right. OK. And. 
+
+27:27| Customer
+I think I can give you an example of which one. So you can, I'll just find one customer with two. So let's go. 
+
+27:37 | Customer Success Manager
+For example, since they were both close, I'm. 
+
+27:41| Customer
+trying to find out one example for you. 
+
+27:43 | Customer Success Manager
+That's all right? 
+
+27:49| Customer
+OK. For example, sales delivery, not booked closed. Like go to status, sales delivery, not booked. 
+
+27:58 | Customer Success Manager
+Delivery not booked. 
+
+28:02| Customer
+And go close… Rebecca harris. I have three, you see one, two and open another, Rebecca harris, like. 
+
+28:13 | Customer Success Manager
+This is two. So that's an email? 
+
+28:15| Customer
+Because she sent another email with new title. Open another conversation which we don't prefer. 
+
+28:23 | Customer Success Manager
+Yeah, right. And then this has come through as the lead. 
+
+28:27| Customer
+Yeah, as the lead and I have to move three of them. Like I can't delay it like it doesn't make sense? 
+
+28:35 | Customer Success Manager
+Yeah, I can see. I, 
+
+28:36| Customer
+merged them. Yeah, I merged them when I put the number, this number already registered, I merged them, but still, it's a one contact but three conversation makes too much mess and a team member is complaining about it. He said like I was expecting podium is like more. Yeah. 
+
+28:54 | Customer Success Manager
+Let me, let me just take a screenshot of this and just send this to the team because, yeah, I can. 
+
+29:03| Customer
+And also the same email. You can see like same person and free conversation. 
+
+29:10 | Customer Success Manager
+Yeah. So that's. 
+
+29:15| Customer
+and open there is one in the open as well. So I can move that one, make it close for now until you can show the team three conversation. 
+
+29:23 | Customer Success Manager
+Yeah. Let's do that. 
+
+29:27| Customer
+You need to go open again and. 
+
+29:29 | Customer Success Manager
+Did it? No, it closed? Did it? Oh, I swear I clicked close. Oh, here it is. 
+
+29:34| Customer
+So, yeah, as you can see, this is pretty much making mess on the chat. Yeah. 
+
+29:41 | Customer Success Manager
+Yeah. 100 percent look, that is not expected behavior that's not how my understanding of how it should work. So, let me follow up and see how to make that not happen. 
+
+29:58| Customer
+Thank you, man. If you can get back to me with this one would be great. Yes. 
+
+30:02 | Customer Success Manager
+100 percent. 
+
+30:03| Customer
+For now, we started recently what? 
+
+30:05 | Customer Success Manager
+I'm going to do as well is I'm going to create, a template automation just so you can start to Kinda see how the automations have Kinda work if this wants to. OK? 
+
+30:21| Customer
+So, it, I can't see your screen now. It freezed actually. 
+
+30:33| Customer
+Hello? 
+
+30:37| Customer
+Hello? 
+
+30:42| Customer
+Hi. 
+
+30:44 | Customer Success Manager
+Sorry, I'm back. Sorry, I think I was having some internet issues. You still there? Can you hear me? Yeah. 
+
+30:54| Customer
+I'm here, I can hear you. 
+
+30:55 | Customer Success Manager
+Oh, OK. Sorry, man. Yeah, I was dropped out there for a bit. I was like, oh, where's matt going? All right. We're back. So, what I'm going to do is create a example automation for you and these automations will be ones that can move based on the status change. 
+
+31:16| Customer
+That's the thing that's what my question was before. Like I said, two questions, and can we also do the tech by tech base as well? 
+
+31:25 | Customer Success Manager
+Absolutely. So I'll set this up as an example so you can always refer back to it. But what I want to show you for this is contact status changed. So essentially, an automation always has to have a trigger and an action for the act, the trigger. Sorry, it'll just be contact status changed and then we would filter for the contact status to equal, you know, one of them, let's just do whatever. 
+
+31:57| Customer
+Let's see. 
+
+31:59 | Customer Success Manager
+I'll just do cold. I'll just do cold leads for now, but, you could always come in here and like when you make yours, you would just make sure that it aligns with what you want it to do. And… then on the other side, so the response is then you can both send messages. So like, you know, you could just send test message… but you can also then do operational things as well. Like for example, you could also then, you know, maybe you send, OK, this is a better example, you send a test mess, send a message. What's this? What did we decide? Cold cold lead send a message to say still interested? Obviously… you would make it a bit prettier than, that would happen right after you then triggered like move that? 
+
+32:47| Customer
+Us, can we change the immediately to different? Exactly? 
+
+32:51 | Customer Success Manager
+Right. So let's say, for example, the customer still hasn't been responded after a day, you could send another message after the last action, but with a one day delay, I. 
+
+33:06| Customer
+Can make it one week as well. Yeah. 
+
+33:08 | Customer Success Manager
+Exactly, right. You can do, you can do years if you want to. I've got customers I've got like for example, like automotive customers who will then once they've moved that status, it, sends a reminder to that customer in 350 days to then give them time to book in for their yearly service. OK? 
+
+33:24| Customer
+Perfect. That's great. So I can full automate these like three, four follow up. So. 
+
+33:30 | Customer Success Manager
+Exactly, right. So, let's just say, for example, all right, you do one more, another day later. So you've hit them three times one day apart each time. All right? To be like, seems like you're gone, what happens? 
+
+33:42| Customer
+If the customer doesn't have phone number? 
+
+33:46 | Customer Success Manager
+It won't run. 
+
+33:48| Customer
+Yeah. But how long does it going to be telling me? Like? 
+
+33:53 | Customer Success Manager
+Failed, the automation will fail, and I can show you what the reporting looks like. But actually, as long as they have contact details, as long as they either have a email, yeah, correct. It will prefer to always send us text, but I'm pretty sure if it only has email, it will also do it. 
+
+34:16| Customer
+OK, perfect. 
+
+34:17 | Customer Success Manager
+But, OK, let's say, for example, in this situation, you've moved them into cold lead. You've messaged them three days apart. And then it seems like you're gone, you could then at that point, you could then change this customer. You could update their status and then you could update this to lost. 
+
+34:36| Customer
+OK. That's great. So, which is I was trying to do like on the phone call exactly same thing I can do with the SMS as well. So we don't need to do this phone call. The SMS can do three weeks follow up every week, one SMS and then move yep. 
+
+34:53 | Customer Success Manager
+Yeah, exactly. Right. You can even some of the other Kinda cool things that you can do is you can even send a push notification. You can send a notification to yourself. You know, maybe before it goes to lost or maybe after it goes to. 
+
+35:11| Customer
+Lost, I can send a notification to myself. 
+
+35:14 | Customer Success Manager
+Yes, this is going to yourself. So you send a notification. The last. 
+
+35:18| Customer
+Time I asked you for the, how can I notificate myself? So, which is going to be notificate me if everything happens like what happens? 
+
+35:26 | Customer Success Manager
+Yeah. So you could, you know, at this point, you could say call time a customer has been moved to lost… please? 
+
+35:37| Customer
+Chekkit that's so, so good, man, I love it. Like I was expecting this notification for last year, trying to ask this actually, which is. 
+
+35:49 | Customer Success Manager
+So, you know, that is now essentially with, you know, obviously with better wording, that is a full follow up automation, three days apart message each time. And the beauty of this is right at the top. Once I get to the top under the settings, we would then just leave this on stop automation if contact response. So once you get the engagement from the customer, it would then not send any more of those other messages. 
+
+36:17| Customer
+OK. But, OK, I need to, how I can trigger again. 
+
+36:23 | Customer Success Manager
+You would just need to move the customer out of that status and then back in. 
+
+36:27| Customer
+OK. 
+
+36:28 | Customer Success Manager
+Because I guess the, I guess the theory is that you've got the engagement from the customer. They've done what you want. They're no longer a cold lead. They're you know, now they get moved into something else. Maybe they're you know, qualified lead or whatever the status is. OK? 
+
+36:41| Customer
+Perfect. What about the tags? Can you show me the filter audience with the like, not the status but. 
+
+36:47 | Customer Success Manager
+Yeah. So, yeah, a great example of when we were talking about quotes and follow up that, you know, if they're a contact, first contact of whatever it is, follow up one and unengaged. You could then only run this status, this automation based on people that have… I think… it's. 
+
+37:14| Customer
+yep. On the top. 
+
+37:16 | Customer Success Manager
+Yeah, contact tag. Sorry, includes any of or, you know, maybe doesn't include any of that. You could then filter in contacts and out of con out contacts based on the tags that they have. So of. 
+
+37:31| Customer
+Means the includes means like, I mean, I'm trying to learn your menu, how it works, includes any of means what the text includes it's going to send the notification? 
+
+37:44 | Customer Success Manager
+Yes. So, if the contact has these tags, this automation will run what's. 
+
+37:49| Customer
+the second one includes? 
+
+37:51 | Customer Success Manager
+Doesn't excludes any of all. 
+
+37:54| Customer
+Of all of means like if like two texts matches, yes. 
+
+37:59 | Customer Success Manager
+Yeah, sorry. Yeah. So any of the, 
+
+38:02| Customer
+condition, yeah. 
+
+38:04 | Customer Success Manager
+So, this is, it would just choose if any of the tags were present, it would proceed or if it includes all of you would need to have all tags present for it to proceed. OK? 
+
+38:16| Customer
+Yeah, it makes sense like a condition. If you have two tags exactly. Yeah. 
+
+38:19 | Customer Success Manager
+Exactly, right. So, you know, you could have multiple automations running for this quote, send follow up based on the tags being present. The only thing that I would say though is that the tags need to be present first before you move the status because the status is what Kinda triggers it all. If you've triggered the status without the tags and the tags are a condition of your automation, it's gonna, it's not gonna let that person through because it hasn't yet registered that person has the tags also. 
+
+38:51| Customer
+I can do only tags as well. It doesn't have to be put status? 
+
+38:55 | Customer Success Manager
+Yes. So… you would need this… because this. 
+
+39:04| Customer
+Can you choose instead of the brand section again when… the contact status part you see? 
+
+39:14 | Customer Success Manager
+Yes. So… I, 
+
+39:20| Customer
+can just only do the tags as well. So. 
+
+39:23 | Customer Success Manager
+You could do only tags. The only thing that I would say though is you need that this filter here determines which status has been selected for them to proceed. If, if say, for example, you just had this, you just had this one contact tags equals… includes, any of, you know, Victoria, for example, this means how this is set up is that every time a victorian customer moves the status, no matter what status it is, as long as they have the tag, Victoria, it's going to send them these messages, OK? 
+
+40:10| Customer
+OK. You recommend actually, but we can just, I can play around and find out which is that, what about on update? When the status change on update? What else on the section name? 
+
+40:20 | Customer Success Manager
+This would be on date. So this would, I, in all honesty, have only ever used on update because, you know, once you move that status? 
+
+40:31| Customer
+Yes. Yeah. 
+
+40:35 | Customer Success Manager
+And then you can also set up some filtering around how often it repeats. So let's say, for example, there's like the follow up status where you send three messages three days apart, you could then say, all right, if a customer goes through this, I don't want them to ever go through it again for another 180 days, even if they are a cold lead. So you can then Kinda, yeah, stop a customer getting bombarded by the same automation every time they've got that status changed, OK? 
+
+41:09| Customer
+Makes sense. 
+
+41:11 | Customer Success Manager
+So this one here is more typically used for like reviews for example. So if you've got a status called send review, you would probably have this set up to say, you know, only send this automation every 999 days per mobile number, because once you've sent it, they're either going to leave it or they're not. But this is always worth just having a bit of a look at because this is some of the guard rails that you set up to Kinda protect yourself from annoying customers traffic. All right. Unless that's unless that's your goal, then you can just, I. 
+
+41:42| Customer
+can play around now. So I, just before you go up to like, I want to also talk about, you have another meeting, not today but another meeting about the integration part. Yes. So my question is from the, our new website is php and using API. So from the new website to get the data integration, you sorting out that one yet? Like podium helping to? 
+
+42:11 | Customer Success Manager
+For which one? Sorry for? 
+
+42:12| Customer
+New websites? Yes. 
+
+42:14 | Customer Success Manager
+Getting. 
+
+42:15| Customer
+my leads because we spoke with miramira was telling me like podium do the free integration for you? 
+
+42:23 | Customer Success Manager
+So, yeah. So, the integration was out of this here if it has like for example, if you have a shop profile or something that we can plug in like. 
+
+42:33| Customer
+New website will come on. Yeah, yeah. It was a customer told me as well like custom website, php, and we have apis. Yep. 
+
+42:43 | Customer Success Manager
+So that's, the custom website. And like, I guess more like custom integrations is where we would get you to sign into that developer portal, use the documents and the material available there, that integration is different to this integration. So these are the integrations that podium I'm. 
+
+43:03| Customer
+pretty sure I explained mirror very well. Like I said, even I explained, the new website is custom. So getting data from my new website, the podium is a new lead. She said, yep, we completely do free integration for you. We, we have really good integration team. She said that's the one reason like how she actually convinced us to go to podium. 
+
+43:25 | Customer Success Manager
+Yeah. So let's just have a Quiq look at because I remember there was a bit of a list of the, you know, integration mapping and things like that. I'm sorry. 
+
+43:35| Customer
+We're only going to get like this queue like the information like name surname from the customer when they choose the product and, you know, when you send the click button, it goes to do, it will go to scene seven. Automatic. We're gonna solve that part, but also it needs to come to you. So that podium part miraset or integration team will do. I said, even I said like this is not sure before she said, yep, completely fine. Even if you have apis, she said, definitely I can speak with Maria as well to confirm. So on that part, like the website is ready. Actually, we will like, I don't know that's the thing I just want to ask you. 
+
+44:20 | Customer Success Manager
+And is what's their website built on is that their prospect three six five? 
+
+44:26| Customer
+No, php. 
+
+44:29 | Customer Success Manager
+Just having a look at… let's look. It supports key system integration and speaks at no additional cost. 
+
+44:49 | Customer Success Manager
+API access includes. Let me just have a Quiq look because I think potentially there might be, I think you're both saying… automation, but I just want to make sure that we're all talking about the same thing. I can actually see Customer Success Manager, why don't? I just see if I can quickly grab her because I just want to make sure that we're all talking about the same thing because at the moment, the integration team aren't working on anything for us at the moment because I haven't instructed them to because I provided the details for the developer portal as well as. 
+
+45:24| Customer
+My question was to Customer Success Manager, like before we buying? Like it was a long process to commencing like when you contract, I many times remember on the phone to tell the Customer Success Manager like custom integrations, not the ready ones. Custom integrations. Do you guys do free? She said, yep, completely free. We are really good at integration. That's the, I can just check with Customer Success Manager as well. Another. 
+
+45:43 | Customer Success Manager
+Question. Yeah, that's right? I'll check with her. 
+
+45:45| Customer
+Moving to data to scene seven, like which is the not on the there? Like that one only moves to if it's sell, but also we want to move the leads as well as leads like for example, this is only creates… a customer sales order or shipped or packed. And there is some custom parts to move to like that part. Last time we discussed with you giving data and taking data, two different things from scene seven to taking data which you provide or giving to data to scene seven you provide like. 
+
+46:26 | Customer Success Manager
+this a lot of the actually, let me just have a Quiq look. 
+
+46:33| Customer
+I'll go with an example. Like I explained miradiz as well. Like for example, we have a lead but it's not a sale yet. I don't want to send as a customer. I want to just send like lead import that's what we want to do. We want to export, we want to export to some leads manually to podium to synceven from podium to synceven. 
+
+46:59 | Customer Success Manager
+So, these, all of the information that we use to then run automations is synceven to podium. And there's also a contact sync from synceven to podium as well. And so podium is Kinda acting as that catch all at the bottom to then be able to then run those automations. 
+
+47:15| Customer
+Yes. 
+
+47:16 | Customer Success Manager
+Taking a look, 
+
+47:18| Customer
+like the integration part, which part can podium do this one masking? Like I'll give an example. For example, you came as a new lead to us here today and you're in the status, new lead. I'm going to send you a quote but you didn't want an estimate from podium. Podium code system is not very good with the PDF things. You are a big customer. I think you're getting like tables, you want to get a proforma… code like formal code. 
+
+47:47 | Customer Success Manager
+I. 
+
+47:48| Customer
+don't want to just take your name, every data from podium one by one, create a new customer in sync seven, which is I explained this to Customer Success Manager on the phone many times. Can you do some customization? She said, yes, of course, like we don't want, we just want it with the one click button or something to move data to sync seven as a new lead and sync seven. 
+
+48:11 | Customer Success Manager
+Has. 
+
+48:12| Customer
+open API, sync seven has open API to get the data as well. And so also like this is the scenario one, OK. This scenario, this lead still has a process on scene seven and it goes to order and shipping. Still, we want to that synchronization together. So like that needs on the status because there are status on the scene seven as well. Podium can get that information of that lead as well because it's not the customer. It's elite now. Yeah. 
+
+48:51 | Customer Success Manager
+So, we just need to be able to push the information back out to Sim seven is what I'm understanding. 
+
+48:56| Customer
+It's Kinda synchronization the leads. It's not like only pushing info and pulling info synchronization. Yeah. 
+
+49:03 | Customer Success Manager
+Yeah. OK. Look, let me, I will follow up and have a look and I will be able to Kinda come back with a bit of a plan for tomorrow. I might even end up inviting Customer Success Manager to our session tomorrow at three just so we're all completely across what's Kinda, you know, whether you know, she had a solution that I'm not quite thinking of or she might have, you know, she might be able to better clarify the conversation that. 
+
+49:29| Customer
+We had like I'm an easygoing person. I'm always trying to find a solution which is not available on the podium. But the thing is, yeah, probably really certain, Ruben. I'm like honestly telling this topic before I signed the contract, I had maybe 10 calls with Customer Success Manager and 10 times I checked with Customer Success Manager, not everything on the email, most of them with the phone call. I don't want to be like disappointed till all the contract been till signed because the sample custom integration part. I many times like I asked Customer Success Manager because I know integration is a big process. The red integrations, all the cut like I don't need to do anything. You don't need to do anything I can do myself which is I wasn't asking that it's simple. I was asking always Customer Success Manager custom integration which is from my website to get the data custom fields. We want to hook. We want to hook the fields to put podium. And she said, yep free. We do. And I'm gonna open my camera as well. She, she said it's free. I said like you're sure. Yep, podium is really good with integration. We, that's why we provide our customers free integration. That convinced me a lot. And, and second thing for the synth seven, she helped me to also choose as well because normally we were going Hubspot. And I explained the scenario on the phone many times like we want to move the lead not only the cell, the lead to scene seven. And I want to see all the progress synchronization with the podium. So I don't need to do double jump that's the podium that's what we want to get for. 
+
+50:56 | Customer Success Manager
+Yeah, no, look, loud and clear. Look, let me have a bit of a chat to her. She just worked a couple of desks over. We'll, yeah, put together a bit of a plan and make sure that, you know, yeah, the podium's whole, you know, job is to make it as easy as possible. And, yeah, I can see how, those integrations will do that for you. But to be super honest, I do have to jump to another meeting but I'm going to come. 
+
+51:18| Customer
+For your meeting? Yeah, yes. 
+
+51:22 | Customer Success Manager
+Three o'clock. 
+
+51:22| Customer
+perfect. All. 
+
+51:23 | Customer Success Manager
+Right. Take care. I'll speak to you soon. 

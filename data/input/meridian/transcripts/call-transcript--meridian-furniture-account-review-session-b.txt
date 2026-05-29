@@ -1,0 +1,267 @@
+Meridian Furniture Group x Podium | Account Review
+
+Customer Success Manager with Customer company
+Recorded on Mar 31, 2026 via Zoom, 13m
+
+
+
+Participants
+
+Podium
+Customer Success Manager
+
+Meridian Furniture Group
+Customer
+
+
+
+Transcript
+
+0:00 | Customer Success Manager
+bash. Hello? 
+
+0:01| Customer
+Sorry, mate. I was eating something while I'm eating. 
+
+0:05 | Customer Success Manager
+Little afternoon snack. Yeah. How are you? Mate? I'm doing really well. It's been a while since we've caught up. How have you been? 
+
+0:12| Customer
+Yeah, everything's all right, mate. We're happy with everything. 
+
+0:16 | Customer Success Manager
+Oh, good, mate. 
+
+0:17| Customer
+Still, I'm not going to hold you much. I've got an issue with automation. 
+
+0:22 | Customer Success Manager
+Yep. Let's have a look. I don't. 
+
+0:25| Customer
+know how come it happened? Some leads automation stopped like we… didn't change the status, anything, you know, that we're putting to the quote follow up. Yep. You know, how I realized I went to the funnel and I realized some leads still sitting there on the quotes and follow up two follow up three for like a month, 45 days. Then I moved many of the most of them to the beginning but it looks, it bothers the customer too much because it's like duplicating the message, but I wasn't able to do one by one so I put them again. Yeah. 
+
+1:03 | Customer Success Manager
+Then. 
+
+1:03| Customer
+I realized automation stops sometimes with some leads. Can we check together? Like why it happens? That's why I just made this meeting. 
+
+1:11 | Customer Success Manager
+All right. Yeah, 100 percent. Let's have a look. I know that when we, what do you got going there? A little potato cake or something that looks good? 
+
+1:18| Customer
+I'm just going to show you my mom made it. It's like a Turkish bread. 
+
+1:23 | Customer Success Manager
+Oh, yum. That looks great. Yeah. 
+
+1:26| Customer
+I was closing my camera. Can I show you? 
+
+1:29 | Customer Success Manager
+No mate. Don't hide that, don't hide that away. 
+
+1:33| Customer
+I still didn't have my lunch yet. 
+
+1:35 | Customer Success Manager
+Oh, no, mate. It's four o'clock what are you doing? 
+
+1:38| Customer
+My business partner went to annual leave. So I'm only myself here rushing everything. What? 
+
+1:44 | Customer Success Manager
+A bastard. How dare he leave you alone? All right. Let's have a look. I just need to quickly refresh my memory. So we moved them to quote follow up. And then, oh, yes. Oh, that's right. All right, perfect. So it progresses through, they send the message? Well, it should be sending the message and it also then updates the status right after that, all right. And you're saying that's not happening? 
+
+2:19| Customer
+Can you go further? 
+
+2:21 | Customer Success Manager
+Like even if we just look at like. 
+
+2:29 | Customer Success Manager
+that's right? Let's see if I can find. 
+
+2:50| Customer
+Generally on the first one, there's no issue. 
+
+2:54 | Customer Success Manager
+Yep. Oh, yeah. There's not going to be anything. Yep second one… automation follow up general. All right. So that's the first one? 
+
+3:12 | Customer Success Manager
+Oh, no. What am I doing here? We go. All right. So message sent… then… let's use this one as the example. So, Customer… so Customer hasn't followed, hasn't replied. So really we should then see a. 
+
+3:55 | Customer Success Manager
+When's this scheduled to send, so this was scheduled and then that's scheduled to send the follow up on the third of April. 
+
+4:03| Customer
+OK. I didn't know. I'm able to see the lead by lead. Let me find an example for you to not waste your time. 
+
+4:10 | Customer Success Manager
+Yeah. Let's see. Have a look. OK? It's probably having a look and I guess like reflect on this automation. Now. It probably wouldn't be the worst idea to actually separate these out. I know that we initially had them as one long string that's what I thought that's. 
+
+4:30| Customer
+what I thought like to make the follow up first, like, sorry, the first automation does the follow up first to second, and it triggers the second automation follow up second to third. At least I can start from middle, you know what I mean? To follow up some customers? 
+
+4:49 | Customer Success Manager
+Yeah. What do you think? I think. Yeah, I probably agree with that. To be honest, I think because as well, then if we can, it means that we can monitor each step individually. That if then it fails at step three where you can then actually just look at that individual automation rather than it being like just one long sequence… show. 
+
+5:13| Customer
+Me one, Lee, you can have a look. 
+
+5:16 | Customer Success Manager
+Yeah, let's have a look. 
+
+5:18| Customer
+Richard, the number, I'll give it to you. I'll text you the number, so I'll make it easier all for. 
+
+5:23 | Customer Success Manager
+Is it, is it, o four o two? No, number four. 
+
+5:27| Customer
+O4, seven three. 
+
+5:28 | Customer Success Manager
+Oh, that's o four seven three. 
+
+5:31| Customer
+Two two three. 
+
+5:33 | Customer Success Manager
+Two two three, yep. 
+
+5:34| Customer
+Three nine three. 
+
+5:37 | Customer Success Manager
+Richard. All right. Let's have a look. So he's moved into. All right. Let's take a look at old Richard. So he should have been, yeah, he should have well and truly progressed now to follow up three. So let's have a look. 
+
+6:08 | Customer Success Manager
+What's this 15? 
+
+6:25| Customer
+That's like. 
+
+6:26 | Customer Success Manager
+That's weird that it's. 
+
+6:34 | Customer Success Manager
+so, definitely, yeah. 
+
+6:40 | Customer Success Manager
+Let's just have a Quiq look. Again… is that Richard, is that his number there? 
+
+6:49| Customer
+It was Richard. 
+
+7:02| Customer
+Maybe there's that one? I just wrong. One wrong status. 
+
+7:08 | Customer Success Manager
+Oh, I'll tell you why it's because the automate. I think I can see that. Yeah, separating these out is probably the better way to go because the thing that actually kicks off the automation. 
+
+7:23| Customer
+Yeah. I just realized that's another good example because I didn't put that one to first one. I put that one to, no, no, it was a mistake. My mistake. It's not a good example. Let me find another. 
+
+7:33 | Customer Success Manager
+One. No, but I mean, that is a good example because you put that at number follow up two. The actual trigger that enrolls them in the automation is the first quote sent follow up. So it hasn't actually enrolled them. So, I think probably the thing that's although we tried to do this with, I guess good intentions to simplify it. I actually think probably the more complicated way of doing this would be better of having them in separate automations and separate them out a bit so that you would just have… this cut off here. So it gets sent to a second. And then we have another automation which is once it sees that it's in second, follow up, it then triggers, you know, that follow up message there because then you would be able to drop people in to different stages. 
+
+8:27| Customer
+Yes, I'll give you another example. That one stop automatically, ME, double R y N. So that one, I want to, give it to you. All… right? 
+
+8:48 | Customer Success Manager
+Let's have a look. So why does this keep going away here we go? 
+
+8:54| Customer
+So automated like it was automation was working after the fourth one. It's supposed to be one more, but it stopped. Yeah. 
+
+9:08 | Customer Success Manager
+So, it's gone one, two three. But then in… the automation, we've got it to say that if the customer replies that it stops, let's have a Quiq look. 
+
+9:32 | Customer Success Manager
+Yeah, you're right. All right. Then. Let's have a look. Did, I don't know if I saved that person's number now, I'll. 
+
+9:45| Customer
+tell you, I'll tell, you don't need to go. I'll tell you, I'm on that page. Hold on. 
+
+9:49 | Customer Success Manager
+Yeah. 
+
+9:51| Customer
+Four five, no. 
+
+9:53 | Customer Success Manager
+Six, three, five, five, nine. Yes. 
+
+9:56| Customer
+Exactly. Perfect. 
+
+9:58 | Customer Success Manager
+All right. Let's go into here. 
+
+10:07 | Customer Success Manager
+All right… general. So that was the process done, but then it should have. 
+
+10:35 | Customer Success Manager
+So, yeah. 
+
+10:39| Customer
+Do you reckon it's a technical issue? We should check? 
+
+10:44 | Customer Success Manager
+Because I. 
+
+10:46| Customer
+manually reply, maybe that's why it stopped. Do you reckon, or I manually close the conversation, it doesn't stop the like. 
+
+10:59 | Customer Success Manager
+It should have… I just wonder whether there's… something in here that it's. 
+
+11:15 | Customer Success Manager
+it's thought that it has filtered out but done the process. It's update the status. This next one should be us then triggering contact status, no value received. That's… that's weird. 
+
+11:40 | Customer Success Manager
+That's not matched. Let's just triple check this. Let's say that it… doesn't match. 
+
+11:57| Customer
+Most of them work. You know, why podium we love podium has already helped us a lot. At least I can tell five, six customer podium converted from cold leads. Once you set the automation. I really appreciate it by the way Robin. Oh, no, that's fine. 
+
+12:20 | Customer Success Manager
+The. 
+
+12:20| Customer
+conversion rate increased a lot. 
+
+12:23 | Customer Success Manager
+Excellent. I'm glad to hear it's working. OK. I'm not 100 percent sure why this hasn't worked either way. I think, we should break these out into separate automations. And, I mean, you've booked me aside for half an hour that maybe even if we pull this meeting short, I can go and separate this all out for you. Yeah. 
+
+12:43| Customer
+If you can, that will be great. Oh. 
+
+12:45 | Customer Success Manager
+100 percent. 
+
+12:46| Customer
+On the next appointment, if you don't have enough time. 
+
+12:49 | Customer Success Manager
+No, I'll just separate it out, it'll honestly take me like 10 minutes. I think once that thing comes through, I think that should weed out any of the issues that we're seeing in terms of the, in terms of the like the filtering out, I think there's just, yeah, I think there's probably just a little bit too much happening in this automation that it's like if there's a bit of a hanging or if there's a bit of a delay in updating the status, it essentially just like shits itself OK? 
+
+13:19| Customer
+Thank you so much, mate. If also can you this automation when you separate it? Can you keep this one offline? But at least we can have it on the spare one. Like in the future? Yes? 
+
+13:30 | Customer Success Manager
+Yeah, yeah. I won't edit this one. I'll just turn this one off. And then I'll go and create. Yeah, new ones. Thank you. So. 
+
+13:37| Customer
+Much mate. By the way. Happy Easter in advance. 
+
+13:40 | Customer Success Manager
+You too, my friend. All good, mate. I'll message you once I'm done let. 
+
+13:44| Customer
+Me open my camera. OK? All good mate. 
+
+13:47 | Customer Success Manager
+I'll speak to you soon. Take care. See you later. 

@@ -1,0 +1,5 @@
+{
+  "_comment": "Bridge between on-disk account folder names and the ORGANIZATION NAME column in accounts.xlsx.",
+  "meridian": "Auscraft Furniture",
+  "northfield": "Mr Sparky"
+}

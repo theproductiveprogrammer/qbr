@@ -1,0 +1,571 @@
+Meridian Furniture Group x Podium | Account Review
+
+Customer Success Manager with Customer company
+Recorded on Jan 27, 2026 via Zoom, 33m
+
+
+
+Participants
+
+Podium
+Customer Success Manager
+
+Customer company
+Customer
+
+
+
+Transcript
+
+0:00| Customer
+really? Hey, Customer Success Manager, how are you? 
+
+0:10 | Customer Success Manager
+Not too bad at all, mate. How are you feeling? I'm. 
+
+0:13| Customer
+much better. Mate. Still like not really good, but recovering. 
+
+0:18 | Customer Success Manager
+I feel like every second week you're unwell, mate? 
+
+0:21| Customer
+Mate, tell me about it. I don't know what's happening to me. Hope you had a good long weekend mate. 
+
+0:27 | Customer Success Manager
+Mate you too. You too. Let me just load up that's. 
+
+0:32| Customer
+right. I'm just sending you one quote to my customer. 
+
+0:35 | Customer Success Manager
+Yeah, I don't miss that, mate. Thank you. Yes, sir. 
+
+2:01 | Customer Success Manager
+Yep. I'm ready to go, mate me too. 
+
+2:04| Customer
+Perfect. 
+
+2:05 | Customer Success Manager
+How have you been going? 
+
+2:07| Customer
+Everything is all right. Actually, I'm just trying to sort out the podium setup, but I just wanted to start over with you again to understand the parts. So some parts like working automation is a bit complicated as well. Setting up the automation is not complicated. Make it run properly. I just like if I create a new contact card right now and trigger, it works. But for example, old contact card, if I just want to trigger, change the app, like update the status with for example, quotient, follow up, it doesn't happen or maybe bulk doesn't happen. I don't know why. 
+
+2:51 | Customer Success Manager
+Right. OK. So, have you in a bulk? Have you in a bulk like amount tried to update to quotient slash follow up? 
+
+3:01| Customer
+Yes, I did like hundreds of them at the same time. That's why maybe it didn't work, I reckon or? 
+
+3:08 | Customer Success Manager
+No. Look, I think, let me just have a Quiq look at the automations. When did you do that last week? 
+
+3:20| Customer
+Yeah. And I did yesterday again and didn't work still. 
+
+3:23 | Customer Success Manager
+Yeah. OK. And one. 
+
+3:27| Customer
+By one, I did, I think I'm testing one by one. Let me check my funnel at the same time. 
+
+3:33 | Customer Success Manager
+Follow up to general message status equals. 
+
+3:42 | Customer Success Manager
+Yeah. OK. I, matt, I don't think the way that you did it was the issue we've actually. So our carrier partner, Twilio is having some issues with like sending out messages at the moment, and I think you might have around that time. It was around. Sorry, when you updated those statuses, it was around that time that they were reporting some errors and I think maybe your messages were just caught up in that. Yeah, the reason why I think that is because when you sent out these messages. 
+
+4:13| Customer
+I. 
+
+4:15 | Customer Success Manager
+can see on the 20 second, they're actually marked as failed rather than filtered out. And when I go to filter in for failed messages, they're all reporting back this error, which is what we were seeing as. 
+
+4:32| Customer
+A. 
+
+4:33 | Customer Success Manager
+result of the issue… so. 
+
+4:36| Customer
+It works normally, should I just make them again? 
+
+4:41 | Customer Success Manager
+Yeah, I would do it again. They are still reporting the issue as ongoing at the moment, but we are starting to see some of those messages coming back like normal. So I would do it again and then have a look when you go to your automation. So you go to monitor here at the top and you'll be able to see where you're falling in these bars. What I suspect is that then you've tried again yesterday and I think that automation is set to only send once for… 365 days. So, because it has like effectively tried to send that message already. When you then go to send it again, it's then like it thinks that you've already done it. 
+
+5:27| Customer
+Oh, OK. So how can I fix it? I didn't understand that. Yeah, or when. 
+
+5:33 | Customer Success Manager
+you go to upload, when you go to upload, do that bulk movement again, I would just for that five minutes or whatever, just turn this to repeat every time the trigger happens. 
+
+5:45| Customer
+Ah, OK. Move. 
+
+5:46 | Customer Success Manager
+Your contacts across we. 
+
+5:47| Customer
+Can do that now, mate. We can do that now. 
+
+5:49 | Customer Success Manager
+Yep. Perfect. I'll just do that now for you because I can see here when you go to view the sorry monitor, the automation. 
+
+5:58| Customer
+Because that shows like it likes that automation already triggered but doesn't trigger again, that's why? 
+
+6:06 | Customer Success Manager
+Yeah, it's because technically the automation has trigger, it's the send that has failed. So it's Kinda getting caught up in itself. But I can see here that then if we filter first filter messages back on the 26, so. 
+
+6:23| Customer
+Failed ones. If I check today, it shows one of them failed, can you see which one failed? Yeah. 
+
+6:32 | Customer Success Manager
+So, today, there was one that failed, which was, looks like it was a missed call follow up. I suspect though that might be because that's the, 
+
+6:41| Customer
+number different, number eighth number that's why it's because. 
+
+6:45 | Customer Success Manager
+It's a landline exactly, right? So, look, you do sometimes get some failed messages and typically those are the missed call follow ups where people have called through on a landline, you're well, I was going to say your failed messages. If they, then spike is generally, then if it's more of like an ongoing issue, I. 
+
+7:06| Customer
+didn't know the monitor site that's why I'm so happy now, I can see what's going on. 
+
+7:12 | Customer Success Manager
+Yeah. And the similarly for the filtered, you know, let's say, for example, you moved a contact to a quote sent slash follow up. All of the other messages automations that we are also running, will also see that status has moved, but it will then filter them out because they don't feel sorry, fall within those filters. So filtered doesn't always mean something has gone wrong. Sometimes it actually means that the automation has correctly identified that person's not applicable to be, have a message sent. OK? So yeah, the ones that you really want to do is scheduled process and message sent. Those are the ones where you can see that the messages are either going out or being scheduled in a queue to go out. 
+
+8:04| Customer
+OK. Much better to see. 
+
+8:06 | Customer Success Manager
+Yeah, that's probably a better reflection of what's actually happening. 
+
+8:10| Customer
+OK. Much better. Yeah, I think I've done like two and a four phone calls which is scheduled to be in a four for tomorrow. 
+
+8:20 | Customer Success Manager
+Yeah, exactly. Right. OK. Yeah, perfect. Does this? 
+
+8:23| Customer
+Make sense? So, I think I'll fix that. So my question. So if you go to automations, like let's go a general follow up, that one, what, I've done it like when the SMS received, it was automatically stopped. So I canceled that one. The reason why is there any chance I can like how to stop manually? The automation like cause we always respond to messages. So if customer replies, sometimes it just says it just puts stop and automation cancels. So does it make sense? 
+
+8:59 | Customer Success Manager
+Yes, so. 
+
+9:00| Customer
+This one, I want to cancel the automation myself manually. So if I change the like status to cold lead, that automation will stop you reckon. 
+
+9:11 | Customer Success Manager
+If, when… it goes to send the automation again, so let's say, for example, they've been moved into… quote send follow up and then you do want to cancel it. If you then move it to quote send follow up to or, you know, move it to cold lead. When it then goes to send the message again, it will recheck your filtering. So because that filtering then doesn't no longer apply. It should then essentially like that send should, then it should then filter out. If I change. 
+
+9:41| Customer
+The status after like triggering the first trigger, let's say like first trigger was the quote send follow up. It triggered and then send the first message and the customer just done thumb, but that it doesn't mean like cancel, but it stops. But now I canceled the automatic stops. So if I move now to quote lead, so the second follow up not going to happen yet. Yeah. 
+
+10:05 | Customer Success Manager
+Correct. Look, I would, probably, I… guess it depends where the volume of… how like how people are replying because if you find that the majority of people are doing thumbs up, then it's canceling them out, you know, then I would have this turned off like this. But if you're finding that it's just a few people that are Kinda opting out. 
+
+10:29| Customer
+It's a, big amount. That's why big amount? Yeah. OK. Because like after the phone call, I already send an SMS. Generally, they reply to that SMS, not the follow up SMS, but they just reply to my SMS, but once they reply, it just stops the automation. It's just going to give extra laboring to trigger that automation again. 
+
+10:46 | Customer Success Manager
+Yeah, perfect. OK. Yeah. Nice. I. 
+
+10:49| Customer
+Can stop manually. OK? This is OK. For now. That makes sense. So, can we go top there as you see AI follow up thing? I? 
+
+10:57 | Customer Success Manager
+Just want to learn the, 
+
+10:59| Customer
+AI things as well today. It's going to be more rather than set up. I want to understand the podium together. If leads response, allow AI employee to continue the conversation. OK. So, and this is the first one and the second one on the settings, I can see, I'm… just going to settings lead follow up? AI. Yes… best of us, the differences are like how to set up there's. A lead follow up and ownership thing. 
+
+11:35 | Customer Success Manager
+Yeah. So two Kinda two separate things. This one here is that if then this customer replies, are you happy for then Jerry to jump in and like reply? I continue that conversation. This one here under lead sources, lead follow up. This is if because… we can go this. 
+
+11:59| Customer
+Is just a, it just, 
+
+12:01 | Customer Success Manager
+does it just bounce you to… it? Doesn't work here we… go. 
+
+12:23 | Customer Success Manager
+OK. OK. 
+
+12:25| Customer
+What's what's this one? Roland? So this? 
+
+12:28 | Customer Success Manager
+Is, what I just clicked through to try and activate? This is what it would actually do. So what this is just an automation. If it just goes away. Essentially, it sees that if Jerry hasn't received a reply after four hours, it's been going to generate a reply to then follow up on that customer. So it's essentially going to chase the people that have stopped specifically responding to it. 
+
+12:52| Customer
+OK. In here? 
+
+12:54 | Customer Success Manager
+You can both have AI messages. So this is just going to generate a message and Kinda keep that conversation going. You could also in here insert specific messages that you would want to say, maybe at the, you know, 12 hour mark, 24 hour mark. Look, most people do choose just to leave the AI messages in there because it all obviously takes the context of the conversation and then combine it with Kinda where it's up to. 
+
+13:20| Customer
+Yeah, but Jerry's like, I don't know Jerry can be trainable, but I didn't like Jerry's responses a lot. It was too like, I mean, I have to say fake cold. You know what I mean? Right? Like it's not like gemini or gpt. It's just, I couldn't find you. 
+
+13:42 | Customer Success Manager
+Yeah. 
+
+13:44| Customer
+Yeah. We. 
+
+13:44 | Customer Success Manager
+can update the tone of it because the back end of this is actually powered by chatgpt. So it's the exact same technology. We just need to plug in the right tone of what you want like for context in the back end. Let's just, I don't think we've had a play around with this at all yet. OK? Where is it is? 
+
+14:06| Customer
+This only you can do it or I can. Is it your point? 
+
+14:09 | Customer Success Manager
+Yeah. This, this tone is, yeah, it's just in the back end. So this is what we have set up at the moment. Informal yet professional adopt a conversational tone that's friendly and approachable. It's. 
+
+14:21| Customer
+not bad. 
+
+14:22 | Customer Success Manager
+Yeah. If there are. 
+
+14:23| Customer
+Responses. Still, I didn't like it. 
+
+14:25 | Customer Success Manager
+Yeah. If there's I guess more specific feedback that you have around it, like whether it's you know, if it talks too long or if it's too direct or it's you know, we need to adjust some of these. Let me. 
+
+14:40| Customer
+read from, I just responsed myself. There you go. I texted myself. I tested, thank you. I'll let you know when I'm ready. Yeah, if you got any questions about styles or finishes? I'm here to help make the choice easier. Like I was trying to stop the conversation but Jerry was keep going to ask question. 
+
+15:04 | Customer Success Manager
+Yeah. How long ago was that one yesterday? Yesterday? Let's have a Quiq look… Customer? 
+
+15:14| Customer, yeah… yeah, I am not yet. 
+
+15:29| Customer
+Yes, AI assistance, that one. 
+
+15:35 | Customer Success Manager
+So this, so… this one here was that when you've gone here and clicked suggest a reply? No? 
+
+15:42| Customer
+The other one met a test. The other one if you go down, if you go down, no, no, same chat. Oh, yeah. That last one is suggest reply. Yep, that one suggest reply, AI assistance, which is one at one 31 PM, which is, Jerry replied without my consent, like automatic reply was. 
+
+16:04 | Customer Success Manager
+Like. 
+
+16:04| Customer
+You see, yeah. 
+
+16:05 | Customer Success Manager
+Like, oh, I see it is not. 
+
+16:08| Customer
+The thank you. I'll let you know when I'm ready AI assistance. The answer it wasn't like to, yeah. 
+
+16:15 | Customer Success Manager
+Is this… when you then replies… was that when it loads the like the suggestion box and then you click accept because. 
+
+16:34| Customer
+this is the last one I did. But that one, the AI assistance one, I didn't do anything that was just an automatic one. 
+
+16:44 | Customer Success Manager
+It's weird. Yeah, that's… doesn't look like how it should. Normally, it should say… AI employee. And then it should say the source of where it has pulled that data from. Because also in our settings here, we don't have it turned on to actually reply to you like to customers yet. We've been, I think when we plugged it in, we said we'll wait and start to, you know, build and develop it. And then at the time, we said that we were going to, you're going to use different platforms. So we paused. So at the moment this is turned on to suggestion mode. 
+
+17:25| Customer
+Now, I've done it on automations. So, which was automation, but I turned off already. So that was the testing automation. Did I delete it or not? I don't know, I just created testing automation yesterday, so. 
+
+17:42 | Customer Success Manager
+OK. 
+
+17:43| Customer
+OK. It wasn't like I didn't make anything. I just made the automation and text it myself. Then I turned off the automation. I was testing ah. 
+
+17:52 | Customer Success Manager
+OK. Gotcha. So to actually have your AI employee turned on? 
+
+17:59| Customer
+Isn't through? 
+
+18:00 | Customer Success Manager
+An automation. It has like its own specific set of settings that we turn on. So for here, what we would do is sorry, we have both the option to do after hours and during hours and we have within those, the option of suggestion fallback and response. Now, once you've loaded in those, all of the different questions and answers, you can say we've added a few in at the moment. Once we get to a point that we're happy with those questions and answers, we would work up to a point where after hours, it's on full response because it knows that you're not going to get to it because you're you know, at home with your family. 
+
+18:38| Customer
+So, it has to be exact question to come up or Jerry can understand and give it roughly. OK? 
+
+18:44 | Customer Success Manager
+Yeah, it's not, yeah, it's not, it's taking the, essentially the theme of the question and then matching it with the theme of the questions that you've entered and using that to combine it with the context of the conversation. OK? So, it's not word matching. OK. So, so, yeah, super quickly on this. 
+
+19:03| Customer
+Yeah. 
+
+19:04 | Customer Success Manager
+We'll leave it on suggestion. I'll. 
+
+19:05| Customer
+finish the questions for next meeting till next meeting. 
+
+19:08 | Customer Success Manager
+Yeah. And eventually, we would work to a point where after hours is set on sorry response, which is full blown response. And then during hours, we would set on fallback and we would set some Kinda fallback period so that, you know, maybe after half an hour, you're not replying. Therefore, it's going to then jump in. Oh, that's. 
+
+19:24| Customer
+so, good, man. That's so good. 
+
+19:26 | Customer Success Manager
+So you've Kinda just got to set that SLA for yourself of how quickly are you going to jump in before Jerry comes in and tidies it up for you? You can. 
+
+19:35| Customer
+Leave it AI response for after hours now, yep. 
+
+19:38 | Customer Success Manager
+And we'll leave maybe during hours for just suggestion just so that, you know, it's not jumping in too much, but at least you'll start to get some conversations coming through. The, what was I going to say? Are you happy with the name Jerry for the AI employee? Do you want to have it as something different? Jerry's good mate. 
+
+19:56| Customer
+Jerry's good. 
+
+19:57 | Customer Success Manager
+Perfect. It's AI. 
+
+19:58| Customer
+Name, so good. Good. AI, name some people? 
+
+20:02 | Customer Success Manager
+Choose to like have a bit of like a play on words, like I've got a dentist that has called their AI employee molar. So, you know, you could always change it if you needed to. So, and, 
+
+20:15| Customer
+what was my other question? So automations part? OK. Let me check, manage. So I can do bulk. Now, I can do that, put that one on the trigger again. Yeah. So this is OK. So we're hiring you next week, Niv, like offshore sales reps starting for follow up delayed. So, what would you suggest to set up for him to like phone call things if he got a phone call? So. 
+
+20:43 | Customer Success Manager
+So, 
+
+20:46| Customer
+so, we have Customer now, Customer, not going to receive any inbound calls, but if we assign, we want to receive his own leads so he can contact with Tim again, you know what I mean? Yep, all leads are all leads, but if we give him the leads, they are his leads. So, we don't want to. 
+
+21:04 | Customer Success Manager
+Give him. 
+
+21:04| Customer
+Any new leads? Yeah. 
+
+21:06 | Customer Success Manager
+Yeah, absolutely. Look what I would probably do. So, when somebody, when a customer calls your main number here, is the idea that then this new team member is going to answer those calls? 
+
+21:21| Customer
+I don't like Customer's not going to answer? No, no. 
+
+21:24 | Customer Success Manager
+No, no. The new, the new team member, 
+
+21:27| Customer
+New team member is Customer. Oh. 
+
+21:29 | Customer Success Manager
+The new team member is Customer. Yeah. 
+
+21:31| Customer
+Oscroft, me and Alpa, like me and a team member. 
+
+21:35 | Customer Success Manager
+Gotcha. OK. So, when a customer calls through… I see, I'm catching up now. So, Customer calls that come through to Customer, then route to the second sales group. And if we just check the second sales group, it has Customer in it. Perfect. If somebody calls the main line, let's just confirm this. It goes through to yourself and a team member. And if it misses you guys, it then goes straight to voicemail. Yeah. Is that correct? That's how you want it to work? Perfect. Well, I mean, it looks like you've set this up, perfectly. OK? 
+
+22:13| Customer
+And also, can we do one more setup for, you know, after work hours, when someone calls us, it, if they don't wait on the line, we don't get the number, how we can make the like turn it off that on. Like I still want to receive a phone call after work hours or maybe I'm a bit late, like maybe seven P. M, eight P. M. Oh, right. So, if I need to change the business hours on there, OK? It's not. 
+
+22:44 | Customer Success Manager
+On the phone? Yeah, correct. 
+
+22:45| Customer
+Because I was looking on the phone, but, OK. Yeah. So, at the. 
+
+22:49 | Customer Success Manager
+moment you've got it through to, on weekdays till seven 30 that number would then swap over to after hours? OK? 
+
+22:55| Customer
+Perfect. Auto reply? 
+
+22:57 | Customer Success Manager
+Message. Yeah, we can open. 
+
+23:00| Customer
+Yep. Auto reply message. We can do. Yeah. 
+
+23:04 | Customer Success Manager
+So, that one's just that message of, we aren't open right now. We'll get back to you as soon as we can. Happy to leave that on. Yeah, I'll. 
+
+23:11| Customer
+change it. Leave it to me. I don't want to take your time. 
+
+23:13 | Customer Success Manager
+All right. Yeah, no, no, no, you're OK. So yeah, for that phone, let's go phones now. 
+
+23:20| Customer
+So, 
+
+23:20 | Customer Success Manager
+I just want to quickly check the after hours for here. OK. So after hours for the main line that goes through to a voicemail for Customer's, does that do the same thing? It goes through to a, OK… nice just place the same one. Yeah. Perfect. Customer can get. 
+
+23:37| Customer
+Phone calls after hours as well because he's in India. So we can turn off after hours, phone call for receive. So Customer doesn't have after hours call like he can receive all calls. He. 
+
+23:47 | Customer Success Manager
+can receive calls all the time all the time, mate. All right. So, in that case, what we'll do is for him after hours, we'll just set up the same that he goes through to second sales. And if it then does miss him. But this? 
+
+24:04| Customer
+Is after hours like this is for, I'm… just checking if someone calls direct or number. If you don't pick up, it's going to go to Customer. 
+
+24:23 | Customer Success Manager
+Right. One more time for me. So when somebody calls the main number and it's after hours, yep. 
+
+24:29| Customer
+I don't want to firstly, it goes to the, Customer, if Customer calls like Customer, if the customer assigned to the Customer lead, which is call group, second sales, yep, after work hours, still, he can pick up, OK? 
+
+24:44 | Customer Success Manager
+Perfect. All right. So, after hours, his number would similarly just go to him. So pretty much whenever it calls, sorry, whenever somebody calls that number, it's going to go to him. Perfect. And then for your main number? 
+
+25:02 | Customer Success Manager
+After hours, should this go to Customer? Should it? Yep? 
+
+25:09| Customer
+No, no, it doesn't go to Customer after work hours. No. OK. As it is as it is. 
+
+25:14 | Customer Success Manager
+Yeah, perfect. OK. Perfect. All right. We'll leave that one then. Perfect. All right. That looks good. And. 
+
+25:20| Customer
+So, for, if you might, if you want to just on the ozcraft one, if you want to separate for sales and operations, like if you, how we can make the like a menu on the phone? Yes. Absolutely. 
+
+25:34 | Customer Success Manager
+So, instead of going straight to a call group, we can route it to a phone menu. And in here, we can then add in the key presses so we can go one for sales. Gonna do this all through the same group for the moment. I'm. 
+
+25:52| Customer
+just gonna also put another number for a team member. So that will be what you make it way easier next time. Yeah. 
+
+25:59 | Customer Success Manager
+OK. Gotcha. And what did you want two to be operate? 
+
+26:02| Customer
+Like on whatever you call, the ongoing sales, if someone already ordered they want to. 
+
+26:08 | Customer Success Manager
+Follow up or like existing customers existing. 
+
+26:11| Customer. Yep. OK. 
+
+26:18 | Customer Success Manager
+I mean, you can route these still all through to the same group, but you'll actually then just start to get some reporting on whether your customers are coming through from. OK? So. 
+
+26:27| Customer
+We can see, is it new sale or existing customer? 
+
+26:30 | Customer Success Manager
+Yeah. And then what we just need to do is upload the welcome, which I can quickly put together here… craft. 
+
+26:40| Customer
+Oscar furniture, maybe Oscar, better last time you said? 
+
+26:45 | Customer Success Manager
+Burn it. Sure. 
+
+26:53 | Customer Success Manager
+I think I'll write this and then we can change it so we can. 
+
+27:03 | Customer Success Manager
+Peace, bye. 
+
+27:10 | Customer Success Manager
+Oh, my goodness, options. Press one for new, sales… press two for existing customers. 
+
+27:31 | Customer Success Manager
+Let's see how that sounds. 
+
+27:33| Customer
+Exciting it is. 
+
+27:40 | Customer Success Manager
+Existing. Oh, my goodness. Existing. All right. Let's see what that sounds like. I just realized. Yeah, one second. Let me just share my computer's audio… that's right? It was, did we do it as this? It was like oscraft? 
+
+28:03| Customer
+Better. Yep, thanks… for calling oscraft furniture, so we can assist you. Best please choose from one of the. 
+
+28:17| Customer
+Thanks for calling Meridian Furniture Group, so we can assist you… following menu options. Press one for new sales, press two. For existing customers. Happy with that. Good. That's good. Perfect. 
+
+28:38 | Customer Success Manager
+Mate, back in the day, you would have had to pay some voiceover artist, a couple 100 bucks for that. There you go. Now, I'm just doing it for free for you. Thank you so much. So, yeah, that can still go that'll just go through the same primary call group. But at least you'll start to get some understand like where your people are coming through from? 
+
+28:58| Customer
+Can you assign the person over there as well on the three dots, like for example, a team member for, so. 
+
+29:05 | Customer Success Manager
+What we would need to do is first have a call group. So you might have a call group for sales and a call group for existing customers. And then you can, assign those call groups to those menu presses. 
+
+29:20| Customer
+OK. 
+
+29:20 | Customer Success Manager
+That's perfect. I. 
+
+29:23| Customer
+love that. I can do that. Yeah. 
+
+29:25 | Customer Success Manager
+It's so easy. It's awesome. 
+
+29:28| Customer
+That's amazing. OK. For now. I think it's been already all appointment was one hour or 30 minutes. 
+
+29:34 | Customer Success Manager
+What did we put in? It was half an hour. I've got a little bit of time if you have any more questions. 
+
+29:39| Customer
+OK, perfect. I'm just gonna check. Let's let me check with this settings. What else? We can? So, can you go to settings and just show me? Like what else? We can do bulk message? I know how to use contacts. OK? Inbox. OK. Surveys, what is surveys like? 
+
+29:54 | Customer Success Manager
+So surveys… rather than sending out a like a review request, what we can do is we can send more of like a survey where it says, you know, based on your experience reply back with, you know, yeah, we've. 
+
+30:16 | Customer Success Manager
+already done all of those in terms of connecting the things that are available. OK? Payments. 
+
+30:21| Customer
+It's all good reviews. What I'm gonna next meeting? I'm gonna, I need your help maybe to just if you can give us some advice to, on the automations for the reviews, what type of automations? Because the current ones are too like cold, like keep asking what else would you recommend for us on the review automation skills? How do you might think mostly specialized for Google reviews? Everyone knows you for Google reviews. Yeah. 
+
+30:49 | Customer Success Manager
+Because what would you want it to do? Instead? We. 
+
+30:52| Customer
+don't want to be too like pushy on the. 
+
+30:55 | Customer Success Manager
+Asking. 
+
+30:57| Customer
+reviews. We sent them always like SMS, but they don't make the, I mean, review on the first SMS and I just check your automations. But it was just keep that's why I just ask this actual Kinda strategy. Like what do you suggest on the automation? 
+
+31:14 | Customer Success Manager
+Yeah, probably look… and I would say probably 50 50 either side. And of my customers would choose to then send the review follow up wherever this is, send a review unopened review info reminder here. This one here is just, I can see that you've already updated this a little bit, OK? 
+
+31:44| Customer
+That's that's keep like every vehicle. So this. 
+
+31:48 | Customer Success Manager
+Just does it once. What you can do is you can add multiple steps to it. So this is two days after we can say that the review hasn't been clicked. Once the customer does click the link, we can't then see it won't stop until… like it will stop once they've clicked, it won't stop once it, we can't keep just getting it until we see that there's left to review. So it's effectively, this automation's job is to get them to click the link, whether they then go through to them, you know, label review is totally up to them, but we could continue to then add further steps, you know, maybe after seven day, sorry, after a further five days, then another follow up. 
+
+32:32| Customer
+That's that makes sense now. Perfect. Yeah, thank you so much. So what I'm gonna do next meeting, I'm gonna fill the old questions like I'm gonna add OK, like a lot of questions to AI. So next meeting, we can more try to build up to Jerry so we can use more efficient. Yes. 
+
+32:51 | Customer Success Manager
+Of course, 
+
+32:52| Customer
+and I'll work on the automations, new automations. If I have a question, I'll ask you, I really appreciate it for your help, Robin. No. 
+
+32:59 | Customer Success Manager
+No, that's all good. Do you want to go? Yeah. Happy with same time next week? 
+
+33:05| Customer
+Even we can maybe, yeah, maybe today, Tuesday, yeah, Tuesday, Monday better because my family coming from overseas on Tuesday, I'll go. Yeah. 
+
+33:17 | Customer Success Manager
+So, yeah, yeah, we can do three PM Monday. Perfect. I'll send that to ready. Now. Thank you so much. No. Take care. I'll speak to you soon. Thank you. 

@@ -1,0 +1,45 @@
+{
+  "account_id": "northfield",
+  "opportunities": [
+    {
+      "id": "opp_001",
+      "product": "Phones AI (Voice)",
+      "fit_score": 75,
+      "goal_links": [
+        "g_001",
+        "g_004"
+      ],
+      "rationale": "[narration pending]",
+      "recommended_action": "[narration pending]",
+      "confidence": "med",
+      "evidence_ids": [
+        "ev_001",
+        "ev_002",
+        "ev_003",
+        "ev_004",
+        "ev_005",
+        "ev_006",
+        "ev_007",
+        "ev_008",
+        "ev_015",
+        "ev_016",
+        "ev_017",
+        "ev_opp_001"
+      ]
+    }
+  ],
+  "evidence": {
+    "ev_opp_001": {
+      "id": "ev_opp_001",
+      "source": "usage",
+      "locator": {
+        "kind": "usage",
+        "column": "AI PRODUCT NAMES"
+      },
+      "quote": "[\"Text AI\"]",
+      "context_before": null,
+      "context_after": null
+    }
+  },
+  "warnings": []
+}

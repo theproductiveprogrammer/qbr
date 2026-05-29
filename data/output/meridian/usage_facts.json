@@ -1,0 +1,112 @@
+{
+  "account_id": "meridian",
+  "facts": {
+    "reviews": {
+      "feature_id": "reviews",
+      "label": "Reviews",
+      "goal_categories": [
+        "reviews"
+      ],
+      "owned": true,
+      "active": true,
+      "signals": {
+        "REVIEW INVITES LAST 30DAYS": 38
+      }
+    },
+    "messaging": {
+      "feature_id": "messaging",
+      "label": "Messaging",
+      "goal_categories": [
+        "messaging",
+        "lead_response"
+      ],
+      "owned": true,
+      "active": true,
+      "signals": {
+        "RECEIVED MESSAGES LAST 30DAYS": 1410
+      }
+    },
+    "webchat": {
+      "feature_id": "webchat",
+      "label": "Webchat",
+      "goal_categories": [
+        "lead_response",
+        "lead_integration"
+      ],
+      "owned": true,
+      "active": false,
+      "signals": {
+        "WEBCHAT LEADS RECEIVED LAST 30DAYS": 8
+      }
+    },
+    "text_ai": {
+      "feature_id": "text_ai",
+      "label": "Text AI",
+      "goal_categories": [
+        "ai_adoption",
+        "lead_response",
+        "messaging",
+        "reviews"
+      ],
+      "owned": false,
+      "active": true,
+      "signals": {
+        "AI PRODUCT NAMES": null,
+        "AI Conversations L28 Days": null
+      }
+    },
+    "phones_ai_voice": {
+      "feature_id": "phones_ai_voice",
+      "label": "Phones AI (Voice)",
+      "goal_categories": [
+        "call_capture",
+        "ai_adoption"
+      ],
+      "owned": false,
+      "active": null,
+      "signals": {
+        "AI PRODUCT NAMES": null
+      }
+    },
+    "paid_phones": {
+      "feature_id": "paid_phones",
+      "label": "Paid Phones",
+      "goal_categories": [
+        "call_capture",
+        "lead_response"
+      ],
+      "owned": false,
+      "active": null,
+      "signals": {
+        "PHONES PRODUCT STATUS": "$0 Phones Product"
+      }
+    },
+    "payments": {
+      "feature_id": "payments",
+      "label": "Payments",
+      "goal_categories": [
+        "payments"
+      ],
+      "owned": true,
+      "active": true,
+      "signals": {
+        "PROCESSED AMOUNT ALL TIME": 18503.95,
+        "PROCESSED AMOUNT LAST 30 DAYS": 2189.771501308471
+      }
+    },
+    "campaigns": {
+      "feature_id": "campaigns",
+      "label": "Campaigns",
+      "goal_categories": [
+        "messaging",
+        "lead_response"
+      ],
+      "owned": true,
+      "active": true,
+      "signals": {
+        "LOCATION CAMPAIGNS SUBSCRIBER LIMIT": 500,
+        "CAMPAIGN MESSAGES SENT LAST 30 DAYS": 2
+      }
+    }
+  }
+}
